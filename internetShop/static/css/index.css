@@ -1,17 +1,80 @@
-h1 {
- font-size: 5rem;
- color: red;
+// Small devices (landscape phones, минимальная ширина области просмотра 576px и выше)
 
- span {
-   color: green;
+
+// Medium devices (tablets, минимальная ширина области просмотра 768px и выше)
+@media (min-width: 768px) {
+
+      header {
+        width: 100%;
+        background: #D8E3AB url(/images/logo.png) no-repeat 5% 50%;
+        height: 70px;
+    }
+
+    h1 {
+        font-size: 5rem;
+        color: red;
+    }
+
+    h2 {
+        font-size: 5rem;
+        color: green;
+    }
+
  }
+
+// Large devices (desktops, минимальная ширина области просмотра 992px и выше)
+@media (min-width: 992px) {
+
+     header {
+        width: 100%;
+        background: #D8E3AB url(/images/logo.png) no-repeat 5% 50%;
+        height: 70px;
+    }
+
+    h1 {
+        font-size: 5rem;
+        color: red;
+    }
+
+    h2 {
+        font-size: 5rem;
+        color: green;
+    }
+
+}
+
+// Extra large devices (large desktops, минимальная ширина области просмотра 1200px и выше)
+@media (min-width: 1200px) {
+     header {
+        width: 100%;
+        background-color: #D8E3AB;
+        height: 70px;
+    }
+
+    h1 {
+        font-size: 5rem;
+        color: red;
+    }
+
+    h2 {
+        font-size: 5rem;
+        color: green;
+    }
+
+ }
+
+ header {
+    width: 100%;
+    background: url(../images/logo.png) no-repeat 5% 50%;
+    height: 70px;
+}
+
+h1 {
+    font-size: 5rem;
+    color: red;
 }
 
 h2 {
- font-size: 5rem;
- color: green;
-
- span {
-   color: green;
- }
+    font-size: 5rem;
+    color: green;
 }
