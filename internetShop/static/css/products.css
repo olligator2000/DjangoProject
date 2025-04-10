@@ -1,0 +1,17 @@
+h1 {
+ font-size: 5rem;
+ color: red;
+
+ span {
+   color: green;
+ }
+}
+
+h2 {
+ font-size: 5rem;
+ color: green;
+
+ span {
+   color: green;
+ }
+}

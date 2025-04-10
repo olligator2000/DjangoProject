@@ -1,11 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-    <link rel="stylesheet" href="/static/css/index.css">
-</head>
-<body>
+{% extends 'products/base.html' %}
+
+{% load static %}
+
+{% block css %}
+    <link rel="stylesheet" href="/static/css/products.css">
+{% endblock %}
+
+{% block content %}
     <h2>Hello people!!!!!</h2>
-</body>
-</html>
+    <div>
+        <form action="/">
+            <button type="submit">Index</button>
+        </form>
+    </div>
+{% endblock %}
+
+{% block footer %}
+{% endblock %}
