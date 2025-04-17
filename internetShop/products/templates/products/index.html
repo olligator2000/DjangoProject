@@ -3,17 +3,43 @@
 {% load static %}
 
 {% block css %}
-
+<link rel="stylesheet" href="/static/css/index.css">
 {% endblock %}
 
 {% block content %}
-    <h1>Hello word!</h1>
-    <div>
-        <form action="/products">
-            <button type="submit">Products</button>
-        </form>
+    <div class="header">
+        <div class="catalog-wrapper">
+            <div class="catalog-btn" id="catalogBtn">
+                Каталог товаров
+            </div>
+
+            <div class="categories_menu" id="categories_menu">
+                <div class="category_menu">
+                    {% for category in categories %}
+                        <a href="#" class="submenu">{{ category.name }}</a>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+
+        <div class="search">
+            <input type="text" class="search-input" placeholder="Умный поиск">
+            <span class="search-icon">🔍</span>
+        </div>
     </div>
+
+    <script src="https://yandex.st/jquery/2.2.3/jquery.min.js"></script>
+    <!-- <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&apikey=31df7a72-4554-4525-a569-9e509470153f"></script> -->
+    <script src="/static/js/map.js"></script>
+    <script src="/static/js/window_for_map.js"></script>
+    <script src="/static/js/street_block.js"></script>
+    <script src="/static/js/menu.js"></script>
 {% endblock %}
 
 {% block footer %}
+<!--pass-->
+{% endblock %}
+
+{% block scripts %}
+
 {% endblock %}
