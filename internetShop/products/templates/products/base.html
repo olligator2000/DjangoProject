@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/static/css/index.css">
+    <link rel="stylesheet" href="/static/css/base.css">
     <title>{{ title|title }}</title>
 
     {% block css %} {% endblock %}
@@ -27,12 +27,39 @@
         </div>
     </div>
 
+    <div class="header">
+        <div class="catalog-btn" id="catalogBtn">
+            ☰ КАТАЛОГ ТОВАРОВ
+        </div>
 
+        <div class="search-container">
+            <input type="text" class="search-input" placeholder="Умный поиск">
+            <span class="search-icon">🔍</span>
+        </div>
+
+        <div class="cart-btn">
+            <span class="cart-icon">🛒</span>
+            <span>Корзина</span>
+        </div>
+    </div>
+
+    <div class="categories-menu" id="categoriesMenu">
+        {% for category in categories %}
+            <a href="#" class="category-item">{{ category.name }}</a>
+        {% endfor %}
+    </div>
 
     {% block content %} {% endblock %}
 
     {% block footer %} {% endblock %}
 
     {% block scripts %} {% endblock %}
+
+    <script src="https://yandex.st/jquery/2.2.3/jquery.min.js"></script>
+    <!-- <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&apikey=31df7a72-4554-4525-a569-9e509470153f"></script> -->
+    <script src="/static/js/map.js"></script>
+    <script src="/static/js/window_for_map.js"></script>
+    <script src="/static/js/street_block.js"></script>
+    <script src="/static/js/menu.js"></script>
 </body>
 </html>

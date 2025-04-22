@@ -5,8 +5,8 @@ from products.models import Product, ProductCategory
 def index(request):
     context = {
         "title": "store",
-        "products": Product.objects.all(),
         "categories": ProductCategory.objects.all(),
+        "products": Product.objects.all(),
     }
     return render(request, "products/index.html", context)
 
@@ -14,6 +14,6 @@ def index(request):
 def products(request):
     context = {
         "title": "store - products",
-
     }
     return render(request, "products/products.html", context)
+

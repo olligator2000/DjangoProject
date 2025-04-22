@@ -7,33 +7,19 @@
 {% endblock %}
 
 {% block content %}
-    <div class="header">
-        <div class="catalog-wrapper">
-            <div class="catalog-btn" id="catalogBtn">
-                Каталог товаров
-            </div>
-
-            <div class="categories_menu" id="categories_menu">
-                <div class="category_menu">
-                    {% for category in categories %}
-                        <a href="#" class="submenu">{{ category.name }}</a>
-                    {% endfor %}
+    <div class="shop-container">
+        <div class="products-grid">
+            {% for product in products %}
+                <div class="product-card">
+                    <img class="product-image" src="/media/{{ product.image }}" alt="{{ product.name }}">
+                    <h3 class="product-title">{{ product.name }}</h3>
+                    <div class="product-price">{{ product.price }} ₽</div>
+                    <p class="product-description">{{ product.short_description }}</p>
+                    <button class="add-to-cart">В корзину</button>
                 </div>
-            </div>
-        </div>
-
-        <div class="search">
-            <input type="text" class="search-input" placeholder="Умный поиск">
-            <span class="search-icon">🔍</span>
+            {% endfor %}
         </div>
     </div>
-
-    <script src="https://yandex.st/jquery/2.2.3/jquery.min.js"></script>
-    <!-- <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&apikey=31df7a72-4554-4525-a569-9e509470153f"></script> -->
-    <script src="/static/js/map.js"></script>
-    <script src="/static/js/window_for_map.js"></script>
-    <script src="/static/js/street_block.js"></script>
-    <script src="/static/js/menu.js"></script>
 {% endblock %}
 
 {% block footer %}
@@ -41,5 +27,5 @@
 {% endblock %}
 
 {% block scripts %}
-
+<!--pass-->
 {% endblock %}
