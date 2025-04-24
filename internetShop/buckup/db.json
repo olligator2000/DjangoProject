@@ -169,6 +169,487 @@
     }
   },
   {
+    "model": "admin.logentry",
+    "pk": 14,
+    "fields": {
+      "action_time": "2025-04-23T12:30:53.913Z",
+      "user": 1,
+      "content_type": 8,
+      "object_id": "4",
+      "object_repr": "Хлеб цельнозерновой без муки | Хлебобулочные изделия",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 15,
+    "fields": {
+      "action_time": "2025-04-23T12:32:04.358Z",
+      "user": 1,
+      "content_type": 8,
+      "object_id": "5",
+      "object_repr": "Батон с отрубями Коломенское | Хлебобулочные изделия",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 16,
+    "fields": {
+      "action_time": "2025-04-23T12:33:09.526Z",
+      "user": 1,
+      "content_type": 8,
+      "object_id": "6",
+      "object_repr": "Хлеб \"Спельта\" цельнозерновой | Хлебобулочные изделия",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 17,
+    "fields": {
+      "action_time": "2025-04-23T12:34:21.367Z",
+      "user": 1,
+      "content_type": 8,
+      "object_id": "7",
+      "object_repr": "Хлеб для вкусного сендвича Harrys | Хлебобулочные изделия",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 18,
+    "fields": {
+      "action_time": "2025-04-23T12:35:11.632Z",
+      "user": 1,
+      "content_type": 8,
+      "object_id": "8",
+      "object_repr": "Хлеб заварной Ржаной край Коломенское | Хлебобулочные изделия",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 19,
+    "fields": {
+      "action_time": "2025-04-23T12:36:06.104Z",
+      "user": 1,
+      "content_type": 8,
+      "object_id": "9",
+      "object_repr": "Хлеб бородинский бездрожжевой | Хлебобулочные изделия",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 20,
+    "fields": {
+      "action_time": "2025-04-23T12:37:01.439Z",
+      "user": 1,
+      "content_type": 8,
+      "object_id": "10",
+      "object_repr": "Хлеб без муки Живое зерно цельнозерновой | Хлебобулочные изделия",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 21,
+    "fields": {
+      "action_time": "2025-04-23T12:38:05.014Z",
+      "user": 1,
+      "content_type": 8,
+      "object_id": "11",
+      "object_repr": "Хлеб покровский Диетичяеский бездрожжевой | Хлебобулочные изделия",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 22,
+    "fields": {
+      "action_time": "2025-04-23T12:38:52.038Z",
+      "user": 1,
+      "content_type": 8,
+      "object_id": "12",
+      "object_repr": "Хлебушек ДЕРЕВЕНСКИЙ Бездрожжевой | Хлебобулочные изделия",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 23,
+    "fields": {
+      "action_time": "2025-04-23T12:39:36.879Z",
+      "user": 1,
+      "content_type": 8,
+      "object_id": "13",
+      "object_repr": "Хлеб зерновой Ржаной край | Хлебобулочные изделия",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 24,
+    "fields": {
+      "action_time": "2025-04-23T12:40:12.623Z",
+      "user": 1,
+      "content_type": 7,
+      "object_id": "4",
+      "object_repr": "Мокоронные изделия",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 25,
+    "fields": {
+      "action_time": "2025-04-23T12:41:01.819Z",
+      "user": 1,
+      "content_type": 7,
+      "object_id": "5",
+      "object_repr": "Консервы",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 26,
+    "fields": {
+      "action_time": "2025-04-23T12:41:08.863Z",
+      "user": 1,
+      "content_type": 7,
+      "object_id": "6",
+      "object_repr": "Овощи",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 27,
+    "fields": {
+      "action_time": "2025-04-23T12:41:14.784Z",
+      "user": 1,
+      "content_type": 7,
+      "object_id": "7",
+      "object_repr": "Фрукты",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 28,
+    "fields": {
+      "action_time": "2025-04-23T12:41:20.794Z",
+      "user": 1,
+      "content_type": 7,
+      "object_id": "8",
+      "object_repr": "Орехи",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 29,
+    "fields": {
+      "action_time": "2025-04-23T12:41:43.203Z",
+      "user": 1,
+      "content_type": 7,
+      "object_id": "9",
+      "object_repr": "Чаи",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 30,
+    "fields": {
+      "action_time": "2025-04-23T12:41:50.006Z",
+      "user": 1,
+      "content_type": 7,
+      "object_id": "10",
+      "object_repr": "Кофе",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 31,
+    "fields": {
+      "action_time": "2025-04-23T12:41:56.135Z",
+      "user": 1,
+      "content_type": 7,
+      "object_id": "11",
+      "object_repr": "Мука",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 32,
+    "fields": {
+      "action_time": "2025-04-23T13:18:04.422Z",
+      "user": 1,
+      "content_type": 7,
+      "object_id": "12",
+      "object_repr": "Ягоды замороженные",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 33,
+    "fields": {
+      "action_time": "2025-04-23T13:18:18.884Z",
+      "user": 1,
+      "content_type": 7,
+      "object_id": "13",
+      "object_repr": "Ягоды свежие",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 34,
+    "fields": {
+      "action_time": "2025-04-23T13:18:29.732Z",
+      "user": 1,
+      "content_type": 7,
+      "object_id": "14",
+      "object_repr": "Конфеты",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 35,
+    "fields": {
+      "action_time": "2025-04-23T13:18:38.496Z",
+      "user": 1,
+      "content_type": 7,
+      "object_id": "15",
+      "object_repr": "Кондитерские изделия",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 36,
+    "fields": {
+      "action_time": "2025-04-23T13:18:52.468Z",
+      "user": 1,
+      "content_type": 7,
+      "object_id": "16",
+      "object_repr": "Газировка",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 37,
+    "fields": {
+      "action_time": "2025-04-23T13:18:57.209Z",
+      "user": 1,
+      "content_type": 7,
+      "object_id": "17",
+      "object_repr": "Пиво",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 38,
+    "fields": {
+      "action_time": "2025-04-23T13:19:10.285Z",
+      "user": 1,
+      "content_type": 7,
+      "object_id": "18",
+      "object_repr": "Водка",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 39,
+    "fields": {
+      "action_time": "2025-04-23T13:19:25.639Z",
+      "user": 1,
+      "content_type": 7,
+      "object_id": "19",
+      "object_repr": "Коньяки",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 40,
+    "fields": {
+      "action_time": "2025-04-23T13:19:37.540Z",
+      "user": 1,
+      "content_type": 7,
+      "object_id": "20",
+      "object_repr": "Винная продукция",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 41,
+    "fields": {
+      "action_time": "2025-04-24T06:25:59.645Z",
+      "user": 1,
+      "content_type": 8,
+      "object_id": "12",
+      "object_repr": "Хлебушек ДЕРЕВЕНСКИЙ Бездрожжевой | Хлебобулочные изделия",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Description\", \"Short description\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 42,
+    "fields": {
+      "action_time": "2025-04-24T07:21:21.968Z",
+      "user": 1,
+      "content_type": 8,
+      "object_id": "12",
+      "object_repr": "Хлебушек ДЕРЕВЕНСКИЙ Бездрожжевой  ывфывфывфывфыфывфывфывфывфывфыывфывфывфывфыфывфывфывфывфывфыывфывфывфывфыфывфывфывфывфывфы | Хлебобулочные изделия",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Name\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 43,
+    "fields": {
+      "action_time": "2025-04-24T07:21:58.386Z",
+      "user": 1,
+      "content_type": 8,
+      "object_id": "12",
+      "object_repr": "Хлебушек ДЕРЕВЕНСКИЙ Бездрожжевой | Хлебобулочные изделия",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Name\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 44,
+    "fields": {
+      "action_time": "2025-04-24T07:26:26.898Z",
+      "user": 1,
+      "content_type": 8,
+      "object_id": "12",
+      "object_repr": "Хлебушек ДЕРЕВЕНСКИЙ Бездрожжевой sadasdsadasdasdasdasdasdasd | Хлебобулочные изделия",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Name\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 45,
+    "fields": {
+      "action_time": "2025-04-24T07:32:13.477Z",
+      "user": 1,
+      "content_type": 8,
+      "object_id": "11",
+      "object_repr": "Хлеб покровский Диетичяеский бездрожжевой | Хлебобулочные изделия",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Description\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 46,
+    "fields": {
+      "action_time": "2025-04-24T07:32:13.711Z",
+      "user": 1,
+      "content_type": 8,
+      "object_id": "11",
+      "object_repr": "Хлеб покровский Диетичяеский бездрожжевой | Хлебобулочные изделия",
+      "action_flag": 2,
+      "change_message": "[]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 47,
+    "fields": {
+      "action_time": "2025-04-24T07:33:48.860Z",
+      "user": 1,
+      "content_type": 8,
+      "object_id": "11",
+      "object_repr": "Хлеб покровский Диетичяеский бездрожжевой | Хлебобулочные изделия",
+      "action_flag": 2,
+      "change_message": "[]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 48,
+    "fields": {
+      "action_time": "2025-04-24T07:34:40.941Z",
+      "user": 1,
+      "content_type": 8,
+      "object_id": "11",
+      "object_repr": "Хлеб покровский Диетичяеский бездрожжевой | Хлебобулочные изделия",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Short description\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 49,
+    "fields": {
+      "action_time": "2025-04-24T07:47:24.568Z",
+      "user": 1,
+      "content_type": 8,
+      "object_id": "11",
+      "object_repr": "Хлеб покровский Диетичяеский бездрожжевой | Хлебобулочные изделия",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Description\", \"Short description\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 50,
+    "fields": {
+      "action_time": "2025-04-24T07:47:38.122Z",
+      "user": 1,
+      "content_type": 8,
+      "object_id": "12",
+      "object_repr": "Хлебушек ДЕРЕВЕНСКИЙ Бездрожжевой sadasdsadasdasdasdasdasdasd | Хлебобулочные изделия",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Description\", \"Short description\"]}}]"
+    }
+  },
+  {
     "model": "auth.permission",
     "pk": 1,
     "fields": {
@@ -457,11 +938,11 @@
     }
   },
   {
-    "model": "auth.user",
+    "model": "users.user",
     "pk": 1,
     "fields": {
-      "password": "pbkdf2_sha256$870000$ATzE1AnItHdKeXVoWqDEbD$x+WNbdZJ2Udq6+VgldQ0GWszqBMWPZuSJ6tMklANxt0=",
-      "last_login": "2025-04-17T16:19:38.465Z",
+      "password": "pbkdf2_sha256$1000000$jLJYTPheiHi1AgAapLkhII$raBbI2sAc3TpMqqH7jRqrFeiIAEVpQG4R/M+qfQFAY0=",
+      "last_login": "2025-04-23T12:29:21.536Z",
       "is_superuser": true,
       "username": "admins",
       "first_name": "",
@@ -555,6 +1036,14 @@
     }
   },
   {
+    "model": "sessions.session",
+    "pk": "dj15s1dmy50c0o47dhxg4a1y0b1kiarb",
+    "fields": {
+      "session_data": ".eJxVjEsOwjAMBe-SNYoSuW4cluw5Q5XENi2gROpnhbg7VOoCtm9m3ssMaVvHYVtkHiY2Z-PN6XfLqTyk7oDvqd6aLa2u85TtrtiDLvbaWJ6Xw_07GNMyfuvgqCPBXhBFVIk4euBIPWDQDC5D6bscyKOTSMoaSlROHrIjUETz_gDaUzfR:1u7ZE9:qB1dihlO0V4lhhu9c8fxXc3xZ8CCWkl-Hd-tL7vDW7Y",
+      "expire_date": "2025-05-07T12:29:21.677Z"
+    }
+  },
+  {
     "model": "products.productcategory",
     "pk": 1,
     "fields": {
@@ -575,6 +1064,142 @@
     "pk": 3,
     "fields": {
       "name": "Мясная продукция",
+      "description": ""
+    }
+  },
+  {
+    "model": "products.productcategory",
+    "pk": 4,
+    "fields": {
+      "name": "Мокоронные изделия",
+      "description": ""
+    }
+  },
+  {
+    "model": "products.productcategory",
+    "pk": 5,
+    "fields": {
+      "name": "Консервы",
+      "description": ""
+    }
+  },
+  {
+    "model": "products.productcategory",
+    "pk": 6,
+    "fields": {
+      "name": "Овощи",
+      "description": ""
+    }
+  },
+  {
+    "model": "products.productcategory",
+    "pk": 7,
+    "fields": {
+      "name": "Фрукты",
+      "description": ""
+    }
+  },
+  {
+    "model": "products.productcategory",
+    "pk": 8,
+    "fields": {
+      "name": "Орехи",
+      "description": ""
+    }
+  },
+  {
+    "model": "products.productcategory",
+    "pk": 9,
+    "fields": {
+      "name": "Чаи",
+      "description": ""
+    }
+  },
+  {
+    "model": "products.productcategory",
+    "pk": 10,
+    "fields": {
+      "name": "Кофе",
+      "description": ""
+    }
+  },
+  {
+    "model": "products.productcategory",
+    "pk": 11,
+    "fields": {
+      "name": "Мука",
+      "description": ""
+    }
+  },
+  {
+    "model": "products.productcategory",
+    "pk": 12,
+    "fields": {
+      "name": "Ягоды замороженные",
+      "description": ""
+    }
+  },
+  {
+    "model": "products.productcategory",
+    "pk": 13,
+    "fields": {
+      "name": "Ягоды свежие",
+      "description": ""
+    }
+  },
+  {
+    "model": "products.productcategory",
+    "pk": 14,
+    "fields": {
+      "name": "Конфеты",
+      "description": ""
+    }
+  },
+  {
+    "model": "products.productcategory",
+    "pk": 15,
+    "fields": {
+      "name": "Кондитерские изделия",
+      "description": ""
+    }
+  },
+  {
+    "model": "products.productcategory",
+    "pk": 16,
+    "fields": {
+      "name": "Газировка",
+      "description": ""
+    }
+  },
+  {
+    "model": "products.productcategory",
+    "pk": 17,
+    "fields": {
+      "name": "Пиво",
+      "description": ""
+    }
+  },
+  {
+    "model": "products.productcategory",
+    "pk": 18,
+    "fields": {
+      "name": "Водка",
+      "description": ""
+    }
+  },
+  {
+    "model": "products.productcategory",
+    "pk": 19,
+    "fields": {
+      "name": "Коньяки",
+      "description": ""
+    }
+  },
+  {
+    "model": "products.productcategory",
+    "pk": 20,
+    "fields": {
+      "name": "Винная продукция",
       "description": ""
     }
   },
@@ -613,6 +1238,136 @@
       "description": "от Мартина",
       "short_description": "",
       "price": "70.00",
+      "quantity": 0,
+      "category": 1
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 4,
+    "fields": {
+      "name": "Хлеб цельнозерновой без муки",
+      "image": "product_media/3fbe81879eb8b0c0.webp",
+      "description": "",
+      "short_description": "",
+      "price": "52.00",
+      "quantity": 0,
+      "category": 1
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 5,
+    "fields": {
+      "name": "Батон с отрубями Коломенское",
+      "image": "product_media/71daf73559e10cc49115f8dc39f4.webp",
+      "description": "",
+      "short_description": "",
+      "price": "52.00",
+      "quantity": 0,
+      "category": 1
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 6,
+    "fields": {
+      "name": "Хлеб \"Спельта\" цельнозерновой",
+      "image": "product_media/661c88c11a04e.jpg",
+      "description": "Хлебная мельница, без муки",
+      "short_description": "",
+      "price": "53.00",
+      "quantity": 0,
+      "category": 1
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 7,
+    "fields": {
+      "name": "Хлеб для вкусного сендвича Harrys",
+      "image": "product_media/726732_1670250866_f094c821-697b-4f38-806d-ccce4ab97669.jpg",
+      "description": "American Sandwich",
+      "short_description": "",
+      "price": "55.00",
+      "quantity": 0,
+      "category": 1
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 8,
+    "fields": {
+      "name": "Хлеб заварной Ржаной край Коломенское",
+      "image": "product_media/100026650688b0.webp",
+      "description": "",
+      "short_description": "",
+      "price": "60.00",
+      "quantity": 0,
+      "category": 1
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 9,
+    "fields": {
+      "name": "Хлеб бородинский бездрожжевой",
+      "image": "product_media/100026674421b0.webp",
+      "description": "Рижский хлеб",
+      "short_description": "",
+      "price": "56.00",
+      "quantity": 0,
+      "category": 1
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 10,
+    "fields": {
+      "name": "Хлеб без муки Живое зерно цельнозерновой",
+      "image": "product_media/100029549704b0.webp",
+      "description": "Сибирский хлеб",
+      "short_description": "",
+      "price": "57.00",
+      "quantity": 0,
+      "category": 1
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 11,
+    "fields": {
+      "name": "Хлеб покровский Диетичяеский бездрожжевой",
+      "image": "product_media/fbb0ccd7347189e84b6335f7b1bb.webp",
+      "description": "аааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааа",
+      "short_description": "фффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффф",
+      "price": "59.00",
+      "quantity": 0,
+      "category": 1
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 12,
+    "fields": {
+      "name": "Хлебушек ДЕРЕВЕНСКИЙ Бездрожжевой sadasdsadasdasdasdasdasdasd",
+      "image": "product_media/l5igms6ymc82217mp4e42yc6rnm2qwai.jpg",
+      "description": "аааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааа",
+      "short_description": "ииииииииииииииииииииииииииииииииииииииииииииииииииииииииииииииии",
+      "price": "48.00",
+      "quantity": 0,
+      "category": 1
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 13,
+    "fields": {
+      "name": "Хлеб зерновой Ржаной край",
+      "image": "product_media/orig.webp",
+      "description": "Коломенское",
+      "short_description": "",
+      "price": "58.00",
       "quantity": 0,
       "category": 1
     }

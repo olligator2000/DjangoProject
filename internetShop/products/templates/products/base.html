@@ -26,71 +26,8 @@
     </div>
 
     <!-- Кнопка входа в левом верхнем углу -->
-    <button id="loginButton" class="login-btn">Войти</button>
+    <a id="loginButton" class="login-btn" href="{% url 'users:login' %}">Войти</a>
 
-    <!-- Модальное окно авторизации -->
-    <div id="authModal" class="auth-modal">
-        <div class="auth-content">
-            <span class="close-modal">&times;</span>
-
-            <!-- Блок авторизации -->
-            <div id="loginBlock" class="auth-block">
-                <div class="auth-header">Авторизация</div>
-                <form id="loginForm">
-                    <div class="form-group">
-                        <label>Имя пользователя</label>
-                        <input type="text" placeholder="Введите имя пользователя" required>
-                    </div>
-                    <div class="form-group">
-                        <label>Пароль</label>
-                        <input type="password" placeholder="Введите пароль" required>
-                    </div>
-                    <div class="auth-links">
-                        <a href="#" class="forgot-password">Забыли пароль?</a>
-                    </div>
-                    <button type="submit" class="auth-button">Авторизоваться</button>
-                </form>
-                <div class="auth-footer">
-                    Нужен аккаунт? <a href="#" class="switch-form" id="showRegister">Зарегистрируйся!</a>
-                </div>
-            </div>
-
-            <!-- Блок регистрации -->
-            <div id="registerBlock" class="auth-block" style="display: none;">
-                <div class="auth-header">Создать аккаунт</div>
-                <form id="registerForm">
-                    <div class="form-group">
-                        <label>Имя</label>
-                        <input type="text" placeholder="Введите имя" required>
-                    </div>
-                    <div class="form-group">
-                        <label>Фамилия</label>
-                        <input type="text" placeholder="Введите фамилию" required>
-                    </div>
-                    <div class="form-group">
-                        <label>Имя пользователя</label>
-                        <input type="text" placeholder="Введите имя пользователя" required>
-                    </div>
-                    <div class="form-group">
-                        <label>Адрес электронной почты</label>
-                        <input type="email" placeholder="Введите адрес эл. почты" required>
-                    </div>
-                    <div class="form-group">
-                        <label>Пароль</label>
-                        <input type="password" placeholder="Введите пароль" required>
-                    </div>
-                    <div class="form-group">
-                        <label>Подтверждение пароля</label>
-                        <input type="password" placeholder="Подтвердите пароль" required>
-                    </div>
-                    <button type="submit" class="auth-button">Создать аккаунт</button>
-                </form>
-                <div class="auth-footer">
-                    Уже есть аккаунт? <a href="#" class="switch-form" id="showLogin">Авторизоваться</a>
-                </div>
-            </div>
-        </div>
-    </div>
 
     <!-- Блок пользователя (будет появляться после входа) -->
     <div id="userBlock" class="user-block" style="display: none;">
@@ -130,11 +67,11 @@
 {% block scripts %} {% endblock %}
 
 <script src="https://yandex.st/jquery/2.2.3/jquery.min.js"></script>
-<!-- <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&apikey=31df7a72-4554-4525-a569-9e509470153f"></script> -->
+<!--<script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&apikey=31df7a72-4554-4525-a569-9e509470153f"></script>-->
 <script src="/static/js/map.js"></script>
 <script src="/static/js/window_for_map.js"></script>
 <script src="/static/js/street_block.js"></script>
 <script src="/static/js/menu.js"></script>
-<script src="/static/js/autoregistr.js"></script>
+<!--<script src="/static/js/autoregistr.js"></script>-->
 </body>
 </html>

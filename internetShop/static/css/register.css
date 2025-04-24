@@ -1,0 +1,151 @@
+/* register.css */
+:root {
+  --primary-color: #ff4d4d;
+  --primary-hover: #e63939;
+  --text-color: #2d3436;
+  --light-gray: #f8f9fa;
+  --border-color: #dfe6e9;
+  --shadow: 0 5px 15px rgba(0, 0, 0, 0.06);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  background-color: var(--light-gray);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  color: var(--text-color);
+  line-height: 1.4;
+  padding: 10px;
+}
+
+.register-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 420px;
+  gap: 8px;
+}
+
+.auth-header {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 12px;
+  text-align: center;
+  position: relative;
+  padding-bottom: 8px;
+  width: 100%;
+}
+
+.auth-header::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40px;
+  height: 2px;
+  background: var(--primary-color);
+  border-radius: 2px;
+}
+
+#registerForm {
+  background: white;
+  width: 100%;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.form-group {
+  margin-bottom: 10px;
+  width: 100%;
+  max-width: 340px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 4px;
+  font-weight: 500;
+  font-size: 13px;
+  color: #636e72;
+  text-align: left;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  font-size: 14px;
+  transition: all 0.2s ease;
+  background-color: #fafafa;
+}
+
+.auth-button {
+  width: 100%;
+  max-width: 340px;
+  padding: 12px;
+  background: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 6px;
+  transition: all 0.2s ease;
+}
+
+.auth-footer {
+  background: white;
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+  margin-top: 12px;
+  text-align: center;
+  font-size: 13px;
+}
+
+.back-on-site {
+  text-align: center;
+  margin-top: 16px;
+  width: 100%;
+}
+
+@media (max-width: 480px) {
+  body {
+    padding: 8px;
+  }
+
+  .register-container {
+    gap: 6px;
+  }
+
+  #registerForm, .auth-footer {
+    padding: 16px 12px;
+  }
+
+  .auth-header {
+    font-size: 21px;
+    margin-bottom: 10px;
+  }
+
+  .form-group {
+    margin-bottom: 8px;
+  }
+}

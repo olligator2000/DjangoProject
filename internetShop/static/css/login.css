@@ -1,0 +1,168 @@
+/* login.css */
+:root {
+  --primary-color: #ff4d4d;
+  --primary-hover: #e63939;
+  --text-color: #2d3436;
+  --light-gray: #f8f9fa;
+  --border-color: #dfe6e9;
+  --shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  background-color: var(--light-gray);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  color: var(--text-color);
+  line-height: 1.5;
+  padding: 12px;
+}
+
+.login-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 440px;
+  gap: 10px;
+}
+
+.auth-block {
+  background: white;
+  width: 100%;
+  padding: 24px;
+  border-radius: 9px;
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.auth-header {
+  font-size: 25px;
+  font-weight: 700;
+  margin-bottom: 16px;
+  text-align: center;
+  position: relative;
+  padding-bottom: 10px;
+  width: 100%;
+}
+
+.auth-header::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 45px;
+  height: 3px;
+  background: var(--primary-color);
+  border-radius: 3px;
+}
+
+.form-group {
+  margin-bottom: 12px;
+  width: 100%;
+  max-width: 360px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 500;
+  font-size: 14px;
+  color: #636e72;
+  text-align: left;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 11px 14px;
+  border: 1px solid var(--border-color);
+  border-radius: 7px;
+  font-size: 15px;
+  transition: all 0.2s ease;
+  background-color: #fafafa;
+}
+
+.auth-links {
+  text-align: right;
+  margin: 10px 0 14px;
+  width: 100%;
+  max-width: 360px;
+}
+
+.forgot-password {
+  color: #636e72;
+  text-decoration: none;
+  font-size: 13px;
+  transition: color 0.2s ease;
+}
+
+.auth-button {
+  width: 100%;
+  max-width: 360px;
+  padding: 13px;
+  background: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 7px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 8px;
+  transition: all 0.2s ease;
+}
+
+.auth-footer {
+  background: white;
+  width: 100%;
+  padding: 14px;
+  border-radius: 9px;
+  box-shadow: var(--shadow);
+  margin-top: 14px;
+  text-align: center;
+  font-size: 14px;
+}
+
+.back-on-site {
+  text-align: center;
+  margin-top: 18px;
+  width: 100%;
+}
+
+@media (max-width: 480px) {
+  body {
+    padding: 10px;
+  }
+
+  .login-container {
+    gap: 8px;
+  }
+
+  .auth-block, .auth-footer {
+    padding: 18px 14px;
+  }
+
+  .auth-header {
+    font-size: 22px;
+    margin-bottom: 14px;
+  }
+
+  .form-group {
+    margin-bottom: 10px;
+  }
+
+  .auth-links {
+    margin: 8px 0 12px;
+  }
+}
