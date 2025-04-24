@@ -8,7 +8,7 @@ body {
 .container {
         display: flex;
         align-items: center; /* Выравнивание по вертикали */
-    }
+}
 
 header {
     padding: 10px;
@@ -71,6 +71,7 @@ header {
     border-radius: 5px;
     cursor: pointer;
 }
+
 .ok-button:hover {
     background-color: #0056b3;
 }
@@ -120,27 +121,13 @@ header {
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
-.catalog-btn {
-    background-color: #c0392b;
-    padding: 10px 20px;
-    border-radius: 4px;
-    cursor: pointer;
-    font-weight: bold;
-    display: flex;
-    align-items: center;
-}
-
-.catalog-btn:hover {
-    background-color: #a93226;
-}
-
 .search-container {
     display: flex;
     align-items: center;
     background-color: white;
     border-radius: 20px;
     padding: 5px 15px;
-    width: 300px;
+    width: 700px;
 }
 
 .search-input {
@@ -153,7 +140,14 @@ header {
 
 .search-icon {
     color: #777;
-    margin-left: 10px;
+    margin-left: 0px;
+    cursor: pointer;
+    transition: transform 0.6s;
+}
+
+.search-icon:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
 
 .cart-btn {
@@ -165,30 +159,159 @@ header {
 .cart-icon {
     margin-right: 5px;
     font-size: 20px;
-}
-
-.categories-menu {
-    background-color: white;
-    width: 250px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    position: absolute;
-    top: 60px;
-    left: 20px;
-    display: none;
-}
-
-.category-item {
-    padding: 12px 20px;
-    border-bottom: 1px solid #eee;
     cursor: pointer;
 }
 
-.category-item:hover {
-    background-color: #f9f9f9;
-    color: #e74c3c;
+/* Стили для кнопки каталога и меню */
+.catalog-container {
+    position: relative;
 }
 
-.highlight {
-    color: #e74c3c;
+.catalog-btn {
+    background-color: #e74c3c;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Стили для меню категорий */
+.categories-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 250px;
+    background: white;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    border-radius: 0 0 4px 4px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    z-index: 1000;
+}
+
+.categories-menu.active {
+    max-height: 500px;
+    overflow-y: auto;
+}
+
+.category-item {
+    padding: 12px 16px;
+    display: block;
+    color: #333;
+    text-decoration: none;
+    transition: background 0.2s;
+}
+
+.category-item:hover {
+    background: #f5f5f5;
+}
+
+/* Стили для авторизации */
+
+/* Модальное окно */
+.auth-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 1001;
+}
+
+.auth-content {
+    background: white;
+    margin: 20px auto;
+    padding: 20px;
+    width: 400px;
+    border-radius: 8px;
+    position: relative;
+}
+
+.close-modal {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/* Остальные стили как в предыдущем примере */
+.auth-header {
+    font-size: 24px;
     font-weight: bold;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 600;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.auth-button {
+    width: 100%;
+    padding: 12px;
+    background-color: #f44336;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+/* Блок пользователя */
+.user-block {
+    position: fixed;
+    top: 18px;
+    right: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    z-index: 1000;
+}
+
+.login-btn {
+    position: fixed;
+
+    right: 20px;
+    padding: 6px 12px;
+    background-color: #f44336;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+.logout-btn {
+    right: 20px;
+    padding: 6px 12px;
+    background-color: #f44336;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+
 }
