@@ -183,10 +183,10 @@ header {
 /* Стили для меню категорий */
 .categories-menu {
     position: absolute;
-    top: 100%;
-    left: 0;
+    top: 139%;
+    left: -19px;
     width: 250px;
-    background: white;
+    background: rgb(238, 169, 169);
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     border-radius: 0 0 4px 4px;
     max-height: 0;

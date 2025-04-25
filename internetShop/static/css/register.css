@@ -59,11 +59,11 @@ body {
 }
 
 #registerForm {
-  background: white;
-  width: 100%;
+  background: rgb(245, 219, 219);
+  width: 20%;
   padding: 20px;
   border-radius: 8px;
-  box-shadow: var(--shadow);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 5);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -97,33 +97,36 @@ body {
 
 .auth-button {
   width: 100%;
-  max-width: 340px;
-  padding: 12px;
+  display: grid;
+  place-items: center; 
+  /* max-width: 360px; */
+  padding: 13px;
   background: var(--primary-color);
   color: white;
-  border: none;
-  border-radius: 6px;
-  font-size: 14px;
+  /* border: none; */
+  border-radius: 7px;
+  font-size: 15px;
   font-weight: 600;
   cursor: pointer;
-  margin-top: 6px;
-  transition: all 0.2s ease;
+  /* margin-top: 8px; */
+  text-align: center;
+  /* transition: all 0.2s ease; */
 }
 
 .auth-footer {
-  background: white;
+  /* background: white; */
   width: 100%;
   padding: 12px;
-  border-radius: 8px;
-  box-shadow: var(--shadow);
-  margin-top: 12px;
+  /* border-radius: 8px;
+  box-shadow: var(--shadow); */
+  margin-top: 2px;
   text-align: center;
-  font-size: 13px;
+  font-size: 14px;
 }
 
 .back-on-site {
   text-align: center;
-  margin-top: 16px;
+  /* margin-top: 2px; */
   width: 100%;
 }
 
