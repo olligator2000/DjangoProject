@@ -24,13 +24,14 @@
         </div>
         <button type="submit" class="auth-button">Авторизоваться</button>
     </form>
-    <div class="auth-footer">
-        Нужен аккаунт? <a href="{% url 'users:register' %}" class="switch-form" id="showRegister">Зарегистрируйся!</a>
-    </div>
+    
+</div>
+<div class="auth-footer">
+    Нужен аккаунт? <a href="{% url 'users:register' %}" class="switch-form" id="showRegister">Зарегистрируйся!</a>
 </div>
 
 <div class="back-on-site">
-    <a href="#" class="exit-registration">Выйти из регистрации</a>
+    <a href="{% url 'index' %}" class="exit-registration">Выйти из регистрации</a>
 </div>
 
 </body>
