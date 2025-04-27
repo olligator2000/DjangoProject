@@ -22,7 +22,7 @@ class Product(models.Model):
     short_description = models.TextField(max_length=64, blank=True)
     price = models.DecimalField(max_digits=8, decimal_places=2)
     quantity = models.PositiveIntegerField(default=0)
-    category = models.ForeignKey(ProductCategory, on_delete=models.PROTECT)
+    category = models.ForeignKey(ProductCategory, on_delete=models.PROTECT, related_name='products')
 
     def __str__(self):
         return f"{self.name} | {self.category.name}"

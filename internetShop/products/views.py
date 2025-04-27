@@ -3,10 +3,14 @@ from products.models import Product, ProductCategory
 
 
 def index(request):
+    categories = ProductCategory.objects.prefetch_related('products').all()
+    first_category = categories.first()
+    
     context = {
         "title": "store",
-        "categories": ProductCategory.objects.all(),
-        "products": Product.objects.all(),
+        "categories": categories,
+        "products": first_category.products.all() if first_category else [],
+        "show_products": False  # Добавляем флаг для отображения товаров
     }
     return render(request, "products/index.html", context)
 
