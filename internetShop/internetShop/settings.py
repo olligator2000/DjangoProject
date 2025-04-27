@@ -41,6 +41,7 @@ INSTALLED_APPS = [
 
     'products',
     'users',
+    'api',
 ]
 
 MIDDLEWARE = [
@@ -136,3 +137,4 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 #используем по умолчанию класс User который создавали, а не тот от Django
 AUTH_USER_MODEL = 'users.User'
+
