@@ -1,11 +1,31 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-    <link rel="stylesheet" href="/static/css/index.css">
-</head>
-<body>
-    <h1>Hello word!</h1>
-</body>
-</html>
+{% extends 'products/base.html' %}
+
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="/static/css/index.css">
+{% endblock %}
+
+{% block content %}
+    <div class="shop-container">
+        <div class="products-grid">
+            {% for product in products %}
+                <div class="product-card">
+                    <img class="product-image" src="/media/{{ product.image }}" alt="{{ product.name }}">
+                    <h3 class="product-title">{{ product.name }}</h3>
+                    <div class="product-price">{{ product.price }} ₽</div>
+                    <p class="product-description">{{ product.short_description }}</p>
+                    <button class="add-to-cart">В корзину</button>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}
+
+{% block footer %}
+<!--pass-->
+{% endblock %}
+
+{% block scripts %}
+<!--pass-->
+{% endblock %}
