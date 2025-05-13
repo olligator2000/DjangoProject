@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/register.css">
+    <title>{{ title|title }}</title>
+</head>
+<body>
+
+
+<form method="post" action="{% url 'users:register' %}" id="registerForm">
+    {% csrf_token %}
+    <div class="auth-header">Создать аккаунт</div>
+
+    <div class="form-group">
+        <label for="{{ form.first_name.id_for_label }}">Имя</label>
+<!--        <input type="text" placeholder="Введите имя" required>-->
+        {{ form.first_name }}
+    </div>
+    <div class="form-group">
+        <label for="{{ form.last_name.id_for_label }}">Фамилия</label>
+<!--        <input type="text" placeholder="Введите фамилию" required>-->
+        {{ form.last_name }}
+    </div>
+    <div class="form-group">
+        <label for="{{ form.username.id_for_label }}">Имя пользователя</label>
+<!--        <input type="text" placeholder="Введите имя пользователя" required>-->
+        {{ form.username }}
+    </div>
+    <div class="form-group">
+        <label for="{{ form.email.id_for_label }}">Адрес электронной почты</label>
+<!--        <input type="email" placeholder="Введите адрес эл. почты" required>-->
+        {{ form.email }}
+    </div>
+    <div class="form-group">
+        <label for="{{ form.password1.id_for_label }}">Пароль</label>
+<!--        <input type="password" placeholder="Введите пароль" required>-->
+        {{ form.password1 }}
+    </div>
+    <div class="form-group">
+        <label for="{{ form.password2.id_for_label }}">Подтверждение пароля</label>
+<!--        <input type="password" placeholder="Подтвердите пароль" required>-->
+        {{ form.password2 }}
+    </div>
+    <button type="submit" class="auth-button">Создать аккаунт</button>
+</form>
+<div class="auth-footer">
+    Уже есть аккаунт? <a href="{% url 'users:login' %}" class="switch-form" id="showLogin">Авторизоваться</a>
+</div>
+
+<div class="back-on-site">
+    <a href="{% url 'index' %}" class="exit-registration">Выйти из регистрации</a>
+</div>
+
+</body>
+</html>
