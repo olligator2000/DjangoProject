@@ -1,0 +1,142 @@
+/* Изолированные стили с префиксом up- (user-profile) */
+.up-container {
+    max-width: 900px;
+    margin: 140px auto 30px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+    overflow: hidden;
+}
+
+.up-header {
+    padding: 20px 25px;
+    border-bottom: 1px solid #f0f2f5;
+}
+
+.up-title {
+    margin: 0;
+    font-size: 22px;
+    color: #2d3748;
+    font-weight: 600;
+}
+
+.up-content-wrapper {
+    display: flex;
+    padding: 25px;
+}
+
+.up-photo-section {
+    width: 180px;
+    margin-right: 30px;
+    text-align: center;
+}
+
+.up-photo-placeholder {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background: #f8fafc;
+    margin: 0 auto 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    border: 1px solid #e2e8f0;
+}
+
+.up-photo-placeholder i {
+    font-size: 60px;
+    color: #cbd5e0;
+}
+
+.up-photo-upload {
+    position: relative;
+}
+
+.up-photo-upload-btn {
+    display: inline-block;
+    padding: 8px 15px;
+    background: #edf2f7;
+    border-radius: 6px;
+    color: #4a5568;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.up-photo-upload-btn:hover {
+    background: #e2e8f0;
+}
+
+.up-photo-input {
+    position: absolute;
+    opacity: 0;
+    width: 0.1px;
+    height: 0.1px;
+}
+
+.up-form-section {
+    flex: 1;
+}
+
+.up-form-group {
+    margin-bottom: 20px;
+}
+
+.up-label {
+    display: block;
+    margin-bottom: 8px;
+    color: #4a5568;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.up-input {
+    width: 100%;
+    padding: 10px 15px;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    font-size: 15px;
+    transition: all 0.2s;
+}
+
+.up-input:focus {
+    border-color: #4299e1;
+    box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.2);
+    outline: none;
+}
+
+.up-save-btn {
+    background: #4299e1;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 6px;
+    font-size: 15px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.up-save-btn:hover {
+    background: #3182ce;
+}
+
+/* Адаптация */
+@media (max-width: 768px) {
+    .up-content-wrapper {
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    .up-photo-section {
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 25px;
+    }
+
+    .up-photo-placeholder {
+        width: 120px;
+        height: 120px;
+    }
+}
