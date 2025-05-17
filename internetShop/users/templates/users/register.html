@@ -8,33 +8,63 @@
 </head>
 <body>
 
+{% if form.errors %}
+<div class="alert-container">
+    <input type="checkbox" id="alert-close" class="alert-close">
+    <div class="alert alert-warning">
+        <ul>
+            {% for field in form %}
+            {% for error in field.errors %}
+            <li>{{ error }}</li>
+            {% endfor %}
+            {% endfor %}
+            {% for error in form.non_field_errors %}
+            <li>{{ error }}</li>
+            {% endfor %}
+        </ul>
+        <label for="alert-close" class="close">
+            <span aria-hidden="true">&times;</span>
+        </label>
+    </div>
+</div>
+{% endif %}
 
-<form id="registerForm">
+<form method="post" action="{% url 'users:register' %}" id="registerForm">
+    {% csrf_token %}
     <div class="auth-header">Создать аккаунт</div>
-    <div class="form-group">
-        <label>Имя</label>
-        <input type="text" placeholder="Введите имя" required>
+
+    <div class="form-fields-container">
+        <div class="form-column">
+            <div class="form-group">
+                <label for="{{ form.first_name.id_for_label }}">Имя</label>
+                {{ form.first_name }}
+            </div>
+            <div class="form-group">
+                <label for="{{ form.last_name.id_for_label }}">Фамилия</label>
+                {{ form.last_name }}
+            </div>
+            <div class="form-group">
+                <label for="{{ form.username.id_for_label }}">Имя пользователя</label>
+                {{ form.username }}
+            </div>
+        </div>
+
+        <div class="form-column">
+            <div class="form-group">
+                <label for="{{ form.email.id_for_label }}">Адрес электронной почты</label>
+                {{ form.email }}
+            </div>
+            <div class="form-group">
+                <label for="{{ form.password1.id_for_label }}">Пароль</label>
+                {{ form.password1 }}
+            </div>
+            <div class="form-group">
+                <label for="{{ form.password2.id_for_label }}">Подтверждение пароля</label>
+                {{ form.password2 }}
+            </div>
+        </div>
     </div>
-    <div class="form-group">
-        <label>Фамилия</label>
-        <input type="text" placeholder="Введите фамилию" required>
-    </div>
-    <div class="form-group">
-        <label>Имя пользователя</label>
-        <input type="text" placeholder="Введите имя пользователя" required>
-    </div>
-    <div class="form-group">
-        <label>Адрес электронной почты</label>
-        <input type="email" placeholder="Введите адрес эл. почты" required>
-    </div>
-    <div class="form-group">
-        <label>Пароль</label>
-        <input type="password" placeholder="Введите пароль" required>
-    </div>
-    <div class="form-group">
-        <label>Подтверждение пароля</label>
-        <input type="password" placeholder="Подтвердите пароль" required>
-    </div>
+
     <button type="submit" class="auth-button">Создать аккаунт</button>
 </form>
 <div class="auth-footer">
@@ -44,6 +74,7 @@
 <div class="back-on-site">
     <a href="{% url 'index' %}" class="exit-registration">Выйти из регистрации</a>
 </div>
+
 
 </body>
 </html>

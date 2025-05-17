@@ -26,15 +26,34 @@
                 </div>
             </div>
 
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'users:profile' %}">Профиль
+                    <i class="fas fa-user-circle"></i>
+                </a>
+            </li>
+
             <!-- Кнопка входа в левом верхнем углу -->
-            <a id="loginButton" class="login-btn" href="{% url 'users:login' %}">Войти</a>
+            <a id="loginButton" class="login-btn" href="
+            {% if user.is_authenticated %}
+                {% url 'users:logout' %}
+            {% else %}
+                {% url 'users:login' %}
+            {% endif %}
+            ">
+            {% if user.is_authenticated %}
+                Выйти
+            {% else %}
+                Войти
+            {% endif %}
+
+            </a>
 
 
-            <!-- Блок пользователя (будет появляться после входа) -->
-            <div id="userBlock" class="user-block" style="display: none;">
-                <span id="usernameDisplay"></span>
-                <button id="logoutBtn" class="logout-btn">Выйти</button>
-            </div>
+<!--            &lt;!&ndash; Блок пользователя (будет появляться после входа) &ndash;&gt;-->
+<!--            <div id="userBlock" class="user-block" style="display: none;">-->
+<!--                <span id="usernameDisplay"></span>-->
+<!--                <button id="logoutBtn" class="logout-btn">Выйти</button>-->
+<!--            </div>-->
 
         </div>
 

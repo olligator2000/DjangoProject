@@ -75,4 +75,5 @@ document.addEventListener('DOMContentLoaded', function() {
     userBlock.style.display = 'flex';
     usernameDisplay.textContent = currentUser;
   }
+
 });

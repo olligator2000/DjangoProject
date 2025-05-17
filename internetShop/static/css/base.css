@@ -2,7 +2,6 @@ body {
     font-family: 'Courier New', Courier, monospace, serif;
     margin: 0;
     padding: 0;
-    /* background-color: #f5f5f5; */
 }
 
 .fixed-header-wrapper {
@@ -13,7 +12,7 @@ body {
 }
 
 .content {
-    margin-top: 140px; /* Общая высота фиксированных элементов */
+    margin-top: 140px;
 }
 
 .container {
@@ -22,13 +21,8 @@ body {
     position: fixed; 
     background-color: #f5f5f5;
     display: flex;
-    align-items: center; /* Выравнивание по вертикали */
+    align-items: center;
     z-index: 1000;
-}
-
-header {
-    padding: 10px;
-    text-align: left;
 }
 
 .logo {
@@ -53,23 +47,22 @@ header {
     border: 2px solid #ccc;
     background-color: #f9f9f9;
     padding: 8px;
-    display: inline-block; /* Чтобы блок имел ширину по содержимому */
-    white-space: nowrap; /* Чтобы текст не переносился на новую строку */
+    display: inline-block;
+    white-space: nowrap;
     height: 20px;
     overflow: auto;
     margin: 18px left;
     border-radius: 15px;
-
 }
 
 #map-modal {
-    display: none; /* Скрываем модальное окно по умолчанию */
+    display: none;
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(201, 57, 57, 0.062); /* Темный фон */
+    background-color: rgba(201, 57, 57, 0.062);
     justify-content: center;
     align-items: center;
 }
@@ -94,24 +87,11 @@ header {
 #map {
     width: 800px;
     height: 500px;
-    background-color: #e7cccc; /* Белый фон для карты */
+    background-color: #e7cccc;
     position: relative;
     padding: 20px;
     border-radius: 8px;
     z-index: 1001;
-}
-
-.wheretaking {
-    border: 2px solid rgb(189, 55, 55);
-    background-color: #ad8e8e;
-    padding: 8px;
-    width: 100px;
-    display: inline-block; /* Чтобы блок имел ширину по содержимому */
-    white-space: nowrap; /* Чтобы текст не переносился на новую строку */
-    height: 22px;
-    overflow: auto;
-    margin: 20px left;
-    border-radius: 17px;
 }
 
 #metka {
@@ -182,8 +162,6 @@ header {
     cursor: pointer;
 }
 
-/* Стили для кнопки каталога и меню */
-
 .catalog-container {
     position: relative;
 }
@@ -215,8 +193,6 @@ header {
     transform: scale(0.98);
 }
 
-/* Блок container-menu */
-
 .container-menu {
     position: fixed; 
     top: 131px; 
@@ -236,10 +212,9 @@ header {
     z-index: 1000;
 }
 
-/* Стили для меню категорий */
 .categories-menu {
-    position: fixed  ;
-    top: 131px; /* Высота шапки (.header)*/
+    position: fixed;
+    top: 131px;
     left: 19px;
     width: 250px;
     font-size: 16px;
@@ -256,7 +231,6 @@ header {
 
 .category-item {
     padding: 10px 16px;
-    /* line-height: 2.8;  */
     display: block;
     color: #333;
     border-radius: 10px;
@@ -266,17 +240,14 @@ header {
     transition: background 0.2s;
 }
 
-
 .category-item:hover {
     background: #b8b0b0bd;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     border-radius: 10px;
 }
 
-/* Стили для меню товаров */
-
 .product-menu {
-    display: none; /* Скрываем по умолчанию */
+    display: none;
     position: fixed;
     top: 131px;
     left: 250px;
@@ -292,10 +263,9 @@ header {
 }
 
 .product-menu.active {
-    display: grid; /* Показываем при активации */
+    display: grid;
 }
 
-/* Если используете класс hidden */
 .hidden {
     display: none !important;
 }
@@ -322,8 +292,6 @@ header {
     transform: translateY(-2px);
 }
 
-/* Блок пользователя */
-
 .user-block {
     position: fixed;
     top: 18px;
@@ -336,7 +304,6 @@ header {
 
 .login-btn {
     position: fixed;
-
     right: 20px;
     padding: 6px 12px;
     background-color: #f44336;
@@ -347,100 +314,135 @@ header {
     z-index: 1000;
 }
 
-.logout-btn {
-    right: 20px;
-    padding: 6px 12px;
-    background-color: #f44336;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
+/* Добавляем в конец файла base.css, перед медиа-запросами */
 
+.nav-item {
+    position: fixed;
+    top: 22px; /* Подгоняем по вертикали */
+    right: 100px; /* Позиционируем слева от кнопки входа */
+    z-index: 1000;
+    list-style: none;
+    margin: 0;
+    padding: 0;
 }
 
-/* Адаптация для экрана 2377px */
+.nav-link {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 0;
+    color: #4f4b4b;
+    text-decoration: none;
+    font-family: 'Courier New', Courier, monospace, serif;
+    font-weight: bold;
+    transition: opacity 0.2s;
+}
+
+.nav-link:hover {
+    opacity: 0.8;
+    text-decoration: underline;
+}
+
+.nav-link i {
+    font-size: 16px;
+    margin-right: 5px;
+}
+
+/* Адаптация для мобильных устройств */
+@media screen and (max-width: 768px) {
+    .nav-item {
+        right: 90px;
+    }
+
+    .nav-link {
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .nav-item {
+        right: 70px;
+    }
+
+    .nav-link span {
+        display: none; /* Скрываем текст "Профиль" на очень маленьких экранах */
+    }
+
+    .nav-link i {
+        font-size: 18px;
+        margin-right: 0;
+    }
+}
+
 @media screen and (max-width: 2377px) {
     .logo { max-width: 280px; }
     .search-container { width: 600px; }
 }
 
-/* Адаптация для 2113px */
 @media screen and (max-width: 2113px) {
     .logo { max-width: 260px; }
     .search-container { width: 550px; }
 }
 
-/* Адаптация для 1981px */
 @media screen and (max-width: 1981px) {
     .logo { max-width: 240px; }
     .search-container { width: 500px; }
 }
 
-/* Адаптация для 1761px */
 @media screen and (max-width: 1761px) {
     .logo { max-width: 220px; }
     .search-container { width: 450px; }
 }
 
-/* Адаптация для 1585px */
 @media screen and (max-width: 1585px) {
     .logo { max-width: 200px; }
     .search-container { width: 400px; }
 }
 
-/* Адаптация для 1441px */
 @media screen and (max-width: 1441px) {
     .logo { max-width: 180px; }
     .search-container { width: 350px; }
 }
 
-/* Адаптация для 1268px */
 @media screen and (max-width: 1268px) {
     .logo { max-width: 160px; }
     .search-container { width: 320px; }
 }
 
-/* Адаптация для 1057px */
 @media screen and (max-width: 1057px) {
     .logo { max-width: 140px; }
     .search-container { width: 300px; }
 }
 
-/* Адаптация для 906px */
 @media screen and (max-width: 906px) {
     .logo { max-width: 120px; }
     .search-container { width: 250px; }
     .cart-btn { right: 50px; }
 }
 
-/* Адаптация для 792px */
 @media screen and (max-width: 792px) {
     .logo { max-width: 100px; }
     .search-container { width: 220px; }
     .catalog-btn { font-size: 14px; padding: 8px 16px; }
 }
 
-/* Адаптация для 634px */
 @media screen and (max-width: 634px) {
     .search-container { width: 180px; }
     .cart-btn { right: 20px; }
 }
 
-/* Адаптация для 528px */
 @media screen and (max-width: 528px) {
     .logo { max-width: 80px; }
     .search-container { width: 150px; }
     .catalog-btn { font-size: 12px; padding: 6px 12px; }
 }
 
-/* Адаптация для 396px */
 @media screen and (max-width: 396px) {
     .search-container { width: 120px; }
     .header { padding: 10px; }
     .cart-btn { right: 10px; }
 }
 
-/* Адаптация для 317px */
 @media screen and (max-width: 317px) {
     .logo { max-width: 60px; }
     .search-container { width: 100px; }
