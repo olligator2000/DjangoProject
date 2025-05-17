@@ -1,7 +1,7 @@
 from django.shortcuts import render
-
 from django.http import JsonResponse
 from products.models import Product
+
 
 def get_products_by_category(request):
     category_id = request.GET.get('category_id')

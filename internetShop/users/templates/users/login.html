@@ -10,15 +10,17 @@
 
 <div id="loginBlock" class="auth-block">
     <div class="auth-header">Авторизация</div>
-    <form id="loginForm">
-        <div class="form-group">
-            <label>Имя пользователя</label>
-            <input type="text" placeholder="Введите имя пользователя" required>
-        </div>
-        <div class="form-group">
-            <label>Пароль</label>
-            <input type="password" placeholder="Введите пароль" required>
-        </div>
+    <form method="post" action="{% url 'users:login' %}" id="loginForm">
+        {% csrf_token %}
+        {{ form.as_p }}
+<!--        <div class="form-group">-->
+<!--            <label>Имя пользователя</label>-->
+<!--            <input type="text" placeholder="Введите имя пользователя" required>-->
+<!--        </div>-->
+<!--        <div class="form-group">-->
+<!--            <label>Пароль</label>-->
+<!--            <input type="password" placeholder="Введите пароль" required>-->
+<!--        </div>-->
         <div class="auth-links">
             <a href="#" class="forgot-password">Забыли пароль?</a>
         </div>
