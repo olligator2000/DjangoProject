@@ -15,7 +15,9 @@
     <div class="fixed-header-wrapper">
         <div class="container">
             <header>
-                <img src="/static/images/logo.png" alt="Logo" class="logo">
+                <a href="{% url 'index' %}" class="logo-link">
+                    <img src="/static/images/logo.png" alt="Logo" class="logo">
+                </a>
             </header>
             <div id="metka"></div>
             <div id="output"></div>
@@ -26,11 +28,14 @@
                 </div>
             </div>
 
-            <li class="nav-item">
-                <a class="nav-link" href="{% url 'users:profile' %}">Профиль
-                    <i class="fas fa-user-circle"></i>
-                </a>
-            </li>
+            {% if user.is_authenticated %}
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'users:profile' %}">
+                        Профиль
+                        <i class="fas fa-user-circle"></i>
+                    </a>
+                </li>
+            {% endif %}
 
             <!-- Кнопка входа в левом верхнем углу -->
             <a id="loginButton" class="login-btn" href="

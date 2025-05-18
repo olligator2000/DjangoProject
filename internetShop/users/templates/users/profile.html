@@ -4,55 +4,83 @@
 
 {% block css %}
 <link rel="stylesheet" href="/static/css/profile.css">
-<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">-->
 {% endblock %}
 
 {% block content %}
-    <div class="up-container">
-        <div class="up-header">
-            <h1 class="up-title">Профиль</h1>
-        </div>
+<div class="profile-wrapper">
+    <div class="profile-sidebar">
+        <div class="profile-tab active" data-tab="info">Личная информация</div>
+        <div class="profile-tab" data-tab="orders">Заказы</div>
+        <div class="profile-tab" data-tab="favorites">Избранное</div>
+        <div class="profile-tab" data-tab="settings">Настройки</div>
+    </div>
 
-        <div class="up-content-wrapper">
-            <!-- Блок с фото пользователя -->
-            <div class="up-photo-section">
-                <div class="up-photo-placeholder">
-                    <i class="fas fa-user-circle"></i>
+    <div class="profile-content">
+        <!-- Личная информация -->
+        <div class="tab-content active" id="info">
+            <h2 class="h2-text-1">Личная информация</h2>
+            <div class="profile-info-container">
+                <div class="profile-photo-container">
+                    <img src="/static/images/фото_профиля.avif" alt="Фото профиля" class="profile-photo"
+                         id="profilePhoto">
+                    <div class="photo-upload">
+                        <input type="file" id="photoUpload" accept="image/*" style="display: none;">
+                        <button onclick="document.getElementById('photoUpload').click()" class="save-btn">Выбрать фото
+                        </button>
+                        <span id="fileName">Файл не выбран</span>
+                    </div>
                 </div>
-                <div class="up-photo-upload">
-                    <label for="up-photo-input" class="up-photo-upload-btn">
-                        <i class="fas fa-camera"></i> Изменить фото
-                    </label>
-                    <input type="file" id="up-photo-input" class="up-photo-input" accept="image/*">
+                <div class="profile-form-container">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Фамилия</label>
+                            <input type="text" placeholder="Введите вашу фамилию">
+                        </div>
+                        <div class="form-group">
+                            <label>Имя</label>
+                            <input type="text" placeholder="Введите ваше имя">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Имя пользователя</label>
+                            <input type="text" placeholder="Введите имя пользователя">
+                        </div>
+                        <div class="form-group">
+                            <label>Адрес электронной почты</label>
+                            <input type="email" placeholder="Введите ваш email">
+                        </div>
+                    </div>
+                    <button class="edit-btn">Редактировать</button>
                 </div>
             </div>
+        </div>
 
-            <!-- Форма с данными -->
-            <div class="up-form-section">
-                <div class="up-form-group">
-                    <label class="up-label">Имя</label>
-                    <input type="text" class="up-input" placeholder="Введите ваше имя">
-                </div>
+        <!-- Заказы -->
+        <div class="tab-content" id="orders">
+            <h2 class="h2-text-1">Ваши заказы</h2>
+            <div class="tab-content-wrapper">
+                <p>Здесь будет список ваших заказов</p>
+            </div>
+        </div>
 
-                <div class="up-form-group">
-                    <label class="up-label">Фамилия</label>
-                    <input type="text" class="up-input" placeholder="Введите вашу фамилию">
-                </div>
+        <!-- Избранное -->
+        <div class="tab-content" id="favorites">
+            <h2 class="h2-text-1">Избранное</h2>
+            <div class="tab-content-wrapper">
+                <p>Здесь будут ваши избранные товары</p>
+            </div>
+        </div>
 
-                <div class="up-form-group">
-                    <label class="up-label">Имя пользователя</label>
-                    <input type="text" class="up-input" placeholder="Введите имя пользователя">
-                </div>
-
-                <div class="up-form-group">
-                    <label class="up-label">Email</label>
-                    <input type="email" class="up-input" placeholder="Введите ваш email">
-                </div>
-
-                <button type="submit" class="up-save-btn">Сохранить изменения</button>
+        <!-- Настройки -->
+        <div class="tab-content" id="settings">
+            <h2 class="h2-text-1">Настройки</h2>
+            <div class="tab-content-wrapper">
+                <p>Здесь будут настройки вашего профиля</p>
             </div>
         </div>
     </div>
+</div>
 {% endblock %}
 
 {% block footer %}
@@ -60,5 +88,5 @@
 {% endblock %}
 
 {% block scripts %}
- <script src="/static/js/profile.js"></script>
+<script src="/static/js/profile.js"></script>
 {% endblock %}
