@@ -1,6 +1,5 @@
 from django.shortcuts import render
-from products.models import Product, ProductCategory
-
+from products.models import Product, ProductCategory, Basket
 
 def index(request):
     categories = ProductCategory.objects.prefetch_related('products').all()

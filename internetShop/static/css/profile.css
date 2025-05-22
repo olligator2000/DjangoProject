@@ -49,6 +49,7 @@
 .tab-content.active {
     display: block;
     margin-top: -8px;
+
 }
 
 /* Остальные стили остаются без изменений */
@@ -191,6 +192,7 @@
 .tab-content h2.h2-text-1 {
     margin-bottom: 0;
 }
+
 
 @media (max-width: 768px) {
     .profile-wrapper {

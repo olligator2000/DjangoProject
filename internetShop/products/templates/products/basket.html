@@ -1,0 +1,46 @@
+{% if baskets %}
+<!-- Статичная панель корзины -->
+<div class="cart-sidebar">
+    <div class="cart-header">
+        <h2 class="cart-title">Корзина</h2>
+        <button class="clear-cart-btn">Очистить</button>
+    </div>
+
+    <div class="cart-items-container">
+        {% for basket in baskets %}
+        <div class="cart-item">
+            <img src="/media/{{ basket.product.image }}" alt="{{ basket.product.name }}" class="item-image">
+            <div class="item-content">
+                <div class="item-name" title="{{ basket.product.name }}">
+                    {{ basket.product.name }}
+                </div>
+                <div class="item-details-row">
+                    <div class="item-quantity">
+                        <button class="quantity-btn decrease">-</button>
+                        <span class="quantity-value">{{ basket.quantity }}</span>
+                        <button class="quantity-btn increase">+</button>
+                    </div>
+                    <div class="item-details">{{ basket.product.price }} ₽</div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+    <div class="cart-footer">
+        <div class="cart-divider"></div>
+        <div class="delivery">Доставка 0 ₽</div>
+        <div class="total">
+            <div class="total-label">Итого:</div>
+            <div class="total-price">{{ baskets.total_sum }} ₽</div>
+        </div>
+        <button class="checkout-btn">Далее</button>
+    </div>
+</div>
+{% else %}
+<div class="cart-sidebar">
+    <div class="empty-cart-message">
+        Корзина пуста
+    </div>
+</div>
+{% endif %}

@@ -15,81 +15,82 @@
         <div class="profile-tab" data-tab="settings">Настройки</div>
     </div>
 
-<form action="{% url 'users:profile' %}" method="post" enctype="multipart/form-data">
-    {% csrf_token %}
-    <div class="profile-content">
-        <!-- Личная информация -->
-        <div class="tab-content active" id="info">
-            <h2 class="h2-text-1">Личная информация</h2>
-            <div class="profile-info-container">
-                <div class="profile-photo-container">
-                    <img src="
+    <form action="{% url 'users:profile' %}" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="profile-content">
+            <!-- Личная информация -->
+            <div class="tab-content active" id="info">
+                <h2 class="h2-text-1">Личная информация</h2>
+                <div class="profile-info-container">
+
+                    <div class="profile-photo-container">
+                        <img src="
                       {% if user.image %}
                         {{ user.image.url }}
                       {% else %}
                         {% static '/images/фото_профиля.avif' %}
-                      {% endif %}
-                    " class="profile-photo" id="profilePhoto">
-                    <div class="photo-upload">
+                      {% endif %}" class="profile-photo" id="profilePhoto">
+
+                        <div class="photo-upload">
                             {{ form.image }}
-                            <button onclick="document.getElementById('photoUpload').click()" class="save-btn">Выбрать
-                                фото
-                            </button>
-                        <span id="fileName">Файл не выбран</span>
+                            <label class="save-btn" for="{{ form.image.id_for_label }}">Выбрать фото</label>
+                            <span id="fileName">Файл не выбран</span>
+                        </div>
                     </div>
+                    <div class="profile-form-container">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="form.last_name.id_for_label">Фамилия</label>
+                                {{ form.last_name }}
+                            </div>
+                            <div class="form-group">
+                                <label for="form.first_name.id_for_label">Имя</label>
+                                {{ form.first_name }}
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="form.username.id_for_label">Имя пользователя</label>
+                                {{ form.username }}
+                            </div>
+                            <div class="form-group">
+                                <label for="form.email.id_for_label">Адрес электронной почты</label>
+                                {{ form.email }}
+                            </div>
+                        </div>
+                        <input class="edit-btn" type="submit" value="Сохранить">
+                    </div>
+
                 </div>
-                <div class="profile-form-container">
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="form.last_name.id_for_label">Фамилия</label>
-                            {{ form.last_name }}
-                        </div>
-                        <div class="form-group">
-                            <label for="form.first_name.id_for_label">Имя</label>
-                            {{ form.first_name }}
-                        </div>
-                    </div>
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="form.username.id_for_label">Имя пользователя</label>
-                            {{ form.username }}
-                        </div>
-                        <div class="form-group">
-                            <label for="form.email.id_for_label">Адрес электронной почты</label>
-                            {{ form.email }}
-                        </div>
-                    </div>
-                    <input class="edit-btn" type="submit" value="Сохранить">
+            </div>
+
+
+            <!-- Заказы -->
+            <div class="tab-content" id="orders">
+                <h2 class="h2-text-1">Ваши заказы</h2>
+                <div class="tab-content-wrapper">
+                    <p>Здесь будет список ваших заказов</p>
+                </div>
+            </div>
+
+
+            <!-- Избранное -->
+            <div class="tab-content" id="favorites">
+                <h2 class="h2-text-1">Избранное</h2>
+                <div class="tab-content-wrapper">
+                    <p>Здесь будут ваши избранные товары</p>
+                </div>
+            </div>
+
+            <!-- Настройки -->
+            <div class="tab-content" id="settings">
+                <h2 class="h2-text-1">Настройки</h2>
+                <div class="tab-content-wrapper">
+                    <p>Здесь будут настройки вашего профиля</p>
                 </div>
             </div>
         </div>
-    </div>
-</form>
-
-    <!-- Заказы -->
-    <div class="tab-content" id="orders">
-        <h2 class="h2-text-1">Ваши заказы</h2>
-        <div class="tab-content-wrapper">
-            <p>Здесь будет список ваших заказов</p>
-        </div>
-    </div>
-
-    <!-- Избранное -->
-    <div class="tab-content" id="favorites">
-        <h2 class="h2-text-1">Избранное</h2>
-        <div class="tab-content-wrapper">
-            <p>Здесь будут ваши избранные товары</p>
-        </div>
-    </div>
-
-    <!-- Настройки -->
-    <div class="tab-content" id="settings">
-        <h2 class="h2-text-1">Настройки</h2>
-        <div class="tab-content-wrapper">
-            <p>Здесь будут настройки вашего профиля</p>
-        </div>
-    </div>
-</div>
+    </form>
 </div>
 {% endblock %}
 
