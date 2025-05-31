@@ -3,7 +3,7 @@ from django.contrib import auth, messages
 from users.models import User
 from users.forms import UserLoginForm, UserRegistrationForm, UserProfileForm
 from django.urls import reverse
-from products.models import Basket
+from products.models import Product, ProductCategory, Basket
 
 
 def login(request):
@@ -57,11 +57,18 @@ def profile(request):
             print(form.errors)
     else:
         form = UserProfileForm(instance=request.user)
+
+    baskets = Basket.objects.filter(user=request.user)
+    total_sum = sum(basket.sum for basket in baskets) if baskets else 0
+    categories = ProductCategory.objects.all()  # Добавляем категории
+
     context = {
         'form': form,
         'title': "Профиль",
-        'baskets': Basket.objects.filter(user=request.user),
-
+        'baskets': baskets,
+        'total_sum': total_sum,
+        'categories': categories,  # Добавляем в контекст
+        'products': Product.objects.all()[:10],  # Добавляем продукты (можно ограничить)
     }
     return render(request, "users/profile.html", context)
 

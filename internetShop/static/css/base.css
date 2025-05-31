@@ -122,7 +122,7 @@ body {
 }
 
 .header {
-    position: fixed; 
+    position: fixed;
     width: 100%;
     top: 59px;
     background-color: #e74c3c;
@@ -141,7 +141,11 @@ body {
     background-color: white;
     border-radius: 20px;
     padding: 5px 15px;
-    width: 700px;
+    width: 700px; /* Фиксированная ширина */
+    margin: 0 auto; /* Центрирование */
+    position: absolute; /* Абсолютное позиционирование */
+    left: 50%; /* Центрирование */
+    transform: translateX(-50%); /* Точное центрирование */
 }
 
 .search-input {
@@ -579,36 +583,77 @@ body {
     gap: 5px;
     background-color: #e74c3c;
     padding: 5px 10px;
-    border-radius: 5px;
+    border-radius: 20px;
     flex-shrink: 0;
 }
 
 .quantity-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 25px;
     height: 25px;
+    min-width: 25px;
+    min-height: 25px;
     background-color: white;
-    color: #e74c3c;
     border: none;
-    border-radius: 50%;
+    border-radius: 50% !important;
+    overflow: hidden;
     cursor: pointer;
-    font-size: 1rem;
     transition: background-color 0.2s;
+    margin: 0 2px;
+    position: relative; /* Для позиционирования псевдоэлементов */
 }
 
 .quantity-btn:hover {
     background-color: #f0ebeb;
 }
 
+/* Стили для кнопки "−" */
+.quantity-btn.decrease::before {
+    content: '';
+    position: absolute;
+    width: 12px; /* Длина линии */
+    height: 2px; /* Толщина линии */
+    background-color: #e74c3c; /* Цвет линии */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Стили для кнопки "+" */
+.quantity-btn.increase::before,
+.quantity-btn.increase::after {
+    content: '';
+    position: absolute;
+    background-color: #e74c3c; /* Цвет линий */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.quantity-btn.increase::before {
+    width: 12px; /* Длина горизонтальной линии */
+    height: 2px; /* Толщина линии */
+}
+
+.quantity-btn.increase::after {
+    width: 2px; /* Толщина вертикальной линии */
+    height: 12px; /* Длина линии */
+}
+
 .quantity-value {
-    font-size: 0.9rem;
+    font-size: 1.2rem;
     color: white;
     min-width: 30px;
     text-align: center;
+    font-weight: bold;
 }
 
 .item-details {
-    color: #666;
-    font-size: 0.9rem;
+    color: #00ff2a;
+    font-weight: bold;
+    font-size: 1.2rem;
     flex-shrink: 0;
     white-space: nowrap; /* Предотвращаем перенос строки */
     overflow: hidden; /* Скрываем избыточный текст */
@@ -666,6 +711,15 @@ body {
     padding: 40px 20px;
     color: #666;
     font-style: italic;
+}
+
+.basket-pusto {
+    position: relative;
+    text-align: center;
+    top: 40%;
+    font-weight: bold;
+    font-size: 1.5rem;
+    color: #333;
 }
 
 /* Адаптация основного контента */

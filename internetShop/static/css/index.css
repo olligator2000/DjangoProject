@@ -102,6 +102,40 @@ body {
     background-color: #45a049;
 }
 
+/* Стили для кнопок корзины */
+.add-to-cart-btn {
+    display: inline-block;
+    padding: 8px 16px;
+    background-color: #4CAF50;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.add-to-cart-btn:hover {
+    background-color: #45a049;
+}
+
+.quantity-btn {
+    display: inline-block;
+    padding: 2px 8px;
+    margin: 0 5px;
+    background-color: #f1f1f1;
+    color: #333;
+    text-decoration: none;
+    border-radius: 3px;
+    border: 1px solid #ddd;
+}
+
+.clear-cart-btn {
+    background-color: #f44336;
+    color: white;
+    padding: 5px 10px;
+    text-decoration: none;
+    border-radius: 3px;
+}
+
 @media (max-width: 1024px) {
     .products-grid {
         grid-template-columns: repeat(auto-fill, 245px);

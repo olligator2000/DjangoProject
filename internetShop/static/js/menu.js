@@ -8,30 +8,31 @@ document.addEventListener('DOMContentLoaded', function() {
     // Открытие/закрытие меню
     catalogBtn.addEventListener('click', function(e) {
         e.stopPropagation();
-        
-        // Показываем/скрываем меню
         categoriesMenu.classList.toggle('active');
         productMenu.classList.toggle('active');
         containerMenu.classList.toggle('active');
     });
 
-    // Обработка наведения на категорию
+    // Обработка клика на категорию
     categoryItems.forEach(item => {
+        item.addEventListener('click', function(e) {
+            e.preventDefault();
+            const categoryId = this.getAttribute('data-category-id');
+            window.location.href = `/products/category/${categoryId}/`;
+        });
+
         item.addEventListener('mouseenter', function() {
             const categoryId = this.getAttribute('data-category-id');
-            
-            // Отправляем AJAX-запрос для получения продуктов категории
+
             fetch(`/api/products/?category_id=${categoryId}`)
                 .then(response => response.json())
                 .then(products => {
-                    // Очищаем меню продуктов
                     productMenu.innerHTML = '';
-                    
-                    // Добавляем новые продукты
+
                     if (products.length > 0) {
                         products.forEach(product => {
                             const productElement = document.createElement('a');
-                            productElement.href = '#';
+                            productElement.href = `/products/${product.id}/`;
                             productElement.className = 'product-item';
                             productElement.textContent = product.name;
                             productMenu.appendChild(productElement);
@@ -42,8 +43,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         noProducts.textContent = 'Нет товаров';
                         productMenu.appendChild(noProducts);
                     }
-                    
-                    // Гарантируем, что меню продуктов видно
+
                     if (!productMenu.classList.contains('active')) {
                         productMenu.classList.add('active');
                     }

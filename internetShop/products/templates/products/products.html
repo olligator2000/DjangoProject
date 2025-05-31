@@ -4,58 +4,93 @@
 
 {% block css %}
 <link rel="stylesheet" href="/static/css/products.css">
+<link rel="stylesheet" href="/static/css/index.css">
 {% endblock %}
 
 {% block content %}
 <nav class="custom-breadcrumb">
-    <a href="#" class="custom-breadcrumb-link">Каталог товаров</a> →
-    <a href="#" class="custom-breadcrumb-link">Молочная продукция</a> →
-    <span class="custom-breadcrumb-current">Молоко "Домик в деревне 3.2%"</span>
+    <a href="{% url 'products:index' %}" class="custom-breadcrumb-link">Каталог товаров</a> →
+    <span class="custom-breadcrumb-current">{{ category.name }}</span>
 </nav>
-<div class="custom-product-card">
-    <div class="custom-left-column">
-      <h1 class="custom-title">Молоко "Домик в деревне 3.2%"</h1>
-      <div class="custom-description-title">Описание</div>
-      <div class="custom-details">
-        <p><strong>Состав:</strong> Молоко цельное</p>
-        <p><strong>Страна производитель:</strong> РФ</p>
-        <p><strong>Изготовитель:</strong> ООО "ДЕРЕВНЯ"</p>
-        <p><strong>Бренд:</strong> "У Каждого своя деревня"</p>
-        <p><strong>Тип упаковки:</strong> Пластиковая бутылка</p>
-        <p><strong>Тип материала:</strong> Пластик</p>
-        <p><strong>Размер (ВxШxГ), см:</strong> 10x20x10</p>
-        <p><strong>Рекомендации:</strong> Готово к употреблению</p>
-        <p><strong>Условия хранения:</strong> 4+…2C</p>
-        <p><strong>Энергетическая ценность:</strong> 53Ккал / 220КДж</p>
-        <p><strong>Пищевая ценность:</strong> Белки 3.0г, Жиры 2.0г, Углеводы 4.7г</p>
-      </div>
-    </div>
-  
-    <div class="custom-right-column">
-      <!-- <div class="custom-product-image">href="/media/product_media/moloko1.png"</div> -->
-      <img class="custom-product-image" src="/media/product_media/moloko1.png" alt="{{ product.name }}">
-      <div class="custom-rating">
-        Рейтинг: <span id="custom-rating-value">4.7</span>
-        <div class="custom-rating-stars" data-rating="4.7">
-          <span class="custom-heart" data-value="1">♥</span>
-          <span class="custom-heart" data-value="2">♥</span>
-          <span class="custom-heart" data-value="3">♥</span>
-          <span class="custom-heart" data-value="4">♥</span>
-          <span class="custom-heart" data-value="5">♥</span>
+
+<div class="products-page-container">
+    <!-- Фильтры слева -->
+    <aside class="filters-sidebar">
+        <div class="filter-section">
+            <h3>Бренд</h3>
+            <ul class="filter-list">
+                {% for brand in brands %}
+                <li>
+                    <label>
+                        <input type="checkbox" name="brand" value="{{ brand }}">
+                        {{ brand }}
+                    </label>
+                </li>
+                {% endfor %}
+            </ul>
         </div>
-      </div>
-      <div class="custom-stock">Наличие: <strong>10 шт.</strong></div>
-      <div class="custom-price-section">
-        <div class="custom-price">135₽</div>
-        <div class="custom-quantity-control">
-          <button>-</button>
-          <input type="text" value="1">
-          <button>+</button>
+
+        <div class="filter-section">
+            <h3>Производитель</h3>
+            <ul class="filter-list">
+                {% for manufacturer in manufacturers %}
+                <li>
+                    <label>
+                        <input type="checkbox" name="manufacturer" value="{{ manufacturer }}">
+                        {{ manufacturer }}
+                    </label>
+                </li>
+                {% endfor %}
+            </ul>
         </div>
-        <button class="custom-add-to-cart">🛒 <span>В корзину</span></button>
-      </div>
-    </div>
+
+        <div class="filter-section">
+            <h3>Цена</h3>
+            <div class="price-range">
+                <input type="range" id="price-slider" min="0" max="10000" step="100" value="10000">
+                <div class="price-values">
+                    <span id="min-price">0 ₽</span>
+                    <span id="max-price">10000 ₽</span>
+                </div>
+            </div>
+        </div>
+
+        <button class="apply-filters-btn">Применить фильтры</button>
+    </aside>
+
+    <!-- Основной контент -->
+    <main class="products-content">
+        <div class="sorting-options">
+            <span>Сортировать:</span>
+            <select id="sort-select">
+                <option value="price_asc">По цене (дешевле)</option>
+                <option value="price_desc">По цене (дороже)</option>
+                <option value="rating">По рейтингу</option>
+                <option value="popularity">По популярности</option>
+            </select>
+        </div>
+
+        <div class="shop-container">
+            <div class="products-grid">
+                {% for product in products %}
+                <div class="product-card">
+                    <img class="product-image" src="/media/{{ product.image }}" alt="{{ product.name }}">
+                    <h3 class="product-title">{{ product.name }}</h3>
+                    <div class="product-price">{{ product.price|stringformat:"d" }} ₽</div>
+                    <p class="product-description">{{ product.short_description }}</p>
+                    <button class="add-to-cart-btn" data-product-id="{{ product.id }}">Добавить в корзину</button>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </main>
 </div>
+
+<!-- Подключаем корзину -->
+<div id="cart-container">
+    {% include 'products/basket.html' %}
+</div>
+
 {% endblock %}
 
 {% block footer %}
@@ -63,5 +98,35 @@
 {% endblock %}
 
 {% block scripts %}
-<!-- <script src="/static/js/products.js"></script> -->
+<script>
+// Обработка фильтров
+document.addEventListener('DOMContentLoaded', function() {
+    const priceSlider = document.getElementById('price-slider');
+    const maxPriceDisplay = document.getElementById('max-price');
+
+    priceSlider.addEventListener('input', function() {
+        maxPriceDisplay.textContent = this.value + ' ₽';
+    });
+
+    document.querySelector('.apply-filters-btn').addEventListener('click', function() {
+        const selectedBrands = Array.from(document.querySelectorAll('input[name="brand"]:checked')).map(el => el.value);
+        const selectedManufacturers = Array.from(document.querySelectorAll('input[name="manufacturer"]:checked')).map(el => el.value);
+        const maxPrice = priceSlider.value;
+        const sortOption = document.getElementById('sort-select').value;
+
+        // Здесь можно добавить AJAX-запрос для фильтрации товаров
+        // или перезагрузить страницу с параметрами фильтрации
+        const params = new URLSearchParams();
+        if (selectedBrands.length) params.append('brands', selectedBrands.join(','));
+        if (selectedManufacturers.length) params.append('manufacturers', selectedManufacturers.join(','));
+        params.append('max_price', maxPrice);
+        params.append('sort', sortOption);
+
+        window.location.href = window.location.pathname + '?' + params.toString();
+    });
+
+    // Инициализация корзины
+    initCart();
+});
+</script>
 {% endblock %}

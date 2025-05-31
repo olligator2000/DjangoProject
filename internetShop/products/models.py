@@ -51,5 +51,12 @@ class Basket(models.Model):
     quantity = models.PositiveIntegerField(default=1)
     created_timestamp = models.DateTimeField(auto_now_add=True)
 
+    class Meta:
+        unique_together = ('user', 'product')
+
+    @property
+    def sum(self):
+        return int(self.product.price * self.quantity)
+
     def __str__(self):
-        return f"Корзина для {self.user.username} | Продукт {self.product.name}"
+        return f"Корзина для {self.user.username} | Продукт {self.product.name} | {self.quantity} шт."

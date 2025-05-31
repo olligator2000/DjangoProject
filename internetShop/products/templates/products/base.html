@@ -12,6 +12,7 @@
 
 
 <body>
+{% csrf_token %}
 <div class="fixed-header-wrapper">
     <div class="container">
         <header>
@@ -63,21 +64,21 @@
 
     <div class="header">
         <div class="catalog-container">
-            <button class="catalog-btn" id="catalogBtn">
-                ☰ КАТАЛОГ ТОВАРОВ
-            </button>
-            <div class="container-menu" id="containerMenu"></div>
-            <div class="categories-menu" id="categoriesMenu">
-                {% for category in categories %}
-                <a href="#" class="category-item" data-category-id="{{ category.id }}">{{ category.name }}</a>
-                {% endfor %}
-            </div>
-            <div class="product-menu" id="productMenu">
-                {% for product in products %}
-                <a href="#" class="product-item">{{ product.name }}</a>
-                {% empty %}
-                <span class="product-item">Нет товаров</span>
-                {% endfor %}
+            <button class="catalog-btn" id="catalogBtn">☰ КАТАЛОГ ТОВАРОВ</button>
+            <div class="container-menu" id="containerMenu">
+                <div class="categories-menu" id="categoriesMenu">
+                    {% for category in categories %}
+                    <a href="{% url 'products:category_products' category.id %}" class="category-item"
+                       data-category-id="{{ category.id }}">{{ category.name }}</a>
+                    {% endfor %}
+                </div>
+                <div class="product-menu" id="productMenu">
+                    {% for product in products %}
+                    <a href="{% url 'products:product_detail' product.id %}" class="product-item">{{ product.name }}</a>
+                    {% empty %}
+                    <span class="product-item">Нет товаров</span>
+                    {% endfor %}
+                </div>
             </div>
         </div>
 
@@ -88,18 +89,16 @@
 
         <div class="cart-btn">
             <span class="cart-icon">🛒</span>
-            {% if baskets %}
-                <span class="cart-total">
-                    <span>1526 ₽</span>
-                </span>
-            {% else %}
-                <span>Корзина пуста</span>
-            {% endif %}
+            <span class="cart-total" id="header-cart-total">
+                {% if baskets %}
+            <span id="header-total-sum">{{ total_sum }}</span> ₽
+                {% else %}
+            Корзина пуста
+                {% endif %}
+            </span>
         </div>
     </div>
 </div>
-
-{% include 'products/basket.html' %}
 
 <main class="content">
     {% block content %} {% endblock %}
@@ -115,6 +114,7 @@
 <script src="/static/js/window_for_map.js"></script>
 <script src="/static/js/street_block.js"></script>
 <script src="/static/js/menu.js"></script>
+<script src="/static/js/basket.js"></script>
 <!--<script src="/static/js/autoregistr.js"></script>-->
 </body>
 </html>

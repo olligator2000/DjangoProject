@@ -1,41 +1,4 @@
-{% extends 'products/base.html' %}
-
-{% load static %}
-
-{% block css %}
-<link rel="stylesheet" href="/static/css/index.css">
-{% endblock %}
-
-{% block content %}
-{% csrf_token %}
-<div class="shop-container">
-    <div class="products-grid">
-        {% for product in products %}
-        <div class="product-card">
-            <img class="product-image" src="/media/{{ product.image }}" alt="{{ product.name }}">
-            <h3 class="product-title">{{ product.name }}</h3>
-            <div class="product-price">{{ product.price|stringformat:"d" }} ₽</div>
-            <p class="product-description">{{ product.short_description }}</p>
-            <button class="add-to-cart-btn" data-product-id="{{ product.id }}">Добавить в корзину</button>
-        </div>
-        {% endfor %}
-    </div>
-</div>
-
-<!-- Подключаем корзину -->
-<div id="cart-container">
-    {% include 'products/basket.html' %}
-</div>
-{% endblock %}
-
-{% block footer %}
-<!--pass-->
-{% endblock %}
-
-{% block scripts %}
-<script>
-
-    document.addEventListener('DOMContentLoaded', initCart);
+document.addEventListener('DOMContentLoaded', initCart);
 
 function initCart() {
     const isAuthenticated = {{ request.user.is_authenticated|lower }};
@@ -105,12 +68,6 @@ async function addToCart(productId) {
         if (data.status === 'success') {
             document.getElementById('cart-container').innerHTML = data.cart_html;
             updateCartBadge(data.total_items);
-            // Обновляем сумму в шапке
-            const headerTotalElement = document.getElementById('header-total-sum');
-            if (headerTotalElement) {
-                headerTotalElement.textContent = data.total_sum;
-                document.getElementById('header-cart-total').innerHTML = `${data.total_sum} ₽`;
-            }
         } else {
             alert(data.message || 'Ошибка при добавлении товара в корзину');
         }
@@ -130,10 +87,10 @@ async function updateCart(basketId, action) {
     const quantityElement = cartItem.querySelector('.quantity-value');
     const sumElement = cartItem.querySelector('.item-details');
     const totalElement = document.querySelector('.total-price');
-    const headerTotalElement = document.getElementById('header-total-sum'); // Новый элемент
 
     const originalQuantity = quantityElement.textContent;
     const originalSum = sumElement.textContent;
+
 
     try {
         const response = await fetch(`/products/update_basket_ajax/${basketId}/${action}/`, {
@@ -160,16 +117,13 @@ async function updateCart(basketId, action) {
             quantityElement.textContent = data.quantity;
             sumElement.textContent = `${data.sum} ₽`;
             if (totalElement) totalElement.textContent = `${data.total_sum} ₽`;
-            if (headerTotalElement) headerTotalElement.textContent = data.total_sum; // Обновляем сумму в шапке
         } else if (data.status === 'removed') {
             cartItem.style.transition = 'opacity 0.3s';
             cartItem.style.opacity = '0';
             setTimeout(() => cartItem.remove(), 300);
             if (totalElement) totalElement.textContent = `${data.total_sum} ₽`;
-            if (headerTotalElement) headerTotalElement.textContent = data.total_sum; // Обновляем сумму в шапке
             if (data.total_sum === 0) {
                 document.querySelector('.cart-items-container').innerHTML = '<div class="basket-pusto">В корзине нет товаров</div>';
-                document.getElementById('header-cart-total').innerHTML = 'Корзина пуста'; // Обновляем текст в шапке
             }
         } else {
             quantityElement.textContent = originalQuantity;
@@ -197,8 +151,6 @@ async function clearCart() {
         if (data.status === 'success' || data.status === 'empty') {
             document.getElementById('cart-container').innerHTML = data.cart_html || renderEmptyCart();
             updateCartBadge(0);
-            // Обновляем шапку при очистке корзины
-            document.getElementById('header-cart-total').innerHTML = 'Корзина пуста';
         } else {
             alert(data.message || 'Ошибка при очистке корзины');
         }
@@ -230,6 +182,3 @@ function renderEmptyCart() {
         </div>
     `;
 }
-
-</script>
-{% endblock %}

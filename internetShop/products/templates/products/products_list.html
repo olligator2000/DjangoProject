@@ -1,10 +1,73 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends 'products/base.html' %}
 
-</body>
-</html>
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="/static/css/products_list.css">
+{% endblock %}
+
+{% block content %}
+<nav class="custom-breadcrumb">
+    <a href="{% url 'products:index' %}" class="custom-breadcrumb-link">Каталог товаров</a> →
+    <a href="{{ category.id }}" class="custom-breadcrumb-link">{{ category.id }}</a> →
+    <span class="custom-breadcrumb-current">{{ product.id }}</span>
+</nav>
+<div class="custom-product-card">
+    <div class="custom-left-column">
+      <h1 class="custom-title">{{ product.name }}</h1>
+      <div class="custom-description-title">Описание</div>
+      <div class="custom-details">
+        <p><strong>Состав:</strong> {{ product.composition }}</p>
+        <p><strong>Страна производитель:</strong>{{ product.manufacturer_country }}</p>
+        <p><strong>Изготовитель:</strong>{{ product.manufacturer }}</p>
+        <p><strong>Бренд:</strong>{{ product.brand }}</p>
+        <p><strong>Тип упаковки:</strong>{{ product.packing_type }}</p>
+        <p><strong>Тип материала:</strong>{{ product.material_type }}</p>
+        <p><strong>Размер (ВxШxГ), см:</strong>{{ product.size }}</p>
+        <p><strong>Рекомендации:</strong>{{ product.recommendations }}</p>
+        <p><strong>Условия хранения:</strong>{{ product.storage_conditions }}</p>
+        <p><strong>Энергетическая ценность:</strong>{{ product.kilocalories }}Ккал / {{ product.kilojoule }}КДж</p>
+        <p><strong>Пищевая ценность:</strong> Белки {{ product.proteins }} г, Жиры {{ product.fats }} г, Углеводы
+            {{ product.carbs }} г</p>
+      </div>
+    </div>
+
+    <div class="custom-right-column">
+      <img class="custom-product-image" src="/media/{{ product.image }}" alt="{{ product.name }}">
+      <div class="custom-rating">
+        Рейтинг: <span id="custom-rating-value">4.7</span>
+        <div class="custom-rating-stars" data-rating="4.7">
+          <span class="custom-heart" data-value="1">♥</span>
+          <span class="custom-heart" data-value="2">♥</span>
+          <span class="custom-heart" data-value="3">♥</span>
+          <span class="custom-heart" data-value="4">♥</span>
+          <span class="custom-heart" data-value="5">♥</span>
+        </div>
+      </div>
+      <div class="custom-stock">Наличие: <strong>{{ product.quantity }} шт.</strong></div>
+      <div class="custom-price-section">
+        <div class="custom-price">{{ product.price|stringformat:"d" }}</div>
+        <div class="custom-quantity-control">
+          <button>-</button>
+          <input type="text" value="1">
+          <button>+</button>
+        </div>
+        <button class="custom-add-to-cart">🛒 <span>В корзину</span></button>
+      </div>
+    </div>
+</div>
+
+<!-- Подключаем корзину -->
+<div id="cart-container">
+    {% include 'products/basket.html' %}
+</div>
+
+{% endblock %}
+
+{% block footer %}
+<!--pass-->
+{% endblock %}
+
+{% block scripts %}
+ <script src="/static/js/products_list.js"></script>
+{% endblock %}

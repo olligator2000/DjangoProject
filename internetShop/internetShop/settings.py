@@ -138,3 +138,23 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 #используем по умолчанию класс User который создавали, а не тот от Django
 AUTH_USER_MODEL = 'users.User'
 
+LOGIN_URL = '/users/login'
+
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'handlers': {
+        'file': {
+            'level': 'DEBUG',
+            'class': 'logging.FileHandler',
+            'filename': 'debug.log',
+        },
+    },
+    'loggers': {
+        '': {
+            'handlers': ['file'],
+            'level': 'DEBUG',
+            'propagate': True,
+        },
+    },
+}
