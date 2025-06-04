@@ -79,7 +79,6 @@
                         <h3 class="product-title">{{ product.name }}</h3>
                     </a>
                     <div class="product-price">{{ product.price|stringformat:"d" }} ₽</div>
-                    <p class="product-description">{{ product.short_description }}</p>
                     <button class="add-to-cart-btn" data-product-id="{{ product.id }}">Добавить в корзину</button>
                 </div>
                 {% endfor %}

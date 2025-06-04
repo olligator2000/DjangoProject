@@ -24,13 +24,13 @@
 .custom-product-card {
   max-width: 960px;
   margin: 10px auto;
-  border: 1px solid #000;
+
   border-radius: 12px;
   display: flex;
   padding: 20px;
   box-sizing: border-box;
   background-color: #fff;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
 .custom-left-column {
