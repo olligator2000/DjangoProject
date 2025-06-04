@@ -8,7 +8,9 @@
     <div class="cart-items-container">
         {% for basket in baskets %}
         <div class="cart-item" data-basket-id="{{ basket.id }}">
-            <img src="/media/{{ basket.product.image }}" alt="{{ basket.product.name }}" class="item-image">
+            <a href="{% url 'products:product_detail' basket.product.id %}">
+                <img src="/media/{{ basket.product.image }}" alt="{{ basket.product.name }}" class="item-image">
+            </a>
             <div class="item-content">
                 <div class="item-name" title="{{ basket.product.name }}">
                     {{ basket.product.name }}

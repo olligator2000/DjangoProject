@@ -651,7 +651,7 @@ body {
 }
 
 .item-details {
-    color: #00ff2a;
+    color: green;
     font-weight: bold;
     font-size: 1.2rem;
     flex-shrink: 0;
