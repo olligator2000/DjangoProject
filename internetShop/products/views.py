@@ -4,9 +4,29 @@ from django.contrib.auth.decorators import login_required
 from django.http import JsonResponse
 from django.template.loader import render_to_string
 from products.models import Product, ProductCategory, Basket
+from django.views.generic import ListView
+import logging
 
-# Настройка логирования
 logger = logging.getLogger(__name__)
+
+class IndexView(ListView):
+    template_name = 'products/index.html'
+    context_object_name = 'products'
+
+    def get_queryset(self):
+        return Product.objects.order_by('?')[:12]  # Возвращаем 12 товаров вместо 4
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['categories'] = ProductCategory.objects.all()
+        context['baskets'] = Basket.objects.filter(user=self.request.user) if self.request.user.is_authenticated else []
+        context['total_sum'] = sum(basket.sum for basket in context['baskets']) if context['baskets'] else 0
+        return context
+
+def get_random_products(request):
+    products = Product.objects.order_by('?')[:4]  # Теперь точно 4 товара
+    html = render_to_string('products/partial_carousel.html', {'products': products})
+    return JsonResponse({'carousel_html': html})
 
 def index(request):
     categories = ProductCategory.objects.prefetch_related('products').all()
@@ -224,3 +244,4 @@ def clear_basket_ajax(request):
             'status': 'error',
             'message': 'Не удалось очистить корзину'
         }, status=500)
+

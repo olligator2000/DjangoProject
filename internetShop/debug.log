@@ -7757,3 +7757,365 @@ Not Found: /.well-known/appspecific/com.chrome.devtools.json
 Not Found: /favicon.ico
 Not Found: /.well-known/appspecific/com.chrome.devtools.json
 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /favicon.ico
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /favicon.ico
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /favicon.ico
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /favicon.ico
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /favicon.ico
+D:\Учёба\DjangoProject\internetShop\products\views.py changed, reloading.
+Watching for file changes with StatReloader
+Ошибка при добавлении товара в корзину: name 'json' is not defined
+Traceback (most recent call last):
+  File "D:\Учёба\DjangoProject\internetshop\products\views.py", line 115, in add_to_cart_ajax
+    data = json.loads(request.body)
+           ^^^^
+NameError: name 'json' is not defined. Did you forget to import 'json'
+Internal Server Error: /products/add_to_cart_ajax/2/
+Not Found: /favicon.ico
+Ошибка при добавлении товара в корзину: name 'json' is not defined
+Traceback (most recent call last):
+  File "D:\Учёба\DjangoProject\internetshop\products\views.py", line 115, in add_to_cart_ajax
+    data = json.loads(request.body)
+           ^^^^
+NameError: name 'json' is not defined. Did you forget to import 'json'
+Internal Server Error: /products/add_to_cart_ajax/2/
+D:\Учёба\DjangoProject\internetShop\products\views.py changed, reloading.
+Watching for file changes with StatReloader
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+D:\Учёба\DjangoProject\internetShop\products\views.py changed, reloading.
+Watching for file changes with StatReloader
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /favicon.ico
+Ошибка при добавлении товара в корзину: name 'json' is not defined
+Traceback (most recent call last):
+  File "D:\Учёба\DjangoProject\internetshop\products\views.py", line 113, in add_to_cart_ajax
+    data = json.loads(request.body)
+           ^^^^
+NameError: name 'json' is not defined. Did you forget to import 'json'
+Internal Server Error: /products/add_to_cart_ajax/2/
+Not Found: /favicon.ico
+Ошибка при добавлении товара в корзину: name 'json' is not defined
+Traceback (most recent call last):
+  File "D:\Учёба\DjangoProject\internetshop\products\views.py", line 113, in add_to_cart_ajax
+    data = json.loads(request.body)
+           ^^^^
+NameError: name 'json' is not defined. Did you forget to import 'json'
+Internal Server Error: /products/add_to_cart_ajax/2/
+Ошибка при добавлении товара в корзину: name 'json' is not defined
+Traceback (most recent call last):
+  File "D:\Учёба\DjangoProject\internetshop\products\views.py", line 113, in add_to_cart_ajax
+    data = json.loads(request.body)
+           ^^^^
+NameError: name 'json' is not defined. Did you forget to import 'json'
+Internal Server Error: /products/add_to_cart_ajax/2/
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Ошибка при добавлении товара в корзину: name 'json' is not defined
+Traceback (most recent call last):
+  File "D:\Учёба\DjangoProject\internetshop\products\views.py", line 113, in add_to_cart_ajax
+    data = json.loads(request.body)
+           ^^^^
+NameError: name 'json' is not defined. Did you forget to import 'json'
+Internal Server Error: /products/add_to_cart_ajax/2/
+Ошибка при добавлении товара в корзину: name 'json' is not defined
+Traceback (most recent call last):
+  File "D:\Учёба\DjangoProject\internetshop\products\views.py", line 113, in add_to_cart_ajax
+    data = json.loads(request.body)
+           ^^^^
+NameError: name 'json' is not defined. Did you forget to import 'json'
+Internal Server Error: /products/add_to_cart_ajax/2/
+D:\Учёба\DjangoProject\internetShop\products\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\Учёба\DjangoProject\internetShop\products\views.py changed, reloading.
+Watching for file changes with StatReloader
+Not Found: /favicon.ico
+Недостаточно товара: 2 (доступно: 6, в корзине: 6)
+Bad Request: /products/add_to_cart_ajax/2/
+Недостаточно товара: 2 (доступно: 6, в корзине: 6)
+Bad Request: /products/add_to_cart_ajax/2/
+Watching for file changes with StatReloader
+Not Found: /favicon.ico
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /favicon.ico
+Недостаточно товара: 2 (доступно: 6, в корзине: 6)
+Bad Request: /products/update_basket_ajax/342/increase/
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Watching for file changes with StatReloader
+Not Found: /favicon.ico
+Недостаточно товара: 2 (доступно: 6, в корзине: 6)
+Bad Request: /products/add_to_cart_ajax/2/
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Попытка добавить отсутствующий товар: 13
+Bad Request: /products/add_to_cart_ajax/13/
+Not Found: /media/orange.jpeg
+Not Found: /media/watermelon.jpeg
+Not Found: /media/fruit_car.jpeg
+Not Found: /media/fruit_basket.jpeg
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /favicon.ico
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Not Found: /products/0/
+D:\Учёба\DjangoProject\internetShop\products\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\Учёба\DjangoProject\internetShop\products\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\Учёба\DjangoProject\internetShop\products\views.py changed, reloading.
+Watching for file changes with StatReloader
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+D:\Учёба\DjangoProject\internetShop\products\views.py changed, reloading.
+Watching for file changes with StatReloader
+Not Found: /favicon.ico
+D:\Учёба\DjangoProject\internetShop\products\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\Учёба\DjangoProject\internetShop\products\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\Учёба\DjangoProject\internetShop\products\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\Учёба\DjangoProject\internetShop\products\urls.py changed, reloading.
+Watching for file changes with StatReloader
+D:\Учёба\DjangoProject\internetShop\products\urls.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+D:\Учёба\DjangoProject\internetShop\products\urls.py changed, reloading.
+Watching for file changes with StatReloader
+Недостаточно товара: 17 (доступно: 6, в корзине: 6)
+Bad Request: /products/update_basket_ajax/368/increase/
+Ошибка при добавлении товара в корзину: get() returned more than one Basket -- it returned 2!
+Traceback (most recent call last):
+  File "D:\Учёба\DjangoProject\internetshop\products\views.py", line 142, in add_to_cart_ajax
+    basket, created = Basket.objects.get_or_create(
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\db\models\query.py", line 946, in get_or_create
+    return self.get(**kwargs), False
+           ^^^^^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\db\models\query.py", line 636, in get
+    raise self.model.MultipleObjectsReturned(
+products.models.Basket.MultipleObjectsReturned: get() returned more than one Basket -- it returned 2!
+Internal Server Error: /products/add_to_cart_ajax/4/
+Not Found: /favicon.ico
+Ошибка при добавлении товара в корзину: get() returned more than one Basket -- it returned 2!
+Traceback (most recent call last):
+  File "D:\Учёба\DjangoProject\internetshop\products\views.py", line 142, in add_to_cart_ajax
+    basket, created = Basket.objects.get_or_create(
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\db\models\query.py", line 946, in get_or_create
+    return self.get(**kwargs), False
+           ^^^^^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\db\models\query.py", line 636, in get
+    raise self.model.MultipleObjectsReturned(
+products.models.Basket.MultipleObjectsReturned: get() returned more than one Basket -- it returned 2!
+Internal Server Error: /products/add_to_cart_ajax/4/
+Ошибка при добавлении товара в корзину: get() returned more than one Basket -- it returned 2!
+Traceback (most recent call last):
+  File "D:\Учёба\DjangoProject\internetshop\products\views.py", line 142, in add_to_cart_ajax
+    basket, created = Basket.objects.get_or_create(
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\db\models\query.py", line 946, in get_or_create
+    return self.get(**kwargs), False
+           ^^^^^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\db\models\query.py", line 636, in get
+    raise self.model.MultipleObjectsReturned(
+products.models.Basket.MultipleObjectsReturned: get() returned more than one Basket -- it returned 2!
+Internal Server Error: /products/add_to_cart_ajax/4/
+Watching for file changes with StatReloader
+Not Found: /favicon.ico
+D:\Учёба\DjangoProject\internetShop\products\views.py changed, reloading.
+Watching for file changes with StatReloader
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+D:\Учёба\DjangoProject\internetShop\products\views.py changed, reloading.
+Watching for file changes with StatReloader
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Watching for file changes with StatReloader
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /favicon.ico
+Watching for file changes with StatReloader
+Not Found: /favicon.ico
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Недостаточно товара: 10 (доступно: 8, в корзине: 8)
+Bad Request: /products/add_to_cart_ajax/10/
+Недостаточно товара: 17 (доступно: 6, в корзине: 6)
+Bad Request: /products/add_to_cart_ajax/17/
+Недостаточно товара: 17 (доступно: 6, в корзине: 6)
+Bad Request: /products/add_to_cart_ajax/17/
+Not Found: /favicon.ico
+D:\Учёба\DjangoProject\internetShop\products\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\Учёба\DjangoProject\internetShop\products\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\Учёба\DjangoProject\internetShop\products\views.py changed, reloading.
+Watching for file changes with StatReloader
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+D:\Учёба\DjangoProject\internetShop\products\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\Учёба\DjangoProject\internetShop\products\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\Учёба\DjangoProject\internetShop\products\views.py changed, reloading.
+Watching for file changes with StatReloader
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Watching for file changes with StatReloader
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /favicon.ico
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /favicon.ico
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /favicon.ico
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /favicon.ico
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /favicon.ico
+Not Found: /favicon.ico

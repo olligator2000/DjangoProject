@@ -24,7 +24,6 @@
 .custom-product-card {
   max-width: 960px;
   margin: 10px auto;
-
   border-radius: 12px;
   display: flex;
   padding: 20px;
@@ -64,14 +63,14 @@
 
 .custom-details {
   font-size: 15px;
-  line-height: 1.6;
+  line-height: 0.8;
 }
 
 .custom-product-image {
   width: 400px;
   height: 400px;
   background-color: #f0f0f0;
-  border: 2px solid #000;
+  border-radius: 20px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -82,7 +81,7 @@
 /* Рейтинг */
 .custom-rating {
   font-size: 18px;
-  margin: 10px 0;
+  margin: 2px 0;
   color: #333;
   display: flex;
   align-items: center;
@@ -126,7 +125,7 @@
 /* Наличие */
 .custom-stock {
   font-size: 16px;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 
 .custom-price-section {

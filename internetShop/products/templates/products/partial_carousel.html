@@ -1,0 +1,10 @@
+{% for product in products|slice:":4" %}
+<div class="product-card">
+    <a href="{% url 'products:product_detail' product.id %}">
+        <img class="product-image" src="/media/{{ product.image }}" alt="{{ product.name }}">
+        <h3 class="product-title">{{ product.name }}</h3>
+    </a>
+    <div class="product-price">{{ product.price|stringformat:"d" }} ₽</div>
+    <button class="add-to-cart-btn" data-product-id="{{ product.id }}">Добавить в корзину</button>
+</div>
+{% endfor %}

@@ -12,7 +12,7 @@ body {
 }
 
 .content {
-    margin-top: 140px;
+    margin-top: 0px;
 }
 
 .container {
@@ -702,7 +702,7 @@ body {
 }
 
 .checkout-btn:hover {
-    background-color: #c0392b;
+    background-color: #ad1e0e;
 }
 
 /* Стиль для пустой корзины */
@@ -722,10 +722,30 @@ body {
     color: #333;
 }
 
+.toast-notification {
+    position: fixed;
+    bottom: 20px;
+    right: 35px;
+    background-color: #4CAF50;
+    color: white;
+    padding: 5px 25px;
+    border-radius: 4px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    z-index: 1000;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.toast-notification.show {
+    opacity: 1;
+}
+
 /* Адаптация основного контента */
 .content {
-    margin-right: 380px; /* Добавляем отступ для корзины */
+    margin-right: 350px; /* Ширина корзины */
     margin-top: 140px;
+    padding: 0 20px; /* Добавьте симметричные отступы */
+    box-sizing: border-box;
 }
 
 /* Адаптивность */
@@ -736,6 +756,9 @@ body {
     .content {
         margin-right: 300px;
     }
+    .carousel-container {
+        width: calc(100% - 300px);
+    }
 }
 
 @media (max-width: 992px) {
@@ -744,5 +767,8 @@ body {
     }
     .content {
         margin-right: 0;
+    }
+    .carousel-container {
+        width: 100%;
     }
 }

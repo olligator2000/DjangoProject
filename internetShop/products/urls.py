@@ -1,9 +1,11 @@
 from django.urls import path
+from . import views
 from products.views import (
-    products, products_list, product_detail,
+    IndexView, products, products_list, product_detail,
     add_to_cart_ajax, update_basket_ajax,
-    clear_basket_ajax, category_products, get_products_by_category
+    clear_basket_ajax, category_products, get_products_by_category, get_random_products
 )
+
 
 app_name = "products"
 
@@ -16,4 +18,5 @@ urlpatterns = [
     path('update_basket_ajax/<int:basket_id>/<str:action>/', update_basket_ajax, name='update_basket_ajax'),
     path('clear_basket_ajax/', clear_basket_ajax, name='clear_basket_ajax'),
     path('api/products/', get_products_by_category, name='api_products'),  # Added API endpoint
+    path('get_random_products/', views.get_random_products, name='get_random_products'),
 ]

@@ -4,12 +4,21 @@
 
 {% block css %}
 <link rel="stylesheet" href="/static/css/index.css">
+
 {% endblock %}
 
 {% block content %}
 {% csrf_token %}
-<div class="shop-container">
-    <div class="products-grid">
+<div class="banner">
+    <img src="/media/baner/1.png" alt="Fruit Basket Banner">
+    <img src="/media/baner/2.png" alt="Fruit Basket Banner">
+    <img src="/media/baner/3.png" alt="Fruit Basket Banner">
+    <img src="/media/baner/4.png" alt="Fruit Basket Banner">
+    <img src="/media/baner/5.png" alt="Fruit Basket Banner">
+</div>
+<div class="carousel-container">
+    <button class="carousel-nav prev">❮</button>
+    <div class="carousel fade-in" id="product-carousel">
         {% for product in products %}
         <div class="product-card">
             <a href="{% url 'products:product_detail' product.id %}">
@@ -21,6 +30,7 @@
         </div>
         {% endfor %}
     </div>
+    <button class="carousel-nav next">❯</button>
 </div>
 
 <!-- Подключаем корзину -->
@@ -39,4 +49,95 @@
     window.loginUrl = "{% url 'users:login' %}?next={{ request.path }}";
 </script>
 <script src="{% static 'js/cart.js' %}"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Баннер
+    const bannerImages = document.querySelectorAll('.banner img');
+    let bannerIndex = 0;
+
+    function changeBannerImage() {
+        bannerImages[bannerIndex].classList.remove('active');
+        bannerIndex = (bannerIndex + 1) % bannerImages.length;
+        bannerImages[bannerIndex].classList.add('active');
+    }
+
+    if (bannerImages.length > 0) {
+        bannerImages[0].classList.add('active');
+        setInterval(changeBannerImage, 2500);
+    }
+
+    // Карусель товаров
+    const carousel = document.getElementById('product-carousel');
+    const prevBtn = document.querySelector('.carousel-nav.prev');
+    const nextBtn = document.querySelector('.carousel-nav.next');
+    let autoRefreshInterval;
+
+    function refreshCarousel(direction) {
+        carousel.classList.remove('fade-in');
+        carousel.classList.add('fade-out');
+
+        setTimeout(() => {
+            fetch('/products/get_random_products/', {
+                method: 'POST', // Указываем метод POST для CSRF
+                headers: {
+                    'X-Requested-With': 'XMLHttpRequest',
+                    'X-CSRFToken': document.querySelector('[name=csrfmiddlewaretoken]').value
+                }
+            })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.json();
+            })
+            .then(data => {
+                carousel.innerHTML = data.carousel_html;
+                carousel.classList.remove('fade-out');
+                carousel.classList.add('fade-in');
+                bindCartButtons(); // Перепривязываем кнопки после обновления
+            })
+            .catch(error => {
+                console.error('Ошибка при обновлении карусели:', error);
+            });
+        }, 300);
+    }
+
+    function bindCartButtons() {
+        document.querySelectorAll('.add-to-cart-btn').forEach(button => {
+            // Удаляем все старые обработчики, чтобы избежать дублирования
+            button.removeEventListener('click', handleCartClick);
+            button.addEventListener('click', handleCartClick);
+        });
+    }
+
+    function handleCartClick(event) {
+        event.preventDefault(); // Предотвращаем возможные побочные действия
+        const productId = this.getAttribute('data-product-id');
+        if (typeof addToCart === 'function') {
+            addToCart(productId);
+        } else {
+            console.error('Функция addToCart не определена');
+        }
+    }
+
+    // Инициализация
+    bindCartButtons();
+
+    // Обработчики для кнопок
+    prevBtn.addEventListener('click', () => refreshCarousel('prev'));
+    nextBtn.addEventListener('click', () => refreshCarousel('next'));
+
+    // Автоматическое обновление каждые 5 секунд
+    function startAutoRefresh() {
+        autoRefreshInterval = setInterval(() => refreshCarousel(), 5000);
+    }
+
+    // Остановка автообновления при наведении
+    carousel.addEventListener('mouseenter', () => clearInterval(autoRefreshInterval));
+    carousel.addEventListener('mouseleave', startAutoRefresh);
+
+    // Запускаем автообновление при загрузке
+    startAutoRefresh();
+});
+</script>
 {% endblock %}

@@ -18,9 +18,9 @@ body {
 
 .products-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, 245px); /* Фиксированная ширина карточек */
+    grid-template-columns: repeat(auto-fill, minmax(245px, 1fr));
     gap: 20px;
-    justify-content: center; /* Центрирование карточек */
+    justify-content: center;
 }
 
 .product-card {
@@ -31,10 +31,12 @@ body {
     transition: transform 0.3s ease;
     display: flex;
     flex-direction: column;
-    width: 245px; /* Фиксированная ширина */
-    height: 514px; /* Фиксированная высота */
-    box-sizing: border-box; /* Учитываем padding в общей ширине/высоте */
+    width: 100%;
+    max-width: 245px;
+    height: 425px;
+    box-sizing: border-box;
     cursor: pointer;
+    margin: 0 auto;
 }
 
 .product-card:hover {
@@ -43,12 +45,12 @@ body {
 }
 
 .product-card a {
-    text-decoration: none; /* Убираем подчёркивание */
-    color: inherit; /* Наследуем цвет текста от родительского элемента */
+    text-decoration: none;
+    color: inherit;
 }
 
 .product-card a:hover .product-title {
-    text-decoration: underline; /* Подчёркивание при наведении для указания кликабельности */
+    text-decoration: underline;
 }
 
 .product-image {
@@ -78,20 +80,19 @@ body {
     color: #666;
     margin-bottom: 15px;
     display: -webkit-box;
-    -webkit-line-clamp: 3; /* Ограничение в 3 строки */
+    -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
     overflow: hidden;
-    min-height: 4.2em; /* Примерная высота для 3 строк */
+    min-height: 4.2em;
     line-height: 1.4em;
-    word-break: break-all ; /* Перенос длинных слов */
+    word-break: break-all;
     text-overflow: ellipsis;
     flex-grow: 1;
     cursor: pointer;
-
 }
 
 .product-price {
-    color: #e63946;
+    color: green;
     font-weight: bold;
     font-size: 18px;
     margin-bottom: 10px;
@@ -105,18 +106,17 @@ body {
     border-radius: 4px;
     cursor: pointer;
     width: 100%;
-    margin-top: auto; /* Прижимает кнопку к низу */
+    margin-top: auto;
 }
 
 .add-to-cart:hover {
     background-color: #45a049;
 }
 
-/* Стили для кнопок корзины */
 .add-to-cart-btn {
     display: inline-block;
     padding: 8px 16px;
-    background-color: #4CAF50;
+    background-color: #f0d362;
     color: white;
     text-decoration: none;
     border-radius: 4px;
@@ -124,7 +124,7 @@ body {
 }
 
 .add-to-cart-btn:hover {
-    background-color: #45a049;
+    background-color: #f5b800;
 }
 
 .quantity-btn {
@@ -146,15 +146,136 @@ body {
     border-radius: 3px;
 }
 
-@media (max-width: 1024px) {
-    .products-grid {
-        grid-template-columns: repeat(auto-fill, 245px);
+.banner {
+    position: relative;
+    width: calc(100vw - 350px); /* Учитываем ширину корзины */
+    height: 150px;
+    margin: 0; /* Убираем все отступы */
+    left: calc(-20px); /* Компенсируем padding родителя */
+    overflow: hidden;
+    margin-top: -9px;
+    z-index: 900;
+}
+
+.banner img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.banner img.active {
+    opacity: 1;
+}
+
+.carousel-container {
+    position: relative;
+    max-width: 1200px;
+    width: 100%;
+    margin: 20px auto;
+    padding: 0 20px;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.carousel {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: calc((100% - 30px) / 4);
+    gap: 10px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    padding: 20px 0;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    margin: 0;
+    scroll-padding: 50%;
+    box-sizing: border-box;
+}
+
+.carousel::-webkit-scrollbar {
+    display: none;
+}
+
+.carousel-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 40px;
+    background-color: rgba(255,255,255,0.9);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 10;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    border: none;
+    font-size: 18px;
+}
+
+.carousel-nav.prev {
+    left: 0;
+}
+
+.carousel-nav.next {
+    right: 0;
+}
+
+.carousel-nav:hover {
+    background-color: #e74c3c;
+    color: white;
+}
+
+.fade-in {
+    animation: fadeIn 0.5s;
+}
+
+.fade-out {
+    animation: fadeOut 0.5s;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes fadeOut {
+    from { opacity: 1; }
+    to { opacity: 0; }
+}
+
+@media (max-width: 1200px) {
+    .banner {
+        width: calc(100vw - 300px); /* Учитываем уменьшенную ширину корзины */
+    }
+    .carousel {
+        grid-auto-columns: calc((100% - 30px) / 4);
+    }
+}
+
+@media (max-width: 992px) {
+    .banner {
+        width: 100vw; /* Корзина скрыта, баннер на всю ширину */
+        left: calc(-20px);
+    }
+    .carousel {
+        grid-auto-columns: calc((100% - 20px) / 3);
     }
 }
 
 @media (max-width: 768px) {
     .products-grid {
         grid-template-columns: repeat(auto-fill, 245px);
+    }
+    .carousel {
+        grid-auto-columns: calc((100% - 10px) / 2);
     }
 }
 
@@ -163,10 +284,27 @@ body {
         grid-template-columns: 1fr;
     }
     .product-card {
-        width: 100%; /* На мобильных — ширина на весь экран */
-        height: auto; /* Автоматическая высота */
-        max-width: 245px; /* Но не шире 245px */
-        margin: 0 auto; /* Центрирование */
+        width: 100%;
+        max-width: 245px;
+        height: auto;
+        min-height: 425px;
     }
+}
 
+@media (max-width: 576px) {
+    .carousel {
+        grid-auto-columns: 100%;
+    }
+}
+
+.carousel::-webkit-scrollbar {
+    display: none;
+}
+
+.product-card {
+    scroll-snap-align: start;
+    width: 100% !important;
+    height: auto;
+    min-height: 425px;
+    box-sizing: border-box;
 }

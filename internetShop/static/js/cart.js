@@ -48,9 +48,22 @@ function setupHandlers() {
 
 async function addToCart(productId) {
     try {
+        // Находим ближайший элемент ввода количества или используем значение по умолчанию 1
+        let quantity = 1;
+        const quantityInput = document.querySelector(`.add-to-cart-btn[data-product-id="${productId}"]`)
+                            .closest('.product-card')?.querySelector('.quantity-input');
+
+        if (quantityInput) {
+            quantity = parseInt(quantityInput.value) || 1;
+        }
+
         const response = await fetch(`/products/add_to_cart_ajax/${productId}/`, {
             method: 'POST',
-            headers: { 'X-CSRFToken': getCSRFToken(), 'Content-Type': 'application/json' }
+            headers: {
+                'X-CSRFToken': getCSRFToken(),
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ quantity: quantity })
         });
 
         if (!response.ok) {
@@ -66,12 +79,23 @@ async function addToCart(productId) {
         const data = await response.json();
 
         if (data.status === 'success') {
-            document.getElementById('cart-container').innerHTML = data.cart_html;
-            updateCartBadge(data.total_items);
-            const headerTotalElement = document.getElementById('header-cart-total'); // Изменено на header-cart-total
-            if (headerTotalElement) {
-                headerTotalElement.textContent = `${data.total_sum} ₽`; // Синхронизация
+            // Обновляем корзину
+            const cartContainer = document.getElementById('cart-container');
+            if (cartContainer) {
+                cartContainer.innerHTML = data.cart_html;
             }
+
+            // Обновляем бейдж с количеством товаров
+            updateCartBadge(data.total_items);
+
+            // Обновляем общую сумму в шапке
+            const headerTotalElement = document.getElementById('header-cart-total');
+            if (headerTotalElement) {
+                headerTotalElement.textContent = `${data.total_sum} ₽`;
+            }
+
+            // Показываем уведомление о добавлении
+            showToast('Товар добавлен в корзину');
         } else {
             alert(data.message || 'Ошибка при добавлении товара в корзину');
         }
@@ -79,6 +103,23 @@ async function addToCart(productId) {
         console.error('Add to cart failed:', error);
         alert(error.message !== 'HTTP error! Status: 400' ? `Ошибка: ${error.message}` : 'Товар отсутствует на складе');
     }
+}
+
+// Вспомогательная функция для показа уведомлений
+function showToast(message) {
+    const toast = document.createElement('div');
+    toast.className = 'toast-notification';
+    toast.textContent = message;
+    document.body.appendChild(toast);
+
+    setTimeout(() => {
+        toast.classList.add('show');
+    }, 10);
+
+    setTimeout(() => {
+        toast.classList.remove('show');
+        setTimeout(() => toast.remove(), 300);
+    }, 3000);
 }
 
 async function updateCart(basketId, action) {
@@ -191,3 +232,42 @@ function renderEmptyCart() {
         </div>
     `;
 }
+
+// Обработчики для кнопок "+" и "-"
+document.querySelectorAll('.quantity-increase').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        const input = btn.parentElement.querySelector('.quantity-input');
+        const max = parseInt(input.getAttribute('max')) || Infinity;
+        if (parseInt(input.value) < max) {
+            input.value = parseInt(input.value) + 1;
+        }
+    });
+});
+
+document.querySelectorAll('.quantity-decrease').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        const input = btn.parentElement.querySelector('.quantity-input');
+        if (parseInt(input.value) > 1) {
+            input.value = parseInt(input.value) - 1;
+        }
+    });
+});
+
+// Валидация ввода
+document.querySelectorAll('.quantity-input').forEach(input => {
+    input.addEventListener('change', (e) => {
+        const value = parseInt(e.target.value);
+        const min = parseInt(e.target.getAttribute('min')) || 1;
+        const max = parseInt(e.target.getAttribute('max')) || Infinity;
+
+        if (isNaN(value) || value < min) {
+            e.target.value = min;
+        } else if (value > max) {
+            e.target.value = max;
+        } else {
+            e.target.value = value;
+        }
+    });
+});
