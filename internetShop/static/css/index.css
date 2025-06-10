@@ -11,7 +11,7 @@ body {
     max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
-    font-family: Arial, sans-serif;
+    font-family: 'Segoe UI', sans-serif;
     background: #f5f5f5;
     z-index: 998;
 }
@@ -19,7 +19,7 @@ body {
 .products-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(245px, 1fr));
-    gap: 20px;
+    gap: 10px;
     justify-content: center;
 }
 
@@ -153,7 +153,7 @@ body {
     margin: 0; /* Убираем все отступы */
     left: calc(-20px); /* Компенсируем padding родителя */
     overflow: hidden;
-    margin-top: -9px;
+    margin-top: -10px;
     z-index: 900;
 }
 
@@ -176,17 +176,20 @@ body {
     position: relative;
     max-width: 1200px;
     width: 100%;
-    margin: 20px auto;
+    margin: -10px auto;
     padding: 0 20px;
     box-sizing: border-box;
     overflow: hidden;
+    display: flex;
+    justify-content: center;
 }
 
 .carousel {
     display: grid;
     grid-auto-flow: column;
-    grid-auto-columns: calc((100% - 30px) / 4);
+    grid-auto-columns: 245px;
     gap: 10px;
+    width: calc(245px * 4 + 10px * 3);
     overflow-x: auto;
     scroll-snap-type: x mandatory;
     scroll-behavior: smooth;
@@ -233,6 +236,15 @@ body {
     color: white;
 }
 
+.carousel-title {
+    font-family: 'Segoe UI', sans-serif;
+    font-size: 28px;
+    font-weight: bold;
+    color: #e74c3c;
+    text-align: center;
+    margin: 10px 0 0px 0;
+}
+
 .fade-in {
     animation: fadeIn 0.5s;
 }
@@ -253,7 +265,7 @@ body {
 
 @media (max-width: 1200px) {
     .banner {
-        width: calc(100vw - 300px); /* Учитываем уменьшенную ширину корзины */
+        width: calc(100vw - 300px);
     }
     .carousel {
         grid-auto-columns: calc((100% - 30px) / 4);
@@ -262,7 +274,7 @@ body {
 
 @media (max-width: 992px) {
     .banner {
-        width: 100vw; /* Корзина скрыта, баннер на всю ширину */
+        width: 100vw;
         left: calc(-20px);
     }
     .carousel {

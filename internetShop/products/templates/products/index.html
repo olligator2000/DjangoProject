@@ -4,7 +4,6 @@
 
 {% block css %}
 <link rel="stylesheet" href="/static/css/index.css">
-
 {% endblock %}
 
 {% block content %}
@@ -16,10 +15,12 @@
     <img src="/media/baner/4.png" alt="Fruit Basket Banner">
     <img src="/media/baner/5.png" alt="Fruit Basket Banner">
 </div>
+<h2 class="carousel-title">Новинки</h2>
 <div class="carousel-container">
-    <button class="carousel-nav prev">❮</button>
+    <button class="carousel-nav prev" data-carousel-id="product-carousel">❮</button>
     <div class="carousel fade-in" id="product-carousel">
-        {% for product in products %}
+        <!-- Отображаем только первые 4 случайных продукта -->
+        {% for product in products|slice:":4" %}
         <div class="product-card">
             <a href="{% url 'products:product_detail' product.id %}">
                 <img class="product-image" src="/media/{{ product.image }}" alt="{{ product.name }}">
@@ -30,7 +31,26 @@
         </div>
         {% endfor %}
     </div>
-    <button class="carousel-nav next">❯</button>
+    <button class="carousel-nav next" data-carousel-id="product-carousel">❯</button>
+</div>
+
+<h2 class="carousel-title">Часто покупаемые товары</h2>
+<div class="carousel-container">
+    <button class="carousel-nav prev" data-carousel-id="popular-carousel">❮</button>
+    <div class="carousel fade-in" id="popular-carousel">
+        <!-- Отображаем только первые 4 случайных продукта -->
+        {% for product in products|slice:":4" %}
+        <div class="product-card">
+            <a href="{% url 'products:product_detail' product.id %}">
+                <img class="product-image" src="/media/{{ product.image }}" alt="{{ product.name }}">
+                <h3 class="product-title">{{ product.name }}</h3>
+            </a>
+            <div class="product-price">{{ product.price|stringformat:"d" }} ₽</div>
+            <button class="add-to-cart-btn" data-product-id="{{ product.id }}">Добавить в корзину</button>
+        </div>
+        {% endfor %}
+    </div>
+    <button class="carousel-nav next" data-carousel-id="popular-carousel">❯</button>
 </div>
 
 <!-- Подключаем корзину -->
@@ -66,19 +86,24 @@ document.addEventListener('DOMContentLoaded', function() {
         setInterval(changeBannerImage, 2500);
     }
 
-    // Карусель товаров
-    const carousel = document.getElementById('product-carousel');
-    const prevBtn = document.querySelector('.carousel-nav.prev');
-    const nextBtn = document.querySelector('.carousel-nav.next');
-    let autoRefreshInterval;
+    // Управление каруселями
+    const carousels = [
+        { id: 'product-carousel', interval: null },
+        { id: 'popular-carousel', interval: null }
+    ];
 
-    function refreshCarousel(direction) {
+    function refreshCarousel(carouselId) {
+        const carousel = document.getElementById(carouselId);
+        if (!carousel) {
+            console.error(`Карусель с ID ${carouselId} не найдена`);
+            return;
+        }
         carousel.classList.remove('fade-in');
         carousel.classList.add('fade-out');
 
         setTimeout(() => {
             fetch('/products/get_random_products/', {
-                method: 'POST', // Указываем метод POST для CSRF
+                method: 'POST',
                 headers: {
                     'X-Requested-With': 'XMLHttpRequest',
                     'X-CSRFToken': document.querySelector('[name=csrfmiddlewaretoken]').value
@@ -94,50 +119,37 @@ document.addEventListener('DOMContentLoaded', function() {
                 carousel.innerHTML = data.carousel_html;
                 carousel.classList.remove('fade-out');
                 carousel.classList.add('fade-in');
-                bindCartButtons(); // Перепривязываем кнопки после обновления
+                // Инициализация корзины после обновления карусели
+                initCart();
             })
             .catch(error => {
-                console.error('Ошибка при обновлении карусели:', error);
+                console.error(`Ошибка при обновлении карусели ${carouselId}:`, error);
             });
         }, 300);
     }
 
-    function bindCartButtons() {
-        document.querySelectorAll('.add-to-cart-btn').forEach(button => {
-            // Удаляем все старые обработчики, чтобы избежать дублирования
-            button.removeEventListener('click', handleCartClick);
-            button.addEventListener('click', handleCartClick);
-        });
-    }
+    // Инициализация каруселей
+    carousels.forEach(carousel => {
+        const prevBtn = document.querySelector(`.carousel-nav.prev[data-carousel-id="${carousel.id}"]`);
+        const nextBtn = document.querySelector(`.carousel-nav.next[data-carousel-id="${carousel.id}"]`);
+        const carouselElement = document.getElementById(carousel.id);
 
-    function handleCartClick(event) {
-        event.preventDefault(); // Предотвращаем возможные побочные действия
-        const productId = this.getAttribute('data-product-id');
-        if (typeof addToCart === 'function') {
-            addToCart(productId);
-        } else {
-            console.error('Функция addToCart не определена');
+        // Обработчики для кнопок
+        prevBtn.addEventListener('click', () => refreshCarousel(carousel.id));
+        nextBtn.addEventListener('click', () => refreshCarousel(carousel.id));
+
+        // Автоматическое обновление каждые 5 секунд
+        function startAutoRefresh() {
+            carousel.interval = setInterval(() => refreshCarousel(carousel.id), 5000);
         }
-    }
 
-    // Инициализация
-    bindCartButtons();
+        // Остановка автообновления при наведении
+        carouselElement.addEventListener('mouseenter', () => clearInterval(carousel.interval));
+        carouselElement.addEventListener('mouseleave', startAutoRefresh);
 
-    // Обработчики для кнопок
-    prevBtn.addEventListener('click', () => refreshCarousel('prev'));
-    nextBtn.addEventListener('click', () => refreshCarousel('next'));
-
-    // Автоматическое обновление каждые 5 секунд
-    function startAutoRefresh() {
-        autoRefreshInterval = setInterval(() => refreshCarousel(), 5000);
-    }
-
-    // Остановка автообновления при наведении
-    carousel.addEventListener('mouseenter', () => clearInterval(autoRefreshInterval));
-    carousel.addEventListener('mouseleave', startAutoRefresh);
-
-    // Запускаем автообновление при загрузке
-    startAutoRefresh();
+        // Запускаем автообновление при загрузке
+        startAutoRefresh();
+    });
 });
 </script>
 {% endblock %}

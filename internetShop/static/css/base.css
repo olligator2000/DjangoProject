@@ -1,5 +1,5 @@
 body {
-    font-family: 'Courier New', Courier, monospace, serif;
+    font-family: 'Segoe UI', sans-serif;
     margin: 0;
     padding: 0;
 }
@@ -196,7 +196,7 @@ body {
     font-size: 16px;
     text-decoration: none;
     font-weight: bold;
-    font-family: 'Courier New', Courier, monospace, serif;
+    font-family: 'Segoe UI', sans-serif;
     display: flex;
     align-items: center;
     gap: 8px;
@@ -254,7 +254,7 @@ body {
     border-radius: 10px;
     text-decoration: none;
     font-weight: bold;
-    font-family: 'Courier New', Courier, monospace, serif;
+    font-family: 'Segoe UI', sans-serif;
     transition: background 0.2s;
 }
 
@@ -297,7 +297,7 @@ body {
     border-radius: 10px;
     text-decoration: none;
     font-size: 14px;
-    font-family: 'Courier New', Courier, monospace, serif;
+    font-family: 'Segoe UI', sans-serif;
     overflow-y: auto;
     transition: background 0.2s;
     break-inside: avoid;
@@ -353,7 +353,7 @@ body {
     padding: 0;
     color: #4f4b4b;
     text-decoration: none;
-    font-family: 'Courier New', Courier, monospace, serif;
+    font-family: 'Segoe UI', sans-serif;
     font-weight: bold;
     transition: opacity 0.2s;
 }
@@ -725,10 +725,10 @@ body {
 .toast-notification {
     position: fixed;
     bottom: 20px;
-    right: 35px;
+    right: 51px;
     background-color: #4CAF50;
     color: white;
-    padding: 5px 25px;
+    padding: 4px 25px;
     border-radius: 4px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     z-index: 1000;

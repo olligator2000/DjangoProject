@@ -1,4 +1,3 @@
-import logging
 from django.shortcuts import render, get_object_or_404
 from django.contrib.auth.decorators import login_required
 from django.http import JsonResponse
@@ -14,7 +13,7 @@ class IndexView(ListView):
     context_object_name = 'products'
 
     def get_queryset(self):
-        return Product.objects.order_by('?')[:12]  # Возвращаем 12 товаров вместо 4
+        return Product.objects.order_by('?')[:4]
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -179,11 +178,18 @@ def add_to_cart_ajax(request, product_id):
 @login_required
 def update_basket_ajax(request, basket_id, action):
     try:
+        # Получаем объект корзины
         basket = get_object_or_404(Basket, id=basket_id, user=request.user)
+        if not basket.product:
+            logger.error(f"Продукт для корзины {basket_id} не найден")
+            return JsonResponse({
+                'status': 'error',
+                'message': 'Продукт не найден'
+            }, status=400)
+
         product = get_object_or_404(Product, id=basket.product.id)
 
         if action == 'increase':
-            # Проверка: достаточно ли товара на складе
             if product.quantity <= basket.quantity:
                 logger.warning(f"Недостаточно товара: {product.id} (доступно: {product.quantity}, в корзине: {basket.quantity})")
                 return JsonResponse({
@@ -194,28 +200,44 @@ def update_basket_ajax(request, basket_id, action):
         elif action == 'decrease':
             if basket.quantity <= 1:
                 basket.delete()
+                baskets = Basket.objects.filter(user=request.user)
                 return JsonResponse({
                     'status': 'removed',
                     'basket_id': basket_id,
-                    'total_sum': float(sum(b.sum for b in Basket.objects.filter(user=request.user)) or 0)
+                    'total_sum': float(sum(b.sum for b in baskets) or 0)
                 })
             basket.quantity -= 1
+        else:
+            logger.error(f"Недопустимое действие: {action} для корзины {basket_id}")
+            return JsonResponse({
+                'status': 'error',
+                'message': 'Недопустимое действие'
+            }, status=400)
 
         basket.save()
+
+        baskets = Basket.objects.filter(user=request.user)
+        total_sum = sum(b.sum for b in baskets) or 0
 
         return JsonResponse({
             'status': 'success',
             'basket_id': basket.id,
             'quantity': basket.quantity,
             'sum': float(basket.sum),
-            'total_sum': float(sum(b.sum for b in Basket.objects.filter(user=request.user)) or 0)
+            'total_sum': float(total_sum)
         })
 
-    except Exception as e:
-        logger.error(f"Ошибка при обновлении корзины: {str(e)}", exc_info=True)
+    except Product.DoesNotExist:
+        logger.error(f"Продукт с ID {basket.product.id if basket else 'unknown'} не найден для корзины {basket_id}")
         return JsonResponse({
             'status': 'error',
-            'message': 'Внутренняя ошибка сервера'
+            'message': 'Продукт не найден'
+        }, status=400)
+    except Exception as e:
+        logger.error(f"Ошибка при обновлении корзины {basket_id}: {str(e)}", exc_info=True)
+        return JsonResponse({
+            'status': 'error',
+            'message': f'Внутренняя ошибка сервера: {str(e)}'
         }, status=500)
 
 @login_required

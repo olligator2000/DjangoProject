@@ -8119,3 +8119,493 @@ Not Found: /favicon.ico
 Not Found: /.well-known/appspecific/com.chrome.devtools.json
 Not Found: /favicon.ico
 Not Found: /favicon.ico
+Watching for file changes with StatReloader
+Not Found: /favicon.ico
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /favicon.ico
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /favicon.ico
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /favicon.ico
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+D:\Учёба\DjangoProject\internetShop\products\views.py changed, reloading.
+Watching for file changes with StatReloader
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Ошибка при добавлении товара в корзину: get() returned more than one Basket -- it returned 2!
+Traceback (most recent call last):
+  File "D:\Учёба\DjangoProject\internetshop\products\views.py", line 142, in add_to_cart_ajax
+    basket, created = Basket.objects.get_or_create(
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\db\models\query.py", line 946, in get_or_create
+    return self.get(**kwargs), False
+           ^^^^^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\db\models\query.py", line 636, in get
+    raise self.model.MultipleObjectsReturned(
+products.models.Basket.MultipleObjectsReturned: get() returned more than one Basket -- it returned 2!
+Ошибка при добавлении товара в корзину: get() returned more than one Basket -- it returned 2!
+Traceback (most recent call last):
+  File "D:\Учёба\DjangoProject\internetshop\products\views.py", line 142, in add_to_cart_ajax
+    basket, created = Basket.objects.get_or_create(
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\db\models\query.py", line 946, in get_or_create
+    return self.get(**kwargs), False
+           ^^^^^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\db\models\query.py", line 636, in get
+    raise self.model.MultipleObjectsReturned(
+products.models.Basket.MultipleObjectsReturned: get() returned more than one Basket -- it returned 2!
+Internal Server Error: /products/add_to_cart_ajax/2/
+Internal Server Error: /products/add_to_cart_ajax/2/
+Ошибка при добавлении товара в корзину: get() returned more than one Basket -- it returned 2!
+Traceback (most recent call last):
+  File "D:\Учёба\DjangoProject\internetshop\products\views.py", line 142, in add_to_cart_ajax
+    basket, created = Basket.objects.get_or_create(
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\db\models\query.py", line 946, in get_or_create
+    return self.get(**kwargs), False
+           ^^^^^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\db\models\query.py", line 636, in get
+    raise self.model.MultipleObjectsReturned(
+products.models.Basket.MultipleObjectsReturned: get() returned more than one Basket -- it returned 2!
+Ошибка при добавлении товара в корзину: get() returned more than one Basket -- it returned 2!
+Traceback (most recent call last):
+  File "D:\Учёба\DjangoProject\internetshop\products\views.py", line 142, in add_to_cart_ajax
+    basket, created = Basket.objects.get_or_create(
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\db\models\query.py", line 946, in get_or_create
+    return self.get(**kwargs), False
+           ^^^^^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\db\models\query.py", line 636, in get
+    raise self.model.MultipleObjectsReturned(
+products.models.Basket.MultipleObjectsReturned: get() returned more than one Basket -- it returned 2!
+Internal Server Error: /products/add_to_cart_ajax/2/
+Internal Server Error: /products/add_to_cart_ajax/2/
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Попытка добавить отсутствующий товар: 13
+Bad Request: /products/add_to_cart_ajax/13/
+Попытка добавить отсутствующий товар: 13
+Bad Request: /products/add_to_cart_ajax/13/
+Недостаточно товара: 2 (доступно: 6, в корзине: 6)
+Bad Request: /products/add_to_cart_ajax/2/
+Недостаточно товара: 3 (доступно: 6, в корзине: 6)
+Bad Request: /products/add_to_cart_ajax/3/
+Недостаточно товара: 1 (доступно: 6, в корзине: 6)
+Bad Request: /products/add_to_cart_ajax/1/
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Ошибка при обновлении корзины: No Basket matches the given query.
+Traceback (most recent call last):
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\shortcuts.py", line 90, in get_object_or_404
+    return queryset.get(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\db\models\query.py", line 633, in get
+    raise self.model.DoesNotExist(
+products.models.Basket.DoesNotExist: Basket matching query does not exist.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Учёба\DjangoProject\internetshop\products\views.py", line 182, in update_basket_ajax
+    basket = get_object_or_404(Basket, id=basket_id, user=request.user)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\shortcuts.py", line 92, in get_object_or_404
+    raise Http404(
+django.http.response.Http404: No Basket matches the given query.
+Internal Server Error: /products/update_basket_ajax/427/decrease/
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Недостаточно товара: 9 (доступно: 6, в корзине: 6)
+Bad Request: /products/update_basket_ajax/444/increase/
+Недостаточно товара: 9 (доступно: 6, в корзине: 6)
+Bad Request: /products/add_to_cart_ajax/9/
+Not Found: /favicon.ico
+Попытка добавить отсутствующий товар: 13
+Bad Request: /products/add_to_cart_ajax/13/
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /favicon.ico
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Ошибка при обновлении корзины: No Basket matches the given query.
+Traceback (most recent call last):
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\shortcuts.py", line 90, in get_object_or_404
+    return queryset.get(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\db\models\query.py", line 633, in get
+    raise self.model.DoesNotExist(
+products.models.Basket.DoesNotExist: Basket matching query does not exist.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Учёба\DjangoProject\internetshop\products\views.py", line 182, in update_basket_ajax
+    basket = get_object_or_404(Basket, id=basket_id, user=request.user)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\shortcuts.py", line 92, in get_object_or_404
+    raise Http404(
+django.http.response.Http404: No Basket matches the given query.
+Internal Server Error: /products/update_basket_ajax/458/decrease/
+Watching for file changes with StatReloader
+Not Found: /favicon.ico
+Ошибка при добавлении товара в корзину: get() returned more than one Basket -- it returned 2!
+Traceback (most recent call last):
+  File "D:\Учёба\DjangoProject\internetshop\products\views.py", line 142, in add_to_cart_ajax
+    basket, created = Basket.objects.get_or_create(
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\db\models\query.py", line 946, in get_or_create
+    return self.get(**kwargs), False
+           ^^^^^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\db\models\query.py", line 636, in get
+    raise self.model.MultipleObjectsReturned(
+products.models.Basket.MultipleObjectsReturned: get() returned more than one Basket -- it returned 2!
+Ошибка при добавлении товара в корзину: get() returned more than one Basket -- it returned 2!
+Traceback (most recent call last):
+  File "D:\Учёба\DjangoProject\internetshop\products\views.py", line 142, in add_to_cart_ajax
+    basket, created = Basket.objects.get_or_create(
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\db\models\query.py", line 946, in get_or_create
+    return self.get(**kwargs), False
+           ^^^^^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\db\models\query.py", line 636, in get
+    raise self.model.MultipleObjectsReturned(
+products.models.Basket.MultipleObjectsReturned: get() returned more than one Basket -- it returned 2!
+Internal Server Error: /products/add_to_cart_ajax/4/
+Internal Server Error: /products/add_to_cart_ajax/4/
+Ошибка при добавлении товара в корзину: get() returned more than one Basket -- it returned 2!
+Traceback (most recent call last):
+  File "D:\Учёба\DjangoProject\internetshop\products\views.py", line 142, in add_to_cart_ajax
+    basket, created = Basket.objects.get_or_create(
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\db\models\query.py", line 946, in get_or_create
+    return self.get(**kwargs), False
+           ^^^^^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\db\models\query.py", line 636, in get
+    raise self.model.MultipleObjectsReturned(
+products.models.Basket.MultipleObjectsReturned: get() returned more than one Basket -- it returned 2!
+Ошибка при добавлении товара в корзину: get() returned more than one Basket -- it returned 2!
+Traceback (most recent call last):
+  File "D:\Учёба\DjangoProject\internetshop\products\views.py", line 142, in add_to_cart_ajax
+    basket, created = Basket.objects.get_or_create(
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\db\models\query.py", line 946, in get_or_create
+    return self.get(**kwargs), False
+           ^^^^^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\db\models\query.py", line 636, in get
+    raise self.model.MultipleObjectsReturned(
+products.models.Basket.MultipleObjectsReturned: get() returned more than one Basket -- it returned 2!
+Internal Server Error: /products/add_to_cart_ajax/4/
+Internal Server Error: /products/add_to_cart_ajax/4/
+Ошибка при добавлении товара в корзину: get() returned more than one Basket -- it returned 2!
+Traceback (most recent call last):
+  File "D:\Учёба\DjangoProject\internetshop\products\views.py", line 142, in add_to_cart_ajax
+    basket, created = Basket.objects.get_or_create(
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\db\models\query.py", line 946, in get_or_create
+    return self.get(**kwargs), False
+           ^^^^^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\db\models\query.py", line 636, in get
+    raise self.model.MultipleObjectsReturned(
+products.models.Basket.MultipleObjectsReturned: get() returned more than one Basket -- it returned 2!
+Internal Server Error: /products/add_to_cart_ajax/4/
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Попытка добавить отсутствующий товар: 13
+Bad Request: /products/add_to_cart_ajax/13/
+Not Found: /favicon.ico
+Watching for file changes with StatReloader
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Попытка добавить отсутствующий товар: 13
+Bad Request: /products/add_to_cart_ajax/13/
+Недостаточно товара: 10 (доступно: 8, в корзине: 8)
+Недостаточно товара: 10 (доступно: 8, в корзине: 8)
+Bad Request: /products/update_basket_ajax/504/increase/
+Bad Request: /products/update_basket_ajax/504/increase/
+Недостаточно товара: 10 (доступно: 8, в корзине: 8)
+Недостаточно товара: 10 (доступно: 8, в корзине: 8)
+Bad Request: /products/update_basket_ajax/504/increase/
+Недостаточно товара: 10 (доступно: 8, в корзине: 8)
+Bad Request: /products/update_basket_ajax/504/increase/
+Bad Request: /products/update_basket_ajax/504/increase/
+Недостаточно товара: 10 (доступно: 8, в корзине: 8)
+Bad Request: /products/update_basket_ajax/504/increase/
+Недостаточно товара: 10 (доступно: 8, в корзине: 8)
+Недостаточно товара: 10 (доступно: 8, в корзине: 8)
+Недостаточно товара: 10 (доступно: 8, в корзине: 8)
+Недостаточно товара: 10 (доступно: 8, в корзине: 8)
+Bad Request: /products/update_basket_ajax/504/increase/
+Bad Request: /products/update_basket_ajax/504/increase/
+Bad Request: /products/update_basket_ajax/504/increase/
+Bad Request: /products/update_basket_ajax/504/increase/
+Недостаточно товара: 10 (доступно: 8, в корзине: 8)
+Недостаточно товара: 10 (доступно: 8, в корзине: 8)
+Bad Request: /products/update_basket_ajax/504/increase/
+Bad Request: /products/update_basket_ajax/504/increase/
+Недостаточно товара: 10 (доступно: 8, в корзине: 8)
+Bad Request: /products/update_basket_ajax/504/increase/
+Недостаточно товара: 10 (доступно: 8, в корзине: 8)
+Bad Request: /products/update_basket_ajax/504/increase/
+Недостаточно товара: 6 (доступно: 6, в корзине: 6)
+Bad Request: /products/update_basket_ajax/505/increase/
+Недостаточно товара: 10 (доступно: 8, в корзине: 8)
+Bad Request: /products/update_basket_ajax/504/increase/
+Недостаточно товара: 6 (доступно: 6, в корзине: 6)
+Bad Request: /products/update_basket_ajax/505/increase/
+Ошибка при обновлении корзины: No Basket matches the given query.
+Traceback (most recent call last):
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\shortcuts.py", line 90, in get_object_or_404
+    return queryset.get(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\db\models\query.py", line 633, in get
+    raise self.model.DoesNotExist(
+products.models.Basket.DoesNotExist: Basket matching query does not exist.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Учёба\DjangoProject\internetshop\products\views.py", line 182, in update_basket_ajax
+    basket = get_object_or_404(Basket, id=basket_id, user=request.user)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\shortcuts.py", line 92, in get_object_or_404
+    raise Http404(
+django.http.response.Http404: No Basket matches the given query.
+Internal Server Error: /products/update_basket_ajax/505/decrease/
+Ошибка при обновлении корзины: No Basket matches the given query.
+Traceback (most recent call last):
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\shortcuts.py", line 90, in get_object_or_404
+    return queryset.get(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\db\models\query.py", line 633, in get
+    raise self.model.DoesNotExist(
+products.models.Basket.DoesNotExist: Basket matching query does not exist.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Учёба\DjangoProject\internetshop\products\views.py", line 182, in update_basket_ajax
+    basket = get_object_or_404(Basket, id=basket_id, user=request.user)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\shortcuts.py", line 92, in get_object_or_404
+    raise Http404(
+django.http.response.Http404: No Basket matches the given query.
+Internal Server Error: /products/update_basket_ajax/506/decrease/
+Not Found: /favicon.ico
+Недостаточно товара: 12 (доступно: 7, в корзине: 7)
+Bad Request: /products/update_basket_ajax/508/increase/
+Недостаточно товара: 12 (доступно: 7, в корзине: 7)
+Bad Request: /products/update_basket_ajax/508/increase/
+Ошибка при обновлении корзины: No Basket matches the given query.
+Traceback (most recent call last):
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\shortcuts.py", line 90, in get_object_or_404
+    return queryset.get(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\db\models\query.py", line 633, in get
+    raise self.model.DoesNotExist(
+products.models.Basket.DoesNotExist: Basket matching query does not exist.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Учёба\DjangoProject\internetshop\products\views.py", line 182, in update_basket_ajax
+    basket = get_object_or_404(Basket, id=basket_id, user=request.user)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\shortcuts.py", line 92, in get_object_or_404
+    raise Http404(
+django.http.response.Http404: No Basket matches the given query.
+Internal Server Error: /products/update_basket_ajax/508/decrease/
+Недостаточно товара: 3 (доступно: 6, в корзине: 6)
+Bad Request: /products/update_basket_ajax/509/increase/
+Недостаточно товара: 3 (доступно: 6, в корзине: 6)
+Bad Request: /products/update_basket_ajax/511/increase/
+Недостаточно товара: 2 (доступно: 6, в корзине: 6)
+Bad Request: /products/update_basket_ajax/510/increase/
+Ошибка при обновлении корзины: No Basket matches the given query.
+Traceback (most recent call last):
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\shortcuts.py", line 90, in get_object_or_404
+    return queryset.get(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\db\models\query.py", line 633, in get
+    raise self.model.DoesNotExist(
+products.models.Basket.DoesNotExist: Basket matching query does not exist.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Учёба\DjangoProject\internetshop\products\views.py", line 182, in update_basket_ajax
+    basket = get_object_or_404(Basket, id=basket_id, user=request.user)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\shortcuts.py", line 92, in get_object_or_404
+    raise Http404(
+django.http.response.Http404: No Basket matches the given query.
+Internal Server Error: /products/update_basket_ajax/510/decrease/
+D:\Учёба\DjangoProject\internetShop\products\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\Учёба\DjangoProject\internetShop\products\views.py changed, reloading.
+Watching for file changes with StatReloader
+Not Found: /favicon.ico
+Корзина не найдена: basket_id=513, user=7
+Корзина не найдена: basket_id=513, user=7
+Not Found: /products/update_basket_ajax/513/decrease/
+Not Found: /products/update_basket_ajax/513/decrease/
+Корзина не найдена: basket_id=512, user=7
+Not Found: /products/update_basket_ajax/512/decrease/
+Корзина не найдена: basket_id=512, user=7
+Not Found: /products/update_basket_ajax/512/decrease/
+Корзина не найдена: basket_id=512, user=7
+Not Found: /products/update_basket_ajax/512/decrease/
+Недостаточно товара: 1 (доступно: 6, в корзине: 6)
+Bad Request: /products/add_to_cart_ajax/1/
+Недостаточно товара: 1 (доступно: 6, в корзине: 6)
+Bad Request: /products/update_basket_ajax/517/increase/
+Недостаточно товара: 4 (доступно: 7, в корзине: 7)
+Bad Request: /products/update_basket_ajax/521/increase/
+Корзина не найдена: basket_id=520, user=7
+Not Found: /products/update_basket_ajax/520/decrease/
+Недостаточно товара: 7 (доступно: 6, в корзине: 6)
+Bad Request: /products/update_basket_ajax/523/increase/
+Недостаточно товара: 8 (доступно: 8, в корзине: 8)
+Недостаточно товара: 8 (доступно: 8, в корзине: 8)
+Bad Request: /products/update_basket_ajax/529/increase/
+Bad Request: /products/update_basket_ajax/529/increase/
+D:\Учёба\DjangoProject\internetShop\products\views.py changed, reloading.
+Watching for file changes with StatReloader
+Not Found: /favicon.ico
+Ошибка при обновлении корзины: No Basket matches the given query.
+Traceback (most recent call last):
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\shortcuts.py", line 90, in get_object_or_404
+    return queryset.get(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\db\models\query.py", line 633, in get
+    raise self.model.DoesNotExist(
+products.models.Basket.DoesNotExist: Basket matching query does not exist.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Учёба\DjangoProject\internetshop\products\views.py", line 181, in update_basket_ajax
+    basket = get_object_or_404(Basket, id=basket_id, user=request.user)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\shortcuts.py", line 92, in get_object_or_404
+    raise Http404(
+django.http.response.Http404: No Basket matches the given query.
+Ошибка при обновлении корзины: No Basket matches the given query.
+Traceback (most recent call last):
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\shortcuts.py", line 90, in get_object_or_404
+    return queryset.get(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\db\models\query.py", line 633, in get
+    raise self.model.DoesNotExist(
+products.models.Basket.DoesNotExist: Basket matching query does not exist.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Учёба\DjangoProject\internetshop\products\views.py", line 181, in update_basket_ajax
+    basket = get_object_or_404(Basket, id=basket_id, user=request.user)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\shortcuts.py", line 92, in get_object_or_404
+    raise Http404(
+django.http.response.Http404: No Basket matches the given query.
+Ошибка при обновлении корзины: No Basket matches the given query.
+Traceback (most recent call last):
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\shortcuts.py", line 90, in get_object_or_404
+    return queryset.get(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\db\models\query.py", line 633, in get
+    raise self.model.DoesNotExist(
+products.models.Basket.DoesNotExist: Basket matching query does not exist.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Учёба\DjangoProject\internetshop\products\views.py", line 181, in update_basket_ajax
+    basket = get_object_or_404(Basket, id=basket_id, user=request.user)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\shortcuts.py", line 92, in get_object_or_404
+    raise Http404(
+django.http.response.Http404: No Basket matches the given query.
+Internal Server Error: /products/update_basket_ajax/528/decrease/
+Internal Server Error: /products/update_basket_ajax/528/decrease/
+Internal Server Error: /products/update_basket_ajax/528/decrease/
+D:\Учёба\DjangoProject\internetShop\products\views.py changed, reloading.
+Watching for file changes with StatReloader
+Not Found: /favicon.ico
+Недостаточно товара: 9 (доступно: 6, в корзине: 6)
+Bad Request: /products/update_basket_ajax/532/increase/
+Недостаточно товара: 17 (доступно: 6, в корзине: 6)
+Bad Request: /products/update_basket_ajax/533/increase/
