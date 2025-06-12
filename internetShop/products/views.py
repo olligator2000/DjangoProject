@@ -4,6 +4,7 @@ from django.http import JsonResponse
 from django.template.loader import render_to_string
 from products.models import Product, ProductCategory, Basket
 from django.views.generic import ListView
+from django.db.models import Q
 import logging
 
 logger = logging.getLogger(__name__)
@@ -123,6 +124,58 @@ def get_products_by_category(request):
     category_id = request.GET.get('category_id')
     products = Product.objects.filter(category_id=category_id).values('id', 'name')
     return JsonResponse(list(products), safe=False)
+
+
+def search_products(request):
+    try:
+        query = request.GET.get('q', '').strip()
+        if not query or len(query) < 2:
+            return JsonResponse({'categories': [], 'products': []})
+
+        # Поиск категорий
+        categories = ProductCategory.objects.filter(
+            Q(name__icontains=query) | Q(description__icontains=query)
+        ).values('id', 'name')[:1]
+
+        # Поиск товаров
+        products = Product.objects.filter(
+            Q(name__icontains=query) |
+            Q(description__icontains=query) |
+            Q(brand__icontains=query) |
+            Q(manufacturer__icontains=query)
+        ).values('id', 'name', 'image', 'price')[:10]
+
+        # Формирование списка категорий
+        categories_list = list(categories)
+        for category in categories_list:
+            category['type'] = 'category'
+
+        # Формирование списка товаров
+        products_list = list(products)
+        for product in products_list:
+            product['type'] = 'product'
+            # Проверяем, есть ли изображение
+            if product['image']:  # Проверяем, не пустое ли поле image
+                try:
+                    # Предполагаем, что image уже строка (путь к файлу), так как используется .values()
+                    product['image'] = request.build_absolute_uri('/media/' + product['image'])
+                    logger.debug(f"Изображение для продукта {product['id']}: {product['image']}")
+                except Exception as e:
+                    logger.warning(f"Ошибка при обработке изображения для продукта {product['id']}: {str(e)}")
+                    product['image'] = request.build_absolute_uri('/static/images/placeholder.png')
+            else:
+                logger.debug(f"Изображение отсутствует для продукта {product['id']}")
+                product['image'] = request.build_absolute_uri('/static/images/placeholder.png')
+
+        # Объединяем категории и товары
+        results = categories_list + products_list
+
+        logger.info(f"Поисковый запрос: '{query}', найдено категорий: {len(categories_list)}, товаров: {len(products_list)}")
+        return JsonResponse({'results': results})
+
+    except Exception as e:
+        logger.error(f"Ошибка при поиске товаров: {str(e)}", exc_info=True)
+        return JsonResponse({'results': []}, status=500)
 
 
 @login_required

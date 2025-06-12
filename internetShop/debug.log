@@ -8609,3 +8609,1004 @@ Not Found: /favicon.ico
 Bad Request: /products/update_basket_ajax/532/increase/
 Недостаточно товара: 17 (доступно: 6, в корзине: 6)
 Bad Request: /products/update_basket_ajax/533/increase/
+Watching for file changes with StatReloader
+Not Found: /favicon.ico
+Попытка добавить отсутствующий товар: 13
+Bad Request: /products/add_to_cart_ajax/13/
+Попытка добавить отсутствующий товар: 13
+Bad Request: /products/add_to_cart_ajax/13/
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+D:\Учёба\DjangoProject\internetShop\products\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\Учёба\DjangoProject\internetShop\products\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\Учёба\DjangoProject\internetShop\products\urls.py changed, reloading.
+Watching for file changes with StatReloader
+D:\Учёба\DjangoProject\internetShop\products\urls.py changed, reloading.
+Watching for file changes with StatReloader
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+D:\Учёба\DjangoProject\internetShop\products\urls.py changed, reloading.
+Watching for file changes with StatReloader
+D:\Учёба\DjangoProject\internetShop\products\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\Учёба\DjangoProject\internetShop\products\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\Учёба\DjangoProject\internetShop\products\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\Учёба\DjangoProject\internetShop\products\urls.py changed, reloading.
+Watching for file changes with StatReloader
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Ошибка при поиске товаров: 'str' object has no attribute 'url'
+Traceback (most recent call last):
+  File "D:\Учёба\DjangoProject\internetshop\products\views.py", line 142, in search_products
+    product['image'] = request.build_absolute_uri(product['image'].url)
+                                                  ^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'str' object has no attribute 'url'
+Internal Server Error: /products/search/
+Ошибка при поиске товаров: 'str' object has no attribute 'url'
+Traceback (most recent call last):
+  File "D:\Учёба\DjangoProject\internetshop\products\views.py", line 142, in search_products
+    product['image'] = request.build_absolute_uri(product['image'].url)
+                                                  ^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'str' object has no attribute 'url'
+Internal Server Error: /products/search/
+Ошибка при поиске товаров: 'str' object has no attribute 'url'
+Traceback (most recent call last):
+  File "D:\Учёба\DjangoProject\internetshop\products\views.py", line 142, in search_products
+    product['image'] = request.build_absolute_uri(product['image'].url)
+                                                  ^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'str' object has no attribute 'url'
+Internal Server Error: /products/search/
+Ошибка при поиске товаров: 'str' object has no attribute 'url'
+Traceback (most recent call last):
+  File "D:\Учёба\DjangoProject\internetshop\products\views.py", line 142, in search_products
+    product['image'] = request.build_absolute_uri(product['image'].url)
+                                                  ^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'str' object has no attribute 'url'
+Internal Server Error: /products/search/
+Ошибка при поиске товаров: 'str' object has no attribute 'url'
+Traceback (most recent call last):
+  File "D:\Учёба\DjangoProject\internetshop\products\views.py", line 142, in search_products
+    product['image'] = request.build_absolute_uri(product['image'].url)
+                                                  ^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'str' object has no attribute 'url'
+Internal Server Error: /products/search/
+Ошибка при поиске товаров: 'str' object has no attribute 'url'
+Traceback (most recent call last):
+  File "D:\Учёба\DjangoProject\internetshop\products\views.py", line 142, in search_products
+    product['image'] = request.build_absolute_uri(product['image'].url)
+                                                  ^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'str' object has no attribute 'url'
+Internal Server Error: /products/search/
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Ошибка при поиске товаров: 'str' object has no attribute 'url'
+Traceback (most recent call last):
+  File "D:\Учёба\DjangoProject\internetshop\products\views.py", line 142, in search_products
+    product['image'] = request.build_absolute_uri(product['image'].url)
+                                                  ^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'str' object has no attribute 'url'
+Internal Server Error: /products/search/
+Ошибка при поиске товаров: 'str' object has no attribute 'url'
+Traceback (most recent call last):
+  File "D:\Учёба\DjangoProject\internetshop\products\views.py", line 142, in search_products
+    product['image'] = request.build_absolute_uri(product['image'].url)
+                                                  ^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'str' object has no attribute 'url'
+Internal Server Error: /products/search/
+Ошибка при поиске товаров: 'str' object has no attribute 'url'
+Traceback (most recent call last):
+  File "D:\Учёба\DjangoProject\internetshop\products\views.py", line 142, in search_products
+    product['image'] = request.build_absolute_uri(product['image'].url)
+                                                  ^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'str' object has no attribute 'url'
+Internal Server Error: /products/search/
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /favicon.ico
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Ошибка при поиске товаров: 'str' object has no attribute 'url'
+Traceback (most recent call last):
+  File "D:\Учёба\DjangoProject\internetshop\products\views.py", line 142, in search_products
+    product['image'] = request.build_absolute_uri(product['image'].url)
+                                                  ^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'str' object has no attribute 'url'
+Internal Server Error: /products/search/
+Ошибка при поиске товаров: 'str' object has no attribute 'url'
+Traceback (most recent call last):
+  File "D:\Учёба\DjangoProject\internetshop\products\views.py", line 142, in search_products
+    product['image'] = request.build_absolute_uri(product['image'].url)
+                                                  ^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'str' object has no attribute 'url'
+Internal Server Error: /products/search/
+Ошибка при поиске товаров: 'str' object has no attribute 'url'
+Traceback (most recent call last):
+  File "D:\Учёба\DjangoProject\internetshop\products\views.py", line 142, in search_products
+    product['image'] = request.build_absolute_uri(product['image'].url)
+                                                  ^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'str' object has no attribute 'url'
+Internal Server Error: /products/search/
+Not Found: /favicon.ico
+Ошибка при поиске товаров: 'str' object has no attribute 'url'
+Traceback (most recent call last):
+  File "D:\Учёба\DjangoProject\internetshop\products\views.py", line 142, in search_products
+    product['image'] = request.build_absolute_uri(product['image'].url)
+                                                  ^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'str' object has no attribute 'url'
+Internal Server Error: /products/search/
+Ошибка при поиске товаров: 'str' object has no attribute 'url'
+Traceback (most recent call last):
+  File "D:\Учёба\DjangoProject\internetshop\products\views.py", line 142, in search_products
+    product['image'] = request.build_absolute_uri(product['image'].url)
+                                                  ^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'str' object has no attribute 'url'
+Internal Server Error: /products/search/
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /favicon.ico
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /favicon.ico
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /favicon.ico
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /favicon.ico
+Ошибка при поиске товаров: 'str' object has no attribute 'url'
+Traceback (most recent call last):
+  File "D:\Учёба\DjangoProject\internetshop\products\views.py", line 142, in search_products
+    product['image'] = request.build_absolute_uri(product['image'].url)
+                                                  ^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'str' object has no attribute 'url'
+Internal Server Error: /products/search/
+Ошибка при поиске товаров: 'str' object has no attribute 'url'
+Traceback (most recent call last):
+  File "D:\Учёба\DjangoProject\internetshop\products\views.py", line 142, in search_products
+    product['image'] = request.build_absolute_uri(product['image'].url)
+                                                  ^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'str' object has no attribute 'url'
+Internal Server Error: /products/search/
+Ошибка при поиске товаров: 'str' object has no attribute 'url'
+Traceback (most recent call last):
+  File "D:\Учёба\DjangoProject\internetshop\products\views.py", line 142, in search_products
+    product['image'] = request.build_absolute_uri(product['image'].url)
+                                                  ^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'str' object has no attribute 'url'
+Internal Server Error: /products/search/
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /favicon.ico
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /favicon.ico
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Ошибка при поиске товаров: 'str' object has no attribute 'url'
+Traceback (most recent call last):
+  File "D:\Учёба\DjangoProject\internetshop\products\views.py", line 142, in search_products
+    product['image'] = request.build_absolute_uri(product['image'].url)
+                                                  ^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'str' object has no attribute 'url'
+Internal Server Error: /products/search/
+Ошибка при поиске товаров: 'str' object has no attribute 'url'
+Traceback (most recent call last):
+  File "D:\Учёба\DjangoProject\internetshop\products\views.py", line 142, in search_products
+    product['image'] = request.build_absolute_uri(product['image'].url)
+                                                  ^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'str' object has no attribute 'url'
+Internal Server Error: /products/search/
+Ошибка при поиске товаров: 'str' object has no attribute 'url'
+Traceback (most recent call last):
+  File "D:\Учёба\DjangoProject\internetshop\products\views.py", line 142, in search_products
+    product['image'] = request.build_absolute_uri(product['image'].url)
+                                                  ^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'str' object has no attribute 'url'
+Internal Server Error: /products/search/
+Ошибка при поиске товаров: 'str' object has no attribute 'url'
+Traceback (most recent call last):
+  File "D:\Учёба\DjangoProject\internetshop\products\views.py", line 142, in search_products
+    product['image'] = request.build_absolute_uri(product['image'].url)
+                                                  ^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'str' object has no attribute 'url'
+Internal Server Error: /products/search/
+Ошибка при поиске товаров: 'str' object has no attribute 'url'
+Traceback (most recent call last):
+  File "D:\Учёба\DjangoProject\internetshop\products\views.py", line 142, in search_products
+    product['image'] = request.build_absolute_uri(product['image'].url)
+                                                  ^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'str' object has no attribute 'url'
+Internal Server Error: /products/search/
+Ошибка при поиске товаров: 'str' object has no attribute 'url'
+Traceback (most recent call last):
+  File "D:\Учёба\DjangoProject\internetshop\products\views.py", line 142, in search_products
+    product['image'] = request.build_absolute_uri(product['image'].url)
+                                                  ^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'str' object has no attribute 'url'
+Internal Server Error: /products/search/
+Ошибка при поиске товаров: 'str' object has no attribute 'url'
+Traceback (most recent call last):
+  File "D:\Учёба\DjangoProject\internetshop\products\views.py", line 142, in search_products
+    product['image'] = request.build_absolute_uri(product['image'].url)
+                                                  ^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'str' object has no attribute 'url'
+Internal Server Error: /products/search/
+Ошибка при поиске товаров: 'str' object has no attribute 'url'
+Traceback (most recent call last):
+  File "D:\Учёба\DjangoProject\internetshop\products\views.py", line 142, in search_products
+    product['image'] = request.build_absolute_uri(product['image'].url)
+                                                  ^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'str' object has no attribute 'url'
+Internal Server Error: /products/search/
+D:\Учёба\DjangoProject\internetShop\products\urls.py changed, reloading.
+Watching for file changes with StatReloader
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+D:\Учёба\DjangoProject\internetShop\products\urls.py changed, reloading.
+Watching for file changes with StatReloader
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+D:\Учёба\DjangoProject\internetShop\products\urls.py changed, reloading.
+Watching for file changes with StatReloader
+Not Found: /favicon.ico
+Ошибка при поиске товаров: 'str' object has no attribute 'url'
+Traceback (most recent call last):
+  File "D:\Учёба\DjangoProject\internetshop\products\views.py", line 142, in search_products
+    product['image'] = request.build_absolute_uri(product['image'].url)
+                                                  ^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'str' object has no attribute 'url'
+Internal Server Error: /products/search/
+Ошибка при поиске товаров: 'str' object has no attribute 'url'
+Traceback (most recent call last):
+  File "D:\Учёба\DjangoProject\internetshop\products\views.py", line 142, in search_products
+    product['image'] = request.build_absolute_uri(product['image'].url)
+                                                  ^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'str' object has no attribute 'url'
+Internal Server Error: /products/search/
+Ошибка при поиске товаров: 'str' object has no attribute 'url'
+Traceback (most recent call last):
+  File "D:\Учёба\DjangoProject\internetshop\products\views.py", line 142, in search_products
+    product['image'] = request.build_absolute_uri(product['image'].url)
+                                                  ^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'str' object has no attribute 'url'
+Internal Server Error: /products/search/
+Ошибка при поиске товаров: 'str' object has no attribute 'url'
+Traceback (most recent call last):
+  File "D:\Учёба\DjangoProject\internetshop\products\views.py", line 142, in search_products
+    product['image'] = request.build_absolute_uri(product['image'].url)
+                                                  ^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'str' object has no attribute 'url'
+Internal Server Error: /products/search/
+Ошибка при поиске товаров: 'str' object has no attribute 'url'
+Traceback (most recent call last):
+  File "D:\Учёба\DjangoProject\internetshop\products\views.py", line 142, in search_products
+    product['image'] = request.build_absolute_uri(product['image'].url)
+                                                  ^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'str' object has no attribute 'url'
+Internal Server Error: /products/search/
+Not Found: /favicon.ico
+Ошибка при поиске товаров: 'str' object has no attribute 'url'
+Traceback (most recent call last):
+  File "D:\Учёба\DjangoProject\internetshop\products\views.py", line 142, in search_products
+    product['image'] = request.build_absolute_uri(product['image'].url)
+                                                  ^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'str' object has no attribute 'url'
+Internal Server Error: /products/search/
+Ошибка при поиске товаров: 'str' object has no attribute 'url'
+Traceback (most recent call last):
+  File "D:\Учёба\DjangoProject\internetshop\products\views.py", line 142, in search_products
+    product['image'] = request.build_absolute_uri(product['image'].url)
+                                                  ^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'str' object has no attribute 'url'
+Internal Server Error: /products/search/
+Ошибка при поиске товаров: 'str' object has no attribute 'url'
+Traceback (most recent call last):
+  File "D:\Учёба\DjangoProject\internetshop\products\views.py", line 142, in search_products
+    product['image'] = request.build_absolute_uri(product['image'].url)
+                                                  ^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'str' object has no attribute 'url'
+Internal Server Error: /products/search/
+D:\Учёба\DjangoProject\internetShop\products\urls.py changed, reloading.
+Watching for file changes with StatReloader
+Not Found: /favicon.ico
+Ошибка при поиске товаров: 'str' object has no attribute 'url'
+Traceback (most recent call last):
+  File "D:\Учёба\DjangoProject\internetshop\products\views.py", line 142, in search_products
+    product['image'] = request.build_absolute_uri(product['image'].url)
+                                                  ^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'str' object has no attribute 'url'
+Internal Server Error: /products/search/
+Ошибка при поиске товаров: 'str' object has no attribute 'url'
+Traceback (most recent call last):
+  File "D:\Учёба\DjangoProject\internetshop\products\views.py", line 142, in search_products
+    product['image'] = request.build_absolute_uri(product['image'].url)
+                                                  ^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'str' object has no attribute 'url'
+Internal Server Error: /products/search/
+Not Found: /favicon.ico
+Ошибка при поиске товаров: 'str' object has no attribute 'url'
+Traceback (most recent call last):
+  File "D:\Учёба\DjangoProject\internetshop\products\views.py", line 142, in search_products
+    product['image'] = request.build_absolute_uri(product['image'].url)
+                                                  ^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'str' object has no attribute 'url'
+Internal Server Error: /products/search/
+Ошибка при поиске товаров: 'str' object has no attribute 'url'
+Traceback (most recent call last):
+  File "D:\Учёба\DjangoProject\internetshop\products\views.py", line 142, in search_products
+    product['image'] = request.build_absolute_uri(product['image'].url)
+                                                  ^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'str' object has no attribute 'url'
+Internal Server Error: /products/search/
+Ошибка при поиске товаров: 'str' object has no attribute 'url'
+Traceback (most recent call last):
+  File "D:\Учёба\DjangoProject\internetshop\products\views.py", line 142, in search_products
+    product['image'] = request.build_absolute_uri(product['image'].url)
+                                                  ^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'str' object has no attribute 'url'
+Internal Server Error: /products/search/
+Not Found: /favicon.ico
+D:\Учёба\DjangoProject\internetShop\products\urls.py changed, reloading.
+Watching for file changes with StatReloader
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Ошибка при поиске товаров: 'str' object has no attribute 'url'
+Traceback (most recent call last):
+  File "D:\Учёба\DjangoProject\internetshop\products\views.py", line 142, in search_products
+    product['image'] = request.build_absolute_uri(product['image'].url)
+                                                  ^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'str' object has no attribute 'url'
+Internal Server Error: /products/search/
+D:\Учёба\DjangoProject\internetShop\products\urls.py changed, reloading.
+Watching for file changes with StatReloader
+Not Found: /favicon.ico
+Ошибка при поиске товаров: 'str' object has no attribute 'url'
+Traceback (most recent call last):
+  File "D:\Учёба\DjangoProject\internetshop\products\views.py", line 142, in search_products
+    product['image'] = request.build_absolute_uri(product['image'].url)
+                                                  ^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'str' object has no attribute 'url'
+Internal Server Error: /products/search/
+Ошибка при поиске товаров: 'str' object has no attribute 'url'
+Traceback (most recent call last):
+  File "D:\Учёба\DjangoProject\internetshop\products\views.py", line 142, in search_products
+    product['image'] = request.build_absolute_uri(product['image'].url)
+                                                  ^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'str' object has no attribute 'url'
+Internal Server Error: /products/search/
+Not Found: /favicon.ico
+Ошибка при поиске товаров: 'str' object has no attribute 'url'
+Traceback (most recent call last):
+  File "D:\Учёба\DjangoProject\internetshop\products\views.py", line 142, in search_products
+    product['image'] = request.build_absolute_uri(product['image'].url)
+                                                  ^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'str' object has no attribute 'url'
+Internal Server Error: /products/search/
+Ошибка при поиске товаров: 'str' object has no attribute 'url'
+Traceback (most recent call last):
+  File "D:\Учёба\DjangoProject\internetshop\products\views.py", line 142, in search_products
+    product['image'] = request.build_absolute_uri(product['image'].url)
+                                                  ^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'str' object has no attribute 'url'
+Internal Server Error: /products/search/
+D:\Учёба\DjangoProject\internetShop\products\models.py changed, reloading.
+Watching for file changes with StatReloader
+D:\Учёба\DjangoProject\internetShop\products\models.py changed, reloading.
+Watching for file changes with StatReloader
+D:\Учёба\DjangoProject\internetShop\products\models.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Ошибка при поиске товаров: 'str' object has no attribute 'url'
+Traceback (most recent call last):
+  File "D:\Учёба\DjangoProject\internetshop\products\views.py", line 142, in search_products
+    product['image'] = request.build_absolute_uri(product['image'].url)
+                                                  ^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'str' object has no attribute 'url'
+Internal Server Error: /products/search/
+Ошибка при поиске товаров: 'str' object has no attribute 'url'
+Traceback (most recent call last):
+  File "D:\Учёба\DjangoProject\internetshop\products\views.py", line 142, in search_products
+    product['image'] = request.build_absolute_uri(product['image'].url)
+                                                  ^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'str' object has no attribute 'url'
+Internal Server Error: /products/search/
+Ошибка при поиске товаров: 'str' object has no attribute 'url'
+Traceback (most recent call last):
+  File "D:\Учёба\DjangoProject\internetshop\products\views.py", line 142, in search_products
+    product['image'] = request.build_absolute_uri(product['image'].url)
+                                                  ^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'str' object has no attribute 'url'
+Internal Server Error: /products/search/
+D:\Учёба\DjangoProject\internetShop\products\models.py changed, reloading.
+Watching for file changes with StatReloader
+Not Found: /favicon.ico
+Ошибка при поиске товаров: 'str' object has no attribute 'url'
+Traceback (most recent call last):
+  File "D:\Учёба\DjangoProject\internetshop\products\views.py", line 142, in search_products
+    product['image'] = request.build_absolute_uri(product['image'].url)
+                                                  ^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'str' object has no attribute 'url'
+Internal Server Error: /products/search/
+Ошибка при поиске товаров: 'str' object has no attribute 'url'
+Traceback (most recent call last):
+  File "D:\Учёба\DjangoProject\internetshop\products\views.py", line 142, in search_products
+    product['image'] = request.build_absolute_uri(product['image'].url)
+                                                  ^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'str' object has no attribute 'url'
+Internal Server Error: /products/search/
+Ошибка при поиске товаров: 'str' object has no attribute 'url'
+Traceback (most recent call last):
+  File "D:\Учёба\DjangoProject\internetshop\products\views.py", line 142, in search_products
+    product['image'] = request.build_absolute_uri(product['image'].url)
+                                                  ^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'str' object has no attribute 'url'
+Internal Server Error: /products/search/
+Ошибка при поиске товаров: 'str' object has no attribute 'url'
+Traceback (most recent call last):
+  File "D:\Учёба\DjangoProject\internetshop\products\views.py", line 142, in search_products
+    product['image'] = request.build_absolute_uri(product['image'].url)
+                                                  ^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'str' object has no attribute 'url'
+Internal Server Error: /products/search/
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Ошибка при поиске товаров: 'str' object has no attribute 'url'
+Traceback (most recent call last):
+  File "D:\Учёба\DjangoProject\internetshop\products\views.py", line 142, in search_products
+    product['image'] = request.build_absolute_uri(product['image'].url)
+                                                  ^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'str' object has no attribute 'url'
+Internal Server Error: /products/search/
+Ошибка при поиске товаров: 'str' object has no attribute 'url'
+Traceback (most recent call last):
+  File "D:\Учёба\DjangoProject\internetshop\products\views.py", line 142, in search_products
+    product['image'] = request.build_absolute_uri(product['image'].url)
+                                                  ^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'str' object has no attribute 'url'
+Internal Server Error: /products/search/
+Ошибка при поиске товаров: 'str' object has no attribute 'url'
+Traceback (most recent call last):
+  File "D:\Учёба\DjangoProject\internetshop\products\views.py", line 142, in search_products
+    product['image'] = request.build_absolute_uri(product['image'].url)
+                                                  ^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'str' object has no attribute 'url'
+Internal Server Error: /products/search/
+Ошибка при поиске товаров: 'str' object has no attribute 'url'
+Traceback (most recent call last):
+  File "D:\Учёба\DjangoProject\internetshop\products\views.py", line 142, in search_products
+    product['image'] = request.build_absolute_uri(product['image'].url)
+                                                  ^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'str' object has no attribute 'url'
+Internal Server Error: /products/search/
+Ошибка при поиске товаров: 'str' object has no attribute 'url'
+Traceback (most recent call last):
+  File "D:\Учёба\DjangoProject\internetshop\products\views.py", line 142, in search_products
+    product['image'] = request.build_absolute_uri(product['image'].url)
+                                                  ^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'str' object has no attribute 'url'
+Internal Server Error: /products/search/
+Not Found: /favicon.ico
+Ошибка при поиске товаров: 'str' object has no attribute 'url'
+Traceback (most recent call last):
+  File "D:\Учёба\DjangoProject\internetshop\products\views.py", line 142, in search_products
+    product['image'] = request.build_absolute_uri(product['image'].url)
+                                                  ^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'str' object has no attribute 'url'
+Internal Server Error: /products/search/
+Ошибка при поиске товаров: 'str' object has no attribute 'url'
+Traceback (most recent call last):
+  File "D:\Учёба\DjangoProject\internetshop\products\views.py", line 142, in search_products
+    product['image'] = request.build_absolute_uri(product['image'].url)
+                                                  ^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'str' object has no attribute 'url'
+Internal Server Error: /products/search/
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Ошибка при поиске товаров: 'str' object has no attribute 'url'
+Traceback (most recent call last):
+  File "D:\Учёба\DjangoProject\internetshop\products\views.py", line 142, in search_products
+    product['image'] = request.build_absolute_uri(product['image'].url)
+                                                  ^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'str' object has no attribute 'url'
+Internal Server Error: /products/search/
+Ошибка при поиске товаров: 'str' object has no attribute 'url'
+Traceback (most recent call last):
+  File "D:\Учёба\DjangoProject\internetshop\products\views.py", line 142, in search_products
+    product['image'] = request.build_absolute_uri(product['image'].url)
+                                                  ^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'str' object has no attribute 'url'
+Internal Server Error: /products/search/
+Ошибка при поиске товаров: 'str' object has no attribute 'url'
+Traceback (most recent call last):
+  File "D:\Учёба\DjangoProject\internetshop\products\views.py", line 142, in search_products
+    product['image'] = request.build_absolute_uri(product['image'].url)
+                                                  ^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'str' object has no attribute 'url'
+Internal Server Error: /products/search/
+Ошибка при поиске товаров: 'str' object has no attribute 'url'
+Traceback (most recent call last):
+  File "D:\Учёба\DjangoProject\internetshop\products\views.py", line 142, in search_products
+    product['image'] = request.build_absolute_uri(product['image'].url)
+                                                  ^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'str' object has no attribute 'url'
+Internal Server Error: /products/search/
+Not Found: /favicon.ico
+Ошибка при поиске товаров: 'str' object has no attribute 'url'
+Traceback (most recent call last):
+  File "D:\Учёба\DjangoProject\internetshop\products\views.py", line 142, in search_products
+    product['image'] = request.build_absolute_uri(product['image'].url)
+                                                  ^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'str' object has no attribute 'url'
+Internal Server Error: /products/search/
+Not Found: /favicon.ico
+Forbidden (CSRF token from the 'X-Csrftoken' HTTP header incorrect.): /products/get_random_products/
+Forbidden (CSRF token from the 'X-Csrftoken' HTTP header incorrect.): /products/get_random_products/
+Forbidden (CSRF token from the 'X-Csrftoken' HTTP header incorrect.): /products/get_random_products/
+Forbidden (CSRF token from the 'X-Csrftoken' HTTP header incorrect.): /products/get_random_products/
+Forbidden (CSRF token from the 'X-Csrftoken' HTTP header incorrect.): /products/get_random_products/
+Forbidden (CSRF token from the 'X-Csrftoken' HTTP header incorrect.): /products/get_random_products/
+Forbidden (CSRF token from the 'X-Csrftoken' HTTP header incorrect.): /products/get_random_products/
+Forbidden (CSRF token from the 'X-Csrftoken' HTTP header incorrect.): /products/get_random_products/
+Forbidden (CSRF token from the 'X-Csrftoken' HTTP header incorrect.): /products/get_random_products/
+Forbidden (CSRF token from the 'X-Csrftoken' HTTP header incorrect.): /products/get_random_products/
+Forbidden (CSRF token from the 'X-Csrftoken' HTTP header incorrect.): /products/get_random_products/
+Forbidden (CSRF token from the 'X-Csrftoken' HTTP header incorrect.): /products/get_random_products/
+Forbidden (CSRF token from the 'X-Csrftoken' HTTP header incorrect.): /products/get_random_products/
+Forbidden (CSRF token from the 'X-Csrftoken' HTTP header incorrect.): /products/get_random_products/
+Not Found: /favicon.ico
+Forbidden (CSRF token from the 'X-Csrftoken' HTTP header incorrect.): /products/get_random_products/
+Forbidden (CSRF token from the 'X-Csrftoken' HTTP header incorrect.): /products/get_random_products/
+Not Found: /favicon.ico
+Forbidden (CSRF token from the 'X-Csrftoken' HTTP header incorrect.): /products/get_random_products/
+Forbidden (CSRF token from the 'X-Csrftoken' HTTP header incorrect.): /products/get_random_products/
+Ошибка при поиске товаров: 'str' object has no attribute 'url'
+Traceback (most recent call last):
+  File "D:\Учёба\DjangoProject\internetshop\products\views.py", line 142, in search_products
+    product['image'] = request.build_absolute_uri(product['image'].url)
+                                                  ^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'str' object has no attribute 'url'
+Internal Server Error: /products/search/
+Ошибка при поиске товаров: 'str' object has no attribute 'url'
+Traceback (most recent call last):
+  File "D:\Учёба\DjangoProject\internetshop\products\views.py", line 142, in search_products
+    product['image'] = request.build_absolute_uri(product['image'].url)
+                                                  ^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'str' object has no attribute 'url'
+Internal Server Error: /products/search/
+Forbidden (CSRF token from the 'X-Csrftoken' HTTP header incorrect.): /products/get_random_products/
+Forbidden (CSRF token from the 'X-Csrftoken' HTTP header incorrect.): /products/get_random_products/
+Forbidden (CSRF token from the 'X-Csrftoken' HTTP header incorrect.): /products/get_random_products/
+Forbidden (CSRF token from the 'X-Csrftoken' HTTP header incorrect.): /products/get_random_products/
+Forbidden (CSRF token from the 'X-Csrftoken' HTTP header incorrect.): /products/get_random_products/
+Forbidden (CSRF token from the 'X-Csrftoken' HTTP header incorrect.): /products/get_random_products/
+D:\Учёба\DjangoProject\internetShop\products\views.py changed, reloading.
+Watching for file changes with StatReloader
+Поисковый запрос: 'Булочки', найдено товаров: 1
+Not Found: /favicon.ico
+Поисковый запрос: 'Бу', найдено товаров: 1
+Поисковый запрос: 'Було', найдено товаров: 1
+Поисковый запрос: 'Булоч', найдено товаров: 1
+Поисковый запрос: 'Хл', найдено товаров: 10
+Forbidden (CSRF token from the 'X-Csrftoken' HTTP header incorrect.): /products/get_random_products/
+Forbidden (CSRF token from the 'X-Csrftoken' HTTP header incorrect.): /products/get_random_products/
+Поисковый запрос: 'було', найдено товаров: 0
+Поисковый запрос: 'Бу', найдено товаров: 1
+Forbidden (CSRF token from the 'X-Csrftoken' HTTP header incorrect.): /products/get_random_products/
+Forbidden (CSRF token from the 'X-Csrftoken' HTTP header incorrect.): /products/get_random_products/
+Not Found: /favicon.ico
+Поисковый запрос: 'було', найдено товаров: 0
+Поисковый запрос: 'Було', найдено товаров: 1
+Поисковый запрос: 'Хлу', найдено товаров: 0
+Поисковый запрос: 'Хл', найдено товаров: 10
+Forbidden (CSRF token from the 'X-Csrftoken' HTTP header incorrect.): /products/get_random_products/
+Forbidden (CSRF token from the 'X-Csrftoken' HTTP header incorrect.): /products/get_random_products/
+Поисковый запрос: 'Хлеб', найдено товаров: 10
+Forbidden (CSRF token from the 'X-Csrftoken' HTTP header incorrect.): /products/get_random_products/
+Forbidden (CSRF token from the 'X-Csrftoken' HTTP header incorrect.): /products/get_random_products/
+Forbidden (CSRF token from the 'X-Csrftoken' HTTP header incorrect.): /products/get_random_products/
+Forbidden (CSRF token from the 'X-Csrftoken' HTTP header incorrect.): /products/get_random_products/
+Forbidden (CSRF token from the 'X-Csrftoken' HTTP header incorrect.): /products/get_random_products/
+Forbidden (CSRF token from the 'X-Csrftoken' HTTP header incorrect.): /products/get_random_products/
+Forbidden (CSRF token from the 'X-Csrftoken' HTTP header incorrect.): /products/get_random_products/
+Forbidden (CSRF token from the 'X-Csrftoken' HTTP header incorrect.): /products/get_random_products/
+Forbidden (CSRF token from the 'X-Csrftoken' HTTP header incorrect.): /products/get_random_products/
+Forbidden (CSRF token from the 'X-Csrftoken' HTTP header incorrect.): /products/get_random_products/
+D:\Учёба\DjangoProject\internetShop\products\views.py changed, reloading.
+Watching for file changes with StatReloader
+Not Found: /favicon.ico
+Forbidden (CSRF token from the 'X-Csrftoken' HTTP header incorrect.): /products/get_random_products/
+Forbidden (CSRF token from the 'X-Csrftoken' HTTP header incorrect.): /products/get_random_products/
+Not Found: /favicon.ico
+Forbidden (CSRF token from the 'X-Csrftoken' HTTP header incorrect.): /products/get_random_products/
+Forbidden (CSRF token from the 'X-Csrftoken' HTTP header incorrect.): /products/get_random_products/
+Forbidden (CSRF token from the 'X-Csrftoken' HTTP header incorrect.): /products/get_random_products/
+Forbidden (CSRF token from the 'X-Csrftoken' HTTP header incorrect.): /products/get_random_products/
+D:\Учёба\DjangoProject\internetShop\products\views.py changed, reloading.
+Watching for file changes with StatReloader
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Forbidden (CSRF token from the 'X-Csrftoken' HTTP header incorrect.): /products/get_random_products/
+Forbidden (CSRF token from the 'X-Csrftoken' HTTP header incorrect.): /products/get_random_products/
+Not Found: /favicon.ico
+Ошибка при поиске товаров: 'str' object has no attribute 'url'
+Traceback (most recent call last):
+  File "D:\Учёба\DjangoProject\internetshop\products\views.py", line 142, in search_products
+    product['image'] = request.build_absolute_uri(product['image'].url)
+                                                  ^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'str' object has no attribute 'url'
+Internal Server Error: /products/search/
+Not Found: /favicon.ico
+Ошибка при поиске товаров: 'str' object has no attribute 'url'
+Traceback (most recent call last):
+  File "D:\Учёба\DjangoProject\internetshop\products\views.py", line 142, in search_products
+    product['image'] = request.build_absolute_uri(product['image'].url)
+                                                  ^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'str' object has no attribute 'url'
+Internal Server Error: /products/search/
+Ошибка при поиске товаров: 'str' object has no attribute 'url'
+Traceback (most recent call last):
+  File "D:\Учёба\DjangoProject\internetshop\products\views.py", line 142, in search_products
+    product['image'] = request.build_absolute_uri(product['image'].url)
+                                                  ^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'str' object has no attribute 'url'
+Internal Server Error: /products/search/
+Ошибка при поиске товаров: 'str' object has no attribute 'url'
+Traceback (most recent call last):
+  File "D:\Учёба\DjangoProject\internetshop\products\views.py", line 142, in search_products
+    product['image'] = request.build_absolute_uri(product['image'].url)
+                                                  ^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'str' object has no attribute 'url'
+Internal Server Error: /products/search/
+D:\Учёба\DjangoProject\internetShop\products\views.py changed, reloading.
+Watching for file changes with StatReloader
+Поисковый запрос: 'Булочки', найдено товаров: 1
+Forbidden (CSRF token from the 'X-Csrftoken' HTTP header incorrect.): /products/get_random_products/
+Forbidden (CSRF token from the 'X-Csrftoken' HTTP header incorrect.): /products/get_random_products/
+Forbidden (CSRF token from the 'X-Csrftoken' HTTP header incorrect.): /products/get_random_products/
+Forbidden (CSRF token from the 'X-Csrftoken' HTTP header incorrect.): /products/get_random_products/
+Forbidden (CSRF token from the 'X-Csrftoken' HTTP header incorrect.): /products/get_random_products/
+Forbidden (CSRF token from the 'X-Csrftoken' HTTP header incorrect.): /products/get_random_products/
+Not Found: /favicon.ico
+Forbidden (CSRF token from the 'X-Csrftoken' HTTP header incorrect.): /products/get_random_products/
+Forbidden (CSRF token from the 'X-Csrftoken' HTTP header incorrect.): /products/get_random_products/
+Not Found: /favicon.ico
+Forbidden (CSRF token from the 'X-Csrftoken' HTTP header incorrect.): /products/get_random_products/
+Forbidden (CSRF token from the 'X-Csrftoken' HTTP header incorrect.): /products/get_random_products/
+Forbidden (CSRF token from the 'X-Csrftoken' HTTP header incorrect.): /products/get_random_products/
+Forbidden (CSRF token from the 'X-Csrftoken' HTTP header incorrect.): /products/get_random_products/
+Forbidden (CSRF token from the 'X-Csrftoken' HTTP header incorrect.): /products/get_random_products/
+Forbidden (CSRF token from the 'X-Csrftoken' HTTP header incorrect.): /products/get_random_products/
+Forbidden (CSRF token from the 'X-Csrftoken' HTTP header incorrect.): /products/get_random_products/
+Forbidden (CSRF token from the 'X-Csrftoken' HTTP header incorrect.): /products/get_random_products/
+Forbidden (CSRF token from the 'X-Csrftoken' HTTP header incorrect.): /products/get_random_products/
+Forbidden (CSRF token from the 'X-Csrftoken' HTTP header incorrect.): /products/get_random_products/
+Forbidden (CSRF token from the 'X-Csrftoken' HTTP header incorrect.): /products/get_random_products/
+Forbidden (CSRF token from the 'X-Csrftoken' HTTP header incorrect.): /products/get_random_products/
+Not Found: /favicon.ico
+Поисковый запрос: '<e', найдено товаров: 0
+Forbidden (CSRF token from the 'X-Csrftoken' HTTP header incorrect.): /products/get_random_products/
+Forbidden (CSRF token from the 'X-Csrftoken' HTTP header incorrect.): /products/get_random_products/
+Поисковый запрос: 'Бул', найдено товаров: 1
+Поисковый запрос: 'Було', найдено товаров: 1
+Forbidden (CSRF token from the 'X-Csrftoken' HTTP header incorrect.): /products/get_random_products/
+Forbidden (CSRF token from the 'X-Csrftoken' HTTP header incorrect.): /products/get_random_products/
+Watching for file changes with StatReloader
+Not Found: /favicon.ico
+Поисковый запрос: 'бу', найдено товаров: 1
+Поисковый запрос: 'бу', найдено товаров: 1
+Поисковый запрос: 'було', найдено товаров: 0
+Поисковый запрос: 'Бу', найдено товаров: 1
+D:\Учёба\DjangoProject\internetShop\products\views.py changed, reloading.
+Watching for file changes with StatReloader
+Поисковый запрос: 'бу', найдено: 1 категорий и 1 товаров
+Поисковый запрос: 'Було', найдено: 0 категорий и 1 товаров
+Поисковый запрос: 'Хле', найдено: 1 категорий и 10 товаров
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Поисковый запрос: 'Хлеб', найдено: 1 категорий и 10 товаров
+D:\Учёба\DjangoProject\internetShop\products\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\Учёба\DjangoProject\internetShop\products\views.py changed, reloading.
+Watching for file changes with StatReloader
+Not Found: /favicon.ico
+Поисковый запрос: 'Було', найдено категорий: 0, товаров: 1
+Поисковый запрос: 'хлеб', найдено категорий: 0, товаров: 1
+Поисковый запрос: 'Белы', найдено категорий: 0, товаров: 1
+Поисковый запрос: 'Хлеб', найдено категорий: 1, товаров: 10
+Поисковый запрос: 'Хлеб', найдено категорий: 1, товаров: 10
+D:\Учёба\DjangoProject\internetShop\products\views.py changed, reloading.
+Watching for file changes with StatReloader
+Not Found: /favicon.ico
+Изображение для продукта 2: http://127.0.0.1:8000/media/product_media/%D1%87%D0%B5%D1%80%D0%BD%D1%8B%D0%B9_%D1%85%D0%BB%D0%B5%D0%B1.jpg
+Изображение для продукта 4: http://127.0.0.1:8000/media/product_media/3fbe81879eb8b0c0.webp
+Изображение для продукта 6: http://127.0.0.1:8000/media/product_media/661c88c11a04e.jpg
+Изображение для продукта 7: http://127.0.0.1:8000/media/product_media/726732_1670250866_f094c821-697b-4f38-806d-ccce4ab97669.jpg
+Изображение для продукта 8: http://127.0.0.1:8000/media/product_media/100026650688b0.webp
+Изображение для продукта 9: http://127.0.0.1:8000/media/product_media/100026674421b0.webp
+Изображение для продукта 10: http://127.0.0.1:8000/media/product_media/100029549704b0.webp
+Изображение для продукта 11: http://127.0.0.1:8000/media/product_media/fbb0ccd7347189e84b6335f7b1bb.webp
+Изображение для продукта 12: http://127.0.0.1:8000/media/product_media/l5igms6ymc82217mp4e42yc6rnm2qwai.jpg
+Изображение для продукта 13: http://127.0.0.1:8000/media/product_media/orig.webp
+Поисковый запрос: 'Хлеб', найдено категорий: 1, товаров: 10
+Изображение для продукта 1: http://127.0.0.1:8000/media/product_media/%D0%B1%D0%B5%D0%BB%D1%8B%D0%B9_%D1%85%D0%BB%D0%B5%D0%B1.png
+Поисковый запрос: 'хлеб', найдено категорий: 0, товаров: 1
+D:\Учёба\DjangoProject\internetShop\products\views.py changed, reloading.
+Watching for file changes with StatReloader
+Not Found: /favicon.ico
+Обработанный поисковый запрос: 'хлеб'
+Изображение для продукта 1: http://127.0.0.1:8000/media/product_media/%D0%B1%D0%B5%D0%BB%D1%8B%D0%B9_%D1%85%D0%BB%D0%B5%D0%B1.png
+Поисковый запрос: 'хлеб', найдено категорий: 0, товаров: 1
+Обработанный поисковый запрос: 'белый'
+Поисковый запрос: 'белый', найдено категорий: 0, товаров: 0
+Обработанный поисковый запрос: 'бу'
+Изображение для продукта 12: http://127.0.0.1:8000/media/product_media/l5igms6ymc82217mp4e42yc6rnm2qwai.jpg
+Поисковый запрос: 'бу', найдено категорий: 1, товаров: 1
+Обработанный поисковый запрос: 'белы'
+Поисковый запрос: 'белы', найдено категорий: 0, товаров: 0
+Обработанный поисковый запрос: 'белый'
+Поисковый запрос: 'белый', найдено категорий: 0, товаров: 0
+Обработанный поисковый запрос: 'белый'
+Поисковый запрос: 'белый', найдено категорий: 0, товаров: 0
+Обработанный поисковый запрос: 'белыйы'
+Поисковый запрос: 'белыйы', найдено категорий: 0, товаров: 0
+Обработанный поисковый запрос: 'белый'
+Поисковый запрос: 'белый', найдено категорий: 0, товаров: 0
+Обработанный поисковый запрос: 'белый'
+Поисковый запрос: 'белый', найдено категорий: 0, товаров: 0
+Обработанный поисковый запрос: 'белый'
+Поисковый запрос: 'белый', найдено категорий: 0, товаров: 0
+Обработанный поисковый запрос: 'хлеб'
+Изображение для продукта 1: http://127.0.0.1:8000/media/product_media/%D0%B1%D0%B5%D0%BB%D1%8B%D0%B9_%D1%85%D0%BB%D0%B5%D0%B1.png
+Поисковый запрос: 'хлеб', найдено категорий: 0, товаров: 1
+Обработанный поисковый запрос: 'хле'
+Изображение для продукта 1: http://127.0.0.1:8000/media/product_media/%D0%B1%D0%B5%D0%BB%D1%8B%D0%B9_%D1%85%D0%BB%D0%B5%D0%B1.png
+Поисковый запрос: 'хле', найдено категорий: 0, товаров: 1
+Обработанный поисковый запрос: 'бе'
+Изображение для продукта 4: http://127.0.0.1:8000/media/product_media/3fbe81879eb8b0c0.webp
+Изображение для продукта 9: http://127.0.0.1:8000/media/product_media/100026674421b0.webp
+Изображение для продукта 10: http://127.0.0.1:8000/media/product_media/100029549704b0.webp
+Изображение для продукта 11: http://127.0.0.1:8000/media/product_media/fbb0ccd7347189e84b6335f7b1bb.webp
+Поисковый запрос: 'бе', найдено категорий: 0, товаров: 4
+Обработанный поисковый запрос: 'цельно'
+Изображение для продукта 4: http://127.0.0.1:8000/media/product_media/3fbe81879eb8b0c0.webp
+Изображение для продукта 6: http://127.0.0.1:8000/media/product_media/661c88c11a04e.jpg
+Изображение для продукта 10: http://127.0.0.1:8000/media/product_media/100029549704b0.webp
+Поисковый запрос: 'цельно', найдено категорий: 0, товаров: 3
+Обработанный поисковый запрос: 'без'
+Изображение для продукта 4: http://127.0.0.1:8000/media/product_media/3fbe81879eb8b0c0.webp
+Изображение для продукта 9: http://127.0.0.1:8000/media/product_media/100026674421b0.webp
+Изображение для продукта 10: http://127.0.0.1:8000/media/product_media/100029549704b0.webp
+Изображение для продукта 11: http://127.0.0.1:8000/media/product_media/fbb0ccd7347189e84b6335f7b1bb.webp
+Поисковый запрос: 'без', найдено категорий: 0, товаров: 4
+Обработанный поисковый запрос: 'хлеб'
+Изображение для продукта 1: http://127.0.0.1:8000/media/product_media/%D0%B1%D0%B5%D0%BB%D1%8B%D0%B9_%D1%85%D0%BB%D0%B5%D0%B1.png
+Поисковый запрос: 'хлеб', найдено категорий: 0, товаров: 1
+Обработанный поисковый запрос: 'хле'
+Изображение для продукта 1: http://127.0.0.1:8000/media/product_media/%D0%B1%D0%B5%D0%BB%D1%8B%D0%B9_%D1%85%D0%BB%D0%B5%D0%B1.png
+Поисковый запрос: 'хле', найдено категорий: 0, товаров: 1
+Обработанный поисковый запрос: 'хл'
+Изображение для продукта 1: http://127.0.0.1:8000/media/product_media/%D0%B1%D0%B5%D0%BB%D1%8B%D0%B9_%D1%85%D0%BB%D0%B5%D0%B1.png
+Поисковый запрос: 'хл', найдено категорий: 0, товаров: 1
+Обработанный поисковый запрос: 'хелб'
+Поисковый запрос: 'хелб', найдено категорий: 0, товаров: 0
+Обработанный поисковый запрос: 'хлеб'
+Изображение для продукта 1: http://127.0.0.1:8000/media/product_media/%D0%B1%D0%B5%D0%BB%D1%8B%D0%B9_%D1%85%D0%BB%D0%B5%D0%B1.png
+Поисковый запрос: 'хлеб', найдено категорий: 0, товаров: 1
+Обработанный поисковый запрос: 'хлеб'
+Изображение для продукта 1: http://127.0.0.1:8000/media/product_media/%D0%B1%D0%B5%D0%BB%D1%8B%D0%B9_%D1%85%D0%BB%D0%B5%D0%B1.png
+Поисковый запрос: 'хлеб', найдено категорий: 0, товаров: 1
+Обработанный поисковый запрос: 'хл'
+Изображение для продукта 1: http://127.0.0.1:8000/media/product_media/%D0%B1%D0%B5%D0%BB%D1%8B%D0%B9_%D1%85%D0%BB%D0%B5%D0%B1.png
+Поисковый запрос: 'хл', найдено категорий: 0, товаров: 1
+Обработанный поисковый запрос: 'хде'
+Поисковый запрос: 'хде', найдено категорий: 0, товаров: 0
+Обработанный поисковый запрос: 'хле'
+Изображение для продукта 1: http://127.0.0.1:8000/media/product_media/%D0%B1%D0%B5%D0%BB%D1%8B%D0%B9_%D1%85%D0%BB%D0%B5%D0%B1.png
+Поисковый запрос: 'хле', найдено категорий: 0, товаров: 1
+Обработанный поисковый запрос: 'хл'
+Изображение для продукта 1: http://127.0.0.1:8000/media/product_media/%D0%B1%D0%B5%D0%BB%D1%8B%D0%B9_%D1%85%D0%BB%D0%B5%D0%B1.png
+Поисковый запрос: 'хл', найдено категорий: 0, товаров: 1
+Обработанный поисковый запрос: 'хлеб'
+Изображение для продукта 1: http://127.0.0.1:8000/media/product_media/%D0%B1%D0%B5%D0%BB%D1%8B%D0%B9_%D1%85%D0%BB%D0%B5%D0%B1.png
+Поисковый запрос: 'хлеб', найдено категорий: 0, товаров: 1
+Обработанный поисковый запрос: 'хле'
+Изображение для продукта 1: http://127.0.0.1:8000/media/product_media/%D0%B1%D0%B5%D0%BB%D1%8B%D0%B9_%D1%85%D0%BB%D0%B5%D0%B1.png
+Поисковый запрос: 'хле', найдено категорий: 0, товаров: 1
+Обработанный поисковый запрос: 'хдеб'
+Поисковый запрос: 'хдеб', найдено категорий: 0, товаров: 0
+Обработанный поисковый запрос: 'хлеб'
+Изображение для продукта 1: http://127.0.0.1:8000/media/product_media/%D0%B1%D0%B5%D0%BB%D1%8B%D0%B9_%D1%85%D0%BB%D0%B5%D0%B1.png
+Поисковый запрос: 'хлеб', найдено категорий: 0, товаров: 1
+Обработанный поисковый запрос: 'хле'
+Изображение для продукта 1: http://127.0.0.1:8000/media/product_media/%D0%B1%D0%B5%D0%BB%D1%8B%D0%B9_%D1%85%D0%BB%D0%B5%D0%B1.png
+Поисковый запрос: 'хле', найдено категорий: 0, товаров: 1
+Обработанный поисковый запрос: 'хл'
+Изображение для продукта 1: http://127.0.0.1:8000/media/product_media/%D0%B1%D0%B5%D0%BB%D1%8B%D0%B9_%D1%85%D0%BB%D0%B5%D0%B1.png
+Поисковый запрос: 'хл', найдено категорий: 0, товаров: 1
+Обработанный поисковый запрос: 'хе'
+Поисковый запрос: 'хе', найдено категорий: 0, товаров: 0
+Обработанный поисковый запрос: 'хде'
+Поисковый запрос: 'хде', найдено категорий: 0, товаров: 0
+Обработанный поисковый запрос: 'хе'
+Поисковый запрос: 'хе', найдено категорий: 0, товаров: 0
+Обработанный поисковый запрос: 'хле'
+Изображение для продукта 1: http://127.0.0.1:8000/media/product_media/%D0%B1%D0%B5%D0%BB%D1%8B%D0%B9_%D1%85%D0%BB%D0%B5%D0%B1.png
+Поисковый запрос: 'хле', найдено категорий: 0, товаров: 1
+Not Found: /favicon.ico
+Обработанный поисковый запрос: 'хлеб'
+Изображение для продукта 1: http://127.0.0.1:8000/media/product_media/%D0%B1%D0%B5%D0%BB%D1%8B%D0%B9_%D1%85%D0%BB%D0%B5%D0%B1.png
+Поисковый запрос: 'хлеб', найдено категорий: 0, товаров: 1
+Обработанный поисковый запрос: 'хле'
+Изображение для продукта 1: http://127.0.0.1:8000/media/product_media/%D0%B1%D0%B5%D0%BB%D1%8B%D0%B9_%D1%85%D0%BB%D0%B5%D0%B1.png
+Поисковый запрос: 'хле', найдено категорий: 0, товаров: 1
+Обработанный поисковый запрос: 'хлеб'
+Изображение для продукта 1: http://127.0.0.1:8000/media/product_media/%D0%B1%D0%B5%D0%BB%D1%8B%D0%B9_%D1%85%D0%BB%D0%B5%D0%B1.png
+Поисковый запрос: 'хлеб', найдено категорий: 0, товаров: 1
+Обработанный поисковый запрос: 'хлеб'
+Изображение для продукта 1: http://127.0.0.1:8000/media/product_media/%D0%B1%D0%B5%D0%BB%D1%8B%D0%B9_%D1%85%D0%BB%D0%B5%D0%B1.png
+Поисковый запрос: 'хлеб', найдено категорий: 0, товаров: 1
+Обработанный поисковый запрос: 'бул'
+Поисковый запрос: 'бул', найдено категорий: 1, товаров: 0
+Обработанный поисковый запрос: 'хлеб'
+Изображение для продукта 1: http://127.0.0.1:8000/media/product_media/%D0%B1%D0%B5%D0%BB%D1%8B%D0%B9_%D1%85%D0%BB%D0%B5%D0%B1.png
+Поисковый запрос: 'хлеб', найдено категорий: 0, товаров: 1
+Обработанный поисковый запрос: 'хле'
+Изображение для продукта 1: http://127.0.0.1:8000/media/product_media/%D0%B1%D0%B5%D0%BB%D1%8B%D0%B9_%D1%85%D0%BB%D0%B5%D0%B1.png
+Поисковый запрос: 'хле', найдено категорий: 0, товаров: 1
+Обработанный поисковый запрос: 'хл'
+Изображение для продукта 1: http://127.0.0.1:8000/media/product_media/%D0%B1%D0%B5%D0%BB%D1%8B%D0%B9_%D1%85%D0%BB%D0%B5%D0%B1.png
+Поисковый запрос: 'хл', найдено категорий: 0, товаров: 1
+Not Found: /favicon.ico
+D:\Учёба\DjangoProject\internetShop\products\views.py changed, reloading.
+Watching for file changes with StatReloader
+Not Found: /favicon.ico
+Поисковый запрос: 'Хд', найдено категорий: 0, товаров: 0
+Изображение для продукта 2: http://127.0.0.1:8000/media/product_media/%D1%87%D0%B5%D1%80%D0%BD%D1%8B%D0%B9_%D1%85%D0%BB%D0%B5%D0%B1.jpg
+Изображение для продукта 4: http://127.0.0.1:8000/media/product_media/3fbe81879eb8b0c0.webp
+Изображение для продукта 6: http://127.0.0.1:8000/media/product_media/661c88c11a04e.jpg
+Изображение для продукта 7: http://127.0.0.1:8000/media/product_media/726732_1670250866_f094c821-697b-4f38-806d-ccce4ab97669.jpg
+Изображение для продукта 8: http://127.0.0.1:8000/media/product_media/100026650688b0.webp
+Изображение для продукта 9: http://127.0.0.1:8000/media/product_media/100026674421b0.webp
+Изображение для продукта 10: http://127.0.0.1:8000/media/product_media/100029549704b0.webp
+Изображение для продукта 11: http://127.0.0.1:8000/media/product_media/fbb0ccd7347189e84b6335f7b1bb.webp
+Изображение для продукта 12: http://127.0.0.1:8000/media/product_media/l5igms6ymc82217mp4e42yc6rnm2qwai.jpg
+Изображение для продукта 13: http://127.0.0.1:8000/media/product_media/orig.webp
+Поисковый запрос: 'Хлеб', найдено категорий: 1, товаров: 10
+Изображение для продукта 1: http://127.0.0.1:8000/media/product_media/%D0%B1%D0%B5%D0%BB%D1%8B%D0%B9_%D1%85%D0%BB%D0%B5%D0%B1.png
+Поисковый запрос: 'хлеб', найдено категорий: 0, товаров: 1
+Изображение для продукта 1: http://127.0.0.1:8000/media/product_media/%D0%B1%D0%B5%D0%BB%D1%8B%D0%B9_%D1%85%D0%BB%D0%B5%D0%B1.png
+Поисковый запрос: 'хле', найдено категорий: 0, товаров: 1
+D:\Учёба\DjangoProject\internetShop\products\views.py changed, reloading.
+Watching for file changes with StatReloader
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+D:\Учёба\DjangoProject\internetShop\products\views.py changed, reloading.
+Watching for file changes with StatReloader
+Изображение для продукта 2: http://127.0.0.1:8000/media/product_media/%D1%87%D0%B5%D1%80%D0%BD%D1%8B%D0%B9_%D1%85%D0%BB%D0%B5%D0%B1.jpg
+Изображение для продукта 4: http://127.0.0.1:8000/media/product_media/3fbe81879eb8b0c0.webp
+Изображение для продукта 6: http://127.0.0.1:8000/media/product_media/661c88c11a04e.jpg
+Изображение для продукта 7: http://127.0.0.1:8000/media/product_media/726732_1670250866_f094c821-697b-4f38-806d-ccce4ab97669.jpg
+Изображение для продукта 8: http://127.0.0.1:8000/media/product_media/100026650688b0.webp
+Изображение для продукта 9: http://127.0.0.1:8000/media/product_media/100026674421b0.webp
+Изображение для продукта 10: http://127.0.0.1:8000/media/product_media/100029549704b0.webp
+Изображение для продукта 11: http://127.0.0.1:8000/media/product_media/fbb0ccd7347189e84b6335f7b1bb.webp
+Изображение для продукта 12: http://127.0.0.1:8000/media/product_media/l5igms6ymc82217mp4e42yc6rnm2qwai.jpg
+Изображение для продукта 13: http://127.0.0.1:8000/media/product_media/orig.webp
+Поисковый запрос: 'Хлеб', найдено категорий: 1, товаров: 10
+Not Found: /favicon.ico
+Изображение для продукта 2: http://127.0.0.1:8000/media/product_media/%D1%87%D0%B5%D1%80%D0%BD%D1%8B%D0%B9_%D1%85%D0%BB%D0%B5%D0%B1.jpg
+Изображение для продукта 4: http://127.0.0.1:8000/media/product_media/3fbe81879eb8b0c0.webp
+Изображение для продукта 6: http://127.0.0.1:8000/media/product_media/661c88c11a04e.jpg
+Изображение для продукта 7: http://127.0.0.1:8000/media/product_media/726732_1670250866_f094c821-697b-4f38-806d-ccce4ab97669.jpg
+Изображение для продукта 8: http://127.0.0.1:8000/media/product_media/100026650688b0.webp
+Изображение для продукта 9: http://127.0.0.1:8000/media/product_media/100026674421b0.webp
+Изображение для продукта 10: http://127.0.0.1:8000/media/product_media/100029549704b0.webp
+Изображение для продукта 11: http://127.0.0.1:8000/media/product_media/fbb0ccd7347189e84b6335f7b1bb.webp
+Изображение для продукта 12: http://127.0.0.1:8000/media/product_media/l5igms6ymc82217mp4e42yc6rnm2qwai.jpg
+Изображение для продукта 13: http://127.0.0.1:8000/media/product_media/orig.webp
+Поисковый запрос: 'Хлеб', найдено категорий: 1, товаров: 10
+Not Found: /favicon.ico
+Изображение для продукта 2: http://127.0.0.1:8000/media/product_media/%D1%87%D0%B5%D1%80%D0%BD%D1%8B%D0%B9_%D1%85%D0%BB%D0%B5%D0%B1.jpg
+Изображение для продукта 4: http://127.0.0.1:8000/media/product_media/3fbe81879eb8b0c0.webp
+Изображение для продукта 6: http://127.0.0.1:8000/media/product_media/661c88c11a04e.jpg
+Изображение для продукта 7: http://127.0.0.1:8000/media/product_media/726732_1670250866_f094c821-697b-4f38-806d-ccce4ab97669.jpg
+Изображение для продукта 8: http://127.0.0.1:8000/media/product_media/100026650688b0.webp
+Изображение для продукта 9: http://127.0.0.1:8000/media/product_media/100026674421b0.webp
+Изображение для продукта 10: http://127.0.0.1:8000/media/product_media/100029549704b0.webp
+Изображение для продукта 11: http://127.0.0.1:8000/media/product_media/fbb0ccd7347189e84b6335f7b1bb.webp
+Изображение для продукта 12: http://127.0.0.1:8000/media/product_media/l5igms6ymc82217mp4e42yc6rnm2qwai.jpg
+Изображение для продукта 13: http://127.0.0.1:8000/media/product_media/orig.webp
+Поисковый запрос: 'Хлеб', найдено категорий: 1, товаров: 10
+Изображение для продукта 1: http://127.0.0.1:8000/media/product_media/%D0%B1%D0%B5%D0%BB%D1%8B%D0%B9_%D1%85%D0%BB%D0%B5%D0%B1.png
+Поисковый запрос: 'хлеб', найдено категорий: 0, товаров: 1
+D:\Учёба\DjangoProject\internetShop\products\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\Учёба\DjangoProject\internetShop\products\views.py changed, reloading.
+Watching for file changes with StatReloader
+Not Found: /favicon.ico
+Ошибка при поиске товаров: 'str' object has no attribute 'url'
+Traceback (most recent call last):
+  File "D:\Учёба\DjangoProject\internetshop\products\views.py", line 160, in search_products
+    'image': request.build_absolute_uri(product['image'].url) if product['image'] else ''
+                                        ^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'str' object has no attribute 'url'
+Internal Server Error: /products/search/
+Not Found: /favicon.ico
+Ошибка при поиске товаров: 'str' object has no attribute 'url'
+Traceback (most recent call last):
+  File "D:\Учёба\DjangoProject\internetshop\products\views.py", line 160, in search_products
+    'image': request.build_absolute_uri(product['image'].url) if product['image'] else ''
+                                        ^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'str' object has no attribute 'url'
+Internal Server Error: /products/search/
+Ошибка при поиске товаров: 'str' object has no attribute 'url'
+Traceback (most recent call last):
+  File "D:\Учёба\DjangoProject\internetshop\products\views.py", line 160, in search_products
+    'image': request.build_absolute_uri(product['image'].url) if product['image'] else ''
+                                        ^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'str' object has no attribute 'url'
+Internal Server Error: /products/search/
+Not Found: /favicon.ico
+Ошибка при поиске товаров: 'str' object has no attribute 'url'
+Traceback (most recent call last):
+  File "D:\Учёба\DjangoProject\internetshop\products\views.py", line 160, in search_products
+    'image': request.build_absolute_uri(product['image'].url) if product['image'] else ''
+                                        ^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'str' object has no attribute 'url'
+Internal Server Error: /products/search/
+Ошибка при поиске товаров: 'str' object has no attribute 'url'
+Traceback (most recent call last):
+  File "D:\Учёба\DjangoProject\internetshop\products\views.py", line 160, in search_products
+    'image': request.build_absolute_uri(product['image'].url) if product['image'] else ''
+                                        ^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'str' object has no attribute 'url'
+Internal Server Error: /products/search/
+Ошибка при поиске товаров: 'str' object has no attribute 'url'
+Traceback (most recent call last):
+  File "D:\Учёба\DjangoProject\internetshop\products\views.py", line 160, in search_products
+    'image': request.build_absolute_uri(product['image'].url) if product['image'] else ''
+                                        ^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'str' object has no attribute 'url'
+Internal Server Error: /products/search/
+D:\Учёба\DjangoProject\internetShop\products\views.py changed, reloading.
+Watching for file changes with StatReloader
+Not Found: /favicon.ico
+D:\Учёба\DjangoProject\internetShop\products\views.py changed, reloading.
+Watching for file changes with StatReloader
+Not Found: /favicon.ico
+Изображение для продукта 3: http://127.0.0.1:8000/media/product_media/%D0%B1%D1%83%D0%BB%D0%BE%D1%87%D0%BA%D0%B8_%D1%81_%D0%BC%D0%B0%D0%BA%D0%BE%D0%BC.jpg
+Поисковый запрос: 'Було', найдено категорий: 0, товаров: 1
+Изображение для продукта 3: http://127.0.0.1:8000/media/product_media/%D0%B1%D1%83%D0%BB%D0%BE%D1%87%D0%BA%D0%B8_%D1%81_%D0%BC%D0%B0%D0%BA%D0%BE%D0%BC.jpg
+Поисковый запрос: 'Бу', найдено категорий: 0, товаров: 1
+Изображение для продукта 2: http://127.0.0.1:8000/media/product_media/%D1%87%D0%B5%D1%80%D0%BD%D1%8B%D0%B9_%D1%85%D0%BB%D0%B5%D0%B1.jpg
+Изображение для продукта 4: http://127.0.0.1:8000/media/product_media/3fbe81879eb8b0c0.webp
+Изображение для продукта 6: http://127.0.0.1:8000/media/product_media/661c88c11a04e.jpg
+Изображение для продукта 7: http://127.0.0.1:8000/media/product_media/726732_1670250866_f094c821-697b-4f38-806d-ccce4ab97669.jpg
+Изображение для продукта 8: http://127.0.0.1:8000/media/product_media/100026650688b0.webp
+Изображение для продукта 9: http://127.0.0.1:8000/media/product_media/100026674421b0.webp
+Изображение для продукта 10: http://127.0.0.1:8000/media/product_media/100029549704b0.webp
+Изображение для продукта 11: http://127.0.0.1:8000/media/product_media/fbb0ccd7347189e84b6335f7b1bb.webp
+Изображение для продукта 12: http://127.0.0.1:8000/media/product_media/l5igms6ymc82217mp4e42yc6rnm2qwai.jpg
+Изображение для продукта 13: http://127.0.0.1:8000/media/product_media/orig.webp
+Поисковый запрос: 'Хлеб', найдено категорий: 1, товаров: 10
+Поисковый запрос: 'було', найдено категорий: 1, товаров: 0
+Изображение для продукта 1: http://127.0.0.1:8000/media/product_media/%D0%B1%D0%B5%D0%BB%D1%8B%D0%B9_%D1%85%D0%BB%D0%B5%D0%B1.png
+Поисковый запрос: 'хлеб', найдено категорий: 0, товаров: 1
