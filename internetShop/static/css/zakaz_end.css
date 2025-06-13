@@ -1,0 +1,509 @@
+/* Основные стили страницы */
+.content {
+    margin-right: 0px;
+    padding: 0px;
+    margin-top: 130px;
+}
+
+.order-wrapper {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    background-color: #f5f5f5;
+    min-height: 100vh;
+    margin-right: 0; /* Убираем отступ справа */
+}
+
+.order-container {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto; /* Центрируем контейнер без отступов */
+    padding: 0;
+    background: transparent;
+    box-shadow: none;
+    animation: fadeIn 0.3s ease-out;
+}
+
+.order-sections-container {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 20px;
+    margin-bottom: 20px;
+    position: relative;
+    width: 100%; /* Занимаем всю доступную ширину */
+}
+
+/* Стили для секций */
+.delivery-section,
+.order-section {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    padding: 30px;
+    margin-bottom: 20px;
+}
+
+.payment-section {
+    position: sticky;
+    top: 140px;
+    height: fit-content;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    padding: 30px;
+}
+
+/* Заголовки */
+.main-title {
+    font-size: 28px;
+    color: #e74c3c;
+    text-align: center;
+    margin-bottom: 30px;
+    font-weight: 600;
+    margin-top: 0;
+}
+
+.section-title {
+    font-size: 20px;
+    color: #e74c3c;
+    margin-bottom: 20px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid #e74c3c;
+    font-weight: 500;
+}
+
+/* Секция выбора доставки */
+.delivery-options {
+    display: flex;
+    margin-bottom: 25px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.option {
+    padding: 12px 25px;
+    cursor: pointer;
+    border-bottom: 3px solid transparent;
+    transition: all 0.2s;
+}
+
+.option.active {
+    border-bottom: 3px solid #e74c3c;
+    font-weight: bold;
+}
+
+.option h3 {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+/* Блок с адресом */
+.address-section,
+.delivery-time,
+.order-section {
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #eee;
+}
+
+.address-section h4 {
+    font-size: 16px;
+    margin-bottom: 15px;
+    font-weight: 500;
+}
+
+.address-details {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.detail {
+    display: flex;
+    flex-direction: column;
+}
+
+.detail label {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 5px;
+}
+
+.detail input {
+    padding: 10px 12px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 14px;
+    transition: border 0.3s;
+}
+
+.detail input:focus {
+    border-color: #e74c3c;
+    outline: none;
+}
+
+/* Поля для комментариев */
+.courier-comment,
+.order-comment {
+    margin-bottom: 20px;
+}
+
+.courier-comment label,
+.order-comment label {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 8px;
+    display: block;
+}
+
+.courier-comment textarea,
+.order-comment textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 14px;
+    resize: vertical;
+    min-height: 80px;
+    transition: border 0.3s;
+}
+
+.courier-comment textarea:focus,
+.order-comment textarea:focus {
+    border-color: #e74c3c;
+    outline: none;
+}
+
+/* Информация о получателе */
+.recipient-info {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.recipient-field {
+    display: flex;
+    flex-direction: column;
+}
+
+.recipient-field label {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 5px;
+}
+
+.recipient-field input {
+    padding: 10px 12px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Время доставки */
+.delivery-time h4 {
+    font-size: 16px;
+    margin-bottom: 10px;
+    font-weight: 500;
+}
+
+.delivery-time p {
+    margin: 0;
+    font-size: 14px;
+    color: #333;
+}
+
+/* Секция с товарами */
+.order-items {
+    margin-bottom: 25px;
+}
+
+.order-item {
+    display: flex;
+    align-items: center;
+    padding: 15px 0;
+    border-bottom: 1px solid #f5f5f5;
+    position: relative;
+}
+
+.order-item:last-child {
+    border-bottom: none;
+}
+
+.item-image {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-right: 15px;
+    border: 1px solid #eee;
+}
+
+.item-info {
+    flex: 1;
+}
+
+.item-info h4 {
+    margin: 0 0 5px 0;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.item-price {
+    font-weight: bold;
+    color: #e74c3c;
+}
+
+.item-quantity {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    background-color: #e74c3c;
+    padding: 5px 10px;
+    border-radius: 20px;
+    margin-left: 15px;
+}
+
+.quantity-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 25px;
+    height: 25px;
+    min-width: 25px;
+    min-height: 25px;
+    background-color: white;
+    border: none;
+    border-radius: 50% !important;
+    overflow: hidden;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    margin: 0 2px;
+    position: relative;
+}
+
+.quantity-btn:hover {
+    background-color: #f0ebeb;
+}
+
+/* Стили для кнопки "−" */
+.quantity-btn.decrease::before {
+    content: '';
+    position: absolute;
+    width: 12px;
+    height: 2px;
+    background-color: #e74c3c;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Стили для кнопки "+" */
+.quantity-btn.increase::before,
+.quantity-btn.increase::after {
+    content: '';
+    position: absolute;
+    background-color: #e74c3c;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.quantity-btn.increase::before {
+    width: 12px;
+    height: 2px;
+}
+
+.quantity-btn.increase::after {
+    width: 2px;
+    height: 12px;
+}
+
+.quantity-value {
+    font-size: 1.2rem;
+    color: white;
+    min-width: 30px;
+    text-align: center;
+    font-weight: bold;
+}
+
+/* Кнопка очистки корзины */
+.order-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.clear-cart-btn {
+    background: none;
+    border: 1px solid #e74c3c;
+    color: #e74c3c;
+    padding: 12px;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-weight: 500;
+}
+
+.clear-cart-btn:hover {
+    background-color: #e74c3c;
+    color: white;
+}
+
+/* Секция оплаты */
+.payment-btn {
+    width: 100%;
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    padding: 14px;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-bottom: 20px;
+    transition: background-color 0.3s;
+    font-weight: 500;
+}
+
+.payment-btn:hover {
+    background-color: #c0392b;
+}
+
+.payment-details {
+    margin: 25px 0;
+}
+
+.detail-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 0;
+    font-size: 15px;
+    color: #555;
+}
+
+.total-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 0;
+    margin-top: 10px;
+    border-top: 1px solid #eee;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.total-price {
+    color: #e74c3c;
+}
+
+/* Кнопка подтверждения */
+.confirm-btn {
+    width: 100%;
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    padding: 16px;
+    border-radius: 6px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background-color 0.3s;
+}
+
+.confirm-btn:hover {
+    background-color: #c0392b;
+}
+
+.payment-fields {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.payment-field {
+    display: flex;
+    flex-direction: column;
+}
+
+.payment-field label {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 5px;
+}
+
+.payment-field input {
+    padding: 10px 12px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 14px;
+    transition: border 0.3s;
+}
+
+.payment-field input:focus {
+    border-color: #e74c3c;
+    outline: none;
+}
+
+/* Анимации */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Адаптация для мобильных */
+@media (max-width: 992px) {
+    .order-sections-container {
+        grid-template-columns: 1fr;
+    }
+
+    .payment-section {
+        position: static;
+        order: -1;
+    }
+}
+
+@media (max-width: 768px) {
+    .order-wrapper {
+        padding: 15px;
+    }
+
+    .address-details,
+    .recipient-info {
+        grid-template-columns: 1fr;
+    }
+
+    .main-title {
+        font-size: 24px;
+    }
+
+    .section-title {
+        font-size: 18px;
+    }
+
+    .option {
+        padding: 10px 15px;
+    }
+
+    .item-image {
+        width: 50px;
+        height: 50px;
+    }
+
+    .confirm-btn {
+        padding: 14px;
+        font-size: 16px;
+    }
+
+    .item-quantity {
+        position: absolute;
+        right: 0;
+        bottom: 15px;
+    }
+}

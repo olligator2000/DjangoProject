@@ -37,7 +37,9 @@
             <div class="total-label">Итого:</div>
             <div class="total-price">{{ total_sum }} ₽</div>
         </div>
-        <button class="checkout-btn">Далее</button>
+        <a href="{% url 'products:zakaz_end' %}">
+            <button class="checkout-btn">Далее</button>
+        </a>
     </div>
 </div>
 {% else %}

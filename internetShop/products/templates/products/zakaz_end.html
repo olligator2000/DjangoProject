@@ -1,0 +1,171 @@
+{% extends 'products/base.html' %}
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/zakaz_end.css' %}">
+{% endblock %}
+
+{% block content %}
+<form method="post">
+    {% csrf_token %}
+    <div class="order-wrapper">
+        <div class="order-container">
+            <h1 class="main-title">Оформление заказа</h1>
+
+            <div class="order-sections-container">
+                <div>
+                    <div class="delivery-section">
+                        <h2 class="section-title">Условия доставки</h2>
+                        <div class="delivery-options">
+                            <div class="option active" id="standard-option">
+                                <h3>Стандарт</h3>
+                            </div>
+                            <div class="option" id="other-option">
+                                <h3>Заказ другому</h3>
+                            </div>
+                        </div>
+                        <div class="address-section">
+                            <h4>{{ form.address.value|default:"Станкозаводская улица, 3, подъезд 4" }}</h4>
+                            <div class="address-details">
+                                <div class="detail">
+                                    <label>{{ form.apartment_office.label }}</label>
+                                    {{ form.apartment_office }}
+                                </div>
+                                <div class="detail">
+                                    <label>{{ form.intercom.label }}</label>
+                                    {{ form.intercom }}
+                                </div>
+                                <div class="detail">
+                                    <label>{{ form.entrance.label }}</label>
+                                    {{ form.entrance }}
+                                </div>
+                                <div class="detail">
+                                    <label>{{ form.floor.label }}</label>
+                                    {{ form.floor }}
+                                </div>
+                            </div>
+                            <div class="courier-comment">
+                                <label>{{ form.courier_comment.label }}</label>
+                                {{ form.courier_comment }}
+                            </div>
+                            <div class="recipient-info hidden" id="recipient-fields">
+                                <div class="recipient-field">
+                                    <label>{{ form.full_name.label }}</label>
+                                    {{ form.full_name }}
+                                </div>
+                                <div class="recipient-field">
+                                    <label>{{ form.phone.label }}</label>
+                                    {{ form.phone }}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="delivery-time">
+                            <h4>Время доставки</h4>
+                            <p><strong>{{ form.delivery_time.value|default:"Доставка 35–45 мин" }}</strong></p>
+                            {{ form.delivery_time }}
+                        </div>
+                    </div>
+
+                    <div class="order-section">
+                        <h2 class="section-title">Ваш заказ</h2>
+                        <div class="order-items">
+                            {% for item in basket_items %}
+                            <div class="order-item" data-basket-id="{{ item.id }}">
+                                <img src="{{ item.product.image.url }}" alt="{{ item.product.name }}"
+                                     class="item-image">
+                                <div class="item-info">
+                                    <h4>{{ item.product.name }}</h4>
+                                    <div class="item-price" data-item-sum="{{ item.sum }}">
+                                        {{ item.sum }} ₽
+                                    </div>
+                                </div>
+                                <div class="item-quantity">
+                                    <button class="quantity-btn decrease" data-basket-id="{{ item.id }}"
+                                            data-action="decrease">-</button>
+                                    <span class="quantity-value">{{ item.quantity }}</span>
+                                    <button class="quantity-btn increase" data-basket-id="{{ item.id }}"
+                                            data-action="increase">+</button>
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </div>
+                        <div class="order-actions">
+                            <button class="clear-cart-btn" type="button">Очистить корзину</button>
+                            <div class="order-comment">
+                                <label>{{ form.order_comment.label }}</label>
+                                {{ form.order_comment }}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="payment-section" id="payment-section">
+                    <div class="payment-sticky">
+                        <h2 class="section-title">Способ оплаты</h2>
+                        <button class="payment-btn" type="button">Добавить карту</button>
+                        <div class="payment-details">
+                            <div class="detail-row">
+                                <span>Товары</span>
+                                <span>{{ form.total_price.value|default:"0" }} ₽</span>
+                                {{ form.total_price }}
+                            </div>
+                            <div class="detail-row">
+                                <span>Доставка</span>
+                                <span>{{ form.delivery_cost.value|default:"0" }} ₽</span>
+                                {{ form.delivery_cost }}
+                            </div>
+                            <div class="detail-row">
+                                <span>Сервисный сбор</span>
+                                <span>{{ form.service_fee.value|default:"39" }} ₽</span>
+                                {{ form.service_fee }}
+                            </div>
+                            <div class="total-row">
+                                <span>Итого</span>
+                                <span class="total-price">{{ total_sum }} ₽</span>
+                            </div>
+                        </div>
+                        <div class="payment-fields">
+                            <div class="payment-field">
+                                <label>{{ form.card_number.label }}</label>
+                                {{ form.card_number }}
+                            </div>
+                            <div class="payment-field">
+                                <label>{{ form.cardholder_name.label }}</label>
+                                {{ form.cardholder_name }}
+                            </div>
+                            <div class="payment-field">
+                                <label>{{ form.cvv.label }}</label>
+                                {{ form.cvv }}
+                            </div>
+                        </div>
+                        <button class="confirm-btn">Подтвердить заказ</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+{% endblock %}
+
+{% block scripts %}
+{{ block.super }}
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const standardOption = document.getElementById('standard-option');
+    const otherOption = document.getElementById('other-option');
+    const recipientFields = document.getElementById('recipient-fields');
+
+    standardOption.addEventListener('click', function() {
+        this.classList.add('active');
+        otherOption.classList.remove('active');
+        recipientFields.classList.add('hidden');
+    });
+
+    otherOption.addEventListener('click', function() {
+        this.classList.add('active');
+        standardOption.classList.remove('active');
+        recipientFields.classList.remove('hidden');
+    });
+});
+</script>
+{% endblock %}

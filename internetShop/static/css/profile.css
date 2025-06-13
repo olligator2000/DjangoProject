@@ -1,6 +1,11 @@
+.content {
+
+    padding: 0px;
+}
+
 /* Общий контейнер */
 .profile-wrapper {
-    display: flex;
+    display: inkine-flex;
     margin-top: 140px;
 }
 
@@ -30,14 +35,17 @@
 }
 
 /* Основное содержимое (правый блок) */
+
 .profile-content {
     margin-left: 250px; /* Отступ равен ширине сайдбара */
-    width: calc(100% - 250px);
+
+    width: calc(100% + 20px);
     padding: 20px;
 }
 
 /* Вкладки (теперь внутри profile-content) */
 .tab-content {
+    width: 100%;
     display: none;
     background: #fff;
     padding: 20px;
@@ -196,6 +204,7 @@
 
 @media (max-width: 768px) {
     .profile-wrapper {
+        width: 100%;
         flex-direction: column;
     }
 

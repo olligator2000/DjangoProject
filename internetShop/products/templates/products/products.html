@@ -1,20 +1,18 @@
 {% extends 'products/base.html' %}
-
 {% load static %}
 
 {% block css %}
-<link rel="stylesheet" href="/static/css/products.css">
-<link rel="stylesheet" href="/static/css/index.css">
+<link rel="stylesheet" href="{% static 'css/products.css' %}">
+<link rel="stylesheet" href="{% static 'css/index.css' %}">
 {% endblock %}
 
 {% block content %}
 <nav class="custom-breadcrumb">
-    <a href="{% url 'index' %}" class="custom-breadcrumb-link">Каталог товаров</a> →
+    <a href="{% url 'products:index' %}" class="custom-breadcrumb-link">Каталог товаров</a> →
     <span class="custom-breadcrumb-current">{{ category.name }}</span>
 </nav>
 
 <div class="products-page-container">
-    <!-- Фильтры слева -->
     <aside class="filters-sidebar">
         <div class="filter-section">
             <h3>Бренд</h3>
@@ -58,7 +56,6 @@
         <button class="apply-filters-btn">Применить фильтры</button>
     </aside>
 
-    <!-- Основной контент -->
     <main class="products-content">
         <div class="sorting-options">
             <span>Сортировать:</span>
@@ -75,7 +72,7 @@
                 {% for product in products %}
                 <div class="product-card">
                     <a href="{% url 'products:product_detail' product.id %}">
-                        <img class="product-image" src="/media/{{ product.image }}" alt="{{ product.name }}">
+                        <img class="product-image" src="{{ product.image.url }}" alt="{{ product.name }}">
                         <h3 class="product-title">{{ product.name }}</h3>
                     </a>
                     <div class="product-price">{{ product.price|stringformat:"d" }} ₽</div>
@@ -87,11 +84,9 @@
     </main>
 </div>
 
-<!-- Подключаем корзину -->
 <div id="cart-container">
     {% include 'products/basket.html' %}
 </div>
-
 {% endblock %}
 
 {% block footer %}
@@ -99,9 +94,5 @@
 {% endblock %}
 
 {% block scripts %}
-<script>
-    window.isAuthenticated = {{ request.user.is_authenticated|lower }};
-    window.loginUrl = "{% url 'users:login' %}?next={{ request.path }}";
-</script>
-<script src="{% static 'js/cart.js' %}"></script>
+{{ block.super }}
 {% endblock %}

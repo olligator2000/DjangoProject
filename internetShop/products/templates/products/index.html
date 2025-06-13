@@ -1,9 +1,8 @@
 {% extends 'products/base.html' %}
-
 {% load static %}
 
 {% block css %}
-<link rel="stylesheet" href="/static/css/index.css">
+<link rel="stylesheet" href="{% static 'css/index.css' %}">
 {% endblock %}
 
 {% block content %}
@@ -19,11 +18,10 @@
 <div class="carousel-container">
     <button class="carousel-nav prev" data-carousel-id="product-carousel">❮</button>
     <div class="carousel fade-in" id="product-carousel">
-        <!-- Отображаем только первые 4 случайных продукта -->
         {% for product in products|slice:":4" %}
         <div class="product-card">
             <a href="{% url 'products:product_detail' product.id %}">
-                <img class="product-image" src="/media/{{ product.image }}" alt="{{ product.name }}">
+                <img class="product-image" src="{{ product.image.url }}" alt="{{ product.name }}">
                 <h3 class="product-title">{{ product.name }}</h3>
             </a>
             <div class="product-price">{{ product.price|stringformat:"d" }} ₽</div>
@@ -38,11 +36,10 @@
 <div class="carousel-container">
     <button class="carousel-nav prev" data-carousel-id="popular-carousel">❮</button>
     <div class="carousel fade-in" id="popular-carousel">
-        <!-- Отображаем только первые 4 случайных продукта -->
         {% for product in products|slice:":4" %}
         <div class="product-card">
             <a href="{% url 'products:product_detail' product.id %}">
-                <img class="product-image" src="/media/{{ product.image }}" alt="{{ product.name }}">
+                <img class="product-image" src="{{ product.image.url }}" alt="{{ product.name }}">
                 <h3 class="product-title">{{ product.name }}</h3>
             </a>
             <div class="product-price">{{ product.price|stringformat:"d" }} ₽</div>
@@ -53,7 +50,6 @@
     <button class="carousel-nav next" data-carousel-id="popular-carousel">❯</button>
 </div>
 
-<!-- Подключаем корзину -->
 <div id="cart-container">
     {% include 'products/basket.html' %}
 </div>
@@ -64,11 +60,7 @@
 {% endblock %}
 
 {% block scripts %}
-<script>
-    window.isAuthenticated = {{ request.user.is_authenticated|lower }};
-    window.loginUrl = "{% url 'users:login' %}?next={{ request.path }}";
-</script>
-<script src="{% static 'js/cart.js' %}"></script>
+{{ block.super }}
 <script>
 document.addEventListener('DOMContentLoaded', function() {
     // Баннер
@@ -119,35 +111,31 @@ document.addEventListener('DOMContentLoaded', function() {
                 carousel.innerHTML = data.carousel_html;
                 carousel.classList.remove('fade-out');
                 carousel.classList.add('fade-in');
-                // Инициализация корзины после обновления карусели
-                initCart();
+                setupHandlers(); // Повторная привязка обработчиков
+                syncCartState(); // Синхронизация корзины
             })
             .catch(error => {
                 console.error(`Ошибка при обновлении карусели ${carouselId}:`, error);
+                showToast('Ошибка обновления карусели', 'error');
             });
         }, 300);
     }
 
-    // Инициализация каруселей
     carousels.forEach(carousel => {
         const prevBtn = document.querySelector(`.carousel-nav.prev[data-carousel-id="${carousel.id}"]`);
         const nextBtn = document.querySelector(`.carousel-nav.next[data-carousel-id="${carousel.id}"]`);
         const carouselElement = document.getElementById(carousel.id);
 
-        // Обработчики для кнопок
         prevBtn.addEventListener('click', () => refreshCarousel(carousel.id));
         nextBtn.addEventListener('click', () => refreshCarousel(carousel.id));
 
-        // Автоматическое обновление каждые 5 секунд
         function startAutoRefresh() {
             carousel.interval = setInterval(() => refreshCarousel(carousel.id), 5000);
         }
 
-        // Остановка автообновления при наведении
         carouselElement.addEventListener('mouseenter', () => clearInterval(carousel.interval));
         carouselElement.addEventListener('mouseleave', startAutoRefresh);
 
-        // Запускаем автообновление при загрузке
         startAutoRefresh();
     });
 });

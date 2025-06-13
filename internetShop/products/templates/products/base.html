@@ -109,7 +109,13 @@
 {% block footer %} {% endblock %}
 
 {% block scripts %} {% endblock %}
-
+<script src="{% static 'js/cart.js' %}"></script>
+<script>
+    window.isAuthenticated = {{ user.is_authenticated|lower|default:"false" }};
+    window.loginUrl = "{% url 'users:login' %}?next={{ request.path }}";
+    window.initialCartCount = {{ baskets|length|default:0 }};
+    window.initialTotalSum = {{ total_sum|default:0 }};
+</script>
 <script src="https://yandex.st/jquery/2.2.3/jquery.min.js"></script>
 <script src="{% static 'js/search.js' %}"></script>
 <!--<script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&apikey=31df7a72-4554-4525-a569-9e509470153f"></script>-->
