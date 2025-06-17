@@ -6,11 +6,23 @@
 {% endblock %}
 
 {% block content %}
-<form method="post">
+<form method="post" id="order-form">
     {% csrf_token %}
+    <input type="hidden" name="payment_method" id="payment_method" value="">
     <div class="order-wrapper">
         <div class="order-container">
             <h1 class="main-title">Оформление заказа</h1>
+
+            <!-- Отображение сообщений об ошибках -->
+            {% if messages %}
+            <div class="messages">
+                {% for message in messages %}
+                <div class="alert {% if message.tags %}alert-{{ message.tags }}{% endif %}">
+                    {{ message }}
+                </div>
+                {% endfor %}
+            </div>
+            {% endif %}
 
             <div class="order-sections-container">
                 <div>
@@ -18,61 +30,94 @@
                         <h2 class="section-title">Условия доставки</h2>
                         <div class="delivery-options">
                             <div class="option active" id="standard-option">
-                                <h3>Стандарт</h3>
+                                <h3>Себе любимому</h3>
                             </div>
                             <div class="option" id="other-option">
                                 <h3>Заказ другому</h3>
                             </div>
                         </div>
                         <div class="address-section">
-                            <h4>{{ form.address.value|default:"Станкозаводская улица, 3, подъезд 4" }}</h4>
+                            <div class="courier-address">
+                                <div class="detail">
+                                    <label for="id_address">Адрес доставки</label>
+                                    {{ form.address }}
+                                    {% if form.address.errors %}
+                                    <span class="error-message">{{ form.address.errors }}</span>
+                                    {% endif %}
+                                </div>
+                            </div>
                             <div class="address-details">
                                 <div class="detail">
                                     <label>{{ form.apartment_office.label }}</label>
                                     {{ form.apartment_office }}
+                                    {% if form.apartment_office.errors %}
+                                    <span class="error-message">{{ form.apartment_office.errors }}</span>
+                                    {% endif %}
                                 </div>
                                 <div class="detail">
                                     <label>{{ form.intercom.label }}</label>
                                     {{ form.intercom }}
+                                    {% if form.intercom.errors %}
+                                    <span class="error-message">{{ form.intercom.errors }}</span>
+                                    {% endif %}
                                 </div>
                                 <div class="detail">
                                     <label>{{ form.entrance.label }}</label>
                                     {{ form.entrance }}
+                                    {% if form.entrance.errors %}
+                                    <span class="error-message">{{ form.entrance.errors }}</span>
+                                    {% endif %}
                                 </div>
                                 <div class="detail">
                                     <label>{{ form.floor.label }}</label>
                                     {{ form.floor }}
+                                    {% if form.floor.errors %}
+                                    <span class="error-message">{{ form.floor.errors }}</span>
+                                    {% endif %}
                                 </div>
                             </div>
                             <div class="courier-comment">
                                 <label>{{ form.courier_comment.label }}</label>
                                 {{ form.courier_comment }}
+                                {% if form.courier_comment.errors %}
+                                <span class="error-message">{{ form.courier_comment.errors }}</span>
+                                {% endif %}
                             </div>
                             <div class="recipient-info hidden" id="recipient-fields">
                                 <div class="recipient-field">
                                     <label>{{ form.full_name.label }}</label>
                                     {{ form.full_name }}
+                                    {% if form.full_name.errors %}
+                                    <span class="error-message">{{ form.full_name.errors }}</span>
+                                    {% endif %}
                                 </div>
                                 <div class="recipient-field">
                                     <label>{{ form.phone.label }}</label>
                                     {{ form.phone }}
+                                    {% if form.phone.errors %}
+                                    <span class="error-message">{{ form.phone.errors }}</span>
+                                    {% endif %}
                                 </div>
                             </div>
                         </div>
                         <div class="delivery-time">
                             <h4>Время доставки</h4>
                             <p><strong>{{ form.delivery_time.value|default:"Доставка 35–45 мин" }}</strong></p>
-                            {{ form.delivery_time }}
+                            {% if form.delivery_time.errors %}
+                            <span class="error-message">{{ form.delivery_time.errors }}</span>
+                            {% endif %}
                         </div>
                     </div>
 
                     <div class="order-section">
-                        <h2 class="section-title">Ваш заказ</h2>
+                        <h2 class="section-title">В Ваш заказ</h2>
                         <div class="order-items">
                             {% for item in basket_items %}
                             <div class="order-item" data-basket-id="{{ item.id }}">
-                                <img src="{{ item.product.image.url }}" alt="{{ item.product.name }}"
-                                     class="item-image">
+                                <a href="{% url 'products:product_detail' item.product.id %}">
+                                    <img src="{{ item.product.image.url }}" alt="{{ item.product.name }}"
+                                         class="item-image">
+                                </a>
                                 <div class="item-info">
                                     <h4>{{ item.product.name }}</h4>
                                     <div class="item-price" data-item-sum="{{ item.sum }}">
@@ -81,10 +126,10 @@
                                 </div>
                                 <div class="item-quantity">
                                     <button class="quantity-btn decrease" data-basket-id="{{ item.id }}"
-                                            data-action="decrease">-</button>
+                                            data-action="decrease"></button>
                                     <span class="quantity-value">{{ item.quantity }}</span>
                                     <button class="quantity-btn increase" data-basket-id="{{ item.id }}"
-                                            data-action="increase">+</button>
+                                            data-action="increase"></button>
                                 </div>
                             </div>
                             {% endfor %}
@@ -94,6 +139,9 @@
                             <div class="order-comment">
                                 <label>{{ form.order_comment.label }}</label>
                                 {{ form.order_comment }}
+                                {% if form.order_comment.errors %}
+                                <span class="error-message">{{ form.order_comment.errors }}</span>
+                                {% endif %}
                             </div>
                         </div>
                     </div>
@@ -102,70 +150,383 @@
                 <div class="payment-section" id="payment-section">
                     <div class="payment-sticky">
                         <h2 class="section-title">Способ оплаты</h2>
-                        <button class="payment-btn" type="button">Добавить карту</button>
+                        <button class="payment-btn" type="button">Выбрать способ оплаты</button>
                         <div class="payment-details">
                             <div class="detail-row">
                                 <span>Товары</span>
-                                <span>{{ form.total_price.value|default:"0" }} ₽</span>
-                                {{ form.total_price }}
+                                <div class="price-container">
+                                    <span class="price-total">{{ total_sum }}</span>₽
+                                </div>
                             </div>
                             <div class="detail-row">
                                 <span>Доставка</span>
-                                <span>{{ form.delivery_cost.value|default:"0" }} ₽</span>
-                                {{ form.delivery_cost }}
+                                <div class="price-container">
+                                    <span class="price-delivery">{{ delivery_cost }}</span>₽
+                                </div>
                             </div>
                             <div class="detail-row">
                                 <span>Сервисный сбор</span>
-                                <span>{{ form.service_fee.value|default:"39" }} ₽</span>
-                                {{ form.service_fee }}
+                                <div class="price-container">
+                                    <span class="price-service">{{ service_fee }}</span>₽
+                                </div>
                             </div>
                             <div class="total-row">
                                 <span>Итого</span>
-                                <span class="total-price">{{ total_sum }} ₽</span>
+                                <div class="price-container">
+                                    <span class="total-price">{{ total_with_delivery }}</span> ₽
+                                </div>
+                            </div>
+                            <div class="min-sum-zakaz">
+                                <a>***Минимальная сумма для заказа 1000₽</a>
                             </div>
                         </div>
-                        <div class="payment-fields">
-                            <div class="payment-field">
-                                <label>{{ form.card_number.label }}</label>
-                                {{ form.card_number }}
-                            </div>
-                            <div class="payment-field">
-                                <label>{{ form.cardholder_name.label }}</label>
-                                {{ form.cardholder_name }}
-                            </div>
-                            <div class="payment-field">
-                                <label>{{ form.cvv.label }}</label>
-                                {{ form.cvv }}
-                            </div>
-                        </div>
-                        <button class="confirm-btn">Подтвердить заказ</button>
+                        <button class="confirm-btn" type="submit" disabled>Подтвердить заказ</button>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
+    <!-- Модальное окно для выбора способа оплаты -->
+    <div id="payment-modal" class="payment-modal hidden">
+        <div class="payment-modal-content">
+            <button class="close-modal-btn" type="button">×</button>
+            <h3>Выберите способ оплаты</h3>
+            <div class="payment-option">
+                <label class="payment-radio">
+                    <input type="radio" name="payment-method" value="card" id="card-option">
+                    <span>Добавить карту</span>
+                </label>
+                <div class="payment-fields hidden" id="card-fields">
+                    <div class="payment-field">
+                        <label>{{ form.card_number.label }}</label>
+                        {{ form.card_number }}
+                        <span class="error-message" id="card-number-error"></span>
+                        {% if form.card_number.errors %}
+                        <span class="error-message">{{ form.card_number.errors }}</span>
+                        {% endif %}
+                    </div>
+                    <div class="payment-field">
+                        <label>{{ form.cardholder_name.label }}</label>
+                        {{ form.cardholder_name }}
+                        <span class="error-message" id="cardholder-name-error"></span>
+                        {% if form.cardholder_name.errors %}
+                        <span class="error-message">{{ form.cardholder_name.errors }}</span>
+                        {% endif %}
+                    </div>
+                    <div class="payment-field">
+                        <label>{{ form.cvv.label }}</label>
+                        {{ form.cvv }}
+                        <span class="error-message" id="cvv-error"></span>
+                        {% if form.cvv.errors %}
+                        <span class="error-message">{{ form.cvv.errors }}</span>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+            <div class="payment-option">
+                <label class="payment-radio">
+                    <input type="radio" name="payment-method" value="sbp" id="sbp-option">
+                    <span>СБП</span>
+                    <img src="{% static 'images/sbp-logo.png' %}" alt="СБП" class="sbp-logo">
+                </label>
+            </div>
+            <button class="save-payment-btn" type="button" disabled>Сохранить</button>
+        </div>
+    </div>
 </form>
+
+<style>
+.alert {
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+.alert-error {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+.alert-success {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+</style>
 {% endblock %}
 
 {% block scripts %}
 {{ block.super }}
 <script>
-document.addEventListener('DOMContentLoaded', function() {
-    const standardOption = document.getElementById('standard-option');
-    const otherOption = document.getElementById('other-option');
-    const recipientFields = document.getElementById('recipient-fields');
+    document.addEventListener('DOMContentLoaded', function() {
+        const standardOption = document.getElementById('standard-option');
+        const otherOption = document.getElementById('other-option');
+        const recipientFields = document.getElementById('recipient-fields');
+        const paymentBtn = document.querySelector('.payment-btn');
+        const paymentModal = document.getElementById('payment-modal');
+        const cardOption = document.getElementById('card-option');
+        const sbpOption = document.getElementById('sbp-option');
+        const cardFields = document.getElementById('card-fields');
+        const savePaymentBtn = document.querySelector('.save-payment-btn');
+        const orderForm = document.getElementById('order-form');
+        const cardNumberInput = document.getElementById('id_card_number');
+        const cardholderNameInput = document.getElementById('id_cardholder_name');
+        const cvvInput = document.getElementById('id_cvv');
+        const cardNumberError = document.getElementById('card-number-error');
+        const cardholderNameError = document.getElementById('cardholder-name-error');
+        const cvvError = document.getElementById('cvv-error');
+        const closeModalBtn = document.querySelector('.close-modal-btn');
+        const phoneInput = document.getElementById('id_phone');
+        const confirmBtn = document.querySelector('.confirm-btn');
+        const paymentMethodInput = document.getElementById('payment_method');
 
-    standardOption.addEventListener('click', function() {
-        this.classList.add('active');
-        otherOption.classList.remove('active');
-        recipientFields.classList.add('hidden');
-    });
+        // Защита префикса +7 в поле телефона
+        if (phoneInput) {
+            phoneInput.addEventListener('keydown', function(event) {
+                const cursorPosition = this.selectionStart;
+                const value = this.value;
+                if (event.key === 'Backspace' && cursorPosition <= 2) {
+                    event.preventDefault();
+                }
+            });
+            phoneInput.addEventListener('input', function() {
+                const value = this.value;
+                if (!value.startsWith('+7')) {
+                    this.value = '+7' + value.replace(/^\+7/, '');
+                }
+                this.value = this.value.replace(/[^+\d]/g, '');
+                if (this.value.length > 12) {
+                    this.value = this.value.slice(0, 12);
+                }
+            });
+            if (!phoneInput.value) {
+                phoneInput.value = '+7';
+            }
+        }
 
-    otherOption.addEventListener('click', function() {
-        this.classList.add('active');
-        standardOption.classList.remove('active');
-        recipientFields.classList.remove('hidden');
+        // Функция для обновления цен в секции оплаты и состояния кнопки подтверждения
+        function updatePaymentDetails(totalSum) {
+            const priceTotal = document.querySelector('.price-total');
+            const priceDelivery = document.querySelector('.price-delivery');
+            const priceService = document.querySelector('.price-service');
+            const totalPrice = document.querySelector('.total-price');
+
+            const deliveryCost = parseInt(totalSum || 0) < 1000 ? 0 : Math.floor(parseFloat(totalSum) * 0.10);
+            const serviceFee = 39;
+            const totalWithDelivery = parseInt(totalSum || 0) + deliveryCost + serviceFee;
+
+            if (priceTotal) priceTotal.textContent = parseInt(totalSum || 0);
+            if (priceDelivery) priceDelivery.textContent = deliveryCost;
+            if (priceService) priceService.textContent = serviceFee;
+            if (totalPrice) totalPrice.textContent = totalWithDelivery;
+
+            // Обновляем состояние кнопки "Подтвердить заказ"
+            updateConfirmButtonState(totalSum);
+        }
+
+        // Функция для управления состоянием кнопки подтверждения
+        function updateConfirmButtonState(totalSum) {
+            const isTotalValid = parseInt(totalSum || 0) >= 1000;
+            const isPaymentSelected = paymentMethodInput.value === 'card' || paymentMethodInput.value === 'sbp';
+            confirmBtn.disabled = !(isTotalValid && isPaymentSelected);
+            console.log(`Total Sum: ${totalSum}, Payment Method: ${paymentMethodInput.value}, Confirm Button Disabled: ${confirmBtn.disabled}`);
+        }
+
+        // Перехватываем вызовы из cart.js для обновления цен
+        const originalUpdateCartDisplay = window.updateCartDisplay;
+        window.updateCartDisplay = function(data) {
+            console.log('Cart updated, total_sum:', data.total_sum);
+            if (originalUpdateCartDisplay) {
+                originalUpdateCartDisplay(data);
+            }
+            updatePaymentDetails(data.total_sum);
+        };
+
+        // Инициализация цен при загрузке страницы
+        const initialTotalSum = {{ total_sum|default:0 }};
+        console.log('Initial Total Sum:', initialTotalSum);
+        updatePaymentDetails(initialTotalSum);
+
+        // Валидация номера карты по алгоритму Луна
+        function validateCardNumber(cardNumber) {
+            cardNumber = cardNumber.replace(/[\s-]/g, '');
+            if (!/^\d{13,19}$/.test(cardNumber)) {
+                return false;
+            }
+            let sum = 0;
+            const isEven = cardNumber.length % 2 === 0;
+            for (let i = 0; i < cardNumber.length; i++) {
+                let digit = parseInt(cardNumber[i]);
+                if ((i % 2 === 0 && isEven) || (i % 2 !== 0 && !isEven)) {
+                    digit *= 2;
+                    if (digit > 9) {
+                        digit -= 9;
+                    }
+                }
+                sum += digit;
+            }
+            return sum % 10 === 0;
+        }
+
+        // Валидация имени и фамилии на карте
+        function validateCardholderName(name) {
+            name = name.trim();
+            const regex = /^[A-Z][a-zA-Z]* [A-Z][a-zA-Z]*$/;
+            return regex.test(name);
+        }
+
+        // Валидация CVV
+        function validateCvv(cvv) {
+            return /^\d{3,4}$/.test(cvv);
+        }
+
+        // Отображение ошибки
+        function showError(element, message) {
+            if (element) {
+                element.textContent = message;
+                element.style.display = message ? 'block' : 'none';
+            }
+        }
+
+        // Обновление стиля поля
+        function updateFieldStyle(input, isValid) {
+            if (input) {
+                input.style.borderColor = isValid ? '#827a79' : '#e74c3c';
+            }
+        }
+
+        // Проверка валидности всех полей и управление кнопкой "Сохранить"
+        function updateSaveButtonState() {
+            if (cardOption.checked) {
+                const isCardNumberValid = cardNumberInput && validateCardNumber(cardNumberInput.value);
+                const isCardholderNameValid = cardholderNameInput && validateCardholderName(cardholderNameInput.value);
+                const isCvvValid = cvvInput && validateCvv(cvvInput.value);
+                savePaymentBtn.disabled = !(isCardNumberValid && isCardholderNameValid && isCvvValid);
+            } else if (sbpOption.checked) {
+                savePaymentBtn.disabled = false;
+            } else {
+                savePaymentBtn.disabled = true;
+            }
+        }
+
+        // Валидация при вводе
+        if (cardNumberInput) {
+            cardNumberInput.addEventListener('input', function() {
+                const value = this.value;
+                const isValid = value.length >= 13 ? validateCardNumber(value) : false;
+                showError(cardNumberError, value.length >= 13 && !isValid ? 'Неверный номер карты' : '');
+                updateFieldStyle(this, value.length < 13 || isValid);
+                updateSaveButtonState();
+            });
+        }
+
+        if (cardholderNameInput) {
+            cardholderNameInput.addEventListener('input', function() {
+                const value = this.value;
+                const isValid = validateCardholderName(value);
+                showError(cardholderNameError, value && !isValid ? 'Введите Фамилию и Имя с заглавной буквы (например, Smith John)' : '');
+                updateFieldStyle(this, !value || isValid);
+                updateSaveButtonState();
+            });
+        }
+
+        if (cvvInput) {
+            cvvInput.addEventListener('input', function() {
+                const value = this.value;
+                const isValid = validateCvv(value);
+                showError(cvvError, value && !isValid ? 'CVV должен содержать 3 или 4 цифры' : '');
+                updateFieldStyle(this, !value || isValid);
+                updateSaveButtonState();
+            });
+        }
+
+        // Сохранение способа оплаты
+        if (savePaymentBtn) {
+            savePaymentBtn.addEventListener('click', function() {
+                if (cardOption.checked) {
+                    let hasError = false;
+                    if (cardNumberInput && !validateCardNumber(cardNumberInput.value)) {
+                        showError(cardNumberError, 'Неверный номер карты');
+                        updateFieldStyle(cardNumberInput, false);
+                        hasError = true;
+                    }
+                    if (cardholderNameInput && !validateCardholderName(cardholderNameInput.value)) {
+                        showError(cardholderNameError, 'Введите Фамилию и Имя с заглавной буквы (например, Smith John)');
+                        updateFieldStyle(cardholderNameInput, false);
+                        hasError = true;
+                    }
+                    if (cvvInput && !validateCvv(cvvInput.value)) {
+                        showError(cvvError, 'CVV должен содержать 3 или 4 цифры');
+                        updateFieldStyle(cvvInput, false);
+                        hasError = true;
+                    }
+                    if (hasError) {
+                        return;
+                    }
+                    paymentMethodInput.value = 'card';
+                } else if (sbpOption.checked) {
+                    paymentMethodInput.value = 'sbp';
+                }
+                paymentModal.classList.add('hidden');
+                updateConfirmButtonState(initialTotalSum);
+                paymentBtn.textContent = cardOption.checked ? 'Оплата картой' : 'Оплата через СБП';
+            });
+        }
+
+        // Закрытие модального окна по крестику
+        if (closeModalBtn) {
+            closeModalBtn.addEventListener('click', function() {
+                paymentModal.classList.add('hidden');
+            });
+        }
+
+        // Закрытие модального окна по клику вне содержимого
+        paymentModal.addEventListener('click', function(e) {
+            if (e.target === paymentModal) {
+                paymentModal.classList.add('hidden');
+            }
+        });
+
+        // Переключение между "Себе любимому" и "Заказ другому"
+        standardOption.addEventListener('click', function() {
+            this.classList.add('active');
+            otherOption.classList.remove('active');
+            recipientFields.classList.add('hidden');
+        });
+
+        otherOption.addEventListener('click', function() {
+            this.classList.add('active');
+            standardOption.classList.remove('active');
+            recipientFields.classList.remove('hidden');
+        });
+
+        // Открытие модального окна оплаты
+        paymentBtn.addEventListener('click', function() {
+            paymentModal.classList.remove('hidden');
+            updateSaveButtonState();
+        });
+
+        // Переключение между способами оплаты
+        cardOption.addEventListener('change', function() {
+            if (this.checked) {
+                cardFields.classList.remove('hidden');
+                updateSaveButtonState();
+            }
+        });
+
+        sbpOption.addEventListener('change', function() {
+            if (this.checked) {
+                cardFields.classList.add('hidden');
+                updateSaveButtonState();
+            }
+        });
+
+        // Отладка отправки формы
+        if (orderForm) {
+            orderForm.addEventListener('submit', function(event) {
+                console.log('Отправка формы, данные:', new FormData(orderForm));
+            });
+        }
     });
-});
 </script>
 {% endblock %}

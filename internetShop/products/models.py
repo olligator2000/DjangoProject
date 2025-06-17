@@ -83,6 +83,8 @@ class Order(models.Model):
     card_number = models.CharField(max_length=16, blank=True, verbose_name='Номер карты клиента')
     cardholder_name = models.CharField(max_length=100, blank=True, verbose_name='Имя и фамилия на карте')
     cvv = models.CharField(max_length=4, blank=True, verbose_name='CVV карты')
+    payment_method = models.CharField(max_length=10, choices=[('card', 'Карта'), ('sbp', 'СБП')], blank=True, verbose_name='Способ оплаты')
+    transaction_id = models.CharField(max_length=50, blank=True, verbose_name='ID транзакции')
 
     def __str__(self):
         return f"Заказ #{self.id} от {self.full_name}"

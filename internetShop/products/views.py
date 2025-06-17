@@ -7,6 +7,7 @@ from products.models import Product, ProductCategory, Basket, Order, OrderItem
 from products.forms import OrderForm
 from django.views.generic import ListView
 from django.db.models import Q
+from django.db import transaction
 import logging
 
 logger = logging.getLogger(__name__)
@@ -323,40 +324,160 @@ def clear_basket_ajax(request):
         }, status=500)
 
 
+def process_payment(payment_method, card_details, total_amount):
+    """Фиктивная функция обработки платежа."""
+    logger.info(f"Обработка платежа через {payment_method} на сумму {total_amount}")
+    try:
+        if payment_method == 'card':
+            card_number = card_details.get('card_number', '')
+            cardholder_name = card_details.get('cardholder_name', '')
+            cvv = card_details.get('cvv', '')
+            # Проверка валидности номера карты
+            card_number = card_number.replace(' ', '').replace('-', '')
+            if not card_number.isdigit() or len(card_number) < 13 or len(card_number) > 19:
+                raise ValueError('Неверный номер карты')
+            # Проверка имени держателя карты
+            if not cardholder_name or not all(part[0].isupper() for part in cardholder_name.split() if part):
+                raise ValueError('Неверное имя держателя карты')
+            # Проверка CVV
+            if not cvv.isdigit() or len(cvv) not in (3, 4):
+                raise ValueError('Неверный CVV')
+            # Фиктивная успешная транзакция
+            return {'status': 'success', 'transaction_id': f'TXN-{int(total_amount * 100)}-{card_number[-4:]}'}
+        elif payment_method == 'sbp':
+            # Фиктивный платеж через СБП
+            return {'status': 'success', 'transaction_id': f'SBP-TXN-{int(total_amount * 100)}'}
+        else:
+            raise ValueError('Недопустимый способ оплаты')
+    except ValueError as e:
+        logger.error(f"Ошибка валидации платежа: {str(e)}")
+        return {'status': 'error', 'message': str(e)}
+    except Exception as e:
+        logger.error(f"Ошибка обработки платежа: {str(e)}")
+        return {'status': 'error', 'message': 'Ошибка обработки платежа'}
+
 @login_required
 def zakaz_end(request):
     baskets = Basket.objects.filter(user=request.user) if request.user.is_authenticated else []
     total_sum = sum(basket.sum for basket in baskets) if baskets else 0
+
+    if total_sum < 1000:
+        delivery_cost = 0
+    else:
+        delivery_cost = int(total_sum * 0.10)
+    service_fee = 39
+    total_with_delivery = total_sum + delivery_cost + service_fee
+
     if request.method == 'POST':
+        logger.info(f"POST запрос на zakaz_end, данные: {request.POST}")
+        payment_method = request.POST.get('payment_method', '')
+        logger.info(f"Выбранный способ оплаты: {payment_method}")
+
+        if not payment_method:
+            logger.warning("Способ оплаты не выбран")
+            messages.error(request, 'Выберите способ оплаты')
+            return redirect('products:zakaz_end')
+
         form = OrderForm(request.POST)
         if form.is_valid():
-            order = form.save(commit=False)
-            order.user = request.user
-            if not baskets.exists():
-                messages.error(request, 'Корзина пуста!')
-                return redirect('products:index')
-            order.total_price = total_sum
-            order.save()
-            for basket in baskets:
-                OrderItem.objects.create(
-                    order=order,
-                    product=basket.product,
-                    quantity=basket.quantity,
-                    price=basket.product.price
-                )
-            baskets.delete()
-            messages.success(request, 'Заказ успешно создан!')
-            return redirect('products:order_confirmation')
+            logger.info("Форма валидна")
+            try:
+                with transaction.atomic():
+                    # Проверка валидности данных карты, если выбрана карта
+                    if payment_method == 'card':
+                        card_details = {
+                            'card_number': form.cleaned_data.get('card_number', ''),
+                            'cardholder_name': form.cleaned_data.get('cardholder_name', ''),
+                            'cvv': form.cleaned_data.get('cvv', '')
+                        }
+                        logger.info(f"Данные карты: {card_details}")
+                        payment_result = process_payment(payment_method, card_details, total_with_delivery)
+                    else:
+                        payment_result = process_payment(payment_method, {}, total_with_delivery)
+
+                    if payment_result['status'] == 'error':
+                        logger.error(f"Ошибка платежа: {payment_result['message']}")
+                        messages.error(request, payment_result['message'])
+                        return redirect('products:zakaz_end')
+
+                    order = form.save(commit=False)
+                    order.user = request.user
+                    if not baskets.exists():
+                        logger.warning("Корзина пуста")
+                        messages.error(request, 'Корзина пуста!')
+                        return redirect('products:zakaz_end')
+
+                    order.total_price = total_sum
+                    order.delivery_cost = delivery_cost
+                    order.service_fee = service_fee
+                    order.payment_method = payment_method
+                    order.transaction_id = payment_result['transaction_id']
+                    order.save()
+
+                    for basket in baskets:
+                        OrderItem.objects.create(
+                            order=order,
+                            product=basket.product,
+                            quantity=basket.quantity,
+                            price=basket.product.price
+                        )
+
+                    logger.info(f"Заказ #{order.id} успешно создан, очищаем корзину")
+                    baskets.delete()
+                    messages.success(request, f'Заказ успешно создан! ID транзакции: {payment_result["transaction_id"]}')
+                    return redirect('products:order_confirmation')
+            except Exception as e:
+                logger.error(f"Ошибка при создании заказа: {str(e)}", exc_info=True)
+                messages.error(request, 'Произошла ошибка при оформлении заказа. Пожалуйста, попробуйте еще раз.')
+                return redirect('products:zakaz_end')
+        else:
+            logger.error(f"Форма невалидна: {form.errors.as_json()}")
+            messages.error(request, f'Ошибки в форме: {form.errors.as_text()}')
+            return render(request, 'products/zakaz_end.html', {
+                'form': form,
+                'basket_items': baskets,
+                'total_sum': total_sum,
+                'delivery_cost': delivery_cost,
+                'service_fee': service_fee,
+                'total_with_delivery': total_with_delivery,
+                'categories': ProductCategory.objects.all(),
+            })
     else:
-        form = OrderForm(initial={'total_price': total_sum, 'delivery_cost': 0, 'service_fee': 39})
+        initial_data = {}
+        if request.user.is_authenticated:
+            initial_data = {
+                'full_name': f"{request.user.first_name} {request.user.last_name}",
+                'phone': request.user.phone if hasattr(request.user, 'phone') else '+7',
+                'address': request.user.address if hasattr(request.user, 'address') else '',
+                'payment_method': ''
+            }
+        form = OrderForm(initial=initial_data)
+
     context = {
         'form': form,
         'basket_items': baskets,
         'total_sum': total_sum,
+        'delivery_cost': delivery_cost,
+        'service_fee': service_fee,
+        'total_with_delivery': total_with_delivery,
         'categories': ProductCategory.objects.all(),
     }
+    logger.info("Отображение страницы zakaz_end для GET запроса")
     return render(request, 'products/zakaz_end.html', context)
 
+@login_required
+def order_confirmation(request):
+    last_order = Order.objects.filter(user=request.user).order_by('-order_date').first()
+
+    if not last_order:
+        messages.warning(request, 'У вас нет активных заказов.')
+        return redirect('products:index')
+
+    context = {
+        'order': last_order,
+        'categories': ProductCategory.objects.all(),
+    }
+    return render(request, 'products/order_confirmation.html', context)
 
 @login_required
 def get_cart_state(request):

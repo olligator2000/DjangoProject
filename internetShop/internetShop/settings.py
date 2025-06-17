@@ -143,16 +143,21 @@ LOGIN_URL = '/users/login'
 LOGGING = {
     'version': 1,
     'disable_existing_loggers': False,
+
     'handlers': {
         'file': {
             'level': 'DEBUG',
             'class': 'logging.FileHandler',
             'filename': 'debug.log',
         },
+        'console': {
+            'class': 'logging.StreamHandler',
+        },
     },
+
     'loggers': {
         '': {
-            'handlers': ['file'],
+            'handlers': ['file', 'console'],  # ✅ используем оба
             'level': 'DEBUG',
             'propagate': True,
         },

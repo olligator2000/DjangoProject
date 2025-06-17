@@ -48,11 +48,11 @@
         <div class="custom-stock">Наличие: <strong>{{ product.quantity }} шт.</strong></div>
         <div class="custom-price-section">
             <div class="custom-price">{{ product.price|stringformat:"d" }}₽</div>
-            <div class="custom-quantity-control">
-                <button class="quantity-decrease">-</button>
-                <input type="text" class="quantity-input" value="1" min="1" max="{{ product.quantity }}">
-                <button class="quantity-increase">+</button>
-            </div>
+<!--            <div class="custom-quantity-control">-->
+<!--                <button class="quantity-decrease">-</button>-->
+<!--                <input type="text" class="quantity-input" value="1" min="1" max="{{ product.quantity }}">-->
+<!--                <button class="quantity-increase">+</button>-->
+<!--            </div>-->
             <button class="custom-add-to-cart add-to-cart-btn" data-product-id="{{ product.id }}">🛒
                 <span>В корзину</span></button>
         </div>

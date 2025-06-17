@@ -69,39 +69,40 @@ body {
 #map-modal {
     display: none;
     position: fixed;
-    top: 0;
+    top: 8%;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(201, 57, 57, 0.062);
+    background-color: rgba(0, 0, 0, 0.9); /* Полупрозрачный черный фон */
     justify-content: center;
     align-items: center;
+    flex-direction: column;
+    z-index: 1000;
+    padding: 0;
 }
 
 .ok-button {
-    position: relative;
-    margin-top: 0px;
-    left: 840px;
-    top: 288px;
-    padding: 10px 20px;
+    width: 800px;
+    padding: 12px 0;
     background-color: #e74c3c;
     color: white;
     border: none;
-    border-radius: 5px;
+    border-radius: 8px 8px 0 0;
     cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+    margin-top: 0; /* Убираем отступ сверху */
+    z-index: 1001;
 }
 
 .ok-button:hover {
-    background-color: #e74c3c;
+    background-color: #c0392b;
 }
 
 #map {
     width: 800px;
     height: 500px;
     background-color: #e7cccc;
-    position: relative;
-    padding: 20px;
-    border-radius: 8px;
     z-index: 1001;
 }
 
@@ -128,7 +129,7 @@ body {
     display: inline-block;
     white-space: nowrap;
     height: 20px;
-    overflow: auto;
+    overflow: hidden;
     margin: 18px left;
     border-radius: 15px;
 }
@@ -714,6 +715,67 @@ body {
     opacity: 1;
 }
 
+.clear-cart-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1002;
+}
+
+.clear-cart-modal-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    width: 300px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.clear-cart-modal-content h3 {
+    margin: 0 0 20px;
+    font-size: 1.2rem;
+    color: #333;
+}
+
+.clear-cart-modal-buttons {
+    display: flex;
+    justify-content: space-around;
+}
+
+.clear-cart-confirm-btn,
+.clear-cart-cancel-btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.2s;
+}
+
+.clear-cart-confirm-btn {
+    background-color: #e74c3c;
+    color: white;
+}
+
+.clear-cart-confirm-btn:hover {
+    background-color: #c0392b;
+}
+
+.clear-cart-cancel-btn {
+    background-color: #ccc;
+    color: #333;
+}
+
+.clear-cart-cancel-btn:hover {
+    background-color: #bbb;
+}
+
 @media (max-width: 1200px) {
     .cart-sidebar {
         width: 300px;
@@ -755,6 +817,9 @@ body {
     .nav-link i {
         font-size: 18px;
         margin-right: 0;
+    }
+    .clear-cart-modal-content {
+        width: 250px;
     }
 }
 

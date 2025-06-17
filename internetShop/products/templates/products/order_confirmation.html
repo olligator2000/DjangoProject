@@ -1,3 +1,30 @@
-<h2>Заказ успешно создан!</h2>
-<p>Спасибо за покупку. Ваш заказ будет обработан в ближайшее время.</p>
-<a href="{% url 'products:index' %}">Вернуться на главную</a>
+{% extends 'products/base.html' %}
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/order_confirmation.css' %}">
+{% endblock %}
+
+
+{% block content %}
+<div class="order-confirmation-container">
+    <h1>Заказ успешно оформлен!</h1>
+    <p>Спасибо за ваш заказ! Вы получите подтверждение по указанному телефону.</p>
+    {% if order %}
+    <div class="order-details">
+        <h2>Детали заказа</h2>
+        <p><strong>Номер заказа:</strong> #{{ order.id }}</p>
+        <p><strong>Имя получателя:</strong> {{ order.full_name }}</p>
+        <p><strong>Телефон:</strong> {{ order.phone }}</p>
+        <p><strong>Адрес доставки:</strong> {{ order.address }}{% if order.apartment_office %}, кв./офис {{ order.apartment_office }}{% endif %}</p>
+        <p><strong>Итоговая сумма:</strong> {{ order.total_price }} ₽</p>
+        <p><strong>Доставка:</strong> {{ order.delivery_cost }} ₽</p>
+        <p><strong>Сервисный сбор:</strong> {{ order.service_fee }} ₽</p>
+        <p><strong>Способ оплаты:</strong> {{ order.get_payment_method_display }}</p>
+        <p><strong>ID транзакции:</strong> {{ order.transaction_id }}</p>
+    </div>
+    {% endif %}
+    <a href="{% url 'products:index' %}" class="btn btn-primary">Вернуться на главную</a>
+</div>
+
+{% endblock %}

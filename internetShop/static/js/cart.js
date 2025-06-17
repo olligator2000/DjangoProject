@@ -60,11 +60,49 @@ function setupHandlers() {
             }
             updateCart(basketId, action);
         } else if (e.target.classList.contains('clear-cart-btn')) {
-            if (confirm('Очистить всю корзину?')) {
-                clearCart();
-            }
+            showClearCartModal();
         }
     }
+}
+
+function showClearCartModal() {
+    // Удаляем существующее модальное окно, если есть
+    const existingModal = document.querySelector('.clear-cart-modal');
+    if (existingModal) existingModal.remove();
+
+    // Создаем модальное окно
+    const modal = document.createElement('div');
+    modal.className = 'clear-cart-modal';
+    modal.innerHTML = `
+        <div class="clear-cart-modal-content">
+            <h3>Очистить всю корзину?</h3>
+            <div class="clear-cart-modal-buttons">
+                <button class="clear-cart-confirm-btn">Да</button>
+                <button class="clear-cart-cancel-btn">Нет</button>
+            </div>
+        </div>
+    `;
+    document.body.appendChild(modal);
+
+    // Обработчики для кнопок
+    const confirmBtn = modal.querySelector('.clear-cart-confirm-btn');
+    const cancelBtn = modal.querySelector('.clear-cart-cancel-btn');
+
+    confirmBtn.addEventListener('click', () => {
+        clearCart();
+        modal.remove();
+    });
+
+    cancelBtn.addEventListener('click', () => {
+        modal.remove();
+    });
+
+    // Закрытие при клике на фон
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal) {
+            modal.remove();
+        }
+    });
 }
 
 let lastAdded = {};
@@ -149,7 +187,7 @@ async function updateCart(basketId, action) {
             const data = await response.json();
             if (response.status === 400 && data.message && data.message.startsWith('Недостаточно товара на складе. Доступно: ')) {
                 const availableQuantity = data.message.split(' ').pop();
-                showToast(`Товара ${availableQuantity} количество на складе`, 'info');
+                showToast(`Максимум для заказа ${availableQuantity} шт.`, 'info');
             } else {
                 throw new Error(`HTTP error! Status: ${response.status}: ${data.message || 'Unknown error'}`);
             }

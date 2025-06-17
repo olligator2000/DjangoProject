@@ -1,0 +1,83 @@
+/* order_confirmation.css */
+.content {
+    margin-right: 0px;
+    padding: 0px;
+    margin-top: 130px;
+}
+
+.order-confirmation-container {
+    max-width: 800px;
+    margin: 150px auto 20px;
+
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    text-align: center;
+}
+
+.order-confirmation-container h1 {
+    color: #4CAF50;
+    margin-bottom: 20px;
+}
+
+.order-details {
+    text-align: left;
+    margin: 30px 0;
+    padding: 5px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    border-left: 4px solid #4CAF50;
+}
+
+.order-details h2 {
+    margin-top: 0;
+    color: #333;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+}
+
+.order-details p {
+    margin: 10px 0;
+    line-height: 1.6;
+}
+
+.order-details strong {
+    color: #555;
+    min-width: 180px;
+    display: inline-block;
+}
+
+.btn-primary {
+    background-color: #4CAF50;
+    color: white;
+    margin: 20px 0 0;
+    padding: 12px 25px;
+    margin-bottom: 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    display: inline-block;
+    margin-top: 0px;
+    transition: background-color 0.3s;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-primary:hover {
+    background-color: #45a049;
+}
+
+@media (max-width: 768px) {
+    .order-confirmation-container {
+        margin: 100px 20px 30px;
+        padding: 20px;
+    }
+
+    .order-details {
+        padding: 15px;
+    }
+
+    .order-details strong {
+        min-width: 120px;
+    }
+}

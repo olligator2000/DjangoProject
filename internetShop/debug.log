@@ -13541,3 +13541,1748 @@ Bad Request: /products/update_basket_ajax/663/increase/
 Bad Request: /products/add_to_cart_ajax/3/
 Недостаточно товара: 3 (доступно: 6, в корзине: 6)
 Bad Request: /products/update_basket_ajax/663/increase/
+Watching for file changes with StatReloader
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Watching for file changes with StatReloader
+Недостаточно товара: 2 (доступно: 6, в корзине: 6)
+Bad Request: /products/update_basket_ajax/678/increase/
+Недостаточно товара: 2 (доступно: 6, в корзине: 6)
+Bad Request: /products/update_basket_ajax/678/increase/
+Недостаточно товара: 2 (доступно: 6, в корзине: 6)
+Bad Request: /products/update_basket_ajax/678/increase/
+Not Found: /favicon.ico
+Недостаточно товара: 2 (доступно: 6, в корзине: 6)
+Bad Request: /products/update_basket_ajax/678/increase/
+Not Found: /favicon.ico
+Недостаточно товара: 2 (доступно: 6, в корзине: 6)
+Bad Request: /products/add_to_cart_ajax/2/
+Недостаточно товара: 2 (доступно: 6, в корзине: 6)
+Bad Request: /products/update_basket_ajax/678/increase/
+Недостаточно товара: 2 (доступно: 6, в корзине: 6)
+Bad Request: /products/update_basket_ajax/678/increase/
+Недостаточно товара: 2 (доступно: 6, в корзине: 6)
+Bad Request: /products/add_to_cart_ajax/2/
+Попытка добавить отсутствующий товар: 13
+Bad Request: /products/add_to_cart_ajax/13/
+Недостаточно товара: 2 (доступно: 6, в корзине: 6)
+Bad Request: /products/update_basket_ajax/678/increase/
+Недостаточно товара: 8 (доступно: 8, в корзине: 8)
+Bad Request: /products/update_basket_ajax/679/increase/
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /favicon.ico
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Недостаточно товара: 2 (доступно: 6, в корзине: 6)
+Bad Request: /products/update_basket_ajax/678/increase/
+Недостаточно товара: 8 (доступно: 8, в корзине: 8)
+Bad Request: /products/update_basket_ajax/679/increase/
+Недостаточно товара: 8 (доступно: 8, в корзине: 8)
+Bad Request: /products/update_basket_ajax/679/increase/
+Internal Server Error: /products/zakaz_end/
+Traceback (most recent call last):
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\contrib\auth\decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Учёба\DjangoProject\internetshop\products\views.py", line 358, in zakaz_end
+    return render(request, 'products/zakaz_end.html', context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\template\loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\template\defaulttags.py", line 243, in render
+    nodelist.append(node.render_annotated(context))
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\template\defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\urls\base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'product_detail' with arguments '('',)' not found. 1 pattern(s) tried: ['products/(?P<product_id>[0-9]+)/\\Z']
+Недостаточно товара: 8 (доступно: 8, в корзине: 8)
+Bad Request: /products/update_basket_ajax/679/increase/
+Недостаточно товара: 2 (доступно: 6, в корзине: 6)
+Bad Request: /products/update_basket_ajax/678/increase/
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Watching for file changes with StatReloader
+Not Found: /favicon.ico
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /favicon.ico
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /favicon.ico
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /favicon.ico
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /favicon.ico
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /favicon.ico
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Internal Server Error: /products/zakaz_end/
+Traceback (most recent call last):
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\contrib\auth\decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Учёба\DjangoProject\internetshop\products\views.py", line 349, in zakaz_end
+    return redirect('products:order_confirmation')
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\shortcuts.py", line 51, in redirect
+    resolve_url(to, *args, **kwargs),
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\shortcuts.py", line 184, in resolve_url
+    return reverse(to, args=args, kwargs=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\urls\base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'order_confirmation' not found. 'order_confirmation' is not a valid view function or pattern name.
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /favicon.ico
+Internal Server Error: /products/zakaz_end/
+Traceback (most recent call last):
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\contrib\auth\decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Учёба\DjangoProject\internetshop\products\views.py", line 358, in zakaz_end
+    return render(request, 'products/zakaz_end.html', context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\template\loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\template\backends\django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\template\engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\template\engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+           ^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\template\base.py", line 196, in compile_nodelist
+    nodelist = parser.parse()
+               ^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\template\loader_tags.py", line 299, in do_extends
+    nodelist = parser.parse()
+               ^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\template\loader_tags.py", line 234, in do_block
+    nodelist = parser.parse(("endblock",))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\template\base.py", line 489, in parse
+    raise self.error(token, e)
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\template\base.py", line 487, in parse
+    filter_expression = self.compile_filter(token.contents)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\template\base.py", line 609, in compile_filter
+    return FilterExpression(token, self)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\template\base.py", line 710, in __init__
+    raise TemplateSyntaxError(
+django.template.exceptions.TemplateSyntaxError: Could not parse the remainder: ' form.phone' from '+7 form.phone'
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Internal Server Error: /products/zakaz_end/
+Traceback (most recent call last):
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\contrib\auth\decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Учёба\DjangoProject\internetshop\products\views.py", line 358, in zakaz_end
+    return render(request, 'products/zakaz_end.html', context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\template\loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\template\backends\django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\template\engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\template\engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+           ^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\template\base.py", line 196, in compile_nodelist
+    nodelist = parser.parse()
+               ^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\template\loader_tags.py", line 299, in do_extends
+    nodelist = parser.parse()
+               ^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\template\loader_tags.py", line 234, in do_block
+    nodelist = parser.parse(("endblock",))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\template\base.py", line 489, in parse
+    raise self.error(token, e)
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\template\base.py", line 487, in parse
+    filter_expression = self.compile_filter(token.contents)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\template\base.py", line 609, in compile_filter
+    return FilterExpression(token, self)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\template\base.py", line 710, in __init__
+    raise TemplateSyntaxError(
+django.template.exceptions.TemplateSyntaxError: Could not parse the remainder: '(attrs={"value": "+7"})' from 'form.phone.as_widget(attrs={"value": "+7"})'
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Internal Server Error: /products/zakaz_end/
+Traceback (most recent call last):
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\contrib\auth\decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Учёба\DjangoProject\internetshop\products\views.py", line 358, in zakaz_end
+    return render(request, 'products/zakaz_end.html', context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\template\loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\template\backends\django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\template\engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\template\engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+           ^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\template\base.py", line 196, in compile_nodelist
+    nodelist = parser.parse()
+               ^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\template\loader_tags.py", line 299, in do_extends
+    nodelist = parser.parse()
+               ^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\template\loader_tags.py", line 234, in do_block
+    nodelist = parser.parse(("endblock",))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\template\base.py", line 489, in parse
+    raise self.error(token, e)
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\template\base.py", line 487, in parse
+    filter_expression = self.compile_filter(token.contents)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\template\base.py", line 609, in compile_filter
+    return FilterExpression(token, self)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\template\base.py", line 710, in __init__
+    raise TemplateSyntaxError(
+django.template.exceptions.TemplateSyntaxError: Could not parse the remainder: '(attrs={"value": "+7"})' from 'form.phone(attrs={"value": "+7"})'
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+D:\Учёба\DjangoProject\internetShop\products\forms.py changed, reloading.
+Watching for file changes with StatReloader
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /favicon.ico
+D:\Учёба\DjangoProject\internetShop\products\forms.py changed, reloading.
+Watching for file changes with StatReloader
+D:\Учёба\DjangoProject\internetShop\products\forms.py changed, reloading.
+Watching for file changes with StatReloader
+D:\Учёба\DjangoProject\internetShop\products\forms.py changed, reloading.
+Watching for file changes with StatReloader
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /products/1/{{ item.product.image.url }}
+Not Found: /products/1/{% static 'images/sbp-logo.png' %}
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Watching for file changes with StatReloader
+D:\Учёба\DjangoProject\internetShop\products\forms.py changed, reloading.
+Watching for file changes with StatReloader
+D:\Учёба\DjangoProject\internetShop\products\views.py changed, reloading.
+Watching for file changes with StatReloader
+Недостаточно товара: 1 (доступно: 6, в корзине: 6)
+Bad Request: /products/update_basket_ajax/684/increase/
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Недостаточно товара: 1 (доступно: 6, в корзине: 6)
+Bad Request: /products/update_basket_ajax/684/increase/
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /favicon.ico
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /favicon.ico
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+D:\Учёба\DjangoProject\internetShop\products\models.py changed, reloading.
+Watching for file changes with StatReloader
+D:\Учёба\DjangoProject\internetShop\products\models.py changed, reloading.
+Watching for file changes with StatReloader
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /favicon.ico
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+D:\Учёба\DjangoProject\internetShop\products\views.py changed, reloading.
+Watching for file changes with StatReloader
+Недостаточно товара: 1 (доступно: 6, в корзине: 6)
+Bad Request: /products/update_basket_ajax/684/increase/
+D:\Учёба\DjangoProject\internetShop\products\views.py changed, reloading.
+Watching for file changes with StatReloader
+Not Found: /favicon.ico
+D:\Учёба\DjangoProject\internetShop\products\views.py changed, reloading.
+Watching for file changes with StatReloader
+Not Found: /favicon.ico
+D:\Учёба\DjangoProject\internetShop\products\views.py changed, reloading.
+Watching for file changes with StatReloader
+Not Found: /favicon.ico
+D:\Учёба\DjangoProject\internetShop\products\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\Учёба\DjangoProject\internetShop\products\views.py changed, reloading.
+Watching for file changes with StatReloader
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+D:\Учёба\DjangoProject\internetShop\products\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\Учёба\DjangoProject\internetShop\products\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\Учёба\DjangoProject\internetShop\products\views.py changed, reloading.
+Watching for file changes with StatReloader
+Недостаточно товара: 4 (доступно: 7, в корзине: 7)
+Bad Request: /products/update_basket_ajax/685/increase/
+Недостаточно товара: 4 (доступно: 7, в корзине: 7)
+Bad Request: /products/add_to_cart_ajax/4/
+Недостаточно товара: 3 (доступно: 6, в корзине: 6)
+Bad Request: /products/update_basket_ajax/688/increase/
+Internal Server Error: /products/zakaz_end/
+Traceback (most recent call last):
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\template\base.py", line 510, in parse
+    compile_func = self.tags[command]
+                   ~~~~~~~~~^^^^^^^^^
+KeyError: 'endif'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\contrib\auth\decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Учёба\DjangoProject\internetshop\products\views.py", line 382, in zakaz_end
+    return render(request, 'products/zakaz_end.html', context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\template\loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\template\backends\django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\template\engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\template\engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+           ^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\template\base.py", line 196, in compile_nodelist
+    nodelist = parser.parse()
+               ^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\template\loader_tags.py", line 299, in do_extends
+    nodelist = parser.parse()
+               ^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\template\loader_tags.py", line 234, in do_block
+    nodelist = parser.parse(("endblock",))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\template\base.py", line 512, in parse
+    self.invalid_block_tag(token, command, parse_until)
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\template\base.py", line 567, in invalid_block_tag
+    raise self.error(
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 145: 'endif', expected 'endblock'. Did you forget to register or load this tag?
+Internal Server Error: /products/zakaz_end/
+Traceback (most recent call last):
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\template\base.py", line 510, in parse
+    compile_func = self.tags[command]
+                   ~~~~~~~~~^^^^^^^^^
+KeyError: 'endif'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\contrib\auth\decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Учёба\DjangoProject\internetshop\products\views.py", line 382, in zakaz_end
+    return render(request, 'products/zakaz_end.html', context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\template\loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\template\backends\django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\template\engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\template\engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+           ^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\template\base.py", line 196, in compile_nodelist
+    nodelist = parser.parse()
+               ^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\template\loader_tags.py", line 299, in do_extends
+    nodelist = parser.parse()
+               ^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\template\loader_tags.py", line 234, in do_block
+    nodelist = parser.parse(("endblock",))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\template\base.py", line 512, in parse
+    self.invalid_block_tag(token, command, parse_until)
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\template\base.py", line 567, in invalid_block_tag
+    raise self.error(
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 145: 'endif', expected 'endblock'. Did you forget to register or load this tag?
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Недостаточно товара: 2 (доступно: 6, в корзине: 6)
+Bad Request: /products/update_basket_ajax/687/increase/
+Недостаточно товара: 2 (доступно: 6, в корзине: 6)
+Bad Request: /products/update_basket_ajax/687/increase/
+Недостаточно товара: 2 (доступно: 6, в корзине: 6)
+Bad Request: /products/update_basket_ajax/687/increase/
+Недостаточно товара: 4 (доступно: 7, в корзине: 7)
+Bad Request: /products/update_basket_ajax/685/increase/
+Недостаточно товара: 4 (доступно: 7, в корзине: 7)
+Bad Request: /products/update_basket_ajax/685/increase/
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+D:\Учёба\DjangoProject\internetShop\products\urls.py changed, reloading.
+Watching for file changes with StatReloader
+D:\Учёба\DjangoProject\internetShop\products\forms.py changed, reloading.
+Watching for file changes with StatReloader
+D:\Учёба\DjangoProject\internetShop\products\forms.py changed, reloading.
+Watching for file changes with StatReloader
+D:\Учёба\DjangoProject\internetShop\products\models.py changed, reloading.
+Watching for file changes with StatReloader
+D:\Учёба\DjangoProject\internetShop\products\models.py changed, reloading.
+Watching for file changes with StatReloader
+D:\Учёба\DjangoProject\internetShop\products\urls.py changed, reloading.
+Watching for file changes with StatReloader
+D:\Учёба\DjangoProject\internetShop\products\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\Учёба\DjangoProject\internetShop\products\forms.py changed, reloading.
+Watching for file changes with StatReloader
+D:\Учёба\DjangoProject\internetShop\products\models.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+D:\Учёба\DjangoProject\internetShop\products\admin.py changed, reloading.
+Watching for file changes with StatReloader
+D:\Учёба\DjangoProject\internetShop\products\admin.py changed, reloading.
+Watching for file changes with StatReloader
+D:\Учёба\DjangoProject\internetShop\products\admin.py changed, reloading.
+Watching for file changes with StatReloader
+D:\Учёба\DjangoProject\internetShop\products\admin.py changed, reloading.
+Watching for file changes with StatReloader
+D:\Учёба\DjangoProject\internetShop\users\admin.py changed, reloading.
+Watching for file changes with StatReloader
+D:\Учёба\DjangoProject\internetShop\users\admin.py changed, reloading.
+Watching for file changes with StatReloader
+D:\Учёба\DjangoProject\internetShop\users\admin.py changed, reloading.
+Watching for file changes with StatReloader
+D:\Учёба\DjangoProject\internetShop\users\admin.py changed, reloading.
+Watching for file changes with StatReloader
+D:\Учёба\DjangoProject\internetShop\products\models.py changed, reloading.
+Watching for file changes with StatReloader
+D:\Учёба\DjangoProject\internetShop\products\models.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+D:\Учёба\DjangoProject\internetShop\products\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\Учёба\DjangoProject\internetShop\products\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\Учёба\DjangoProject\internetShop\products\urls.py changed, reloading.
+Watching for file changes with StatReloader
+D:\Учёба\DjangoProject\internetShop\products\urls.py changed, reloading.
+Watching for file changes with StatReloader
+D:\Учёба\DjangoProject\internetShop\products\forms.py changed, reloading.
+Watching for file changes with StatReloader
+D:\Учёба\DjangoProject\internetShop\products\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\Учёба\DjangoProject\internetShop\products\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\Учёба\DjangoProject\internetShop\products\admin.py changed, reloading.
+Watching for file changes with StatReloader
+Ошибки валидации формы заказа: <ul class="errorlist"><li>full_name<ul class="errorlist" id="id_full_name_error"><li>Обязательное поле.</li></ul></li></ul>
+Ошибки валидации формы заказа: <ul class="errorlist"><li>full_name<ul class="errorlist" id="id_full_name_error"><li>Обязательное поле.</li></ul></li></ul>
+Ошибки валидации формы заказа: <ul class="errorlist"><li>full_name<ul class="errorlist" id="id_full_name_error"><li>Обязательное поле.</li></ul></li></ul>
+Not Found: /favicon.ico
+Internal Server Error: /products/zakaz_end/
+Traceback (most recent call last):
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\template\base.py", line 510, in parse
+    compile_func = self.tags[command]
+                   ~~~~~~~~~^^^^^^^^^
+KeyError: 'endif'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\contrib\auth\decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Учёба\DjangoProject\internetshop\products\views.py", line 401, in zakaz_end
+    return render(request, 'products/zakaz_end.html', context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\template\loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\template\backends\django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\template\engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\template\engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+           ^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\template\base.py", line 196, in compile_nodelist
+    nodelist = parser.parse()
+               ^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\template\loader_tags.py", line 299, in do_extends
+    nodelist = parser.parse()
+               ^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\template\loader_tags.py", line 234, in do_block
+    nodelist = parser.parse(("endblock",))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\template\base.py", line 512, in parse
+    self.invalid_block_tag(token, command, parse_until)
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\template\base.py", line 567, in invalid_block_tag
+    raise self.error(
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 143: 'endif', expected 'endblock'. Did you forget to register or load this tag?
+Not Found: /favicon.ico
+Watching for file changes with StatReloader
+Internal Server Error: /products/zakaz_end/
+Traceback (most recent call last):
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\template\base.py", line 510, in parse
+    compile_func = self.tags[command]
+                   ~~~~~~~~~^^^^^^^^^
+KeyError: 'endif'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\contrib\auth\decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Учёба\DjangoProject\internetshop\products\views.py", line 401, in zakaz_end
+    return render(request, 'products/zakaz_end.html', context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\template\loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\template\backends\django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\template\engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\template\engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+           ^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\template\base.py", line 196, in compile_nodelist
+    nodelist = parser.parse()
+               ^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\template\loader_tags.py", line 299, in do_extends
+    nodelist = parser.parse()
+               ^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\template\loader_tags.py", line 234, in do_block
+    nodelist = parser.parse(("endblock",))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\template\base.py", line 512, in parse
+    self.invalid_block_tag(token, command, parse_until)
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\template\base.py", line 567, in invalid_block_tag
+    raise self.error(
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 143: 'endif', expected 'endblock'. Did you forget to register or load this tag?
+Internal Server Error: /products/zakaz_end/
+Traceback (most recent call last):
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\template\smartif.py", line 180, in translate_token
+    op = OPERATORS[token]
+         ~~~~~~~~~^^^^^^^
+KeyError: 'total_sum|lt:1000'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\contrib\auth\decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Учёба\DjangoProject\internetshop\products\views.py", line 401, in zakaz_end
+    return render(request, 'products/zakaz_end.html', context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\template\loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\template\backends\django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\template\engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\template\engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+           ^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\template\base.py", line 196, in compile_nodelist
+    nodelist = parser.parse()
+               ^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\template\loader_tags.py", line 299, in do_extends
+    nodelist = parser.parse()
+               ^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\template\loader_tags.py", line 234, in do_block
+    nodelist = parser.parse(("endblock",))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\template\defaulttags.py", line 961, in do_if
+    condition = TemplateIfParser(parser, bits).parse()
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\template\defaulttags.py", line 894, in __init__
+    super().__init__(*args, **kwargs)
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\template\smartif.py", line 171, in __init__
+    mapped_tokens.append(self.translate_token(token))
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\template\smartif.py", line 182, in translate_token
+    return self.create_var(token)
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\template\defaulttags.py", line 897, in create_var
+    return TemplateLiteral(self.template_parser.compile_filter(value), value)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\template\base.py", line 609, in compile_filter
+    return FilterExpression(token, self)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\template\base.py", line 705, in __init__
+    filter_func = parser.find_filter(filter_name)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\template\base.py", line 615, in find_filter
+    raise TemplateSyntaxError("Invalid filter: '%s'" % filter_name)
+django.template.exceptions.TemplateSyntaxError: Invalid filter: 'lt'
+Ошибки валидации формы заказа: <ul class="errorlist"><li>full_name<ul class="errorlist" id="id_full_name_error"><li>Обязательное поле.</li></ul></li></ul>
+Not Found: /favicon.ico
+Ошибки валидации формы заказа: <ul class="errorlist"><li>full_name<ul class="errorlist" id="id_full_name_error"><li>Обязательное поле.</li></ul></li></ul>
+Ошибки валидации формы заказа: <ul class="errorlist"><li>full_name<ul class="errorlist" id="id_full_name_error"><li>Обязательное поле.</li></ul></li></ul>
+D:\Учёба\DjangoProject\internetShop\products\forms.py changed, reloading.
+Watching for file changes with StatReloader
+Internal Server Error: /products/zakaz_end/
+Traceback (most recent call last):
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\contrib\auth\decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Учёба\DjangoProject\internetshop\products\views.py", line 347, in zakaz_end
+    if form.is_valid():
+       ^^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\forms\forms.py", line 206, in is_valid
+    return self.is_bound and not self.errors
+                                 ^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\forms\forms.py", line 201, in errors
+    self.full_clean()
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\forms\forms.py", line 338, in full_clean
+    self._clean_form()
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\forms\forms.py", line 354, in _clean_form
+    cleaned_data = self.clean()
+                   ^^^^^^^^^^^^
+  File "D:\Учёба\DjangoProject\internetshop\products\forms.py", line 37, in clean
+    logger.info(f'Payment method: {payment_method}')
+    ^^^^^^
+NameError: name 'logger' is not defined
+D:\Учёба\DjangoProject\internetShop\products\forms.py changed, reloading.
+Watching for file changes with StatReloader
+Payment method: 
+Ошибки валидации формы заказа: <ul class="errorlist"><li>full_name<ul class="errorlist" id="id_full_name_error"><li>Обязательное поле.</li></ul></li></ul>
+Payment method: 
+Ошибки валидации формы заказа: <ul class="errorlist"><li>full_name<ul class="errorlist" id="id_full_name_error"><li>Обязательное поле.</li></ul></li></ul>
+Payment method: 
+Ошибки валидации формы заказа: <ul class="errorlist"><li>full_name<ul class="errorlist" id="id_full_name_error"><li>Обязательное поле.</li></ul></li></ul>
+Not Found: /favicon.ico
+Watching for file changes with StatReloader
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Payment method: 
+Ошибки валидации формы: <ul class="errorlist"><li>full_name<ul class="errorlist" id="id_full_name_error"><li>Обязательное поле.</li></ul></li></ul>
+Payment method: 
+Ошибки валидации формы: <ul class="errorlist"><li>full_name<ul class="errorlist" id="id_full_name_error"><li>Обязательное поле.</li></ul></li></ul>
+Payment method: card
+Ошибки валидации формы: <ul class="errorlist"><li>full_name<ul class="errorlist" id="id_full_name_error"><li>Обязательное поле.</li></ul></li></ul>
+D:\Учёба\DjangoProject\internetShop\products\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\Учёба\DjangoProject\internetShop\products\views.py changed, reloading.
+Watching for file changes with StatReloader
+Payment method: card
+Ошибки валидации формы: <ul class="errorlist"><li>full_name<ul class="errorlist" id="id_full_name_error"><li>Обязательное поле.</li></ul></li></ul>
+Payment method: sbp
+Ошибки валидации формы: <ul class="errorlist"><li>full_name<ul class="errorlist" id="id_full_name_error"><li>Обязательное поле.</li></ul></li></ul>
+Payment method: sbp
+Ошибки валидации формы: <ul class="errorlist"><li>full_name<ul class="errorlist" id="id_full_name_error"><li>Обязательное поле.</li></ul></li></ul>
+Not Found: /favicon.ico
+Payment method: sbp
+Ошибки валидации формы: <ul class="errorlist"><li>full_name<ul class="errorlist" id="id_full_name_error"><li>Обязательное поле.</li></ul></li></ul>
+D:\Учёба\DjangoProject\internetShop\products\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\Учёба\DjangoProject\internetShop\products\urls.py changed, reloading.
+Watching for file changes with StatReloader
+Not Found: /favicon.ico
+Payment method: sbp
+Ошибки валидации формы: <ul class="errorlist"><li>full_name<ul class="errorlist" id="id_full_name_error"><li>Обязательное поле.</li></ul></li></ul>
+Bad Request: /products/zakaz_end/
+Payment method: sbp
+Ошибки валидации формы: <ul class="errorlist"><li>full_name<ul class="errorlist" id="id_full_name_error"><li>Обязательное поле.</li></ul></li></ul>
+Bad Request: /products/zakaz_end/
+Payment method: sbp
+Ошибки валидации формы: <ul class="errorlist"><li>full_name<ul class="errorlist" id="id_full_name_error"><li>Обязательное поле.</li></ul></li></ul>
+Bad Request: /products/zakaz_end/
+Payment method: sbp
+Ошибки валидации формы: <ul class="errorlist"><li>full_name<ul class="errorlist" id="id_full_name_error"><li>Обязательное поле.</li></ul></li></ul>
+Bad Request: /products/zakaz_end/
+Payment method: sbp
+Ошибки валидации формы: <ul class="errorlist"><li>full_name<ul class="errorlist" id="id_full_name_error"><li>Обязательное поле.</li></ul></li></ul>
+Bad Request: /products/zakaz_end/
+Payment method: sbp
+Ошибки валидации формы: <ul class="errorlist"><li>full_name<ul class="errorlist" id="id_full_name_error"><li>Обязательное поле.</li></ul></li></ul>
+Bad Request: /products/zakaz_end/
+Payment method: sbp
+Ошибки валидации формы: <ul class="errorlist"><li>full_name<ul class="errorlist" id="id_full_name_error"><li>Обязательное поле.</li></ul></li></ul>
+Bad Request: /products/zakaz_end/
+Payment method: sbp
+Ошибки валидации формы: <ul class="errorlist"><li>full_name<ul class="errorlist" id="id_full_name_error"><li>Обязательное поле.</li></ul></li></ul>
+Bad Request: /products/zakaz_end/
+Payment method: sbp
+Ошибки валидации формы: <ul class="errorlist"><li>full_name<ul class="errorlist" id="id_full_name_error"><li>Обязательное поле.</li></ul></li></ul>
+Bad Request: /products/zakaz_end/
+Payment method: sbp
+Ошибки валидации формы: <ul class="errorlist"><li>full_name<ul class="errorlist" id="id_full_name_error"><li>Обязательное поле.</li></ul></li></ul>
+Bad Request: /products/zakaz_end/
+Payment method: sbp
+Ошибки валидации формы: <ul class="errorlist"><li>full_name<ul class="errorlist" id="id_full_name_error"><li>Обязательное поле.</li></ul></li></ul>
+Bad Request: /products/zakaz_end/
+Payment method: sbp
+Ошибки валидации формы: <ul class="errorlist"><li>full_name<ul class="errorlist" id="id_full_name_error"><li>Обязательное поле.</li></ul></li></ul>
+Bad Request: /products/zakaz_end/
+Payment method: sbp
+Ошибки валидации формы: <ul class="errorlist"><li>full_name<ul class="errorlist" id="id_full_name_error"><li>Обязательное поле.</li></ul></li></ul>
+Bad Request: /products/zakaz_end/
+Payment method: sbp
+Ошибки валидации формы: <ul class="errorlist"><li>full_name<ul class="errorlist" id="id_full_name_error"><li>Обязательное поле.</li></ul></li></ul>
+Bad Request: /products/zakaz_end/
+Payment method: sbp
+Ошибки валидации формы: <ul class="errorlist"><li>full_name<ul class="errorlist" id="id_full_name_error"><li>Обязательное поле.</li></ul></li></ul>
+Bad Request: /products/zakaz_end/
+Payment method: sbp
+Ошибки валидации формы: <ul class="errorlist"><li>full_name<ul class="errorlist" id="id_full_name_error"><li>Обязательное поле.</li></ul></li></ul>
+Bad Request: /products/zakaz_end/
+Payment method: sbp
+Ошибки валидации формы: <ul class="errorlist"><li>full_name<ul class="errorlist" id="id_full_name_error"><li>Обязательное поле.</li></ul></li></ul>
+Bad Request: /products/zakaz_end/
+Payment method: sbp
+Ошибки валидации формы: <ul class="errorlist"><li>full_name<ul class="errorlist" id="id_full_name_error"><li>Обязательное поле.</li></ul></li></ul>
+Bad Request: /products/zakaz_end/
+Payment method: sbp
+Ошибки валидации формы: <ul class="errorlist"><li>full_name<ul class="errorlist" id="id_full_name_error"><li>Обязательное поле.</li></ul></li></ul>
+Bad Request: /products/zakaz_end/
+Payment method: sbp
+Ошибки валидации формы: <ul class="errorlist"><li>full_name<ul class="errorlist" id="id_full_name_error"><li>Обязательное поле.</li></ul></li></ul>
+Bad Request: /products/zakaz_end/
+Payment method: sbp
+Ошибки валидации формы: <ul class="errorlist"><li>full_name<ul class="errorlist" id="id_full_name_error"><li>Обязательное поле.</li></ul></li></ul>
+Bad Request: /products/zakaz_end/
+Payment method: sbp
+Ошибки валидации формы: <ul class="errorlist"><li>full_name<ul class="errorlist" id="id_full_name_error"><li>Обязательное поле.</li></ul></li></ul>
+Bad Request: /products/zakaz_end/
+Payment method: sbp
+Ошибки валидации формы: <ul class="errorlist"><li>full_name<ul class="errorlist" id="id_full_name_error"><li>Обязательное поле.</li></ul></li></ul>
+Bad Request: /products/zakaz_end/
+Payment method: sbp
+Ошибки валидации формы: <ul class="errorlist"><li>full_name<ul class="errorlist" id="id_full_name_error"><li>Обязательное поле.</li></ul></li></ul>
+Bad Request: /products/zakaz_end/
+Payment method: sbp
+Ошибки валидации формы: <ul class="errorlist"><li>full_name<ul class="errorlist" id="id_full_name_error"><li>Обязательное поле.</li></ul></li></ul>
+Bad Request: /products/zakaz_end/
+Payment method: sbp
+Ошибки валидации формы: <ul class="errorlist"><li>full_name<ul class="errorlist" id="id_full_name_error"><li>Обязательное поле.</li></ul></li></ul>
+Bad Request: /products/zakaz_end/
+Payment method: sbp
+Ошибки валидации формы: <ul class="errorlist"><li>full_name<ul class="errorlist" id="id_full_name_error"><li>Обязательное поле.</li></ul></li></ul>
+Bad Request: /products/zakaz_end/
+Payment method: sbp
+Ошибки валидации формы: <ul class="errorlist"><li>full_name<ul class="errorlist" id="id_full_name_error"><li>Обязательное поле.</li></ul></li></ul>
+Bad Request: /products/zakaz_end/
+Payment method: sbp
+Ошибки валидации формы: <ul class="errorlist"><li>full_name<ul class="errorlist" id="id_full_name_error"><li>Обязательное поле.</li></ul></li></ul>
+Bad Request: /products/zakaz_end/
+Payment method: sbp
+Ошибки валидации формы: <ul class="errorlist"><li>full_name<ul class="errorlist" id="id_full_name_error"><li>Обязательное поле.</li></ul></li></ul>
+Bad Request: /products/zakaz_end/
+Payment method: sbp
+Ошибки валидации формы: <ul class="errorlist"><li>full_name<ul class="errorlist" id="id_full_name_error"><li>Обязательное поле.</li></ul></li></ul>
+Bad Request: /products/zakaz_end/
+Not Found: /favicon.ico
+Payment method: sbp
+Ошибки валидации формы: <ul class="errorlist"><li>full_name<ul class="errorlist" id="id_full_name_error"><li>Обязательное поле.</li></ul></li></ul>
+Bad Request: /products/zakaz_end/
+Payment method: sbp
+Ошибки валидации формы: <ul class="errorlist"><li>full_name<ul class="errorlist" id="id_full_name_error"><li>Обязательное поле.</li></ul></li></ul>
+Bad Request: /products/zakaz_end/
+Payment method: sbp
+Ошибки валидации формы: <ul class="errorlist"><li>full_name<ul class="errorlist" id="id_full_name_error"><li>Обязательное поле.</li></ul></li></ul>
+Bad Request: /products/zakaz_end/
+Payment method: sbp
+Ошибки валидации формы: <ul class="errorlist"><li>full_name<ul class="errorlist" id="id_full_name_error"><li>Обязательное поле.</li></ul></li></ul>
+Bad Request: /products/zakaz_end/
+Payment method: sbp
+Ошибки валидации формы: <ul class="errorlist"><li>full_name<ul class="errorlist" id="id_full_name_error"><li>Обязательное поле.</li></ul></li></ul>
+Bad Request: /products/zakaz_end/
+Payment method: sbp
+Ошибки валидации формы: <ul class="errorlist"><li>full_name<ul class="errorlist" id="id_full_name_error"><li>Обязательное поле.</li></ul></li></ul>
+Bad Request: /products/zakaz_end/
+Payment method: sbp
+Ошибки валидации формы: <ul class="errorlist"><li>full_name<ul class="errorlist" id="id_full_name_error"><li>Обязательное поле.</li></ul></li></ul>
+Bad Request: /products/zakaz_end/
+Payment method: sbp
+Ошибки валидации формы: <ul class="errorlist"><li>full_name<ul class="errorlist" id="id_full_name_error"><li>Обязательное поле.</li></ul></li></ul>
+Bad Request: /products/zakaz_end/
+Payment method: sbp
+Ошибки валидации формы: <ul class="errorlist"><li>full_name<ul class="errorlist" id="id_full_name_error"><li>Обязательное поле.</li></ul></li></ul>
+Bad Request: /products/zakaz_end/
+Payment method: sbp
+Ошибки валидации формы: <ul class="errorlist"><li>full_name<ul class="errorlist" id="id_full_name_error"><li>Обязательное поле.</li></ul></li></ul>
+Bad Request: /products/zakaz_end/
+Payment method: sbp
+Ошибки валидации формы: <ul class="errorlist"><li>full_name<ul class="errorlist" id="id_full_name_error"><li>Обязательное поле.</li></ul></li></ul>
+Bad Request: /products/zakaz_end/
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+D:\Учёба\DjangoProject\internetShop\products\views.py changed, reloading.
+Watching for file changes with StatReloader
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Payment method: sbp
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+D:\Учёба\DjangoProject\internetShop\products\views.py changed, reloading.
+Watching for file changes with StatReloader
+Payment method: sbp
+Payment method: sbp
+Payment method: sbp
+D:\Учёба\DjangoProject\internetShop\products\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\Учёба\DjangoProject\internetShop\products\views.py changed, reloading.
+Watching for file changes with StatReloader
+Payment method: sbp
+Ошибки валидации формы: * full_name
+  * Обязательное поле.
+Internal Server Error: /products/process_payment/
+Traceback (most recent call last):
+  File "D:\Учёба\DjangoProject\internetshop\products\views.py", line 413, in process_payment
+    data = json.loads(request.body)
+           ^^^^
+NameError: name 'json' is not defined. Did you forget to import 'json'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\contrib\auth\decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Учёба\DjangoProject\internetshop\products\views.py", line 435, in process_payment
+    except json.JSONDecodeError:
+           ^^^^
+NameError: name 'json' is not defined. Did you forget to import 'json'
+Watching for file changes with StatReloader
+Payment method: sbp
+Ошибки валидации формы: * full_name
+  * Обязательное поле.
+D:\Учёба\DjangoProject\internetShop\products\views.py changed, reloading.
+Watching for file changes with StatReloader
+Payment method: sbp
+Ошибки валидации формы: * full_name
+  * Обязательное поле.
+Not Found: /favicon.ico
+Успешная обработка платежа через sbp
+Payment method: sbp
+Ошибки валидации формы: * full_name
+  * Обязательное поле.
+Успешная обработка платежа через sbp
+Payment method: sbp
+Ошибки валидации формы: * full_name
+  * Обязательное поле.
+Успешная обработка платежа через sbp
+Payment method: sbp
+Ошибки валидации формы: * full_name
+  * Обязательное поле.
+D:\Учёба\DjangoProject\internetShop\products\forms.py changed, reloading.
+Watching for file changes with StatReloader
+Payment method: sbp
+Ошибки валидации формы: * full_name
+  * Обязательное поле.
+Успешная обработка платежа через sbp
+Payment method: sbp
+Ошибки валидации формы: * full_name
+  * Обязательное поле.
+Payment method: sbp
+Ошибки валидации формы: * full_name
+  * Обязательное поле.
+Not Found: /favicon.ico
+Успешная обработка платежа через sbp
+Payment method: sbp
+Ошибки валидации формы: * full_name
+  * Обязательное поле.
+Ошибка обработки платежа через sbp
+Bad Request: /products/process_payment/
+Успешная обработка платежа через sbp
+Payment method: sbp
+Ошибки валидации формы: * full_name
+  * Обязательное поле.
+D:\Учёба\DjangoProject\internetShop\products\forms.py changed, reloading.
+Watching for file changes with StatReloader
+Ошибки валидации формы: * full_name
+  * Обязательное поле.
+  * Укажите ФИО получателя
+Успешная обработка платежа через sbp
+Ошибки валидации формы: * full_name
+  * Обязательное поле.
+  * Укажите ФИО получателя
+D:\Учёба\DjangoProject\internetShop\products\views.py changed, reloading.
+Watching for file changes with StatReloader
+Ошибки формы: * full_name
+  * Обязательное поле.
+  * Укажите ФИО получателя
+POST-данные: <QueryDict: {'csrfmiddlewaretoken': ['MRqwtC3o3SHDjYx61KhrvUfi6jhpITXFrRNcz99ohiI7jApliEnxs5eN8gIvdDpN'], 'payment-method': ['sbp'], 'address': ['Москва, Смоленская набережная, 12/31'], 'apartment_office': [''], 'intercom': [''], 'entrance': [''], 'floor': [''], 'courier_comment': [''], 'full_name': [''], 'phone': ['+7'], 'order_comment': [''], 'card_number': [''], 'cardholder_name': [''], 'cvv': [''], 'payment-method-radio': ['sbp']}>
+Успешная обработка платежа через sbp
+Ошибки формы: * full_name
+  * Обязательное поле.
+  * Укажите ФИО получателя
+POST-данные: <QueryDict: {'csrfmiddlewaretoken': ['dlt2BSInQXMMH6wmGrMAhI49zdD1l2QhSlQIHpOn4nNgHIoBXlSGeT3EBa47QMip'], 'payment-method': ['sbp'], 'address': ['Москва, Смоленская набережная, 12/31'], 'apartment_office': [''], 'intercom': [''], 'entrance': [''], 'floor': [''], 'courier_comment': [''], 'full_name': [''], 'phone': ['+7'], 'order_comment': [''], 'card_number': [''], 'cardholder_name': [''], 'cvv': [''], 'payment-method-radio': ['sbp']}>
+Ошибки формы: * full_name
+  * Обязательное поле.
+  * Укажите ФИО получателя
+POST-данные: <QueryDict: {'csrfmiddlewaretoken': ['dlt2BSInQXMMH6wmGrMAhI49zdD1l2QhSlQIHpOn4nNgHIoBXlSGeT3EBa47QMip'], 'payment-method': ['sbp'], 'address': ['Москва, Смоленская набережная, 12/31'], 'apartment_office': [''], 'intercom': [''], 'entrance': [''], 'floor': [''], 'courier_comment': [''], 'full_name': [''], 'phone': ['+7'], 'order_comment': [''], 'card_number': [''], 'cardholder_name': [''], 'cvv': [''], 'payment-method-radio': ['sbp']}>
+Not Found: /favicon.ico
+Успешная обработка платежа через sbp
+Ошибки формы: * full_name
+  * Обязательное поле.
+  * Укажите ФИО получателя
+POST-данные: <QueryDict: {'csrfmiddlewaretoken': ['TJbyHbemiDxBHJlUzknrrxn8hTzXkKFnyJyeNIkmw3y5Hld9QetxoImDjQ03Pu7v'], 'payment-method': ['sbp'], 'address': ['Москва, Смоленская набережная, 12/31'], 'apartment_office': [''], 'intercom': [''], 'entrance': [''], 'floor': [''], 'courier_comment': [''], 'full_name': [''], 'phone': ['+7'], 'order_comment': [''], 'card_number': [''], 'cardholder_name': [''], 'cvv': [''], 'payment-method-radio': ['sbp']}>
+Успешная обработка платежа через sbp
+Ошибки формы: * full_name
+  * Обязательное поле.
+  * Укажите ФИО получателя
+POST-данные: <QueryDict: {'csrfmiddlewaretoken': ['bV8Ueq7gg8xhD88OSLmAC93zRL4Bvz1NQVvAkXdguyyLDK039FsGzk24TIvH0jtV'], 'payment-method': ['sbp'], 'address': ['Москва, Смоленская набережная, 12/31'], 'apartment_office': [''], 'intercom': [''], 'entrance': [''], 'floor': [''], 'courier_comment': [''], 'full_name': [''], 'phone': ['+7'], 'order_comment': [''], 'card_number': [''], 'cardholder_name': [''], 'cvv': [''], 'payment-method-radio': ['sbp']}>
+D:\Учёба\DjangoProject\internetShop\products\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\Учёба\DjangoProject\internetShop\products\urls.py changed, reloading.
+Watching for file changes with StatReloader
+D:\Учёба\DjangoProject\internetShop\products\forms.py changed, reloading.
+Watching for file changes with StatReloader
+Payment method: sbp
+Ошибки формы: * full_name
+  * Обязательное поле.
+  * Укажите ФИО получателя
+POST-данные: <QueryDict: {'csrfmiddlewaretoken': ['bV8Ueq7gg8xhD88OSLmAC93zRL4Bvz1NQVvAkXdguyyLDK039FsGzk24TIvH0jtV'], 'payment-method': ['sbp'], 'address': ['Москва, Смоленская набережная, 12/31'], 'apartment_office': [''], 'intercom': [''], 'entrance': [''], 'floor': [''], 'courier_comment': [''], 'full_name': [''], 'phone': ['+7'], 'order_comment': [''], 'card_number': [''], 'cardholder_name': [''], 'cvv': [''], 'payment-method-radio': ['sbp']}>
+Not Found: /favicon.ico
+Payment method: sbp
+Ошибки формы: * full_name
+  * Обязательное поле.
+  * Укажите ФИО получателя
+POST-данные: <QueryDict: {'csrfmiddlewaretoken': ['bV8Ueq7gg8xhD88OSLmAC93zRL4Bvz1NQVvAkXdguyyLDK039FsGzk24TIvH0jtV'], 'payment-method': ['sbp'], 'address': ['Москва, Смоленская набережная, 12/31'], 'apartment_office': [''], 'intercom': [''], 'entrance': [''], 'floor': [''], 'courier_comment': [''], 'full_name': [''], 'phone': ['+7'], 'order_comment': [''], 'card_number': [''], 'cardholder_name': [''], 'cvv': [''], 'payment-method-radio': ['sbp']}>
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+D:\Учёба\DjangoProject\internetShop\products\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\Учёба\DjangoProject\internetShop\products\urls.py changed, reloading.
+Watching for file changes with StatReloader
+Not Found: /favicon.ico
+Недостаточно товара: 1 (доступно: 6, в корзине: 6)
+Bad Request: /products/update_basket_ajax/689/increase/
+Not Found: /favicon.ico
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+D:\Учёба\DjangoProject\internetShop\products\views.py changed, reloading.
+Watching for file changes with StatReloader
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+POST-данные: <QueryDict: {'csrfmiddlewaretoken': ['xkEH6pveCYDiHqP2Ma90LPX4EdnPrx8rck1ncWBeQoEMH2Hh34f6I0WzGaOVWhAz'], 'payment-method': ['sbp'], 'recipient_type': ['standard-option'], 'address': ['Москва, Смоленская набережная, 12/31'], 'apartment_office': [''], 'intercom': [''], 'entrance': [''], 'floor': [''], 'courier_comment': [''], 'full_name': [''], 'phone': ['+7'], 'order_comment': [''], 'card_number': [''], 'cardholder_name': [''], 'cvv': [''], 'payment-method-radio': ['sbp']}>
+Payment method: sbp
+Ошибки формы: * full_name
+  * Обязательное поле.
+POST-данные: <QueryDict: {'csrfmiddlewaretoken': ['xkEH6pveCYDiHqP2Ma90LPX4EdnPrx8rck1ncWBeQoEMH2Hh34f6I0WzGaOVWhAz'], 'payment-method': ['sbp'], 'recipient_type': ['standard-option'], 'address': ['Москва, Смоленская набережная, 12/31'], 'apartment_office': [''], 'intercom': [''], 'entrance': [''], 'floor': [''], 'courier_comment': [''], 'full_name': [''], 'phone': ['+7'], 'order_comment': [''], 'card_number': [''], 'cardholder_name': [''], 'cvv': [''], 'payment-method-radio': ['sbp']}>
+D:\Учёба\DjangoProject\internetShop\products\models.py changed, reloading.
+Watching for file changes with StatReloader
+D:\Учёба\DjangoProject\internetShop\products\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\Учёба\DjangoProject\internetShop\products\forms.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Not Found: /favicon.ico
+Ошибка при создании заказа: NOT NULL constraint failed: products_order.delivery_status
+Traceback (most recent call last):
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\db\backends\sqlite3\base.py", line 360, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.IntegrityError: NOT NULL constraint failed: products_order.delivery_status
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\Учёба\DjangoProject\internetshop\products\views.py", line 360, in zakaz_end
+    order.save()
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\db\models\base.py", line 902, in save
+    self.save_base(
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\db\models\base.py", line 1008, in save_base
+    updated = self._save_table(
+              ^^^^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\db\models\base.py", line 1169, in _save_table
+    results = self._do_insert(
+              ^^^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\db\models\base.py", line 1210, in _do_insert
+    return manager._insert(
+           ^^^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\db\models\query.py", line 1854, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\db\models\sql\compiler.py", line 1881, in execute_sql
+    cursor.execute(sql, params)
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\db\backends\utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\db\backends\utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\db\backends\utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\db\backends\utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\db\backends\sqlite3\base.py", line 360, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.IntegrityError: NOT NULL constraint failed: products_order.delivery_status
+Not Found: /admin/products/order/
+Not Found: /favicon.ico
+Not Found: /admin/products/order/
+Not Found: /admin/products/order/
+Not Found: /admin/products/order/
+Not Found: /admin/products/order/
+Not Found: /admin/products/order/
+Not Found: /admin/products/order/
+Not Found: /admin/products/order/
+Not Found: /admin/products/order/
+Not Found: /admin/products/order/
+Not Found: /admin/products/order/
+Not Found: /admin/products/order/
+Ошибка при создании заказа: NOT NULL constraint failed: products_order.delivery_status
+Traceback (most recent call last):
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\db\backends\sqlite3\base.py", line 360, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.IntegrityError: NOT NULL constraint failed: products_order.delivery_status
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\Учёба\DjangoProject\internetshop\products\views.py", line 360, in zakaz_end
+    order.save()
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\db\models\base.py", line 902, in save
+    self.save_base(
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\db\models\base.py", line 1008, in save_base
+    updated = self._save_table(
+              ^^^^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\db\models\base.py", line 1169, in _save_table
+    results = self._do_insert(
+              ^^^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\db\models\base.py", line 1210, in _do_insert
+    return manager._insert(
+           ^^^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\db\models\query.py", line 1854, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\db\models\sql\compiler.py", line 1881, in execute_sql
+    cursor.execute(sql, params)
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\db\backends\utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\db\backends\utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\db\backends\utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\db\backends\utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\db\backends\sqlite3\base.py", line 360, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.IntegrityError: NOT NULL constraint failed: products_order.delivery_status
+Ошибка при создании заказа: NOT NULL constraint failed: products_order.delivery_status
+Traceback (most recent call last):
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\db\backends\sqlite3\base.py", line 360, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.IntegrityError: NOT NULL constraint failed: products_order.delivery_status
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\Учёба\DjangoProject\internetshop\products\views.py", line 360, in zakaz_end
+    order.save()
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\db\models\base.py", line 902, in save
+    self.save_base(
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\db\models\base.py", line 1008, in save_base
+    updated = self._save_table(
+              ^^^^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\db\models\base.py", line 1169, in _save_table
+    results = self._do_insert(
+              ^^^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\db\models\base.py", line 1210, in _do_insert
+    return manager._insert(
+           ^^^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\db\models\query.py", line 1854, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\db\models\sql\compiler.py", line 1881, in execute_sql
+    cursor.execute(sql, params)
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\db\backends\utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\db\backends\utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\db\backends\utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\db\backends\utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\db\backends\sqlite3\base.py", line 360, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.IntegrityError: NOT NULL constraint failed: products_order.delivery_status
+D:\Учёба\DjangoProject\internetShop\products\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\Учёба\DjangoProject\internetShop\products\forms.py changed, reloading.
+Watching for file changes with StatReloader
+D:\Учёба\DjangoProject\internetShop\products\models.py changed, reloading.
+Watching for file changes with StatReloader
+Not Found: /favicon.ico
+Обработка платежа через sbp на сумму 1207
+Ошибка при создании заказа: table products_order has no column named payment_method
+Traceback (most recent call last):
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\db\backends\sqlite3\base.py", line 360, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.OperationalError: table products_order has no column named payment_method
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\Учёба\DjangoProject\internetshop\products\views.py", line 412, in zakaz_end
+    order.save()
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\db\models\base.py", line 902, in save
+    self.save_base(
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\db\models\base.py", line 1008, in save_base
+    updated = self._save_table(
+              ^^^^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\db\models\base.py", line 1169, in _save_table
+    results = self._do_insert(
+              ^^^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\db\models\base.py", line 1210, in _do_insert
+    return manager._insert(
+           ^^^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\db\models\query.py", line 1854, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\db\models\sql\compiler.py", line 1881, in execute_sql
+    cursor.execute(sql, params)
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\db\backends\utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\db\backends\utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\db\backends\utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\db\backends\utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\db\backends\sqlite3\base.py", line 360, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.OperationalError: table products_order has no column named payment_method
+Обработка платежа через sbp на сумму 1207
+Ошибка при создании заказа: table products_order has no column named payment_method
+Traceback (most recent call last):
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\db\backends\sqlite3\base.py", line 360, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.OperationalError: table products_order has no column named payment_method
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\Учёба\DjangoProject\internetshop\products\views.py", line 412, in zakaz_end
+    order.save()
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\db\models\base.py", line 902, in save
+    self.save_base(
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\db\models\base.py", line 1008, in save_base
+    updated = self._save_table(
+              ^^^^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\db\models\base.py", line 1169, in _save_table
+    results = self._do_insert(
+              ^^^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\db\models\base.py", line 1210, in _do_insert
+    return manager._insert(
+           ^^^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\db\models\query.py", line 1854, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\db\models\sql\compiler.py", line 1881, in execute_sql
+    cursor.execute(sql, params)
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\db\backends\utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\db\backends\utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\db\backends\utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\db\backends\utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\db\backends\sqlite3\base.py", line 360, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.OperationalError: table products_order has no column named payment_method
+D:\Учёба\DjangoProject\internetShop\internetShop\settings.py changed, reloading.
+Watching for file changes with StatReloader
+D:\Учёба\DjangoProject\internetShop\products\views.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Отображение страницы zakaz_end для GET запроса
+Not Found: /favicon.ico
+POST запрос на zakaz_end, данные: <QueryDict: {'csrfmiddlewaretoken': ['DHRYzGw6Vtop4RkH7f1WYPQO6euwBTnmiHeEFdC69TpT4tcWo972V0Pj8bVC6DPu'], 'payment_method': ['sbp'], 'address': ['Москва, Смоленская набережная, 12/31'], 'apartment_office': [''], 'intercom': [''], 'entrance': [''], 'floor': [''], 'courier_comment': [''], 'full_name': ['oleg Pupkin343'], 'phone': ['+7'], 'order_comment': [''], 'card_number': [''], 'cardholder_name': [''], 'cvv': [''], 'payment-method': ['sbp']}>
+Выбранный способ оплаты: sbp
+Форма валидна
+Обработка платежа через sbp на сумму 1207
+Заказ #2 успешно создан, очищаем корзину
+D:\Учёба\DjangoProject\internetShop\products\admin.py changed, reloading.
+Watching for file changes with StatReloader
+D:\Учёба\DjangoProject\internetShop\users\admin.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Отображение страницы zakaz_end для GET запроса
+POST запрос на zakaz_end, данные: <QueryDict: {'csrfmiddlewaretoken': ['1Skp5HAnxN4kiSoM2UDynsYKlccKNRdO8Sw2sL39yap8uVAEXpKi8MJZA8qahbpR'], 'payment_method': ['sbp'], 'address': ['Москва, Смоленская набережная, 12/31'], 'apartment_office': [''], 'intercom': [''], 'entrance': [''], 'floor': [''], 'courier_comment': ['куку'], 'full_name': ['Alex Pupkin'], 'phone': ['+79537490060'], 'order_comment': ['Привет'], 'card_number': [''], 'cardholder_name': [''], 'cvv': [''], 'payment-method': ['sbp']}>
+Выбранный способ оплаты: sbp
+Форма валидна
+Обработка платежа через sbp на сумму 1156
+Заказ #3 успешно создан, очищаем корзину
+Not Found: /favicon.ico
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /favicon.ico
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /favicon.ico
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /favicon.ico
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /favicon.ico
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /favicon.ico
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /favicon.ico
+Отображение страницы zakaz_end для GET запроса
+POST запрос на zakaz_end, данные: <QueryDict: {'csrfmiddlewaretoken': ['lWDAxjgJTz9ctcZRZChTa16UQehuzJlpsWPdUnJvUWu0FfbJU7oDVlR95avU33xs'], 'payment_method': ['card'], 'address': ['Москва, Смоленская набережная, 12/31'], 'apartment_office': [''], 'intercom': [''], 'entrance': [''], 'floor': [''], 'courier_comment': [''], 'full_name': ['Alex Pupkin'], 'phone': ['+7'], 'order_comment': [''], 'payment-method': ['card'], 'card_number': ['43324234234238'], 'cardholder_name': ['Qwe Asd'], 'cvv': ['123']}>
+Выбранный способ оплаты: card
+Форма валидна
+Данные карты: {'card_number': '43324234234238', 'cardholder_name': 'Qwe Asd', 'cvv': '123'}
+Обработка платежа через card на сумму 1196
+Заказ #4 успешно создан, очищаем корзину
+Поисковый запрос: '[kt,', найдено категорий: 0, товаров: 0
+Изображение для продукта 1: http://127.0.0.1:8000/media/product_media/%D0%B1%D0%B5%D0%BB%D1%8B%D0%B9_%D1%85%D0%BB%D0%B5%D0%B1.png
+Изображение для продукта 2: http://127.0.0.1:8000/media/product_media/%D1%87%D0%B5%D1%80%D0%BD%D1%8B%D0%B9_%D1%85%D0%BB%D0%B5%D0%B1.jpg
+Поисковый запрос: 'хлеб', найдено категорий: 0, товаров: 2
+Отображение страницы zakaz_end для GET запроса
