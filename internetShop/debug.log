@@ -19379,3 +19379,34 @@ Not Found: /favicon.ico
 Not Found: /favicon.ico
 Not Found: /.well-known/appspecific/com.chrome.devtools.json
 Not Found: /favicon.ico
+Watching for file changes with StatReloader
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+D:\Учёба\DjangoProject\internetShop\products\views.py changed, reloading.
+Watching for file changes with StatReloader
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+D:\Учёба\DjangoProject\internetShop\products\views.py changed, reloading.
+Watching for file changes with StatReloader
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Watching for file changes with StatReloader
+Not Found: /favicon.ico
+D:\Учёба\DjangoProject\internetShop\products\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\Учёба\DjangoProject\internetShop\products\views.py changed, reloading.
+Watching for file changes with StatReloader
+Not Found: /favicon.ico
+Отображение страницы zakaz_end для GET запроса
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Недостаточно товара: 4 (доступно: 7, в корзине: 7)
+Bad Request: /products/add_to_cart_ajax/4/
+Недостаточно товара: 2 (доступно: 6, в корзине: 6)
+Bad Request: /products/add_to_cart_ajax/2/
+Отображение страницы zakaz_end для GET запроса
+Отображение страницы zakaz_end для GET запроса

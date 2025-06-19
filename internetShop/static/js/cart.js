@@ -306,9 +306,38 @@ async function syncCartState() {
     }
 }
 
+function updatePaymentDetails(totalSum) {
+    const deliveryCost = parseInt(totalSum || 0) < 1000 ? 0 : Math.floor(parseFloat(totalSum) * 0.10);
+    const serviceFee = 39;
+    const totalWithDelivery = parseInt(totalSum || 0) + deliveryCost + serviceFee;
+
+    document.querySelectorAll('.delivery').forEach(el => {
+        el.textContent = `Доставка ${deliveryCost} ₽`;
+    });
+
+    const priceTotal = document.querySelector('.price-total');
+    const priceDelivery = document.querySelector('.price-delivery');
+    const priceService = document.querySelector('.price-service');
+    const totalPrice = document.querySelector('.total-price');
+
+    if (priceTotal) priceTotal.textContent = parseInt(totalSum || 0);
+    if (priceDelivery) priceDelivery.textContent = deliveryCost;
+    if (priceService) priceService.textContent = serviceFee;
+    if (totalPrice) totalPrice.textContent = totalWithDelivery;
+
+    updateConfirmButtonState(totalSum);
+}
+
 function updateCartDisplay(data) {
     updateCartBadge(data.total_items || 0);
     updateAllTotalElements(data.total_sum || 0, data.total_items === 0);
+
+    // Обновляем стоимость доставки
+    const deliveryCost = parseInt(data.total_sum || 0) < 1000 ? 0 : Math.floor(parseFloat(data.total_sum) * 0.10);
+    document.querySelectorAll('.delivery').forEach(el => {
+        el.textContent = `Доставка ${deliveryCost} ₽`;
+    });
+
     // Обновляем #cart-container только если не на zakaz_end.html
     if (!window.location.pathname.includes('/zakaz_end/')) {
         const cartContainer = document.getElementById('cart-container');

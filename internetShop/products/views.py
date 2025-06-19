@@ -311,6 +311,7 @@ def search_products(request):
         logger.error(f"Ошибка при поиске товаров: {str(e)}", exc_info=True)
         return JsonResponse({'results': []}, status=500)
 
+
 @login_required
 def add_to_cart_ajax(request, product_id):
     try:
@@ -331,7 +332,8 @@ def add_to_cart_ajax(request, product_id):
 
         if not created:
             if product.quantity <= basket.quantity:
-                logger.warning(f"Недостаточно товара: {product_id} (доступно: {product.quantity}, в корзине: {basket.quantity})")
+                logger.warning(
+                    f"Недостаточно товара: {product_id} (доступно: {product.quantity}, в корзине: {basket.quantity})")
                 return JsonResponse({
                     'status': 'error',
                     'message': f'Недостаточно товара на складе. Доступно: {product.quantity}'
@@ -341,17 +343,19 @@ def add_to_cart_ajax(request, product_id):
 
         baskets = Basket.objects.filter(user=request.user)
         total_sum = sum(basket.sum for basket in baskets) if baskets else 0
+        delivery_cost = 0 if total_sum < 1000 else int(total_sum * 0.10)
 
         return JsonResponse({
             'status': 'success',
             'cart_html': render_to_string('products/basket.html', {
                 'baskets': baskets,
-                'total_sum': total_sum
+                'total_sum': total_sum,
+                'delivery_cost': delivery_cost
             }),
             'total_items': baskets.count(),
-            'total_sum': float(total_sum)
+            'total_sum': float(total_sum),
+            'delivery_cost': float(delivery_cost)
         })
-
     except Exception as e:
         logger.error(f"Ошибка при добавлении товара в корзину: {str(e)}", exc_info=True)
         return JsonResponse({
@@ -603,10 +607,16 @@ def get_cart_state(request):
     try:
         baskets = Basket.objects.filter(user=request.user)
         total_sum = sum(basket.sum for basket in baskets) if baskets else 0
-        cart_html = render_to_string('products/basket.html', {'baskets': baskets, 'total_sum': total_sum})
+        delivery_cost = 0 if total_sum < 1000 else int(total_sum * 0.10)
+        cart_html = render_to_string('products/basket.html', {
+            'baskets': baskets,
+            'total_sum': total_sum,
+            'delivery_cost': delivery_cost
+        })
         return JsonResponse({
             'total_items': baskets.count(),
             'total_sum': float(total_sum),
+            'delivery_cost': float(delivery_cost),
             'cart_html': cart_html
         })
     except Exception as e:
