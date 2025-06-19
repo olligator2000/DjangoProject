@@ -94,34 +94,6 @@
   margin-right: 8px;
 }
 
-.custom-rating-stars {
-  display: inline-flex;
-  gap: 5px;
-  cursor: pointer;
-}
-
-.custom-heart {
-  font-size: 22px;
-  color: transparent;
-  -webkit-text-stroke: 1px red;
-  transition: color 0.3s;
-}
-
-.custom-rating-stars:hover .custom-heart {
-  color: transparent;
-}
-
-.custom-rating-stars:hover .custom-heart:hover,
-.custom-rating-stars:hover .custom-heart:hover ~ .custom-heart {
-  color: transparent;
-}
-
-.custom-heart:hover,
-.custom-heart:hover ~ .custom-heart {
-  color: red;
-  -webkit-text-stroke: 0;
-}
-
 /* Наличие */
 .custom-stock {
   font-size: 16px;
@@ -216,6 +188,36 @@
     padding: 5px 10px;
     text-decoration: none;
     border-radius: 3px;
+}
+
+.rating-stars {
+    display: inline-flex;
+    margin-left: 10px;
+}
+
+.rating-star {
+    color: transparent;
+    -webkit-text-stroke: 1px red;
+    cursor: pointer;
+    font-size: 20px;
+    margin: 0 2px;
+    transition: color 0.2s;
+}
+
+.rating-star.filled {
+    color: red;
+    -webkit-text-stroke: 0;
+}
+
+.rating-star:hover {
+    color: red;
+}
+
+.custom-rating-star-icon {
+    color: gold;
+    font-size: 20px;
+    margin-right: 5px;
+    -webkit-text-stroke: 0;
 }
 
 @media (max-width: 900px) {

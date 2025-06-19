@@ -46,6 +46,13 @@ class UserRegistrationForm(UserCreationForm):
         "required": False
     }))
 
+    phone = forms.CharField(widget=forms.TextInput(attrs={
+        'class': 'form-group',
+        'placeholder': "Введите номер телефона",
+        'value': '+7',
+        "required": False
+    }))
+
     password1 = forms.CharField(widget=forms.PasswordInput(attrs={
         'class': 'form-group',
         'placeholder': "Введите пароль",
@@ -60,11 +67,10 @@ class UserRegistrationForm(UserCreationForm):
 
     class Meta:
         model = User
-        fields = ('first_name', 'last_name', 'username', 'email', 'password1', 'password2')
+        fields = ('first_name', 'last_name', 'username', 'email', 'phone', 'password1', 'password2')
 
 
 class UserProfileForm(UserChangeForm):
-
     first_name = forms.CharField(widget=forms.TextInput(attrs={
         'class': 'form-group',
         "required": False
@@ -85,10 +91,16 @@ class UserProfileForm(UserChangeForm):
         'class': 'form-group',
     }))
 
+    phone = forms.CharField(widget=forms.TextInput(attrs={
+        'class': 'form-group',
+        'value': '+7',
+        "required": False
+    }))
+
     image = forms.ImageField(widget=forms.FileInput(attrs={
         'class': 'save-btn', 'id': 'photoUpload', 'hidden': True,
     }))
 
     class Meta:
         model = User
-        fields = ('first_name', 'last_name', 'username', 'email', 'image')
+        fields = ('first_name', 'last_name', 'username', 'email', 'phone', 'image')

@@ -6,4 +6,5 @@ from django.contrib.auth.models import AbstractUser
 class User(AbstractUser):
     #Добавляем новое поле - фото(будут хранятся в media/users_images), фото пользователь может и не поставить
     image = models.ImageField(upload_to="users_images", blank=True)
-
+    # Добавляем поле для номера телефона, с префиксом +7 по умолчанию, необязательное
+    phone = models.CharField(max_length=12, default="+7", blank=True)

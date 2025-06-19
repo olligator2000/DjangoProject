@@ -90,14 +90,16 @@
         <div id="search-results" class="search-results hidden"></div>
 
         <div class="cart-btn">
-            <span class="cart-icon">🛒</span>
-            <span class="cart-total" id="header-cart-total">
-                {% if baskets %}
-            <span id="header-total-sum">{{ total_sum }}</span> ₽
-                {% else %}
-            Корзина пуста
-                {% endif %}
-            </span>
+             <a href="{% url 'products:zakaz_end' %}" class="cart-link">
+                <span class="cart-icon">🛒</span>
+                <span class="cart-total" id="header-cart-total">
+                    {% if baskets %}
+                <span id="header-total-sum">{{ total_sum }}</span> ₽
+                    {% else %}
+                Корзина пуста
+                    {% endif %}
+                </span>
+             </a>
         </div>
     </div>
 </div>

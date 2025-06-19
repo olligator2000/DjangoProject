@@ -1,0 +1,47 @@
+{% load humanize %}
+{% load static %}
+
+<div class="orders-container">
+    {% if orders_by_year %}
+        {% for year, orders in orders_by_year.items %}
+            <h3 class="year-header">{{ year }} г.</h3>
+            <table class="orders-table">
+                <thead>
+                    <tr>
+                        <th>Номер заказа</th>
+                        <th>Дата</th>
+                        <th>Сумма</th>
+                        <th>Статус оплаты</th>
+                        <th>Товары</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for order in orders %}
+                        <tr>
+                            <td>#{{ order.id }}</td>
+                            <td>{{ order.order_date|date:"d.m.Y H:i" }}</td>
+                            <td>{{ order.total_price|intcomma }} ₽</td>
+                            <td>{{ order.payment_method|default:"Не оплачен" }}</td>
+                            <td>
+                                <ul>
+                                    {% for item in order.items.all %}
+                                        <li>
+                                            <a href="{% url 'products:product_detail' item.product.id %}" class="product-link">
+                                                <div class="product-image-wrapper">
+                                                    <img src="{% if item.product.image %}{{ item.product.image.url }}{% else %}{% static 'images/placeholder.png' %}{% endif %}" alt="{{ item.product.name }}" class="product-image">
+                                                </div>
+                                                {{ item.product.name }} (x{{ item.quantity }})
+                                            </a>
+                                        </li>
+                                    {% endfor %}
+                                </ul>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        {% endfor %}
+    {% else %}
+        <p>У вас нет заказов.</p>
+    {% endif %}
+</div>

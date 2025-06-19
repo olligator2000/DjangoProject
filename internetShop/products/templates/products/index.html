@@ -24,7 +24,13 @@
                 <img class="product-image" src="{{ product.image.url }}" alt="{{ product.name }}">
                 <h3 class="product-title">{{ product.name }}</h3>
             </a>
-            <div class="product-price">{{ product.price|stringformat:"d" }} ₽</div>
+            <div class="product-rating-container">
+                <div class="product-price">{{ product.price|stringformat:"d" }} ₽</div>
+                <div class="product-rating">
+                    <span class="product-rating-star">★</span>
+                    <span class="product-rating-value">{{ product.average_rating|floatformat:1 }}</span>
+                </div>
+            </div>
             <button class="add-to-cart-btn" data-product-id="{{ product.id }}">Добавить в корзину</button>
         </div>
         {% endfor %}
@@ -42,7 +48,13 @@
                 <img class="product-image" src="{{ product.image.url }}" alt="{{ product.name }}">
                 <h3 class="product-title">{{ product.name }}</h3>
             </a>
-            <div class="product-price">{{ product.price|stringformat:"d" }} ₽</div>
+            <div class="product-rating-container">
+                <div class="product-price">{{ product.price|stringformat:"d" }} ₽</div>
+                <div class="product-rating">
+                    <span class="product-rating-star">★</span>
+                    <span class="product-rating-value">{{ product.average_rating|floatformat:1 }}</span>
+                </div>
+            </div>
             <button class="add-to-cart-btn" data-product-id="{{ product.id }}">Добавить в корзину</button>
         </div>
         {% endfor %}
@@ -62,82 +74,105 @@
 {% block scripts %}
 {{ block.super }}
 <script>
-document.addEventListener('DOMContentLoaded', function() {
-    // Баннер
-    const bannerImages = document.querySelectorAll('.banner img');
-    let bannerIndex = 0;
+    document.addEventListener('DOMContentLoaded', function() {
+        // Баннер
+        const bannerImages = document.querySelectorAll('.banner img');
+        let bannerIndex = 0;
 
-    function changeBannerImage() {
-        bannerImages[bannerIndex].classList.remove('active');
-        bannerIndex = (bannerIndex + 1) % bannerImages.length;
-        bannerImages[bannerIndex].classList.add('active');
-    }
-
-    if (bannerImages.length > 0) {
-        bannerImages[0].classList.add('active');
-        setInterval(changeBannerImage, 2500);
-    }
-
-    // Управление каруселями
-    const carousels = [
-        { id: 'product-carousel', interval: null },
-        { id: 'popular-carousel', interval: null }
-    ];
-
-    function refreshCarousel(carouselId) {
-        const carousel = document.getElementById(carouselId);
-        if (!carousel) {
-            console.error(`Карусель с ID ${carouselId} не найдена`);
-            return;
+        function changeBannerImage() {
+            bannerImages[bannerIndex].classList.remove('active');
+            bannerIndex = (bannerIndex + 1) % bannerImages.length;
+            bannerImages[bannerIndex].classList.add('active');
         }
-        carousel.classList.remove('fade-in');
-        carousel.classList.add('fade-out');
 
-        setTimeout(() => {
-            fetch('/products/get_random_products/', {
-                method: 'POST',
-                headers: {
-                    'X-Requested-With': 'XMLHttpRequest',
-                    'X-CSRFToken': document.querySelector('[name=csrfmiddlewaretoken]').value
-                }
-            })
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error('Network response was not ok');
-                }
-                return response.json();
-            })
-            .then(data => {
-                carousel.innerHTML = data.carousel_html;
-                carousel.classList.remove('fade-out');
-                carousel.classList.add('fade-in');
-                setupHandlers(); // Повторная привязка обработчиков
-                syncCartState(); // Синхронизация корзины
-            })
-            .catch(error => {
-                console.error(`Ошибка при обновлении карусели ${carouselId}:`, error);
-                showToast('Ошибка обновления карусели', 'error');
+        if (bannerImages.length > 0) {
+            bannerImages[0].classList.add('active');
+            setInterval(changeBannerImage, 2500);
+        }
+
+        // Управление каруселями
+        const carousels = [
+            { id: 'product-carousel', interval: null },
+            { id: 'popular-carousel', interval: null }
+        ];
+
+        function refreshCarousel(carouselId) {
+            const carousel = document.getElementById(carouselId);
+            if (!carousel) {
+                console.error(`Карусель с ID ${carouselId} не найдена`);
+                return;
+            }
+
+            // Сохраняем текущие обработчики событий
+            const currentButtons = carousel.querySelectorAll('.add-to-cart-btn');
+            const handlers = [];
+            currentButtons.forEach(btn => {
+                handlers.push({
+                    productId: btn.dataset.productId,
+                    handler: btn.onclick
+                });
             });
-        }, 300);
-    }
 
-    carousels.forEach(carousel => {
-        const prevBtn = document.querySelector(`.carousel-nav.prev[data-carousel-id="${carousel.id}"]`);
-        const nextBtn = document.querySelector(`.carousel-nav.next[data-carousel-id="${carousel.id}"]`);
-        const carouselElement = document.getElementById(carousel.id);
+            carousel.classList.remove('fade-in');
+            carousel.classList.add('fade-out');
 
-        prevBtn.addEventListener('click', () => refreshCarousel(carousel.id));
-        nextBtn.addEventListener('click', () => refreshCarousel(carousel.id));
+            setTimeout(() => {
+                fetch('/products/get_random_products/', {
+                    method: 'POST',
+                    headers: {
+                        'X-Requested-With': 'XMLHttpRequest',
+                        'X-CSRFToken': document.querySelector('[name=csrfmiddlewaretoken]').value
+                    }
+                })
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    carousel.innerHTML = data.carousel_html;
+                    carousel.classList.remove('fade-out');
+                    carousel.classList.add('fade-in');
 
-        function startAutoRefresh() {
-            carousel.interval = setInterval(() => refreshCarousel(carousel.id), 5000);
+                    // Восстанавливаем обработчики событий
+                    handlers.forEach(item => {
+                        const newBtn = carousel.querySelector(`.add-to-cart-btn[data-product-id="${item.productId}"]`);
+                        if (newBtn && item.handler) {
+                            newBtn.onclick = item.handler;
+                        }
+                    });
+
+                    // Инициализируем корзину для новых элементов
+                    initCart();
+                })
+                .catch(error => {
+                    console.error(`Ошибка при обновлении карусели ${carouselId}:`, error);
+                    showToast('Ошибка обновления карусели', 'error');
+                    carousel.classList.remove('fade-out');
+                    carousel.classList.add('fade-in');
+                });
+            }, 300);
         }
 
-        carouselElement.addEventListener('mouseenter', () => clearInterval(carousel.interval));
-        carouselElement.addEventListener('mouseleave', startAutoRefresh);
+        carousels.forEach(carousel => {
+            const prevBtn = document.querySelector(`.carousel-nav.prev[data-carousel-id="${carousel.id}"]`);
+            const nextBtn = document.querySelector(`.carousel-nav.next[data-carousel-id="${carousel.id}"]`);
+            const carouselElement = document.getElementById(carousel.id);
 
-        startAutoRefresh();
+            prevBtn.addEventListener('click', () => refreshCarousel(carousel.id));
+            nextBtn.addEventListener('click', () => refreshCarousel(carousel.id));
+
+            // Увеличиваем интервал автоматического обновления с 5 до 15 секунд
+            function startAutoRefresh() {
+                carousel.interval = setInterval(() => refreshCarousel(carousel.id), 15000);
+            }
+
+            carouselElement.addEventListener('mouseenter', () => clearInterval(carousel.interval));
+            carouselElement.addEventListener('mouseleave', startAutoRefresh);
+
+            startAutoRefresh();
+        });
     });
-});
 </script>
 {% endblock %}

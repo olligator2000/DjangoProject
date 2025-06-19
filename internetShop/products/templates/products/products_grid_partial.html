@@ -1,0 +1,20 @@
+<div class="products-grid">
+    {% for product in products %}
+    <div class="product-card">
+        <a href="{% url 'products:product_detail' product.id %}">
+            <img class="product-image" src="{{ product.image.url }}" alt="{{ product.name }}">
+            <h3 class="product-title">{{ product.name }}</h3>
+        </a>
+        <div class="product-rating-container">
+            <div class="product-price">{{ product.price|stringformat:"d" }} ₽</div>
+            <div class="product-rating">
+                <span class="product-rating-star">★</span>
+                <span class="product-rating-value">
+                    {{ product.average_rating|default:"0.0"|floatformat:1 }}
+                </span>
+            </div>
+        </div>
+        <button class="add-to-cart-btn" data-product-id="{{ product.id }}">В корзину</button>
+    </div>
+    {% endfor %}
+</div>

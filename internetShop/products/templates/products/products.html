@@ -8,78 +8,81 @@
 
 {% block content %}
 <nav class="custom-breadcrumb">
-    <a href="{% url 'products:index' %}" class="custom-breadcrumb-link">Каталог товаров</a> →
+    <a href="{% url 'index' %}" class="custom-breadcrumb-link">Каталог товаров</a> →
     <span class="custom-breadcrumb-current">{{ category.name }}</span>
 </nav>
 
 <div class="products-page-container">
     <aside class="filters-sidebar">
-        <div class="filter-section">
-            <h3>Бренд</h3>
-            <ul class="filter-list">
-                {% for brand in brands %}
-                <li>
-                    <label>
-                        <input type="checkbox" name="brand" value="{{ brand }}">
-                        {{ brand }}
-                    </label>
-                </li>
-                {% endfor %}
-            </ul>
-        </div>
-
-        <div class="filter-section">
-            <h3>Производитель</h3>
-            <ul class="filter-list">
-                {% for manufacturer in manufacturers %}
-                <li>
-                    <label>
-                        <input type="checkbox" name="manufacturer" value="{{ manufacturer }}">
-                        {{ manufacturer }}
-                    </label>
-                </li>
-                {% endfor %}
-            </ul>
-        </div>
-
-        <div class="filter-section">
-            <h3>Цена</h3>
-            <div class="price-range">
-                <input type="range" id="price-slider" min="0" max="10000" step="100" value="10000">
-                <div class="price-values">
-                    <span id="min-price">0 ₽</span>
-                    <span id="max-price">10000 ₽</span>
-                </div>
+        <form id="filter-form">
+            <div class="filter-section">
+                <h3>Бренд</h3>
+                <ul class="filter-list">
+                    {% for brand in brands %}
+                    <li>
+                        <label>
+                            <input type="checkbox" name="brand" value="{{ brand }}"
+                                   {% if brand in request.GET.brand %}checked{% endif %}>
+                            {{ brand }}
+                        </label>
+                    </li>
+                    {% endfor %}
+                </ul>
             </div>
-        </div>
 
-        <button class="apply-filters-btn">Применить фильтры</button>
+            <div class="filter-section">
+                <h3>Производитель</h3>
+                <ul class="filter-list">
+                    {% for manufacturer in manufacturers %}
+                    <li>
+                        <label>
+                            <input type="checkbox" name="manufacturer" value="{{ manufacturer }}"
+                                   {% if manufacturer in request.GET.manufacturer %}checked{% endif %}>
+                            {{ manufacturer }}
+                        </label>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+
+            <div class="filter-section">
+                <h3>Цена</h3>
+                <div class="price-range">
+                    <input type="range" id="price-slider" min="0" max="10000" step="100" value="10000">
+                    <div class="price-values">
+                        <span id="min-price">0 ₽</span>
+                        <span id="max-price">10000 ₽</span>
+                    </div>
+                </div>
+                <input type="hidden" id="min-price-input" name="min_price" value="0">
+                <input type="hidden" id="max-price-input" name="max_price" value="10000">
+            </div>
+        </form>
     </aside>
 
     <main class="products-content">
         <div class="sorting-options">
             <span>Сортировать:</span>
-            <select id="sort-select">
-                <option value="price_asc">По цене (дешевле)</option>
-                <option value="price_desc">По цене (дороже)</option>
-                <option value="rating">По рейтингу</option>
-                <option value="popularity">По популярности</option>
-            </select>
+            {% if category %}
+            <form id="sort-form" method="GET" action="{% url 'products:category_products' category.id %}">
+            {% else %}
+            <form id="sort-form" method="GET" action="#">
+            {% endif %}
+                <select id="sort-select" name="sort" onchange="this.form.submit()">
+                    <option value="price_asc" {% if sort == 'price_asc' %}selected{% endif %}>По цене (дешевле)</option>
+                    <option value="price_desc" {% if sort == 'price_desc' %}selected{% endif %}>По цене (дороже)</option>
+                    <option value="brand_ru_asc" {% if sort == 'brand_ru_asc' %}selected{% endif %}>По бренду (А-Я)</option>
+                    <option value="brand_ru_desc" {% if sort == 'brand_ru_desc' %}selected{% endif %}>По бренду (Я-А)</option>
+                    <option value="manufacturer_ru_asc" {% if sort == 'manufacturer_ru_asc' %}selected{% endif %}>По производителю (А-Я)</option>
+                    <option value="manufacturer_ru_desc" {% if sort == 'manufacturer_ru_desc' %}selected{% endif %}>По производителю (Я-А)</option>
+                    <option value="rating" {% if sort == 'rating' %}selected{% endif %}>По рейтингу</option>
+                    <option value="popularity" {% if sort == 'popularity' %}selected{% endif %}>По популярности</option>
+                </select>
+            </form>
         </div>
 
         <div class="shop-container">
-            <div class="products-grid">
-                {% for product in products %}
-                <div class="product-card">
-                    <a href="{% url 'products:product_detail' product.id %}">
-                        <img class="product-image" src="{{ product.image.url }}" alt="{{ product.name }}">
-                        <h3 class="product-title">{{ product.name }}</h3>
-                    </a>
-                    <div class="product-price">{{ product.price|stringformat:"d" }} ₽</div>
-                    <button class="add-to-cart-btn" data-product-id="{{ product.id }}">Добавить в корзину</button>
-                </div>
-                {% endfor %}
-            </div>
+            {% include 'products/products_grid_partial.html' %}
         </div>
     </main>
 </div>
@@ -87,12 +90,104 @@
 <div id="cart-container">
     {% include 'products/basket.html' %}
 </div>
-{% endblock %}
-
-{% block footer %}
-<!--pass-->
-{% endblock %}
 
 {% block scripts %}
 {{ block.super }}
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const filterForm = document.getElementById('filter-form');
+        const priceSlider = document.getElementById('price-slider');
+        const minPriceSpan = document.getElementById('min-price');
+        const maxPriceSpan = document.getElementById('max-price');
+        const minPriceInput = document.getElementById('min-price-input');
+        const maxPriceInput = document.getElementById('max-price-input');
+        const sortSelect = document.getElementById('sort-select');
+        const brandCheckboxes = document.querySelectorAll('input[name="brand"]');
+        const manufacturerCheckboxes = document.querySelectorAll('input[name="manufacturer"]');
+
+        // Обновление отображаемых значений цены
+        function updatePriceDisplay() {
+            maxPriceSpan.textContent = `${priceSlider.value} ₽`;
+            maxPriceInput.value = priceSlider.value;
+        }
+
+        // Инициализация значений цены
+        updatePriceDisplay();
+
+        // Обработчик изменения слайдера цены
+        priceSlider.addEventListener('input', updatePriceDisplay);
+
+        // Обработчики для чекбоксов
+        function handleCheckboxChange(checkbox, checkboxes) {
+            if (checkbox.checked) {
+                checkboxes.forEach(cb => {
+                    if (cb !== checkbox) {
+                        cb.checked = false;
+                    }
+                });
+            }
+            applyFilters();
+        }
+
+        brandCheckboxes.forEach(checkbox => {
+            checkbox.addEventListener('change', function() {
+                handleCheckboxChange(this, brandCheckboxes);
+            });
+        });
+
+        manufacturerCheckboxes.forEach(checkbox => {
+            checkbox.addEventListener('change', function() {
+                handleCheckboxChange(this, manufacturerCheckboxes);
+            });
+        });
+
+        sortSelect.addEventListener('change', applyFilters);
+
+        // Функция применения фильтров через AJAX
+        function applyFilters() {
+            const selectedBrands = Array.from(brandCheckboxes)
+                .filter(checkbox => checkbox.checked)
+                .map(checkbox => checkbox.value);
+
+            const selectedManufacturers = Array.from(manufacturerCheckboxes)
+                .filter(checkbox => checkbox.checked)
+                .map(checkbox => checkbox.value);
+
+            const data = {
+                brand: selectedBrands,
+                manufacturer: selectedManufacturers,
+                min_price: minPriceInput.value,
+                max_price: maxPriceInput.value,
+                sort: sortSelect.value,
+                category_id: {% if category %}{{ category.id }}{% else %}null{% endif %}  // Добавляем условие для category_id
+            };
+
+            fetch('{% url 'products:filter_products' %}', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'X-CSRFToken': '{{ csrf_token }}'
+                },
+                body: JSON.stringify(data)
+            })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.json();
+            })
+            .then(data => {
+                if (data.status === 'success') {
+                    document.querySelector('.shop-container').innerHTML = data.products_html;
+                } else {
+                    console.error('Ошибка фильтрации:', data.message);
+                }
+            })
+            .catch(error => {
+                console.error('Ошибка AJAX:', error);
+            });
+        }
+    });
+</script>
+{% endblock %}
 {% endblock %}

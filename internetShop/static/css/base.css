@@ -188,6 +188,19 @@ body {
     cursor: pointer;
 }
 
+.cart-link {
+    color: #333; /* Цвет текста, как у других элементов */
+    text-decoration: none; /* Убираем подчёркивание */
+    display: flex;
+    align-items: center;
+    cursor: pointer; /* Курсор как у кликабельного элемента */
+    transition: opacity 0.2s; /* Плавное изменение прозрачности при наведении */
+}
+
+.cart-link:hover {
+    opacity: 0.8; /* Эффект наведения */
+}
+
 .catalog-container {
     position: relative;
 }
@@ -592,13 +605,14 @@ body {
 .checkout-btn {
     width: 100%;
     padding: 12px;
+    display: inline-block;
+    
     background-color: #e74c3c;
     color: white;
-    border: none;
+    text-decoration: none;
     border-radius: 4px;
-    font-weight: bold;
     cursor: pointer;
-    transition: background-color 0.2s;
+    transition: background-color 0.3s;
 }
 
 .checkout-btn:hover {

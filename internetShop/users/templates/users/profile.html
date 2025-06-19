@@ -1,114 +1,95 @@
 {% extends 'products/base.html' %}
 
 {% load static %}
-
-{% block css %}
-<link rel="stylesheet" href="/static/css/profile.css">
-<link rel="stylesheet" href="/static/css/index.css">
-{% endblock %}
+{% load humanize %}
 
 {% block content %}
-<div class="profile-wrapper">
-    <div class="profile-sidebar">
-        <div class="profile-tab active" data-tab="info">Личная информация</div>
-        <div class="profile-tab" data-tab="orders">Заказы</div>
-        <div class="profile-tab" data-tab="favorites">Избранное</div>
-        <div class="profile-tab" data-tab="settings">Настройки</div>
-    </div>
+<link rel="stylesheet" href="{% static 'css/profile.css' %}?v=3">
+<div class="content">
+    <div class="profile-wrapper">
+        <!-- Левая колонка (меню) -->
+        <div class="profile-sidebar">
+            <div class="profile-tab active" data-tab="personal-info">Личная информация</div>
+            <div class="profile-tab" data-tab="orders">Мои заказы</div>
+            <div class="profile-tab" data-tab="favorites">Избранное</div>
+        </div>
 
-    <form action="{% url 'users:profile' %}" method="post" enctype="multipart/form-data">
-        {% csrf_token %}
+        <!-- Правая колонка (контент) -->
         <div class="profile-content">
-            <!-- Личная информация -->
-            <div class="tab-content active" id="info">
+            <!-- Вкладка: Личная информация -->
+            <div class="tab-content active" id="personal-info">
                 <h2 class="h2-text-1">Личная информация</h2>
                 <div class="profile-info-container">
-
-                    <div class="profile-photo-container">
-                        <img src="
-                      {% if user.image %}
-                        {{ user.image.url }}
-                      {% else %}
-                        {% static '/images/фото_профиля.avif' %}
-                      {% endif %}" class="profile-photo" id="profilePhoto">
-
-                        <div class="photo-upload">
+                    <!-- Форма для фото и данных -->
+                    <form method="post" enctype="multipart/form-data" id="profileForm">
+                        {% csrf_token %}
+                        <!-- Фото профиля -->
+                        <div class="profile-photo-container">
+                            {% if form.instance.image %}
+                            <img src="{{ form.instance.image.url }}" alt="Profile Photo" class="profile-photo"
+                                 id="profilePhoto">
+                            {% else %}
+                            <img src="{% static 'images/placeholder.png' %}" alt="Profile Photo" class="profile-photo"
+                                 id="profilePhoto">
+                            {% endif %}
                             {{ form.image }}
-                            <label class="save-btn" for="{{ form.image.id_for_label }}">Выбрать фото</label>
+                            <label for="photoUpload" class="save-btn">Выбрать фото</label>
+                            {% if not form.instance.image %}
                             <span id="fileName">Файл не выбран</span>
+                            {% endif %}
                         </div>
-                    </div>
-                    <div class="profile-form-container">
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="form.last_name.id_for_label">Фамилия</label>
-                                {{ form.last_name }}
-                            </div>
-                            <div class="form-group">
-                                <label for="form.first_name.id_for_label">Имя</label>
-                                {{ form.first_name }}
-                            </div>
-                        </div>
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="form.username.id_for_label">Имя пользователя</label>
-                                {{ form.username }}
-                            </div>
-                            <div class="form-group">
-                                <label for="form.email.id_for_label">Адрес электронной почты</label>
-                                {{ form.email }}
-                            </div>
-                        </div>
-                        <input class="edit-btn" type="submit" value="Сохранить">
-                    </div>
 
+                        <!-- Поля профиля -->
+                        <div class="profile-form-container">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="{{ form.first_name.id_for_label }}">Имя</label>
+                                    {{ form.first_name }}
+                                </div>
+                                <div class="form-group">
+                                    <label for="{{ form.last_name.id_for_label }}">Фамилия</label>
+                                    {{ form.last_name }}
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="{{ form.username.id_for_label }}">Имя пользователя</label>
+                                    {{ form.username }}
+                                </div>
+                                <div class="form-group">
+                                    <label for="{{ form.email.id_for_label }}">Эл. почта</label>
+                                    {{ form.email }}
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="{{ form.phone.id_for_label }}">Телефон</label>
+                                    {{ form.phone }}
+                                </div>
+                                <div class="form-group"></div>
+                            </div>
+                            <button type="submit" class="save-btn">Сохранить</button>
+                        </div>
+                    </form>
                 </div>
             </div>
 
-
-            <!-- Заказы -->
+            <!-- Вкладка: Мои заказы -->
             <div class="tab-content" id="orders">
-                <h2 class="h2-text-1">Ваши заказы</h2>
-                <div class="tab-content-wrapper">
-                    <p>Здесь будет список ваших заказов</p>
-                </div>
+                <h2 class="h2-text-1">Мои заказы</h2>
+                {% include 'users/orders_partial.html' %}
             </div>
 
-
-            <!-- Избранное -->
+            <!-- Вкладка: Избранное -->
             <div class="tab-content" id="favorites">
                 <h2 class="h2-text-1">Избранное</h2>
                 <div class="tab-content-wrapper">
-                    <p>Здесь будут ваши избранные товары</p>
-                </div>
-            </div>
-
-            <!-- Настройки -->
-            <div class="tab-content" id="settings">
-                <h2 class="h2-text-1">Настройки</h2>
-                <div class="tab-content-wrapper">
-                    <p>Здесь будут настройки вашего профиля</p>
+                    <p>Пока тут ничего нет</p>
                 </div>
             </div>
         </div>
-    </form>
+    </div>
 </div>
-
-
-
-
-{% endblock %}
-
-{% block footer %}
-<!--pass-->
-{% endblock %}
-
-{% block scripts %}
 <script src="{% static 'js/profile.js' %}"></script>
-<script>
-    window.isAuthenticated = {{ request.user.is_authenticated|lower }};
-    window.loginUrl = "{% url 'users:login' %}?next={{ request.path }}";
-</script>
-<script src="{% static 'js/cart.js' %}"></script>
 
 {% endblock %}
