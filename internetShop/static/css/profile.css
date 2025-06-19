@@ -109,16 +109,20 @@
     margin-top: 10px;
     width: auto;
     padding: 10px 20px;
-    background-color: #3498db;
+    background-color: #e74c3c;
     color: white;
-    border: none;
+    border: 2px solid black; /* черная обводка */
     border-radius: 4px;
     cursor: pointer;
     transition: background-color 0.3s;
 }
 
+.save-btn:active {
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.3); /* эффект вдавленности */
+}
+
 .save-btn:hover {
-    background-color: #2980b9;
+    background-color: #c0392b;
 }
 
 .profile-form-container .save-btn {
@@ -329,7 +333,6 @@
     width: 100%;
     background-color: #e74c3c;
     color: white;
-    border: none;
     padding: 12px;
     border-radius: 6px;
     font-size: 16px;

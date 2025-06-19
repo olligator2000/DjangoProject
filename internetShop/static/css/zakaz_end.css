@@ -270,11 +270,16 @@
 .item-quantity {
     display: flex;
     align-items: center;
+    border: 2px solid black; /* черная обводка */
     gap: 5px;
     background-color: #e74c3c;
     padding: 5px 10px;
     border-radius: 20px;
     margin-left: 15px;
+}
+
+.item-quantity:hover {
+    background-color: #c0392b;
 }
 
 .quantity-btn {
@@ -368,7 +373,6 @@
     width: 100%;
     background-color: #e74c3c;
     color: white;
-    border: none;
     padding: 14px;
     border-radius: 6px;
     font-size: 16px;
@@ -420,15 +424,22 @@
     color: #555;
 }
 
+/* Кнопка подтверждения */
 .confirm-btn {
-    background-color: #4CAF50; /* Example: active state color */
+    width: 100%;
+    background-color: #e74c3c;
     color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
+    padding: 16px;
+    border-radius: 6px;
+    font-size: 18px;
+    font-weight: bold;
     cursor: pointer;
-    font-size: 16px;
-    transition: background-color 0.3s ease;
+    margin-top: 10px;
+    transition: background-color 0.3s;
+}
+
+.confirm-btn:hover {
+    background-color: #c0392b;
 }
 
 .confirm-btn:disabled {
@@ -441,25 +452,6 @@
 /* Optional: Hover effect for active state */
 .confirm-btn:not(:disabled):hover {
     background-color: #45a049;
-}
-
-/* Кнопка подтверждения */
-.confirm-btn {
-    width: 100%;
-    background-color: #e74c3c;
-    color: white;
-    border: none;
-    padding: 16px;
-    border-radius: 6px;
-    font-size: 18px;
-    font-weight: bold;
-    cursor: pointer;
-    margin-top: 10px;
-    transition: background-color 0.3s;
-}
-
-.confirm-btn:hover {
-    background-color: #c0392b;
 }
 
 .payment-fields {
@@ -576,7 +568,6 @@
     width: 100%;
     background-color: #e74c3c;
     color: white;
-    border: none;
     padding: 12px;
     border-radius: 6px;
     font-size: 16px;
@@ -601,6 +592,22 @@
     color: #e74c3c;
     font-size: 12px;
     margin-top: 5px;
+}
+
+.alert {
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+.alert-error {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+.alert-success {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
 }
 
 /* Анимации */

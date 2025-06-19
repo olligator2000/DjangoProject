@@ -32,10 +32,13 @@
 
     <div class="cart-footer">
         <div class="cart-divider"></div>
-        <div class="delivery">Доставка 0 ₽</div>
+        <div class="delivery">
+            Доставка: <span class="delivery-price">{{ delivery_cost }}</span> ₽
+        </div>
         <div class="total">
             <div class="total-label">Итого:</div>
-            <div class="total-price">{{ total_sum }} ₽</div>
+            <div class="total-price">{{ total_with_delivery }}</div>
+            ₽
         </div>
         <a href="{% url 'products:zakaz_end' %}">
             <button class="checkout-btn">Далее</button>
