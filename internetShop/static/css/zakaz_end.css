@@ -58,9 +58,15 @@
     font-size: 28px;
     color: #e74c3c;
     text-align: center;
+    font-weight: bold;
     margin-bottom: 30px;
     font-weight: 600;
     margin-top: 0;
+    text-shadow:
+        -1px -1px 0 #000,
+         1px -1px 0 #000,
+        -1px  1px 0 #000,
+         1px  1px 0 #000;
 }
 
 .section-title {

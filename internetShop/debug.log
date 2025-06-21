@@ -19410,3 +19410,101 @@ Bad Request: /products/add_to_cart_ajax/4/
 Bad Request: /products/add_to_cart_ajax/2/
 Отображение страницы zakaz_end для GET запроса
 Отображение страницы zakaz_end для GET запроса
+Watching for file changes with StatReloader
+Not Found: /favicon.ico
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /favicon.ico
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /favicon.ico
+Отображение страницы zakaz_end для GET запроса
+Отображение страницы zakaz_end для GET запроса
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Отображение страницы zakaz_end для GET запроса
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Отображение страницы zakaz_end для GET запроса
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /favicon.ico
+Watching for file changes with StatReloader
+Not Found: /favicon.ico
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Watching for file changes with StatReloader
+Not Found: /favicon.ico
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /favicon.ico
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+D:\Учёба\DjangoProject\internetShop\products\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\Учёба\DjangoProject\internetShop\products\urls.py changed, reloading.
+Watching for file changes with StatReloader
+D:\Учёба\DjangoProject\internetShop\products\urls.py changed, reloading.
+Watching for file changes with StatReloader
+Not Found: /favicon.ico
+Ошибка при сохранении рейтинга: int() argument must be a string, a bytes-like object or a real number, not 'NoneType'
+Traceback (most recent call last):
+  File "D:\Учёба\DjangoProject\internetshop\products\views.py", line 663, in rate_product
+    rating = int(request.POST.get('rating'))
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: int() argument must be a string, a bytes-like object or a real number, not 'NoneType'
+Internal Server Error: /products/rate_product/
+Not Found: /favicon.ico
+Ошибка при сохранении рейтинга: int() argument must be a string, a bytes-like object or a real number, not 'NoneType'
+Traceback (most recent call last):
+  File "D:\Учёба\DjangoProject\internetshop\products\views.py", line 663, in rate_product
+    rating = int(request.POST.get('rating'))
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: int() argument must be a string, a bytes-like object or a real number, not 'NoneType'
+Internal Server Error: /products/rate_product/
+Bad Request: /products/2/review/
+Not Found: /favicon.ico
+Ошибка при сохранении рейтинга: int() argument must be a string, a bytes-like object or a real number, not 'NoneType'
+Traceback (most recent call last):
+  File "D:\Учёба\DjangoProject\internetshop\products\views.py", line 663, in rate_product
+    rating = int(request.POST.get('rating'))
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: int() argument must be a string, a bytes-like object or a real number, not 'NoneType'
+Internal Server Error: /products/rate_product/
+Bad Request: /products/2/review/
+D:\Учёба\DjangoProject\internetShop\products\forms.py changed, reloading.
+Watching for file changes with StatReloader
+D:\Учёба\DjangoProject\internetShop\products\views.py changed, reloading.
+Watching for file changes with StatReloader
+Not Found: /favicon.ico
+Bad Request: /products/4/review/
+Bad Request: /products/4/review/
+Bad Request: /products/4/review/
+Bad Request: /products/4/review/
+Bad Request: /products/2/review/
+Bad Request: /products/2/review/
+D:\Учёба\DjangoProject\internetShop\products\urls.py changed, reloading.
+Watching for file changes with StatReloader
+D:\Учёба\DjangoProject\internetShop\products\urls.py changed, reloading.
+Watching for file changes with StatReloader
+D:\Учёба\DjangoProject\internetShop\products\views.py changed, reloading.
+Watching for file changes with StatReloader
+Bad Request: /products/2/review/
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Watching for file changes with StatReloader
+Not Found: /favicon.ico
+Not Found: /favicon.ico

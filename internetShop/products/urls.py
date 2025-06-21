@@ -4,7 +4,7 @@ from products.views import (
     IndexView, products, products_list, product_detail,
     add_to_cart_ajax, update_basket_ajax,
     clear_basket_ajax, category_products, get_products_by_category, get_random_products, search_products, zakaz_end,
-    order_confirmation, rate_product, filter_products
+    order_confirmation, rate_product, filter_products, submit_review
 )
 
 app_name = "products"
@@ -24,5 +24,7 @@ urlpatterns = [
     path('get_cart_state/', views.get_cart_state, name='get_cart_state'),
     path('order_confirmation/', order_confirmation, name='order_confirmation'),
     path('rate_product/', rate_product, name='rate_product'),
+    path('<int:product_id>/rate/', rate_product, name='rate_product_detail'),  # Новый путь
     path('filter_products/', filter_products, name='filter_products'),
+    path('<int:product_id>/review/', views.submit_review, name='submit_review'),
 ]

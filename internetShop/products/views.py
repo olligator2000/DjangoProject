@@ -3,8 +3,8 @@ from django.contrib.auth.decorators import login_required
 from django.http import JsonResponse
 from django.template.loader import render_to_string
 from django.contrib import messages
-from products.models import Product, ProductCategory, Basket, Order, OrderItem, ProductRating
-from products.forms import OrderForm
+from products.models import Product, ProductCategory, Basket, Order, OrderItem, ProductRating, ProductReview
+from products.forms import OrderForm, ReviewForm
 from django.views.generic import ListView
 from django.db.models import Q
 from django.db import transaction
@@ -232,6 +232,35 @@ def product_detail(request, product_id):
             except ProductRating.DoesNotExist:
                 pass
 
+    # Проверка возможности оставить отзыв
+    can_review = False
+    if request.user.is_authenticated:
+        can_review = OrderItem.objects.filter(
+            order__user=request.user,
+            product=product
+        ).exists()
+
+    # Обработка отправки отзыва
+    review_form = None
+    if request.method == 'POST' and 'review_text' in request.POST:
+        if can_review:
+            review_form = ReviewForm(request.POST)
+            if review_form.is_valid():
+                review = review_form.save(commit=False)
+                review.user = request.user
+                review.product = product
+                review.save()
+                messages.success(request, 'Ваш отзыв успешно добавлен!')
+                return redirect('products:product_detail', product_id=product.id)
+        else:
+            messages.error(request, 'Вы не можете оставить отзыв, так как не покупали этот товар')
+    else:
+        review_form = ReviewForm()
+
+    # Получаем все отзывы для товара
+    reviews = product.reviews.all().order_by('-created_at')
+
+
     context = {
         "title": product.name,
         "product": product,  # Оставляем оригинальный объект продукта
@@ -241,7 +270,10 @@ def product_detail(request, product_id):
         'baskets': baskets,
         'total_sum': total_sum,
         'user_can_rate': user_can_rate,
-        'user_rating': user_rating  # Передаем рейтинг отдельно
+        'user_rating': user_rating, # Передаем рейтинг отдельно
+        'can_review': can_review,
+        'review_form': review_form,
+        'reviews': reviews,
     }
     return render(request, "products/products_list.html", context)
 
@@ -623,22 +655,39 @@ def get_cart_state(request):
         logger.error(f"Ошибка при синхронизации корзины: {str(e)}", exc_info=True)
         return JsonResponse({'error': 'Ошибка синхронизации корзины'}, status=500)
 
+
 @login_required
-def rate_product(request):
+def rate_product(request, product_id=None):
     if request.method == 'POST':
         try:
-            product_id = request.POST.get('product_id')
+            # Для совместимости с обоими URL
+            product_id = product_id or request.POST.get('product_id')
             rating = int(request.POST.get('rating'))
+
             if not (1 <= rating <= 5):
                 return JsonResponse({'status': 'error', 'message': 'Недопустимая оценка'}, status=400)
 
             product = get_object_or_404(Product, id=product_id)
+
+            # Проверяем, покупал ли пользователь товар
+            has_ordered = OrderItem.objects.filter(
+                order__user=request.user,
+                product=product
+            ).exists()
+
+            if not has_ordered:
+                return JsonResponse({
+                    'status': 'error',
+                    'message': 'Вы не можете оценить товар, так как не покупали его'
+                }, status=403)
+
             ProductRating.objects.update_or_create(
                 user=request.user,
                 product=product,
                 defaults={'rating': rating}
             )
             product.update_average_rating()
+
             return JsonResponse({
                 'status': 'success',
                 'average_rating': float(product.average_rating),
@@ -648,3 +697,57 @@ def rate_product(request):
             logger.error(f"Ошибка при сохранении рейтинга: {str(e)}", exc_info=True)
             return JsonResponse({'status': 'error', 'message': 'Ошибка сервера'}, status=500)
     return JsonResponse({'status': 'error', 'message': 'Недопустимый метод'}, status=400)
+
+@login_required
+def submit_review(request, product_id):
+    product = get_object_or_404(Product, id=product_id)
+
+    # Проверяем, покупал ли пользователь товар
+    has_ordered = OrderItem.objects.filter(
+        order__user=request.user,
+        product=product
+    ).exists()
+
+    if not has_ordered:
+        return JsonResponse({
+            'status': 'error',
+            'message': 'Вы не можете оставить отзыв, так как не покупали этот товар'
+        }, status=403)
+
+    if request.method == 'POST':
+        form = ReviewForm(request.POST)
+        if form.is_valid():
+            review = form.save(commit=False)
+            review.user = request.user
+            review.product = product
+            review.save()
+
+            # Обновляем рейтинг, если он был указан
+            rating = form.cleaned_data.get('rating')
+            if rating:
+                ProductRating.objects.update_or_create(
+                    user=request.user,
+                    product=product,
+                    defaults={'rating': rating}
+                )
+                product.update_average_rating()
+
+            return JsonResponse({
+                'status': 'success',
+                'message': 'Отзыв успешно добавлен'
+            })
+        else:
+            # Добавляем более детальную информацию об ошибках
+            errors = {}
+            for field, error_list in form.errors.items():
+                errors[field] = [str(error) for error in error_list]
+            return JsonResponse({
+                'status': 'error',
+                'message': 'Ошибка в форме',
+                'errors': errors
+            }, status=400)
+
+    return JsonResponse({
+        'status': 'error',
+        'message': 'Недопустимый метод'
+    }, status=405)

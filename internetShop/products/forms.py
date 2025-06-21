@@ -1,5 +1,6 @@
 from django import forms
-from .models import Order
+from .models import Order, ProductReview
+
 
 class OrderForm(forms.ModelForm):
     phone = forms.CharField(
@@ -21,3 +22,23 @@ class OrderForm(forms.ModelForm):
             'courier_comment', 'order_comment', 'delivery_time', 'card_number', 'cardholder_name',
             'cvv', 'payment_method'
         ]
+
+
+class ReviewForm(forms.ModelForm):
+    rating = forms.IntegerField(
+        required=False,
+        widget=forms.HiddenInput(),
+        min_value=1,
+        max_value=5
+    )
+
+    class Meta:
+        model = ProductReview
+        fields = ['text', 'rating']
+        widgets = {
+            'text': forms.Textarea(attrs={
+                'rows': 4,
+                'placeholder': 'Напишите ваш отзыв о товаре...',
+                'class': 'review-textarea'
+            })
+        }

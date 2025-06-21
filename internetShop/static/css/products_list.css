@@ -1,6 +1,16 @@
-.custom-breadcrumb {
+/* Основные стили для страницы продукта */
+.product-container {
   max-width: 960px;
-  margin: 10px auto;
+  margin: 20px auto;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  padding: 0;
+}
+
+/* Хлебные крошки */
+.custom-breadcrumb {
+  padding: 10px 25px;
   font-size: 14px;
   color: #555;
   font-family: 'Segoe UI', sans-serif;
@@ -21,21 +31,18 @@
   font-weight: bold;
 }
 
+/* Карточка товара */
 .custom-product-card {
-  max-width: 960px;
-  margin: 10px auto;
-  border-radius: 12px;
   display: flex;
-  padding: 20px;
+  padding: 25px;
   box-sizing: border-box;
-  background-color: #fff;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  border-bottom: 1px solid #eee;
 }
 
 .custom-left-column {
   flex: 1;
   padding-right: 20px;
-  border-right: 1px solid #ccc;
+  border-right: 1px solid #eee;
 }
 
 .custom-right-column {
@@ -50,6 +57,7 @@
   text-align: center;
   font-size: 22px;
   margin-bottom: 10px;
+  color: #333;
 }
 
 .custom-description-title {
@@ -57,31 +65,38 @@
   font-weight: bold;
   margin: 10px 0;
   font-size: 18px;
-  border-bottom: 1px solid #000;
+  border-bottom: 1px solid #ddd;
   padding-bottom: 5px;
+  color: #444;
 }
 
 .custom-details {
   font-size: 15px;
-  line-height: 0.8;
+  line-height: 1.5;
+  color: #555;
 }
 
 .custom-product-image {
   width: 400px;
   height: 400px;
-  background-color: #f0f0f0;
+  background-color: #f5f5f5;
   border-radius: 20px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 14px;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
+  overflow: hidden;
 }
 
-/* Рейтинг */
+.custom-product-image img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
 .custom-rating {
   font-size: 18px;
-  margin: 2px 0;
+  margin: 5px 0;
   color: #333;
   display: flex;
   align-items: center;
@@ -91,141 +106,335 @@
 #custom-rating-value {
   font-weight: bold;
   color: #e63946;
-  margin-right: 8px;
 }
 
-/* Наличие */
 .custom-stock {
   font-size: 16px;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
+  color: #444;
 }
 
 .custom-price-section {
   display: flex;
   align-items: center;
   margin-top: auto;
-  gap: 10px;
+  gap: 15px;
 }
 
 .custom-price {
-  color: green;
+  color: #2e7d32;
   font-size: 24px;
   font-weight: bold;
-}
-
-.custom-quantity-control {
-  display: flex;
-  align-items: center;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  overflow: hidden;
-}
-
-.custom-quantity-control button {
-  padding: 5px 10px;
-  font-size: 18px;
-  border: none;
-  background: #eee;
-  cursor: pointer;
-}
-
-.custom-quantity-control input {
-  width: 40px;
-  text-align: center;
-  border: none;
-  font-size: 16px;
 }
 
 .custom-add-to-cart {
   background-color: #e74c3c;
   color: white;
-  padding: 10px 20px;
+  padding: 12px 25px;
   font-size: 16px;
-  text-decoration: none;
   border-radius: 8px;
-  color: #000;
   cursor: pointer;
   display: flex;
-  transition: background-color 0.3s;
+  transition: all 0.3s;
   align-items: center;
+  border: none;
 }
 
 .custom-add-to-cart:hover {
-  background-color: #f5b800;
+  background-color: #c0392b;
+  transform: translateY(-2px);
 }
 
 .custom-add-to-cart span {
   margin-left: 8px;
 }
 
-/* Стили для кнопок корзины */
-.add-to-cart-btn {
-    display: inline-block;
-    padding: 8px 16px;
-    background-color: #4CAF50;
-    color: white;
-    text-decoration: none;
-    border-radius: 4px;
-    transition: background-color 0.3s;
+.custom-rating-star-icon {
+  color: gold;
+  font-size: 20px;
 }
 
-.add-to-cart-btn:hover {
-    background-color: #45a049;
+/* Секция отзывов */
+.reviews-section {
+  padding: 25px;
 }
 
-.quantity-btn {
-    display: inline-block;
-    padding: 2px 8px;
-    margin: 0 5px;
-    background-color: #f1f1f1;
-    color: #333;
-    text-decoration: none;
-    border-radius: 3px;
-    border: 1px solid #ddd;
+.reviews-header {
+  padding-bottom: 15px;
+  margin-bottom: 20px;
 }
 
-.clear-cart-btn {
-    background-color: #f44336;
-    color: white;
-    padding: 5px 10px;
-    text-decoration: none;
-    border-radius: 3px;
+.reviews-title {
+  font-size: 22px;
+  color: #333;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.reviews-title i {
+  color: #e74c3c;
+}
+
+.reviews-count {
+  font-size: 16px;
+  color: #777;
+  margin-left: 5px;
+}
+
+.review-form-section {
+  margin-bottom: 30px;
+}
+
+.review-form {
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 10px;
+  border: 1px solid #eee;
+  box-sizing: border-box; /* Добавлено для правильного расчета ширины */
+}
+
+.form-title {
+  font-size: 18px;
+  margin-bottom: 15px;
+  color: #444;
+}
+
+.rating-control {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+
+.rating-label {
+  font-weight: 500;
+  color: #555;
 }
 
 .rating-stars {
-    display: inline-flex;
-    margin-left: 10px;
+  display: flex;
+  gap: 5px;
 }
 
 .rating-star {
-    color: transparent;
-    -webkit-text-stroke: 1px red;
-    cursor: pointer;
-    font-size: 20px;
-    margin: 0 2px;
-    transition: color 0.2s;
+  font-size: 24px;
+  color: #ddd;
+  cursor: pointer;
+  transition: all 0.2s;
 }
 
 .rating-star.filled {
-    color: red;
-    -webkit-text-stroke: 0;
+  color: #ffc107;
 }
 
 .rating-star:hover {
-    color: red;
+  color: #ffc107;
+  transform: scale(1.1);
 }
 
-.custom-rating-star-icon {
-    color: gold;
-    font-size: 20px;
-    margin-right: 5px;
-    -webkit-text-stroke: 0;
+.review-textarea {
+  width: 100%;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  resize: vertical;
+  min-height: 120px;
+  font-family: 'Segoe UI', sans-serif;
+  font-size: 15px;
+  margin-bottom: 15px;
+  transition: border 0.3s;
+  box-sizing: border-box; /* Важное добавление */
+  max-width: 100%; /* Гарантирует, что не выйдет за пределы */
 }
 
+.review-textarea:focus {
+  border-color: #e74c3c;
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(231, 76, 60, 0.2);
+}
+
+.submit-review-btn {
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.submit-review-btn:hover {
+  background-color: #c0392b;
+  transform: translateY(-2px);
+}
+
+.submit-review-btn:disabled {
+  background-color: #aaa;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.review-notice {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  background-color: #f8f9fa;
+  padding: 15px;
+  border-radius: 8px;
+  border-left: 4px solid #e74c3c;
+}
+
+.notice-text {
+  color: #555;
+  font-size: 14px;
+}
+
+.notice-text i {
+  color: #e74c3c;
+  margin-right: 5px;
+}
+
+.auth-notice {
+  background-color: #f8f9fa;
+  padding: 15px;
+  border-radius: 8px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.auth-link {
+  color: #e74c3c;
+  font-weight: 500;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.auth-link:hover {
+  color: #c0392b;
+  text-decoration: underline;
+}
+
+.reviews-list {
+  margin-top: 30px;
+}
+
+.review-item {
+  padding: 20px;
+  margin-bottom: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  border-left: 4px solid #e74c3c;
+  transition: transform 0.3s;
+}
+
+.review-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.review-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+  border-bottom: 1px dashed #ddd;
+}
+
+.review-author {
+  font-weight: 600;
+  color: #333;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.review-author i {
+  color: #e74c3c;
+}
+
+.review-date {
+  font-size: 13px;
+  color: #777;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.review-text {
+  line-height: 1.6;
+  color: #444;
+  font-size: 15px;
+  white-space: pre-line;
+}
+
+.no-reviews {
+  text-align: center;
+  padding: 30px;
+  color: #666;
+  font-size: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.no-reviews i {
+  font-size: 24px;
+  color: #e74c3c;
+}
+
+.custom-notification {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 15px 25px;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+    z-index: 1000;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.custom-notification.show {
+    opacity: 1;
+}
+
+.custom-notification.success {
+    background-color: #4CAF50;
+}
+
+.custom-notification.warning {
+    background-color: #FF9800;
+}
+
+.custom-notification.error {
+    background-color: #F44336;
+}
+
+.review-textarea.error {
+    border: 2px solid #FF9800;
+    animation: shake 0.5s;
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    20%, 60% { transform: translateX(-5px); }
+    40%, 80% { transform: translateX(5px); }
+}
+
+/* Адаптивность */
 @media (max-width: 900px) {
   .custom-product-card {
     flex-direction: column;
-    align-items: center;
   }
 
   .custom-left-column,
@@ -237,5 +446,35 @@
   .custom-product-image {
     width: 100%;
     height: auto;
+    max-height: 400px;
+  }
+}
+
+@media (max-width: 768px) {
+  .product-container {
+    margin: 10px;
+    border-radius: 8px;
+  }
+
+  .review-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+  }
+
+  .rating-control {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .review-notice {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .review-textarea {
+    width: calc(100% - 30px); /* Учитываем padding */
   }
 }
