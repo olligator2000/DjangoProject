@@ -84,7 +84,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 15px;
+  margin-bottom: 0px;
   overflow: hidden;
 }
 
@@ -128,7 +128,7 @@
 }
 
 .custom-add-to-cart {
-  background-color: #e74c3c;
+  background-color: #f44336;
   color: white;
   padding: 12px 25px;
   font-size: 16px;
@@ -137,12 +137,10 @@
   display: flex;
   transition: all 0.3s;
   align-items: center;
-  border: none;
 }
 
 .custom-add-to-cart:hover {
-  background-color: #c0392b;
-  transform: translateY(-2px);
+  background-color: #ad1e0e;
 }
 
 .custom-add-to-cart span {
@@ -255,9 +253,8 @@
 }
 
 .submit-review-btn {
-  background-color: #e74c3c;
+  background-color: #f44336;
   color: white;
-  border: none;
   padding: 12px 25px;
   border-radius: 6px;
   font-size: 16px;
@@ -269,8 +266,7 @@
 }
 
 .submit-review-btn:hover {
-  background-color: #c0392b;
-  transform: translateY(-2px);
+  background-color: #ad1e0e;
 }
 
 .submit-review-btn:disabled {
@@ -429,6 +425,67 @@
     0%, 100% { transform: translateX(0); }
     20%, 60% { transform: translateX(-5px); }
     40%, 80% { transform: translateX(5px); }
+}
+
+/* Контейнер для изображения и кнопки */
+.custom-image-container {
+    position: relative;
+    display: inline-block;
+}
+
+/* Стили для кнопки "В избранное" */
+.custom-favorite-btn {
+    position: relative;
+    top: -430px;
+    left: 230px;
+    width: 40px;
+    height: 40px;
+    background-color: #f44336;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 40px;
+    color: #ccc;
+    transition: all 0.3s ease;
+    z-index: 10;
+    margin: -20px;
+}
+
+.custom-favorite-btn:hover {
+    background-color: #ad1e0e;
+}
+
+/* Подсказка при наведении */
+.custom-favorite-btn::after {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #333;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 12px;
+    white-space: nowrap;
+    opacity: 0;
+    transition: opacity 0.3s;
+    pointer-events: none;
+    margin-top: 5px;
+}
+
+.custom-favorite-btn:hover::after {
+    opacity: 1;
+}
+
+/* Адаптация для мобильных */
+@media (max-width: 768px) {
+    .custom-favorite-btn {
+        width: 25px;
+        height: 25px;
+        font-size: 14px;
+    }
 }
 
 /* Адаптивность */

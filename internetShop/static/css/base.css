@@ -446,6 +446,7 @@ body {
 
 .clear-cart-btn {
     display: inline-block;
+    margin-top: 8px;
     background: none;
     background-color: #e74c3c;
     color: white;

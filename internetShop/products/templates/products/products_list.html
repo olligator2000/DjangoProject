@@ -37,6 +37,7 @@
 
     <div class="custom-right-column">
         <img class="custom-product-image" src="{{ product.image.url }}" alt="{{ product.name }}">
+        <button class="custom-favorite-btn" title="В избранное">♥</button>
         <div class="custom-rating">
             <span class="custom-rating-star-icon">★</span>
             <span id="custom-rating-value">{{ product.average_rating|floatformat:1 }}</span>
