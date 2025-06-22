@@ -27,12 +27,23 @@ class IndexView(ListView):
         context['total_sum'] = sum(basket.sum for basket in context['baskets']) if context['baskets'] else 0
         return context
 
+
 def get_random_products(request):
     if request.method == 'POST':
         try:
             # Получаем 4 случайных продукта, у которых есть количество на складе
             products = Product.objects.filter(quantity__gt=0).order_by('?')[:4]
-            html = render_to_string('products/partial_carousel.html', {'products': products})
+
+            # Получаем favorite_ids для авторизованного пользователя
+            favorite_ids = []
+            if request.user.is_authenticated:
+                favorite_ids = request.user.favorites.values_list('product_id', flat=True)
+
+            html = render_to_string('products/partial_carousel.html', {
+                'products': products,
+                'favorite_ids': favorite_ids,
+                'request': request  # Передаем request в контекст
+            })
             return JsonResponse({'carousel_html': html})
         except Exception as e:
             logger.error(f"Ошибка при получении случайных товаров: {str(e)}", exc_info=True)
@@ -46,6 +57,11 @@ def index(request):
     baskets = Basket.objects.filter(user=request.user) if request.user.is_authenticated else []
     total_sum = sum(basket.sum for basket in baskets) if baskets else 0
 
+
+    favorite_ids = []
+    if request.user.is_authenticated:
+        favorite_ids = request.user.favorites.values_list('product_id', flat=True)
+
     context = {
         "title": "store",
         "categories": categories,
@@ -53,6 +69,8 @@ def index(request):
         "show_products": False,
         'baskets': baskets,
         'total_sum': total_sum,
+        'favorite_ids': favorite_ids,
+
     }
     return render(request, "products/index.html", context)
 

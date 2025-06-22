@@ -1,16 +1,22 @@
 {% for product in products %}
 <div class="product-card">
-    <a href="{% url 'products:product_detail' product.id %}">
-        <img class="product-image" src="{{ product.image.url }}" alt="{{ product.name }}">
-        <h3 class="product-title">{{ product.name }}</h3>
-    </a>
-    <div style="display: flex; justify-content: space-between; align-items: center;">
-        <div class="product-price">{{ product.price|stringformat:"d" }} ₽</div>
-        <div class="product-rating">
-            <span class="product-rating-star">★</span>
-            <span class="product-rating-value">{{ product.average_rating|floatformat:1 }}</span>
+    <div class="product-card-inner">
+        <a href="{% url 'products:product_detail' product.id %}">
+            <img class="product-image" src="{{ product.image.url }}" alt="{{ product.name }}">
+            <h3 class="product-title">{{ product.name }}</h3>
+        </a>
+        <a href="{% url 'users:add_to_favorites' product.id %}"
+           class="favorite-btn {% if request.user.is_authenticated and product.id in favorite_ids %}active{% endif %}"
+           title="{% if request.user.is_authenticated and product.id in favorite_ids %}Удалить из избранного{% else %}В избранное{% endif %}"
+           data-product-id="{{ product.id }}">♥</a>
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+            <div class="product-price">{{ product.price|stringformat:"d" }} ₽</div>
+            <div class="product-rating">
+                <span class="product-rating-star">★</span>
+                <span class="product-rating-value">{{ product.average_rating|floatformat:1 }}</span>
+            </div>
         </div>
+        <button class="add-to-cart-btn" data-product-id="{{ product.id }}">Добавить в корзину</button>
     </div>
-    <button class="add-to-cart-btn" data-product-id="{{ product.id }}">Добавить в корзину</button>
 </div>
 {% endfor %}
