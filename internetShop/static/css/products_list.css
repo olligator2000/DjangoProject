@@ -440,7 +440,7 @@
     left: 170px;
     width: 40px;
     height: 40px;
-    background-color: #f44336;
+    background-color: #b1b5b2;
     border-radius: 50%;
     border: 2px solid black; /* черная обводка */
     display: flex;
@@ -448,7 +448,9 @@
     justify-content: center;
     cursor: pointer;
     font-size: 21px;
-    color: #ccc;
+    color: #fff; /* Set base color to white */
+    -webkit-text-fill-color: #cccccc; /* Ensure emoji fill is white */
+    -webkit-text-stroke: 0; /* Remove any stroke that might cause black outline */
     transition: all 0.3s ease;
     z-index: 10;
     text-decoration: none;
@@ -457,7 +459,7 @@
 }
 
 .custom-favorite-btn:hover {
-    background-color: #ad1e0e;
+    background-color: #646664;
 }
 
 .custom-favorite-btn:active {
@@ -467,11 +469,11 @@
 }
 
 .custom-favorite-btn.active {
-    background-color: #2e7d32 !important;
+    background-color: #f44336 !important;
 }
 
 .custom-favorite-btn.active:hover {
-    background-color: #1b5e20 !important;
+    background-color: #ad1e0e !important;
 }
 
 /* Адаптация для мобильных */
