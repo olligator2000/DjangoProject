@@ -93,6 +93,7 @@
 
 {% block scripts %}
 {{ block.super }}
+<script src="{% static 'js/products.js' %}"></script>
 <script>
     document.addEventListener('DOMContentLoaded', function() {
         const filterForm = document.getElementById('filter-form');

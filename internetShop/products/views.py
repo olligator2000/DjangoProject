@@ -8,6 +8,7 @@ from products.forms import OrderForm, ReviewForm
 from django.views.generic import ListView
 from django.db.models import Q
 from django.db import transaction
+from users.models import Favorite
 from django.db.models.functions import Collate
 import logging
 
@@ -84,6 +85,11 @@ def products(request):
     brands = Product.objects.values_list('brand', flat=True).distinct()
     manufacturers = Product.objects.values_list('manufacturer', flat=True).distinct()
 
+    # Получаем favorite_ids для авторизованного пользователя
+    favorite_ids = []
+    if request.user.is_authenticated:
+        favorite_ids = request.user.favorites.values_list('product_id', flat=True)
+
     context = {
         "title": "store - products",
         'baskets': baskets,
@@ -91,8 +97,9 @@ def products(request):
         "categories": categories,
         "products": first_category.products.all() if first_category else [],
         "category": first_category,
-        "brands": brands,  # Добавляем бренды в контекст
-        "manufacturers": manufacturers,  # Добавляем производителей в контекст
+        "brands": brands,
+        "manufacturers": manufacturers,
+        'favorite_ids': favorite_ids,  # Добавляем favorite_ids в контекст
     }
     return render(request, "products/products.html", context)
 
@@ -143,6 +150,11 @@ def category_products(request, category_id):
     baskets = Basket.objects.filter(user=request.user) if request.user.is_authenticated else []
     total_sum = sum(basket.sum for basket in baskets) if baskets else 0
 
+    # Получаем favorite_ids для авторизованного пользователя
+    favorite_ids = []
+    if request.user.is_authenticated:
+        favorite_ids = request.user.favorites.values_list('product_id', flat=True)
+
     context = {
         "title": f"Товары категории {category.name}",
         "category": category,
@@ -153,6 +165,7 @@ def category_products(request, category_id):
         'baskets': baskets,
         'total_sum': total_sum,
         "categories": categories,
+        'favorite_ids': favorite_ids,  # Добавляем favorite_ids в контекст
     }
     return render(request, "products/products.html", context)
 
@@ -167,6 +180,11 @@ def filter_products(request):
             min_price = data.get('min_price')
             max_price = data.get('max_price')
             sort = data.get('sort', 'price_asc')
+
+            # Получаем favorite_ids для авторизованного пользователя
+            favorite_ids = []
+            if request.user.is_authenticated:
+                favorite_ids = request.user.favorites.values_list('product_id', flat=True)
 
             # Если category_id не указан, берем все продукты
             if category_id:
@@ -205,7 +223,11 @@ def filter_products(request):
             else:
                 products = products.order_by('price')
 
-            products_html = render_to_string('products/products_grid_partial.html', {'products': products})
+            products_html = render_to_string('products/products_grid_partial.html', {
+                'products': products,
+                'favorite_ids': favorite_ids,
+                'request': request
+            })
 
             return JsonResponse({
                 'status': 'success',
