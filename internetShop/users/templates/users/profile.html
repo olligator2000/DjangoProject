@@ -83,11 +83,35 @@
             <!-- Вкладка: Избранное -->
             <div class="tab-content" id="favorites">
                 <h2 class="h2-text-1">Избранное</h2>
-                <div class="tab-content-wrapper">
-                    <p>Пока тут ничего нет</p>
+                <div class="favorites-list">
+                    {% for favorite in request.user.favorites.all %}
+                    <div class="favorite-item">
+                        <a href="{% url 'products:product_detail' favorite.product.id %}" class="product-link">
+                            <div class="product-image-wrapper">
+                                <img src="{{ favorite.product.image.url }}" alt="{{ favorite.product.name }}" class="product-image">
+                            </div>
+                            <div>
+                                <div class="product-name">{{ favorite.product.name }}</div>
+                                <div class="product-price">{{ favorite.product.price|intcomma }}₽</div>
+                            </div>
+                        </a>
+                        <div style="margin-top: 10px;">
+                            <a href="{% url 'users:remove_from_favorites' favorite.product.id %}"
+                               class="save-btn remove-favorite-btn"
+                               style="padding: 5px 10px; font-size: 14px;"
+                               data-product-id="{{ favorite.product.id }}">
+                                Удалить из избранного
+                            </a>
+                        </div>
+                    </div>
+                    {% empty %}
+                    <div class="no-favorites" style="text-align: center; padding: 30px; color: #666;">
+                        <i class="far fa-heart" style="font-size: 24px; color: #e74c3c;"></i>
+                        <div style="margin-top: 10px;">У вас пока нет избранных товаров</div>
+                    </div>
+                    {% endfor %}
                 </div>
             </div>
-        </div>
     </div>
 </div>
 <script src="{% static 'js/profile.js' %}"></script>

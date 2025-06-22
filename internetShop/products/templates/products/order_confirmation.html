@@ -8,7 +8,7 @@
 
 {% block content %}
 <div class="order-confirmation-container">
-    <h1>Заказ успешно оформлен!</h1>
+    <h1 class="borders-h1">Заказ успешно оформлен!</h1>
     <p>Спасибо за ваш заказ! Вы получите подтверждение по указанному телефону.</p>
     {% if order %}
     <div class="order-details">
@@ -24,7 +24,7 @@
         <p><strong>ID транзакции:</strong> {{ order.transaction_id }}</p>
     </div>
     {% endif %}
-    <a href="{% url 'products:index' %}" class="btn btn-primary">Вернуться на главную</a>
+    <a href="{% url 'products:index' %}" class="btn-primary-1">Вернуться на главную</a>
 </div>
 
 {% endblock %}

@@ -31,6 +31,55 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
+    // Обработка удаления из избранного
+    document.querySelectorAll('.remove-favorite-btn').forEach(btn => {
+        btn.addEventListener('click', function(e) {
+            e.preventDefault();
+            const productId = this.dataset.productId;
+            const url = `/users/favorites/remove/${productId}/`;
+            const productItem = this.closest('.favorite-item');
+
+            fetch(url, {
+                method: 'POST',
+                headers: {
+                    'X-CSRFToken': getCookie('csrftoken'),
+                    'X-Requested-With': 'XMLHttpRequest',
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                },
+                body: `csrfmiddlewaretoken=${getCookie('csrftoken')}`
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.status === 'success') {
+                    // Плавное удаление элемента
+                    productItem.style.transition = 'opacity 0.3s';
+                    productItem.style.opacity = '0';
+
+                    setTimeout(() => {
+                        productItem.remove();
+
+                        // Проверяем, есть ли еще избранные товары
+                        if (document.querySelectorAll('.favorite-item').length === 0) {
+                            // Показываем сообщение "нет избранных товаров"
+                            document.querySelector('.favorites-list').innerHTML = `
+                                <div class="no-favorites" style="text-align: center; padding: 30px; color: #666;">
+                                    <i class="far fa-heart" style="font-size: 24px; color: #e74c3c;"></i>
+                                    <div style="margin-top: 10px;">У вас пока нет избранных товаров</div>
+                                </div>
+                            `;
+                        }
+                    }, 300);
+                } else {
+                    alert('Ошибка при удалении из избранного');
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('Произошла ошибка');
+            });
+        });
+    });
+
     // Обработка кликов по сердечкам для рейтинга товаров
     const hearts = document.querySelectorAll('.heart');
     hearts.forEach(heart => {
@@ -66,6 +115,56 @@ document.addEventListener('DOMContentLoaded', function () {
             });
         });
     });
+
+    // Функция для получения CSRF-токена
+    function getCookie(name) {
+        let cookieValue = null;
+        if (document.cookie && document.cookie !== '') {
+            const cookies = document.cookie.split(';');
+            for (let i = 0; i < cookies.length; i++) {
+                const cookie = cookies[i].trim();
+                if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                    cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                    break;
+                }
+            }
+        }
+        return cookieValue;
+    }
+
+    function toggleFavorite(event, productId) {
+        event.preventDefault();
+
+        fetch(`/users/favorites/add/${productId}/`, {
+            method: 'POST',
+            headers: {
+                'X-CSRFToken': getCookie('csrftoken'),
+                'X-Requested-With': 'XMLHttpRequest',
+            },
+            body: `csrfmiddlewaretoken=${getCookie('csrftoken')}`
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.status === 'added' || data.status === 'removed') {
+                // Обновляем только правую колонку
+                fetch(window.location.href, {
+                    headers: {
+                        'X-Requested-With': 'XMLHttpRequest',
+                    }
+                })
+                .then(response => response.text())
+                .then(html => {
+                    const parser = new DOMParser();
+                    const doc = parser.parseFromString(html, 'text/html');
+                    const newRightColumn = doc.querySelector('.custom-right-column');
+                    document.getElementById('product-favorite-section').innerHTML = newRightColumn.innerHTML;
+                });
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+        });
+    }
 
     // Функция для получения CSRF-токена
     function getCookie(name) {

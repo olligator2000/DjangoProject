@@ -212,6 +212,7 @@ def product_detail(request, product_id):
     first_category = categories.first()
     baskets = Basket.objects.filter(user=request.user) if request.user.is_authenticated else []
     total_sum = sum(basket.sum for basket in baskets) if baskets else 0
+    reviews = product.reviews.all().order_by('-created_at').select_related('user')
 
     # Проверяем, может ли пользователь оценивать товар
     user_can_rate = False
@@ -231,6 +232,11 @@ def product_detail(request, product_id):
                 user_rating = rating.rating
             except ProductRating.DoesNotExist:
                 pass
+
+        # Получаем список ID избранных товаров пользователя
+        favorite_ids = request.user.favorites.values_list('product_id', flat=True)
+    else:
+        favorite_ids = []
 
     # Проверка возможности оставить отзыв
     can_review = False
@@ -257,25 +263,25 @@ def product_detail(request, product_id):
     else:
         review_form = ReviewForm()
 
-    # Получаем все отзывы для товара
-    reviews = product.reviews.all().order_by('-created_at')
-
-
     context = {
         "title": product.name,
-        "product": product,  # Оставляем оригинальный объект продукта
+        "product": product,
         "category": category,
         "categories": categories,
         "products": first_category.products.all() if first_category else [],
         'baskets': baskets,
         'total_sum': total_sum,
         'user_can_rate': user_can_rate,
-        'user_rating': user_rating, # Передаем рейтинг отдельно
+        'user_rating': user_rating,
         'can_review': can_review,
         'review_form': review_form,
         'reviews': reviews,
+        'favorite_ids': list(favorite_ids),  # Добавляем список ID избранных товаров
     }
-    return render(request, "products/products_list.html", context)
+
+    if request.headers.get('X-Requested-With') == 'XMLHttpRequest':
+        return render(request, 'products/right_column_partial.html', context)
+    return render(request, 'products/products_list.html', context)
 
 def products_list(request):
     categories = ProductCategory.objects.prefetch_related('products').all()
@@ -342,6 +348,19 @@ def search_products(request):
     except Exception as e:
         logger.error(f"Ошибка при поиске товаров: {str(e)}", exc_info=True)
         return JsonResponse({'results': []}, status=500)
+
+def add_to_favorites(request, product_id):
+    if not request.user.is_authenticated:
+        return JsonResponse({'status': 'error', 'message': 'Требуется авторизация'}, status=401)
+
+    product = get_object_or_404(Product, id=product_id)
+    favorite, created = Favorite.objects.get_or_create(user=request.user, product=product)
+
+    if created:
+        return JsonResponse({'status': 'added'})
+    else:
+        favorite.delete()
+        return JsonResponse({'status': 'removed'})
 
 
 @login_required

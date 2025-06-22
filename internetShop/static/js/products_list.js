@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', function() {
         ratingStars.forEach(star => {
             star.addEventListener('click', function() {
                 selectedRating = parseInt(this.getAttribute('data-rating'));
-                console.log('Выбрана оценка:', selectedRating); // Логирование
+                console.log('Выбрана оценка:', selectedRating);
 
                 // Обновляем визуальное отображение звёзд
                 ratingStars.forEach((s, index) => {
@@ -22,51 +22,11 @@ document.addEventListener('DOMContentLoaded', function() {
                 const ratingInput = document.getElementById('rating-input');
                 if (ratingInput) {
                     ratingInput.value = selectedRating;
-                    console.log('Рейтинг обновлён в поле:', ratingInput.value);
                 }
 
                 // Отправляем рейтинг на сервер
                 sendRating(selectedRating);
             });
-        });
-    }
-
-    // Функция отправки рейтинга на сервер
-    function sendRating(rating) {
-        const productId = window.location.pathname.split('/')[2];
-        const formData = new FormData();
-        formData.append('rating', rating);
-        formData.append('csrfmiddlewaretoken', document.querySelector('input[name="csrfmiddlewaretoken"]').value);
-
-        console.log('Отправка рейтинга:', rating, 'для товара:', productId);
-
-        fetch(`/products/${productId}/rate/`, {
-            method: 'POST',
-            body: formData,
-            headers: {
-                'X-CSRFToken': formData.get('csrfmiddlewaretoken'),
-            }
-        })
-        .then(response => {
-            if (!response.ok) throw new Error('Ошибка сети');
-            return response.json();
-        })
-        .then(data => {
-            console.log('Ответ сервера:', data);
-            if (data.status === 'success') {
-                // Обновляем отображение среднего рейтинга
-                const ratingValueElement = document.getElementById('custom-rating-value');
-                if (ratingValueElement) {
-                    ratingValueElement.textContent = data.average_rating;
-                }
-                showNotification('Ваша оценка сохранена!', 'success');
-            } else {
-                throw new Error(data.message || 'Неизвестная ошибка');
-            }
-        })
-        .catch(error => {
-            console.error('Ошибка:', error);
-            showNotification(error.message || 'Ошибка при сохранении оценки', 'error');
         });
     }
 
@@ -107,7 +67,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 console.log('Ответ сервера:', data);
                 if (data.status === 'success') {
                     showNotification('Отзыв успешно добавлен!', 'success');
-                    setTimeout(() => location.reload(), 1500); // Перезагрузка для отображения нового отзыва
+                    setTimeout(() => location.reload(), 1500);
                 } else {
                     throw new Error(data.message || 'Ошибка при отправке отзыва');
                 }
@@ -119,7 +79,97 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // 3. Функция для показа уведомлений
+    // 3. Обработка кнопки "В избранное"
+    const favoriteBtns = document.querySelectorAll('.custom-favorite-btn');
+    favoriteBtns.forEach(btn => {
+        btn.addEventListener('click', function(e) {
+            e.preventDefault();
+            const productId = this.getAttribute('data-product-id');
+
+            fetch(this.href, {
+                method: 'POST',
+                headers: {
+                    'X-CSRFToken': getCookie('csrftoken'),
+                    'X-Requested-With': 'XMLHttpRequest',
+                },
+                body: `csrfmiddlewaretoken=${getCookie('csrftoken')}`
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.status === 'added' || data.status === 'removed') {
+                    // Обновляем только правую колонку
+                    fetch(window.location.href, {
+                        headers: {
+                            'X-Requested-With': 'XMLHttpRequest',
+                        }
+                    })
+                    .then(response => response.text())
+                    .then(html => {
+                        const parser = new DOMParser();
+                        const doc = parser.parseFromString(html, 'text/html');
+                        const newRightColumn = doc.querySelector('.custom-right-column');
+                        document.getElementById('product-favorite-section').innerHTML = newRightColumn.innerHTML;
+                        // Повторно инициализируем обработчики событий для новой кнопки
+                        initFavoriteButtons();
+                    });
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                showNotification('Произошла ошибка', 'error');
+            });
+        });
+    });
+
+    // 4. Инициализация текущего рейтинга пользователя (если есть)
+    const initialRating = document.getElementById('rating-input')?.value;
+    if (initialRating && initialRating > 0) {
+        const stars = document.querySelectorAll('.rating-star');
+        stars.forEach((star, index) => {
+            if (index < initialRating) {
+                star.classList.add('filled');
+            }
+        });
+    }
+
+    // Функция отправки рейтинга на сервер
+    function sendRating(rating) {
+        const productId = window.location.pathname.split('/')[2];
+        const formData = new FormData();
+        formData.append('rating', rating);
+        formData.append('csrfmiddlewaretoken', document.querySelector('input[name="csrfmiddlewaretoken"]').value);
+
+        fetch(`/products/${productId}/rate/`, {
+            method: 'POST',
+            body: formData,
+            headers: {
+                'X-CSRFToken': formData.get('csrfmiddlewaretoken'),
+            }
+        })
+        .then(response => {
+            if (!response.ok) throw new Error('Ошибка сети');
+            return response.json();
+        })
+        .then(data => {
+            console.log('Ответ сервера:', data);
+            if (data.status === 'success') {
+                // Обновляем отображение среднего рейтинга
+                const ratingValueElement = document.getElementById('custom-rating-value');
+                if (ratingValueElement) {
+                    ratingValueElement.textContent = data.average_rating;
+                }
+                showNotification('Ваша оценка сохранена!', 'success');
+            } else {
+                throw new Error(data.message || 'Неизвестная ошибка');
+            }
+        })
+        .catch(error => {
+            console.error('Ошибка:', error);
+            showNotification(error.message || 'Ошибка при сохранении оценки', 'error');
+        });
+    }
+
+    // Функция для показа уведомлений
     function showNotification(message, type = 'success') {
         // Удаляем предыдущие уведомления
         const existingNotice = document.querySelector('.custom-notification');
@@ -141,14 +191,60 @@ document.addEventListener('DOMContentLoaded', function() {
         }, 3000);
     }
 
-    // 4. Инициализация текущего рейтинга пользователя (если есть)
-    const initialRating = document.getElementById('rating-input')?.value;
-    if (initialRating && initialRating > 0) {
-        const stars = document.querySelectorAll('.rating-star');
-        stars.forEach((star, index) => {
-            if (index < initialRating) {
-                star.classList.add('filled');
+    // Функция для получения CSRF-токена
+    function getCookie(name) {
+        let cookieValue = null;
+        if (document.cookie && document.cookie !== '') {
+            const cookies = document.cookie.split(';');
+            for (let i = 0; i < cookies.length; i++) {
+                const cookie = cookies[i].trim();
+                if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                    cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                    break;
+                }
             }
+        }
+        return cookieValue;
+    }
+
+    // Функция для повторной инициализации кнопок избранного после обновления DOM
+    function initFavoriteButtons() {
+        document.querySelectorAll('.custom-favorite-btn').forEach(btn => {
+            btn.addEventListener('click', function(e) {
+                e.preventDefault();
+                const productId = this.getAttribute('data-product-id');
+
+                fetch(this.href, {
+                    method: 'POST',
+                    headers: {
+                        'X-CSRFToken': getCookie('csrftoken'),
+                        'X-Requested-With': 'XMLHttpRequest',
+                    },
+                    body: `csrfmiddlewaretoken=${getCookie('csrftoken')}`
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.status === 'added' || data.status === 'removed') {
+                        fetch(window.location.href, {
+                            headers: {
+                                'X-Requested-With': 'XMLHttpRequest',
+                            }
+                        })
+                        .then(response => response.text())
+                        .then(html => {
+                            const parser = new DOMParser();
+                            const doc = parser.parseFromString(html, 'text/html');
+                            const newRightColumn = doc.querySelector('.custom-right-column');
+                            document.getElementById('product-favorite-section').innerHTML = newRightColumn.innerHTML;
+                            initFavoriteButtons();
+                        });
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    showNotification('Произошла ошибка', 'error');
+                });
+            });
         });
     }
 });

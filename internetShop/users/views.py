@@ -1,9 +1,13 @@
-from django.shortcuts import render, HttpResponseRedirect
+from django.shortcuts import render, HttpResponseRedirect, get_object_or_404, redirect
 from django.contrib import auth, messages
+from django.http import JsonResponse
 from users.models import User
 from users.forms import UserLoginForm, UserRegistrationForm, UserProfileForm
 from django.urls import reverse
 from products.models import Product, ProductCategory, Basket, Order
+from users.models import Favorite
+
+
 import logging
 
 logger = logging.getLogger(__name__)
@@ -84,3 +88,29 @@ def profile(request):
 def logout(request):
     auth.logout(request)
     return HttpResponseRedirect(reverse('index'))
+
+
+def add_to_favorites(request, product_id):
+    if not request.user.is_authenticated:
+        return JsonResponse({'status': 'error', 'message': 'Требуется авторизация'}, status=401)
+
+    product = get_object_or_404(Product, id=product_id)
+    favorite, created = Favorite.objects.get_or_create(user=request.user, product=product)
+
+    if created:
+        return JsonResponse({'status': 'added'})
+    else:
+        favorite.delete()
+        return JsonResponse({'status': 'removed'})
+
+
+def remove_from_favorites(request, product_id):
+    if not request.user.is_authenticated:
+        return JsonResponse({'status': 'error', 'message': 'Требуется авторизация'}, status=401)
+
+    favorite = get_object_or_404(Favorite, user=request.user, product_id=product_id)
+    favorite.delete()
+
+    if request.headers.get('X-Requested-With') == 'XMLHttpRequest':
+        return JsonResponse({'status': 'success'})
+    return redirect(request.META.get('HTTP_REFERER', 'index'))

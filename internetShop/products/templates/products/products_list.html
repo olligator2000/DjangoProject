@@ -35,9 +35,12 @@
         </div>
     </div>
 
-    <div class="custom-right-column">
+    <div class="custom-right-column" id="product-favorite-section">
         <img class="custom-product-image" src="{{ product.image.url }}" alt="{{ product.name }}">
-        <button class="custom-favorite-btn" title="В избранное">♥</button>
+        <a href="{% url 'users:add_to_favorites' product.id %}"
+           class="custom-favorite-btn {% if request.user.is_authenticated and product.id in favorite_ids %}active{% endif %}"
+           title="{% if request.user.is_authenticated and product.id in favorite_ids %}Удалить из избранного{% else %}В избранное{% endif %}"
+           data-product-id="{{ product.id }}">♥</a>
         <div class="custom-rating">
             <span class="custom-rating-star-icon">★</span>
             <span id="custom-rating-value">{{ product.average_rating|floatformat:1 }}</span>
@@ -107,7 +110,14 @@
         <div class="review-item">
             <div class="review-header">
                 <div class="review-author">
-                    <i class="fas fa-user"></i> {{ review.user.username }}
+                    {% if review.user.image %}
+                        <img src="{{ review.user.image.url }}" alt="{{ review.user.username }}" class="review-avatar">
+                    {% else %}
+                        <div class="review-avatar default-avatar">
+                            {{ review.user.username|first|upper }}
+                        </div>
+                    {% endif %}
+                    <span>{{ review.user.username }}</span>
                 </div>
                 <div class="review-date">
                     <i class="far fa-clock"></i> {{ review.created_at|date:"d.m.Y H:i" }}
@@ -125,7 +135,6 @@
         {% endif %}
     </div>
 </div>
-
 
 <div id="cart-container">
     {% include 'products/basket.html' %}

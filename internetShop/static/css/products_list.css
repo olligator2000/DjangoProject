@@ -436,12 +436,13 @@
 /* Стили для кнопки "В избранное" */
 .custom-favorite-btn {
     position: relative;
-    top: -430px;
-    left: 230px;
+    top: -370px;
+    left: 170px;
     width: 40px;
     height: 40px;
     background-color: #f44336;
     border-radius: 50%;
+    border: 2px solid black; /* черная обводка */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -450,33 +451,75 @@
     color: #ccc;
     transition: all 0.3s ease;
     z-index: 10;
+    text-decoration: none;
     margin: -20px;
+    text-decoration: none;
 }
 
 .custom-favorite-btn:hover {
     background-color: #ad1e0e;
 }
 
-/* Подсказка при наведении */
-.custom-favorite-btn::after {
-    position: absolute;
-    top: 100%;
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: #333;
-    color: white;
-    padding: 5px 10px;
-    border-radius: 4px;
-    font-size: 12px;
-    white-space: nowrap;
-    opacity: 0;
-    transition: opacity 0.3s;
-    pointer-events: none;
-    margin-top: 5px;
+.custom-favorite-btn:active {
+    transform: translateY(1px) scale(0.99); /* Сдвиг вниз и уменьшение масштаба */
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.3); /* Внутренняя тень для эффекта вдавливания */
+    background-color: #8b0a00; /* Более темный цвет при нажатии */
 }
 
-.custom-favorite-btn:hover::after {
-    opacity: 1;
+.custom-favorite-btn.active {
+    background-color: #2e7d32 !important;
+}
+
+.custom-favorite-btn.active:hover {
+    background-color: #1b5e20 !important;
+}
+
+/* Адаптация для мобильных */
+@media (max-width: 768px) {
+    .custom-favorite-btn {
+        width: 25px;
+        height: 25px;
+        font-size: 14px;
+    }
+}
+
+/* Стили для аватара в отзывах */
+.review-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 10px;
+}
+
+.default-avatar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #e74c3c;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    margin-right: 10px;
+}
+
+.review-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px dashed #ddd;
+}
+
+.review-author {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 600;
+    color: #333;
 }
 
 /* Адаптация для мобильных */

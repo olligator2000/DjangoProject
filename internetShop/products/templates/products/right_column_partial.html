@@ -1,0 +1,17 @@
+<div class="custom-right-column">
+    <img class="custom-product-image" src="{{ product.image.url }}" alt="{{ product.name }}">
+    <a href="{% url 'users:add_to_favorites' product.id %}"
+       class="custom-favorite-btn {% if request.user.is_authenticated and product.id in favorite_ids %}active{% endif %}"
+       title="{% if request.user.is_authenticated and product.id in favorite_ids %}Удалить из избранного{% else %}В избранное{% endif %}"
+       onclick="toggleFavorite(event, {{ product.id }})">♥</a>
+    <div class="custom-rating">
+        <span class="custom-rating-star-icon">★</span>
+        <span id="custom-rating-value">{{ product.average_rating|floatformat:1 }}</span>
+    </div>
+    <div class="custom-stock">Наличие: <strong>{{ product.quantity }} шт.</strong></div>
+    <div class="custom-price-section">
+        <div class="custom-price">{{ product.price|stringformat:"d" }}₽</div>
+        <button class="custom-add-to-cart add-to-cart-btn" data-product-id="{{ product.id }}">🛒
+            <span>В корзину</span></button>
+    </div>
+</div>
