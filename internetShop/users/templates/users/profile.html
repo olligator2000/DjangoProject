@@ -3,6 +3,7 @@
 {% load static %}
 {% load humanize %}
 
+
 {% block content %}
 <link rel="stylesheet" href="{% static 'css/profile.css' %}?v=3">
 <div class="content">
@@ -29,7 +30,7 @@
                             <img src="{{ form.instance.image.url }}" alt="Profile Photo" class="profile-photo"
                                  id="profilePhoto">
                             {% else %}
-                            <img src="{% static 'images/placeholder.png' %}" alt="Profile Photo" class="profile-photo"
+                            <img src="{% static 'images/profile.avif' %}" alt="Profile Photo" class="profile-photo"
                                  id="profilePhoto">
                             {% endif %}
                             {{ form.image }}
@@ -54,11 +55,21 @@
                             <div class="form-row">
                                 <div class="form-group">
                                     <label for="{{ form.username.id_for_label }}">Имя пользователя</label>
-                                    {{ form.username }}
+                                    <input type="text"
+                                           id="{{ form.username.id_for_label }}"
+                                           name="{{ form.username.html_name }}"
+                                           value="{{ form.username.value }}"
+                                           class="form-control"
+                                           readonly>
                                 </div>
                                 <div class="form-group">
                                     <label for="{{ form.email.id_for_label }}">Эл. почта</label>
-                                    {{ form.email }}
+                                    <input type="email"
+                                           id="{{ form.email.id_for_label }}"
+                                           name="{{ form.email.html_name }}"
+                                           value="{{ form.email.value }}"
+                                           class="form-control"
+                                           readonly>
                                 </div>
                             </div>
                             <div class="form-row">

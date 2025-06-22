@@ -36,10 +36,11 @@ def register(request):
         form = UserRegistrationForm(data=request.POST)
         if form.is_valid():
             form.save()
-            messages.success(request, message="Вы успешно зарегистрировались!")
+            messages.success(request, "Вы успешно зарегистрировались!")
             return HttpResponseRedirect(reverse('users:login'))
         else:
             logger.error(f"Ошибки при регистрации: {form.errors}")
+            # Автоматически покажет ошибки из формы через form.errors
     else:
         form = UserRegistrationForm()
 
