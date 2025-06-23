@@ -757,6 +757,7 @@ def rate_product(request, product_id=None):
             return JsonResponse({'status': 'error', 'message': 'Ошибка сервера'}, status=500)
     return JsonResponse({'status': 'error', 'message': 'Недопустимый метод'}, status=400)
 
+
 @login_required
 def submit_review(request, product_id):
     product = get_object_or_404(Product, id=product_id)

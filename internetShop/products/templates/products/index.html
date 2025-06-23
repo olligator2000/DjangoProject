@@ -188,7 +188,7 @@
 
             // Увеличиваем интервал автоматического обновления с 5 до 15 секунд
             function startAutoRefresh() {
-                carousel.interval = setInterval(() => refreshCarousel(carousel.id), 15000);
+                carousel.interval = setInterval(() => refreshCarousel(carousel.id), 5000);
             }
 
             carouselElement.addEventListener('mouseenter', () => clearInterval(carousel.interval));

@@ -181,4 +181,49 @@ document.addEventListener('DOMContentLoaded', function () {
         }
         return cookieValue;
     }
+
+    // Обработка удаления отзывов
+    document.querySelectorAll('.remove-review-btn').forEach(btn => {
+        btn.addEventListener('click', function(e) {
+            e.preventDefault();
+            const url = this.href;
+
+            fetch(url, {
+                method: 'POST',
+                headers: {
+                    'X-CSRFToken': getCookie('csrftoken'),
+                    'X-Requested-With': 'XMLHttpRequest',
+                },
+                body: `csrfmiddlewaretoken=${getCookie('csrftoken')}`
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.status === 'success') {
+                    const reviewItem = this.closest('.review-item');
+                    reviewItem.style.transition = 'opacity 0.3s';
+                    reviewItem.style.opacity = '0';
+
+                    setTimeout(() => {
+                        reviewItem.remove();
+
+                        // Проверяем, есть ли еще отзывы
+                        if (document.querySelectorAll('.review-item').length === 0) {
+                            document.querySelector('.reviews-list').innerHTML = `
+                                <div class="no-reviews">
+                                    <i class="far fa-comment-alt"></i>
+                                    <div>Вы ещё не оставляли отзывов</div>
+                                </div>
+                            `;
+                        }
+                    }, 300);
+                } else {
+                    alert('Ошибка при удалении отзыва');
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('Произошла ошибка');
+            });
+        });
+    });
 });

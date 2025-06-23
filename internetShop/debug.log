@@ -21429,3 +21429,186 @@ Not Found: /.well-known/appspecific/com.chrome.devtools.json
 Not Found: /favicon.ico
 Поисковый запрос: 'sd', найдено категорий: 0, товаров: 0
 Not Found: /favicon.ico
+Watching for file changes with StatReloader
+D:\Учёба\DjangoProject\internetShop\users\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\Учёба\DjangoProject\internetShop\users\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\Учёба\DjangoProject\internetShop\users\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\Учёба\DjangoProject\internetShop\users\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\Учёба\DjangoProject\internetShop\users\admin.py changed, reloading.
+Watching for file changes with StatReloader
+D:\Учёба\DjangoProject\internetShop\users\admin.py changed, reloading.
+Watching for file changes with StatReloader
+D:\Учёба\DjangoProject\internetShop\users\admin.py changed, reloading.
+Watching for file changes with StatReloader
+D:\Учёба\DjangoProject\internetShop\users\admin.py changed, reloading.
+Watching for file changes with StatReloader
+D:\Учёба\DjangoProject\internetShop\users\admin.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+D:\Учёба\DjangoProject\internetShop\users\admin.py changed, reloading.
+Watching for file changes with StatReloader
+D:\Учёба\DjangoProject\internetShop\users\admin.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+D:\Учёба\DjangoProject\internetShop\users\admin.py changed, reloading.
+Watching for file changes with StatReloader
+D:\Учёба\DjangoProject\internetShop\products\admin.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+D:\Учёба\DjangoProject\internetShop\users\admin.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Internal Server Error: /users/profile
+Traceback (most recent call last):
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Учёба\DjangoProject\internetshop\users\views.py", line 69, in profile
+    reviews = ProductReview.objects.filter(user=request.user).select_related('product')
+              ^^^^^^^^^^^^^
+NameError: name 'ProductReview' is not defined
+Not Found: /favicon.ico
+Internal Server Error: /users/profile
+Traceback (most recent call last):
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Учёба\Python\DjangoProject\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Учёба\DjangoProject\internetshop\users\views.py", line 69, in profile
+    reviews = ProductReview.objects.filter(user=request.user).select_related('product')
+              ^^^^^^^^^^^^^
+NameError: name 'ProductReview' is not defined
+Not Found: /favicon.ico
+D:\Учёба\DjangoProject\internetShop\users\views.py changed, reloading.
+Watching for file changes with StatReloader
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+tag: ImageWidth (256) - type: long (4) - value: b'\xa0\x0f\x00\x00'
+tag: ImageLength (257) - type: long (4) - value: b'\x08\x07\x00\x00'
+tag: Make (271) - type: string (2) Tag Location: 46 - Data Location: 158 - value: b'samsung\x00'
+tag: Model (272) - type: string (2) Tag Location: 58 - Data Location: 166 - value: b'SM-A315F\x00'
+tag: Orientation (274) - type: short (3) - value: b'\x06\x00'
+tag: XResolution (282) - type: rational (5) Tag Location: 82 - Data Location: 210 - value: b'H\x00\x00\x00\x01\x00\x00\x00'
+tag: YResolution (283) - type: rational (5) Tag Location: 94 - Data Location: 218 - value: b'H\x00\x00\x00\x01\x00\x00\x00'
+tag: ResolutionUnit (296) - type: short (3) - value: b'\x02\x00'
+tag: Software (305) - type: string (2) Tag Location: 118 - Data Location: 176 - value: b'A315FXXU1DVG8\x00'
+tag: DateTime (306) - type: string (2) Tag Location: 130 - Data Location: 190 - value: b'2023:04:22 18:39:05\x00'
+tag: YCbCrPositioning (531) - type: short (3) - value: b'\x01\x00'
+tag: ExifIFD (34665) - type: long (4) - value: b'\xe2\x00\x00\x00'
+Importing AvifImagePlugin
+Importing BlpImagePlugin
+Importing BmpImagePlugin
+Importing BufrStubImagePlugin
+Importing CurImagePlugin
+Importing DcxImagePlugin
+Importing DdsImagePlugin
+Importing EpsImagePlugin
+Importing FitsImagePlugin
+Importing FliImagePlugin
+Importing FpxImagePlugin
+Image: failed to import FpxImagePlugin: No module named 'olefile'
+Importing FtexImagePlugin
+Importing GbrImagePlugin
+Importing GifImagePlugin
+Importing GribStubImagePlugin
+Importing Hdf5StubImagePlugin
+Importing IcnsImagePlugin
+Importing IcoImagePlugin
+Importing ImImagePlugin
+Importing ImtImagePlugin
+Importing IptcImagePlugin
+Importing JpegImagePlugin
+Importing Jpeg2KImagePlugin
+Importing McIdasImagePlugin
+Importing MicImagePlugin
+Image: failed to import MicImagePlugin: No module named 'olefile'
+Importing MpegImagePlugin
+Importing MpoImagePlugin
+Importing MspImagePlugin
+Importing PalmImagePlugin
+Importing PcdImagePlugin
+Importing PcxImagePlugin
+Importing PdfImagePlugin
+Importing PixarImagePlugin
+Importing PngImagePlugin
+Importing PpmImagePlugin
+Importing PsdImagePlugin
+Importing QoiImagePlugin
+Importing SgiImagePlugin
+Importing SpiderImagePlugin
+Importing SunImagePlugin
+Importing TgaImagePlugin
+Importing TiffImagePlugin
+Importing WebPImagePlugin
+Importing WmfImagePlugin
+Importing XbmImagePlugin
+Importing XpmImagePlugin
+Importing XVThumbImagePlugin
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Watching for file changes with StatReloader
+D:\Учёба\DjangoProject\internetShop\users\urls.py changed, reloading.
+Watching for file changes with StatReloader
+D:\Учёба\DjangoProject\internetShop\users\urls.py changed, reloading.
+Watching for file changes with StatReloader
+D:\Учёба\DjangoProject\internetShop\users\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\Учёба\DjangoProject\internetShop\users\views.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+D:\Учёба\DjangoProject\internetShop\users\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\Учёба\DjangoProject\internetShop\users\views.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+D:\Учёба\DjangoProject\internetShop\products\models.py changed, reloading.
+Watching for file changes with StatReloader
+D:\Учёба\DjangoProject\internetShop\products\models.py changed, reloading.
+Watching for file changes with StatReloader
+D:\Учёба\DjangoProject\internetShop\products\models.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Watching for file changes with StatReloader
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+D:\Учёба\DjangoProject\internetShop\products\models.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /favicon.ico
+Поисковый запрос: 'аываыва', найдено категорий: 0, товаров: 0
+Поисковый запрос: 'пвапвапвап', найдено категорий: 0, товаров: 0
+Поисковый запрос: 'ВОдка', найдено категорий: 0, товаров: 0
+Поисковый запрос: 'Во', найдено категорий: 1, товаров: 0
+Поисковый запрос: 'Водка', найдено категорий: 1, товаров: 0
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /favicon.ico
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Отображение страницы zakaz_end для GET запроса

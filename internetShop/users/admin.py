@@ -1,7 +1,9 @@
 from django.contrib import admin
 from users.models import User
-from products.admin import BasketAdminInline
 from products.models import Order, OrderItem
+from products.models import ProductReview
+from products.admin import BasketAdminInline, OrderAdminInline
+from users.models import Favorite
 
 class OrderItemInline(admin.TabularInline):
     model = OrderItem
@@ -24,9 +26,35 @@ class OrderAdminInline(admin.TabularInline):
     def get_queryset(self, request):
         return super().get_queryset(request).prefetch_related('items__product')
 
+class FavoriteInline(admin.TabularInline):
+    model = Favorite
+    fields = ('product', 'added_at')
+    readonly_fields = ('added_at',)
+    extra = 0
+    verbose_name = 'Избранный товар'
+    verbose_name_plural = 'Избранные товары'
+    list_filter = ('added_at',)
+    search_fields = ('product__name',)
+
+    def get_queryset(self, request):
+        return super().get_queryset(request).select_related('product')
+
+class ProductReviewInline(admin.TabularInline):
+    model = ProductReview
+    fields = ('product', 'text', 'created_at')
+    readonly_fields = ('created_at',)
+    extra = 0
+    verbose_name = 'Отзыв'
+    verbose_name_plural = 'Отзывы'
+    list_filter = ('created_at',)
+    search_fields = ('product__name', 'text')
+
+    def get_queryset(self, request):
+        return super().get_queryset(request).select_related('product')
+
 @admin.register(User)
 class UserAdmin(admin.ModelAdmin):
-    inlines = (BasketAdminInline, OrderAdminInline)
+    inlines = (BasketAdminInline, OrderAdminInline, FavoriteInline, ProductReviewInline)
     list_display = ('username', 'email', 'first_name', 'last_name', 'is_active')
     list_filter = ('is_active', 'is_staff')
     search_fields = ('username', 'email', 'first_name', 'last_name')

@@ -4,7 +4,7 @@ from django.http import JsonResponse
 from users.models import User
 from users.forms import UserLoginForm, UserRegistrationForm, UserProfileForm
 from django.urls import reverse
-from products.models import Product, ProductCategory, Basket, Order
+from products.models import Product, ProductCategory, Basket, Order, ProductReview
 from users.models import Favorite
 
 
@@ -115,3 +115,15 @@ def remove_from_favorites(request, product_id):
     if request.headers.get('X-Requested-With') == 'XMLHttpRequest':
         return JsonResponse({'status': 'success'})
     return redirect(request.META.get('HTTP_REFERER', 'index'))
+
+
+def delete_review(request, review_id):
+    if not request.user.is_authenticated:
+        return JsonResponse({'status': 'error', 'message': 'Требуется авторизация'}, status=401)
+
+    review = get_object_or_404(ProductReview, id=review_id, user=request.user)
+    review.delete()
+
+    if request.headers.get('X-Requested-With') == 'XMLHttpRequest':
+        return JsonResponse({'status': 'success'})
+    return redirect('users:profile')

@@ -114,10 +114,12 @@ class OrderItem(models.Model):
 
 
 class ProductReview(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='reviews')
     product = models.ForeignKey(Product, on_delete=models.CASCADE, related_name='reviews')
     text = models.TextField(verbose_name='Текст отзыва')
     created_at = models.DateTimeField(auto_now_add=True)
+    rating = models.PositiveSmallIntegerField(choices=[(i, i) for i in range(1, 6)], verbose_name='Рейтинг',
+        null=True, blank=True)
 
     def __str__(self):
         return f"Отзыв от {self.user.username} на {self.product.name}"

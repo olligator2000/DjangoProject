@@ -1,6 +1,6 @@
 from django.contrib import admin
 from django.utils.html import format_html
-from products.models import Product, ProductCategory, Basket, Order, OrderItem
+from products.models import Product, ProductCategory, Basket, Order, OrderItem, ProductReview
 
 # Регистрация ProductCategory и Basket
 admin.site.register(ProductCategory)
@@ -45,6 +45,19 @@ class OrderItemInline(admin.TabularInline):
     extra = 1  # Добавляем одну пустую строку для нового товара
     verbose_name = 'Товар в заказе'
     verbose_name_plural = 'Товары в заказе'
+
+class OrderAdminInline(admin.TabularInline):
+    model = Order
+    fields = ('user', 'total_price', 'order_date', 'payment_method')
+    readonly_fields = ('order_date',)
+    extra = 0  # Не показывать пустые формы
+
+@admin.register(ProductReview)
+class ProductReviewAdmin(admin.ModelAdmin):
+    list_display = ('user', 'product', 'rating', 'created_at')
+    list_filter = ('created_at', 'rating')
+    search_fields = ('user__username', 'product__name', 'text')
+    readonly_fields = ('created_at',)
 
 @admin.register(Order)
 class OrderAdmin(admin.ModelAdmin):

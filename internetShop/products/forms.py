@@ -26,10 +26,15 @@ class OrderForm(forms.ModelForm):
 
 class ReviewForm(forms.ModelForm):
     rating = forms.IntegerField(
-        required=False,
-        widget=forms.HiddenInput(),
         min_value=1,
-        max_value=5
+        max_value=5,
+        required=False,
+        widget=forms.NumberInput(attrs={
+            'class': 'rating-input',
+            'min': '1',
+            'max': '5'
+        }),
+        label='Оценка'
     )
 
     class Meta:
