@@ -14,6 +14,11 @@ class OrderForm(forms.ModelForm):
         required=True,
         widget=forms.HiddenInput()
     )
+    delivery_time = forms.ChoiceField(
+        label="Время доставки",
+        choices=Order.DELIVERY_TIME_CHOICES,
+        initial='now'
+    )
 
     class Meta:
         model = Order

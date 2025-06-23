@@ -102,7 +102,7 @@
                         </div>
                         <div class="delivery-time">
                             <h4>Время доставки</h4>
-                            <p><strong>{{ form.delivery_time.value|default:"Доставка 35–45 мин" }}</strong></p>
+                            {{ form.delivery_time }}
                             {% if form.delivery_time.errors %}
                             <span class="error-message">{{ form.delivery_time.errors }}</span>
                             {% endif %}

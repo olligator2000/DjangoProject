@@ -107,6 +107,30 @@
 <main class="content">
     {% block content %} {% endblock %}
 </main>
+<button id="scrollToTopBtn" title="Наверх">↑</button>
+
+<footer>
+    <div class="footer-content">
+        <span class="copyright">© 2025 Все права защищены</span>
+        <a href="#feedback-modal" class="feedback-link" id="feedback-btn">
+            <span class="envelope-icon">✉️</span> Обратная связь
+        </a>
+    </div>
+
+    <!-- Модальное окно формы обратной связи -->
+    <div id="feedback-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h3>Напишите нам</h3>
+            <form class="feedback-form">
+                <input type="text" placeholder="Ваше имя" required>
+                <input type="email" placeholder="Email" required>
+                <textarea placeholder="Сообщение..." rows="4" required></textarea>
+                <button type="submit">Отправить</button>
+            </form>
+        </div>
+    </div>
+</footer>
 
 {% block footer %} {% endblock %}
 
@@ -126,5 +150,6 @@
 <script src="/static/js/street_block.js"></script>
 <script src="/static/js/menu.js"></script>
 <script src="/static/js/basket.js"></script>
+<script src="/static/js/scroll.js"></script>
 </body>
 </html>

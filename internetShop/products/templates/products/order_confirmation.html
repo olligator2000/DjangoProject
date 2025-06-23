@@ -17,6 +17,7 @@
         <p><strong>Имя получателя:</strong> {{ order.full_name }}</p>
         <p><strong>Телефон:</strong> {{ order.phone }}</p>
         <p><strong>Адрес доставки:</strong> {{ order.address }}{% if order.apartment_office %}, кв./офис {{ order.apartment_office }}{% endif %}</p>
+        <p><strong>Время доставки:</strong> {{ order.get_delivery_time_display }}</p>
         <p><strong>Итоговая сумма:</strong> {{ order.total_price }} ₽</p>
         <p><strong>Доставка:</strong> {{ order.delivery_cost }} ₽</p>
         <p><strong>Сервисный сбор:</strong> {{ order.service_fee }} ₽</p>
@@ -24,7 +25,7 @@
         <p><strong>ID транзакции:</strong> {{ order.transaction_id }}</p>
     </div>
     {% endif %}
-    <a href="{% url 'products:index' %}" class="btn-primary-1">Вернуться на главную</a>
+    <a href="{% url 'index' %}" class="btn-primary-1">Вернуться на главную</a>
 </div>
 
 {% endblock %}

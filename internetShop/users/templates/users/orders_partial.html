@@ -12,6 +12,7 @@
                         <th>Дата</th>
                         <th>Сумма</th>
                         <th>Статус оплаты</th>
+                        <th>Время доставки</th>  <!-- Новая колонка -->
                         <th>Товары</th>
                     </tr>
                 </thead>
@@ -21,7 +22,8 @@
                             <td>#{{ order.id }}</td>
                             <td>{{ order.order_date|date:"d.m.Y H:i" }}</td>
                             <td>{{ order.total_price|intcomma }} ₽</td>
-                            <td>{{ order.payment_method|default:"Не оплачен" }}</td>
+                            <td>{{ order.get_payment_method_display|default:"Не оплачен" }}</td>
+                            <td>{{ order.get_delivery_time_display|default:"Не указано" }}</td>  <!-- Новая ячейка -->
                             <td>
                                 <ul>
                                     {% for item in order.items.all %}

@@ -616,6 +616,21 @@
     border: 1px solid #c3e6cb;
 }
 
+/* доставка */
+.delivery-time select {
+    padding: 10px 12px;
+    border: 1px solid #827a79;
+    border-radius: 6px;
+    font-size: 14px;
+    width: 100%;
+    transition: border 0.3s;
+}
+
+.delivery-time select:focus {
+    border-color: #e74c3c;
+    outline: none;
+}
+
 /* Анимации */
 @keyframes fadeIn {
     from { opacity: 0; transform: translateY(10px); }

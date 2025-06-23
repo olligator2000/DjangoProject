@@ -48,14 +48,21 @@
             <div class="filter-section">
                 <h3>Цена</h3>
                 <div class="price-range">
-                    <input type="range" id="price-slider" min="0" max="10000" step="100" value="10000">
-                    <div class="price-values">
-                        <span id="min-price">0 ₽</span>
-                        <span id="max-price">10000 ₽</span>
+                    <div class="price-inputs">
+                        <input type="number" id="min-price-input" class="price-input" min="0" max="10000" step="100" value="0">
+                        <span>-</span>
+                        <input type="number" id="max-price-input" class="price-input" min="0" max="10000" step="100" value="10000">
+                    </div>
+                    <div class="price-sliders">
+                        <div class="slider-track"></div>
+                        <input type="range" id="min-price-slider" min="0" max="10000" step="100" value="0">
+                        <input type="range" id="max-price-slider" min="0" max="10000" step="100" value="10000">
+                    </div>
+                    <div class="price-labels">
+                        <span>0 ₽</span>
+                        <span>10000 ₽</span>
                     </div>
                 </div>
-                <input type="hidden" id="min-price-input" name="min_price" value="0">
-                <input type="hidden" id="max-price-input" name="max_price" value="10000">
             </div>
         </form>
     </aside>
@@ -95,100 +102,180 @@
 {{ block.super }}
 <script src="{% static 'js/products.js' %}"></script>
 <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        const filterForm = document.getElementById('filter-form');
-        const priceSlider = document.getElementById('price-slider');
-        const minPriceSpan = document.getElementById('min-price');
-        const maxPriceSpan = document.getElementById('max-price');
-        const minPriceInput = document.getElementById('min-price-input');
-        const maxPriceInput = document.getElementById('max-price-input');
-        const sortSelect = document.getElementById('sort-select');
-        const brandCheckboxes = document.querySelectorAll('input[name="brand"]');
-        const manufacturerCheckboxes = document.querySelectorAll('input[name="manufacturer"]');
+document.addEventListener('DOMContentLoaded', function() {
+    // Элементы для работы с ценой
+    const minPriceInput = document.getElementById('min-price-input');
+    const maxPriceInput = document.getElementById('max-price-input');
+    const minPriceSlider = document.getElementById('min-price-slider');
+    const maxPriceSlider = document.getElementById('max-price-slider');
+    const sliderTrack = document.querySelector('.slider-track');
 
-        // Обновление отображаемых значений цены
-        function updatePriceDisplay() {
-            maxPriceSpan.textContent = `${priceSlider.value} ₽`;
-            maxPriceInput.value = priceSlider.value;
-        }
+    // Элементы фильтров
+    const filterForm = document.getElementById('filter-form');
+    const sortSelect = document.getElementById('sort-select');
+    const brandCheckboxes = document.querySelectorAll('input[name="brand"]');
+    const manufacturerCheckboxes = document.querySelectorAll('input[name="manufacturer"]');
 
-        // Инициализация значений цены
-        updatePriceDisplay();
+    // Обновление ползунков при изменении числовых полей
+    [minPriceInput, maxPriceInput].forEach(input => {
+        input.addEventListener('input', function() {
+            let minVal = parseInt(minPriceInput.value) || 0;
+            let maxVal = parseInt(maxPriceInput.value) || 10000;
 
-        // Обработчик изменения слайдера цены
-        priceSlider.addEventListener('input', updatePriceDisplay);
-
-        // Обработчики для чекбоксов
-        function handleCheckboxChange(checkbox, checkboxes) {
-            if (checkbox.checked) {
-                checkboxes.forEach(cb => {
-                    if (cb !== checkbox) {
-                        cb.checked = false;
-                    }
-                });
-            }
-            applyFilters();
-        }
-
-        brandCheckboxes.forEach(checkbox => {
-            checkbox.addEventListener('change', function() {
-                handleCheckboxChange(this, brandCheckboxes);
-            });
-        });
-
-        manufacturerCheckboxes.forEach(checkbox => {
-            checkbox.addEventListener('change', function() {
-                handleCheckboxChange(this, manufacturerCheckboxes);
-            });
-        });
-
-        sortSelect.addEventListener('change', applyFilters);
-
-        // Функция применения фильтров через AJAX
-        function applyFilters() {
-            const selectedBrands = Array.from(brandCheckboxes)
-                .filter(checkbox => checkbox.checked)
-                .map(checkbox => checkbox.value);
-
-            const selectedManufacturers = Array.from(manufacturerCheckboxes)
-                .filter(checkbox => checkbox.checked)
-                .map(checkbox => checkbox.value);
-
-            const data = {
-                brand: selectedBrands,
-                manufacturer: selectedManufacturers,
-                min_price: minPriceInput.value,
-                max_price: maxPriceInput.value,
-                sort: sortSelect.value,
-                category_id: {% if category %}{{ category.id }}{% else %}null{% endif %}  // Добавляем условие для category_id
-            };
-
-            fetch('{% url 'products:filter_products' %}', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'X-CSRFToken': '{{ csrf_token }}'
-                },
-                body: JSON.stringify(data)
-            })
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error('Network response was not ok');
-                }
-                return response.json();
-            })
-            .then(data => {
-                if (data.status === 'success') {
-                    document.querySelector('.shop-container').innerHTML = data.products_html;
+            if (minVal > maxVal) {
+                if (this === minPriceInput) {
+                    minPriceInput.value = maxVal;
+                    minVal = maxVal;
                 } else {
-                    console.error('Ошибка фильтрации:', data.message);
+                    maxPriceInput.value = minVal;
+                    maxVal = minVal;
                 }
-            })
-            .catch(error => {
-                console.error('Ошибка AJAX:', error);
-            });
-        }
+            }
+
+            minPriceSlider.value = minVal;
+            maxPriceSlider.value = maxVal;
+            updateSliderTrack();
+            applyFilters();
+        });
     });
+
+    // Обновление числовых полей при изменении ползунков
+    [minPriceSlider, maxPriceSlider].forEach(slider => {
+        slider.addEventListener('input', function() {
+            let minVal = parseInt(minPriceSlider.value) || 0;
+            let maxVal = parseInt(maxPriceSlider.value) || 10000;
+
+            if (minVal > maxVal) {
+                if (this === minPriceSlider) {
+                    minPriceSlider.value = maxVal;
+                    minVal = maxVal;
+                } else {
+                    maxPriceSlider.value = minVal;
+                    maxVal = minVal;
+                }
+            }
+
+            minPriceInput.value = minVal;
+            maxPriceInput.value = maxVal;
+            updateSliderTrack();
+            applyFilters();
+        });
+    });
+
+    // Обновление цвета заполненной области между ползунками
+    function updateSliderTrack() {
+        const minVal = parseInt(minPriceSlider.value) || 0;
+        const maxVal = parseInt(maxPriceSlider.value) || 10000;
+        const minPercent = (minVal / 10000) * 100;
+        const maxPercent = (maxVal / 10000) * 100;
+
+        sliderTrack.style.left = `${minPercent}%`;
+        sliderTrack.style.width = `${maxPercent - minPercent}%`;
+        sliderTrack.style.backgroundColor = '#e74c3c';
+    }
+
+    // Обработчики для чекбоксов
+    function handleCheckboxChange(checkbox, checkboxes) {
+        applyFilters();
+    }
+
+    brandCheckboxes.forEach(checkbox => {
+        checkbox.addEventListener('change', function() {
+            handleCheckboxChange(this, brandCheckboxes);
+        });
+    });
+
+    manufacturerCheckboxes.forEach(checkbox => {
+        checkbox.addEventListener('change', function() {
+            handleCheckboxChange(this, manufacturerCheckboxes);
+        });
+    });
+
+    // Обработчик сортировки
+    sortSelect.addEventListener('change', applyFilters);
+
+    // Функция применения фильтров через AJAX
+    function applyFilters() {
+        const selectedBrands = Array.from(brandCheckboxes)
+            .filter(checkbox => checkbox.checked)
+            .map(checkbox => checkbox.value);
+
+        const selectedManufacturers = Array.from(manufacturerCheckboxes)
+            .filter(checkbox => checkbox.checked)
+            .map(checkbox => checkbox.value);
+
+        const minPrice = minPriceInput.value;
+        const maxPrice = maxPriceInput.value;
+        const sort = sortSelect.value;
+
+        const data = {
+            brand: selectedBrands,
+            manufacturer: selectedManufacturers,
+            min_price: minPrice,
+            max_price: maxPrice,
+            sort: sort,
+            category_id: {% if category %}{{ category.id }}{% else %}null{% endif %}
+        };
+
+        fetch('{% url "products:filter_products" %}', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'X-CSRFToken': '{{ csrf_token }}'
+            },
+            body: JSON.stringify(data)
+        })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.json();
+        })
+        .then(data => {
+            if (data.status === 'success') {
+                document.querySelector('.shop-container').innerHTML = data.products_html;
+                // Обновляем URL без перезагрузки страницы
+                updateUrlParams(selectedBrands, selectedManufacturers, minPrice, maxPrice, sort);
+            } else {
+                console.error('Ошибка фильтрации:', data.message);
+            }
+        })
+        .catch(error => {
+            console.error('Ошибка AJAX:', error);
+        });
+    }
+
+    // Функция для обновления URL с параметрами фильтрации
+    function updateUrlParams(brands, manufacturers, minPrice, maxPrice, sort) {
+        const params = new URLSearchParams();
+
+        if (brands.length > 0) {
+            brands.forEach(brand => params.append('brand', brand));
+        }
+
+        if (manufacturers.length > 0) {
+            manufacturers.forEach(manufacturer => params.append('manufacturer', manufacturer));
+        }
+
+        if (minPrice && minPrice > 0) {
+            params.append('min_price', minPrice);
+        }
+
+        if (maxPrice && maxPrice < 10000) {
+            params.append('max_price', maxPrice);
+        }
+
+        if (sort && sort !== 'price_asc') {
+            params.append('sort', sort);
+        }
+
+        const newUrl = window.location.pathname + (params.toString() ? '?' + params.toString() : '');
+        window.history.pushState({}, '', newUrl);
+    }
+
+    // Инициализация
+    updateSliderTrack();
+});
 </script>
 {% endblock %}
 {% endblock %}

@@ -201,6 +201,77 @@
     background-color: #ad1e0e;
 }
 
+/* Стили для двойного ползунка цены */
+/* Стили для двойного ползунка цены */
+.price-range {
+    padding: 0 10px;
+    margin-bottom: 20px;
+}
+
+.price-inputs {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.price-input {
+    width: 80px;
+    padding: 5px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    text-align: center;
+}
+
+.price-sliders {
+    position: relative;
+    height: 40px;
+    margin-bottom: 5px;
+}
+
+.slider-track {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: #ddd;
+    transform: translateY(-50%);
+    border-radius: 2px;
+    z-index: 1;
+}
+
+.price-sliders input[type="range"] {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 0;
+    -webkit-appearance: none;
+    pointer-events: none;
+    transform: translateY(-50%);
+    z-index: 2;
+}
+
+.price-sliders input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    pointer-events: auto;
+    width: 16px;
+    height: 16px;
+    background: #e74c3c;
+    border-radius: 50%;
+    cursor: pointer;
+    border: none;
+}
+
+.price-labels {
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+    color: #666;
+}
+
+
 /* Адаптивность */
 @media (max-width: 768px) {
     .products-page-container {

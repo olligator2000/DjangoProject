@@ -100,6 +100,24 @@ class Order(models.Model):
     payment_method = models.CharField(max_length=10, choices=[('card', 'Карта'), ('sbp', 'СБП')], blank=True, verbose_name='Способ оплаты')
     transaction_id = models.CharField(max_length=50, blank=True, verbose_name='ID транзакции')
 
+    DELIVERY_TIME_CHOICES = [
+        ('now', 'Сейчас 35-45 мин'),
+        ('9-10', '9:00-10:00'),
+        ('10-11', '10:00-11:00'),
+        ('11-12', '11:00-12:00'),
+        ('12-13', '12:00-13:00'),
+        ('13-14', '13:00-14:00'),
+        ('14-15', '14:00-15:00'),
+        ('15-16', '15:00-16:00'),
+        ('16-17', '16:00-17:00'),
+        ('17-18', '17:00-18:00'),
+        ('18-19', '18:00-19:00'),
+        ('19-20', '19:00-20:00'),
+        ('20-21', '20:00-21:00'),
+    ]
+
+    delivery_time = models.CharField(max_length=10, choices=DELIVERY_TIME_CHOICES, default='now', verbose_name='Время доставки')
+
     def __str__(self):
         return f"Заказ #{self.id} от {self.full_name}"
 
